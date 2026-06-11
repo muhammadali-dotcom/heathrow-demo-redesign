@@ -99,9 +99,9 @@ export default function CoverageAreas() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
             style={{
-              background: 'rgba(255,29,37,0.12)',
-              border: '1px solid rgba(255,29,37,0.3)',
-              color: '#FF1D25',
+              background: 'rgba(192,57,43,0.12)',
+              border: '1px solid rgba(192,57,43,0.3)',
+              color: '#C0392B',
             }}
           >
             Coverage
@@ -128,19 +128,19 @@ export default function CoverageAreas() {
                 className="flex items-start gap-3 p-4 rounded-2xl text-left transition-all duration-250 group"
                 style={{
                   background: isActive
-                    ? 'linear-gradient(135deg, rgba(255,29,37,0.18), rgba(139,0,0,0.12))'
+                    ? 'linear-gradient(135deg, rgba(192,57,43,0.18), rgba(139,0,0,0.12))'
                     : 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
                   border: isActive
-                    ? '1px solid rgba(255,29,37,0.55)'
+                    ? '1px solid rgba(192,57,43,0.55)'
                     : '1px solid rgba(255,255,255,0.08)',
-                  boxShadow: isActive ? '0 8px 30px rgba(255,29,37,0.15)' : 'none',
+                  boxShadow: isActive ? '0 8px 30px rgba(192,57,43,0.15)' : 'none',
                   transform: isActive ? 'translateY(-2px)' : '',
                 }}
               >
                 <MapPin
                   size={16}
                   className="flex-shrink-0 mt-0.5 transition-colors duration-200"
-                  style={{ color: isActive ? '#FF1D25' : '#A1A1AA' }}
+                  style={{ color: isActive ? '#C0392B' : '#A1A1AA' }}
                 />
                 <div>
                   <div
@@ -151,7 +151,7 @@ export default function CoverageAreas() {
                   </div>
                   <div
                     className="text-xs font-semibold mt-0.5 transition-colors duration-200"
-                    style={{ color: isActive ? '#FF1D25' : '#71717A' }}
+                    style={{ color: isActive ? '#C0392B' : '#71717A' }}
                   >
                     {area.postcode}
                   </div>
@@ -166,9 +166,9 @@ export default function CoverageAreas() {
           <div
             className="rounded-2xl p-6 sm:p-8 relative transition-all duration-300"
             style={{
-              background: 'linear-gradient(135deg, rgba(255,29,37,0.1), rgba(139,0,0,0.06))',
-              border: '1px solid rgba(255,29,37,0.3)',
-              boxShadow: '0 16px 50px rgba(255,29,37,0.12)',
+              background: 'linear-gradient(135deg, rgba(192,57,43,0.1), rgba(139,0,0,0.06))',
+              border: '1px solid rgba(192,57,43,0.3)',
+              boxShadow: '0 16px 50px rgba(192,57,43,0.12)',
             }}
           >
             {/* Close button */}
@@ -185,8 +185,8 @@ export default function CoverageAreas() {
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                 style={{
-                  background: 'linear-gradient(135deg, #FF1D25, #D90012)',
-                  boxShadow: '0 8px 20px rgba(255,29,37,0.35)',
+                  background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                  boxShadow: '0 8px 20px rgba(192,57,43,0.35)',
                 }}
               >
                 <MapPin size={22} className="text-white" />
@@ -202,9 +202,9 @@ export default function CoverageAreas() {
                   <span
                     className="text-xs font-bold px-2 py-0.5 rounded-full"
                     style={{
-                      background: 'rgba(255,29,37,0.15)',
-                      border: '1px solid rgba(255,29,37,0.3)',
-                      color: '#FF1D25',
+                      background: 'rgba(192,57,43,0.15)',
+                      border: '1px solid rgba(192,57,43,0.3)',
+                      color: '#C0392B',
                     }}
                   >
                     {selected.postcode}
@@ -218,8 +218,8 @@ export default function CoverageAreas() {
                     href="/contact"
                     className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-5 py-2.5 text-white transition-all duration-200"
                     style={{
-                      background: 'linear-gradient(135deg, #FF1D25, #D90012)',
-                      boxShadow: '0 8px 20px rgba(255,29,37,0.3)',
+                      background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                      boxShadow: '0 8px 20px rgba(192,57,43,0.3)',
                     }}
                   >
                     Book from {selected.name} <ArrowRight size={14} />

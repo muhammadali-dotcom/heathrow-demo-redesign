@@ -15,7 +15,7 @@ export default function SectionTitle({ label, title, subtitle, centered, classNa
       {label && (
         <span
           className="text-xs font-bold tracking-[0.2em] uppercase mb-3 block"
-          style={{ color: '#FF1D25' }}
+          style={{ color: '#C0392B' }}
         >
           {label}
         </span>

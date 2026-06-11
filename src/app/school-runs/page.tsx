@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { GraduationCap, Shield, Clock, CheckCircle, Phone, Heart, Star } from 'lucide-react';
 import { PHONE } from '@/lib/constants';
 
@@ -52,7 +53,7 @@ export default function SchoolRunsPage() {
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(255,29,37,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(192,57,43,0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -60,9 +61,9 @@ export default function SchoolRunsPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(255,29,37,0.12)',
-              border: '1px solid rgba(255,29,37,0.3)',
-              color: '#FF1D25',
+              background: 'rgba(192,57,43,0.12)',
+              border: '1px solid rgba(192,57,43,0.3)',
+              color: '#C0392B',
             }}
           >
             School Runs
@@ -72,7 +73,7 @@ export default function SchoolRunsPage() {
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Safe{' '}
-            <span style={{ color: '#FF1D25' }}>School Runs</span>
+            <span style={{ color: '#C0392B' }}>School Runs</span>
             <br />Every Day
           </h1>
           <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed mb-10">
@@ -83,7 +84,7 @@ export default function SchoolRunsPage() {
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white"
-              style={{ background: 'linear-gradient(135deg, #FF1D25, #D90012)', boxShadow: '0 16px 40px rgba(255,29,37,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
             >
               Book a School Run
             </Link>
@@ -99,6 +100,21 @@ export default function SchoolRunsPage() {
         </div>
       </section>
 
+      {/* Service Image */}
+      <section className="px-4 py-12" style={{ background: '#050505' }}>
+        <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+          <div className="relative w-full h-72 sm:h-96">
+            <Image
+              src="/images/fleet/school.png"
+              alt="Safe school run service — Bittacy Cars"
+              fill
+              className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Trust bar */}
       <section className="py-12 px-4" style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="max-w-5xl mx-auto">
@@ -110,7 +126,7 @@ export default function SchoolRunsPage() {
               { value: '24/7', label: 'Support Available' },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-3xl font-black mb-1" style={{ color: '#FF1D25', letterSpacing: '-0.03em' }}>
+                <div className="text-3xl font-black mb-1" style={{ color: '#C0392B', letterSpacing: '-0.03em' }}>
                   {stat.value}
                 </div>
                 <div className="text-sm text-[#A1A1AA] font-medium">{stat.label}</div>
@@ -126,7 +142,7 @@ export default function SchoolRunsPage() {
           <div className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(255,29,37,0.12)', border: '1px solid rgba(255,29,37,0.3)', color: '#FF1D25' }}
+              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#C0392B' }}
             >
               Our Commitment
             </span>
@@ -148,7 +164,7 @@ export default function SchoolRunsPage() {
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'linear-gradient(135deg, #FF1D25, #D90012)', boxShadow: '0 8px 20px rgba(255,29,37,0.3)' }}
+                    style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
                   >
                     <Icon size={22} className="text-white" />
                   </div>
@@ -169,7 +185,7 @@ export default function SchoolRunsPage() {
           <div className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(255,29,37,0.12)', border: '1px solid rgba(255,29,37,0.3)', color: '#FF1D25' }}
+              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#C0392B' }}
             >
               Getting Started
             </span>
@@ -186,7 +202,7 @@ export default function SchoolRunsPage() {
               <div key={item.step} className="text-center">
                 <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-black text-white"
-                  style={{ background: 'linear-gradient(135deg, #FF1D25, #D90012)', boxShadow: '0 8px 24px rgba(255,29,37,0.35)' }}
+                  style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 8px 24px rgba(192,57,43,0.35)' }}
                 >
                   {item.step}
                 </div>
@@ -203,8 +219,8 @@ export default function SchoolRunsPage() {
         <div
           className="max-w-4xl mx-auto rounded-3xl p-12 text-center relative overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #FF1D25 0%, #D90012 50%, #8B0000 100%)',
-            boxShadow: '0 40px 100px rgba(255,29,37,0.35)',
+            background: 'linear-gradient(135deg, #C0392B 0%, #A93226 50%, #8B0000 100%)',
+            boxShadow: '0 40px 100px rgba(192,57,43,0.35)',
           }}
         >
           <div
@@ -225,7 +241,7 @@ export default function SchoolRunsPage() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4"
-                style={{ background: '#FFFFFF', color: '#D90012', boxShadow: '0 8px 24px rgba(0,0,0,0.2)', textDecoration: 'none' }}
+                style={{ background: '#FFFFFF', color: '#A93226', boxShadow: '0 8px 24px rgba(0,0,0,0.2)', textDecoration: 'none' }}
               >
                 Get a Quote
               </Link>

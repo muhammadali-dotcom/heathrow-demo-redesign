@@ -32,9 +32,9 @@ export default function FeatureCard({ feature }: FeatureCardProps) {
     >
       <div
         className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-        style={{ background: 'rgba(255,29,37,0.1)', border: '1px solid rgba(255,29,37,0.2)' }}
+        style={{ background: 'rgba(192,57,43,0.1)', border: '1px solid rgba(192,57,43,0.2)' }}
       >
-        <Icon size={18} style={{ color: '#FF1D25' }} />
+        <Icon size={18} style={{ color: '#C0392B' }} />
       </div>
       <h3 className="text-white font-bold text-base mb-2">{feature.title}</h3>
       <p className="text-[#A1A1AA] text-sm leading-relaxed">{feature.description}</p>

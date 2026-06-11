@@ -35,11 +35,11 @@ export default function FleetCard({ vehicle }: FleetCardProps) {
         </h3>
         <div className="flex items-center gap-4 mb-5">
           <span className="flex items-center gap-1.5 text-sm text-[#A1A1AA]">
-            <Users size={14} style={{ color: '#FF1D25' }} />
+            <Users size={14} style={{ color: '#C0392B' }} />
             {vehicle.passengers} passengers
           </span>
           <span className="flex items-center gap-1.5 text-sm text-[#A1A1AA]">
-            <Luggage size={14} style={{ color: '#FF1D25' }} />
+            <Luggage size={14} style={{ color: '#C0392B' }} />
             {vehicle.luggage} bags
           </span>
         </div>

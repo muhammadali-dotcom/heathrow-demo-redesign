@@ -1,4 +1,4 @@
-import HomeBooking from '@/components/home/HomeBooking';
+import BookingWizard from '@/components/booking/BookingWizard';
 
 export const metadata = {
   title: 'Book a Ride | Bittacy Cars',
@@ -9,7 +9,7 @@ export const metadata = {
 export default function BookPage() {
   return (
     <main style={{ background: '#050505', minHeight: '100vh', paddingTop: '80px' }}>
-      <HomeBooking />
+      <BookingWizard />
     </main>
   );
 }

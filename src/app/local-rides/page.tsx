@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Clock, CheckCircle, Phone, Star, Zap } from 'lucide-react';
 import { PHONE } from '@/lib/constants';
 
@@ -58,7 +59,7 @@ export default function LocalRidesPage() {
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(255,29,37,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(192,57,43,0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -66,9 +67,9 @@ export default function LocalRidesPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(255,29,37,0.12)',
-              border: '1px solid rgba(255,29,37,0.3)',
-              color: '#FF1D25',
+              background: 'rgba(192,57,43,0.12)',
+              border: '1px solid rgba(192,57,43,0.3)',
+              color: '#C0392B',
             }}
           >
             Local Rides
@@ -78,7 +79,7 @@ export default function LocalRidesPage() {
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Your Local{' '}
-            <span style={{ color: '#FF1D25' }}>Taxi</span>
+            <span style={{ color: '#C0392B' }}>Taxi</span>
             <br />in North London
           </h1>
           <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed mb-10">
@@ -89,7 +90,7 @@ export default function LocalRidesPage() {
             <a
               href={`tel:${PHONE.replace(/\s/g, '')}`}
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white"
-              style={{ background: 'linear-gradient(135deg, #FF1D25, #D90012)', boxShadow: '0 16px 40px rgba(255,29,37,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
             >
               <Phone size={16} />
               Call Now — {PHONE}
@@ -105,13 +106,28 @@ export default function LocalRidesPage() {
         </div>
       </section>
 
+      {/* Service Image */}
+      <section className="px-4 py-12" style={{ background: '#050505' }}>
+        <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+          <div className="relative w-full h-72 sm:h-96">
+            <Image
+              src="/images/fleet/local.png"
+              alt="Local taxi rides across North London — Bittacy Cars"
+              fill
+              className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Areas we cover */}
       <section className="py-20 px-4" style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(255,29,37,0.12)', border: '1px solid rgba(255,29,37,0.3)', color: '#FF1D25' }}
+              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#C0392B' }}
             >
               Coverage
             </span>
@@ -129,7 +145,7 @@ export default function LocalRidesPage() {
                   border: '1px solid rgba(255,255,255,0.1)',
                 }}
               >
-                <MapPin size={12} className="inline mr-1.5" style={{ color: '#FF1D25' }} />
+                <MapPin size={12} className="inline mr-1.5" style={{ color: '#C0392B' }} />
                 {area}
               </span>
             ))}
@@ -143,7 +159,7 @@ export default function LocalRidesPage() {
           <div className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(255,29,37,0.12)', border: '1px solid rgba(255,29,37,0.3)', color: '#FF1D25' }}
+              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#C0392B' }}
             >
               Why Bittacy Cars
             </span>
@@ -165,7 +181,7 @@ export default function LocalRidesPage() {
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'linear-gradient(135deg, #FF1D25, #D90012)', boxShadow: '0 8px 20px rgba(255,29,37,0.3)' }}
+                    style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
                   >
                     <Icon size={22} className="text-white" />
                   </div>
@@ -185,8 +201,8 @@ export default function LocalRidesPage() {
         <div
           className="max-w-4xl mx-auto rounded-3xl p-12 text-center relative overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #FF1D25 0%, #D90012 50%, #8B0000 100%)',
-            boxShadow: '0 40px 100px rgba(255,29,37,0.35)',
+            background: 'linear-gradient(135deg, #C0392B 0%, #A93226 50%, #8B0000 100%)',
+            boxShadow: '0 40px 100px rgba(192,57,43,0.35)',
           }}
         >
           <div
@@ -206,7 +222,7 @@ export default function LocalRidesPage() {
             <a
               href={`tel:${PHONE.replace(/\s/g, '')}`}
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-10 py-4"
-              style={{ background: '#FFFFFF', color: '#D90012', boxShadow: '0 8px 24px rgba(0,0,0,0.2)', textDecoration: 'none' }}
+              style={{ background: '#FFFFFF', color: '#A93226', boxShadow: '0 8px 24px rgba(0,0,0,0.2)', textDecoration: 'none' }}
             >
               <Phone size={18} />
               Call {PHONE}

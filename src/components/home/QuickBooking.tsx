@@ -27,7 +27,7 @@ export default function QuickBooking() {
           <div className="flex items-center gap-3 mb-6">
             <div
               className="w-8 h-8 rounded-lg flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #FF1D25, #D90012)' }}
+              style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)' }}
             >
               <Car size={15} className="text-white" />
             </div>
@@ -46,7 +46,7 @@ export default function QuickBooking() {
                 <div className="relative">
                   <field.icon
                     size={15}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 text-[#FF1D25] pointer-events-none"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 text-[#C0392B] pointer-events-none"
                   />
                   {field.type === 'select' ? (
                     <select

@@ -7,19 +7,10 @@ export default function CTA() {
         <div
           className="rounded-3xl p-12 text-center relative overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #FF1D25 0%, #D90012 50%, #8B0000 100%)',
-            boxShadow: '0 40px 100px rgba(255,29,37,0.35)',
+            background: '#A93226',
+            boxShadow: '0 40px 100px rgba(192,57,43,0.35)',
           }}
         >
-          {/* Background dots */}
-          <div
-            className="absolute inset-0 opacity-10 pointer-events-none"
-            style={{
-              backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-              backgroundSize: '24px 24px',
-            }}
-          />
-
           <div className="relative z-10">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/70 mb-4 block">
               Book Now
@@ -36,7 +27,7 @@ export default function CTA() {
                 className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 transition-all duration-200 cursor-pointer cta-quote-btn"
                 style={{
                   background: '#FFFFFF',
-                  color: '#D90012',
+                  color: '#A93226',
                   boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
                   textDecoration: 'none',
                 }}

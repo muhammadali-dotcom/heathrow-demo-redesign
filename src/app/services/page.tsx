@@ -24,7 +24,7 @@ const services = [
       'Available 24/7',
     ],
     href: '/airport-transfers',
-    color: '#FF1D25',
+    color: '#C0392B',
   },
   {
     id: 'school-runs',
@@ -41,7 +41,7 @@ const services = [
       'Flexible scheduling',
     ],
     href: '/school-runs',
-    color: '#FF1D25',
+    color: '#C0392B',
   },
   {
     id: 'local-rides',
@@ -58,7 +58,7 @@ const services = [
       'Friendly professional drivers',
     ],
     href: '/local-rides',
-    color: '#FF1D25',
+    color: '#C0392B',
   },
   {
     id: 'corporate-travel',
@@ -75,7 +75,7 @@ const services = [
       'Professional uniformed drivers',
     ],
     href: '/corporate-travel',
-    color: '#FF1D25',
+    color: '#C0392B',
   },
 ];
 
@@ -90,7 +90,7 @@ export default function ServicesPage() {
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(255,29,37,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(192,57,43,0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -98,9 +98,9 @@ export default function ServicesPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(255,29,37,0.12)',
-              border: '1px solid rgba(255,29,37,0.3)',
-              color: '#FF1D25',
+              background: 'rgba(192,57,43,0.12)',
+              border: '1px solid rgba(192,57,43,0.3)',
+              color: '#C0392B',
             }}
           >
             What We Offer
@@ -110,7 +110,7 @@ export default function ServicesPage() {
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Our{' '}
-            <span style={{ color: '#FF1D25' }}>Services</span>
+            <span style={{ color: '#C0392B' }}>Services</span>
           </h1>
           <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed">
             From airport transfers to school runs, we provide comprehensive taxi services
@@ -139,21 +139,21 @@ export default function ServicesPage() {
                   <div
                     className="flex items-center justify-center p-16 relative overflow-hidden lg:[direction:ltr]"
                     style={{
-                      background: `linear-gradient(135deg, rgba(255,29,37,0.15), rgba(139,0,0,0.08))`,
+                      background: `linear-gradient(135deg, rgba(192,57,43,0.15), rgba(139,0,0,0.08))`,
                     }}
                   >
                     <div
                       className="absolute inset-0 pointer-events-none opacity-20"
                       style={{
-                        backgroundImage: 'radial-gradient(circle, rgba(255,29,37,0.4) 1px, transparent 1px)',
+                        backgroundImage: 'radial-gradient(circle, rgba(192,57,43,0.4) 1px, transparent 1px)',
                         backgroundSize: '32px 32px',
                       }}
                     />
                     <div
                       className="relative z-10 w-32 h-32 rounded-3xl flex items-center justify-center"
                       style={{
-                        background: 'linear-gradient(135deg, #FF1D25, #D90012)',
-                        boxShadow: '0 24px 60px rgba(255,29,37,0.4)',
+                        background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                        boxShadow: '0 24px 60px rgba(192,57,43,0.4)',
                       }}
                     >
                       <Icon size={56} className="text-white" />
@@ -164,7 +164,7 @@ export default function ServicesPage() {
                   <div className="p-10 lg:p-14 lg:[direction:ltr]">
                     <span
                       className="inline-block text-xs font-bold tracking-widest uppercase mb-2"
-                      style={{ color: '#FF1D25' }}
+                      style={{ color: '#C0392B' }}
                     >
                       {service.tagline}
                     </span>
@@ -175,7 +175,7 @@ export default function ServicesPage() {
                     <ul className="space-y-2 mb-8">
                       {service.features.map((f) => (
                         <li key={f} className="flex items-center gap-3 text-sm text-[#A1A1AA]">
-                          <CheckCircle size={15} style={{ color: '#FF1D25', flexShrink: 0 }} />
+                          <CheckCircle size={15} style={{ color: '#C0392B', flexShrink: 0 }} />
                           {f}
                         </li>
                       ))}
@@ -184,8 +184,8 @@ export default function ServicesPage() {
                       href={service.href}
                       className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-white transition-all duration-200"
                       style={{
-                        background: 'linear-gradient(135deg, #FF1D25, #D90012)',
-                        boxShadow: '0 8px 24px rgba(255,29,37,0.3)',
+                        background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                        boxShadow: '0 8px 24px rgba(192,57,43,0.3)',
                       }}
                     >
                       Learn More <ArrowRight size={16} />
@@ -211,7 +211,7 @@ export default function ServicesPage() {
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white"
-              style={{ background: 'linear-gradient(135deg, #FF1D25, #D90012)', boxShadow: '0 16px 40px rgba(255,29,37,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
             >
               Get a Quote
             </Link>

@@ -60,7 +60,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-[#A1A1AA] hover:text-[#FF1D25] text-sm transition-colors duration-200">
+                  <Link href={link.href} className="text-[#A1A1AA] hover:text-[#C0392B] text-sm transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -74,7 +74,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.id}>
-                  <Link href={s.href} className="text-[#A1A1AA] hover:text-[#FF1D25] text-sm transition-colors duration-200">
+                  <Link href={s.href} className="text-[#A1A1AA] hover:text-[#C0392B] text-sm transition-colors duration-200">
                     {s.title}
                   </Link>
                 </li>
@@ -91,8 +91,8 @@ export default function Footer() {
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-white text-sm font-bold transition-all duration-200 hover:brightness-110"
                   style={{
-                    background: 'linear-gradient(135deg, #FF1D25, #D90012)',
-                    boxShadow: '0 4px 16px rgba(255,29,37,0.28)',
+                    background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                    boxShadow: '0 4px 16px rgba(192,57,43,0.28)',
                   }}
                 >
                   Contact Now
@@ -100,19 +100,19 @@ export default function Footer() {
               </li>
               <li>
                 <a href={`mailto:${EMAIL}`} className="flex items-start gap-3 text-[#A1A1AA] hover:text-white text-sm transition-colors">
-                  <Mail size={15} className="mt-0.5 text-[#FF1D25] flex-shrink-0" />
+                  <Mail size={15} className="mt-0.5 text-[#C0392B] flex-shrink-0" />
                   {EMAIL}
                 </a>
               </li>
               <li>
                 <span className="flex items-start gap-3 text-[#A1A1AA] text-sm">
-                  <MapPin size={15} className="mt-0.5 text-[#FF1D25] flex-shrink-0" />
+                  <MapPin size={15} className="mt-0.5 text-[#C0392B] flex-shrink-0" />
                   {LOCATION}
                 </span>
               </li>
               <li>
                 <span className="flex items-start gap-3 text-[#A1A1AA] text-sm">
-                  <Clock size={15} className="mt-0.5 text-[#FF1D25] flex-shrink-0" />
+                  <Clock size={15} className="mt-0.5 text-[#C0392B] flex-shrink-0" />
                   24 Hours, 7 Days a Week
                 </span>
               </li>

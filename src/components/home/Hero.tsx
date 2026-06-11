@@ -27,37 +27,9 @@ export default function Hero() {
     <section
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{
-        background: `
-          linear-gradient(90deg, rgba(5,5,5,0.98) 0%, rgba(5,5,5,0.75) 60%, rgba(255,29,37,0.15) 100%),
-          linear-gradient(180deg, #050505 0%, #0B0B0D 100%)
-        `,
+        background: '#050505',
       }}
     >
-      {/* Red glow orb */}
-      <div
-        className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(255,29,37,0.18) 0%, transparent 70%)',
-          filter: 'blur(40px)',
-        }}
-      />
-
-      {/* Road streaks */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none overflow-hidden">
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute h-px opacity-20"
-            style={{
-              background: 'linear-gradient(90deg, transparent, #FF1D25, transparent)',
-              bottom: `${i * 18 + 10}px`,
-              left: `${i * 8}%`,
-              width: `${60 + i * 8}%`,
-            }}
-          />
-        ))}
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
@@ -71,9 +43,9 @@ export default function Hero() {
               <span
                 className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
                 style={{
-                  background: 'rgba(255,29,37,0.12)',
-                  border: '1px solid rgba(255,29,37,0.3)',
-                  color: '#FF1D25',
+                  background: 'rgba(192,57,43,0.12)',
+                  border: '1px solid rgba(192,57,43,0.3)',
+                  color: '#C0392B',
                 }}
               >
                 Mill Hill Taxis, Airport Transfers &amp; School Runs
@@ -89,7 +61,7 @@ export default function Hero() {
             >
               Your Journey,<br />
               Our{' '}
-              <span style={{ color: '#FF1D25' }}>Priority</span>
+              <span style={{ color: '#C0392B' }}>Priority</span>
             </motion.h1>
 
             <motion.p
@@ -123,7 +95,7 @@ export default function Hero() {
             >
               {trustPoints.map((point) => (
                 <div key={point} className="flex items-center gap-2 text-sm text-[#A1A1AA]">
-                  <CheckCircle size={15} style={{ color: '#FF1D25', flexShrink: 0 }} />
+                  <CheckCircle size={15} style={{ color: '#C0392B', flexShrink: 0 }} />
                   {point}
                 </div>
               ))}
@@ -132,14 +104,6 @@ export default function Hero() {
 
           {/* Right: Car Animation */}
           <div className="relative flex items-center justify-center">
-            {/* Soft red glow behind car */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: 'radial-gradient(ellipse 70% 50% at 50% 60%, rgba(255,29,37,0.2) 0%, transparent 70%)',
-              }}
-            />
-
             <motion.div
               {...(shouldReduceMotion
                 ? {}

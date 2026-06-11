@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Plane, Clock, CheckCircle, MapPin, Phone, Star, Shield } from 'lucide-react';
 import { PHONE } from '@/lib/constants';
 
@@ -61,7 +62,7 @@ export default function AirportTransfersPage() {
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(255,29,37,0.13) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(192,57,43,0.13) 0%, transparent 70%)',
             filter: 'blur(50px)',
           }}
         />
@@ -69,9 +70,9 @@ export default function AirportTransfersPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(255,29,37,0.12)',
-              border: '1px solid rgba(255,29,37,0.3)',
-              color: '#FF1D25',
+              background: 'rgba(192,57,43,0.12)',
+              border: '1px solid rgba(192,57,43,0.3)',
+              color: '#C0392B',
             }}
           >
             Airport Transfers
@@ -81,7 +82,7 @@ export default function AirportTransfersPage() {
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Stress-Free{' '}
-            <span style={{ color: '#FF1D25' }}>Airport</span>
+            <span style={{ color: '#C0392B' }}>Airport</span>
             <br />Transfers
           </h1>
           <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed mb-10">
@@ -92,7 +93,7 @@ export default function AirportTransfersPage() {
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white transition-all duration-200"
-              style={{ background: 'linear-gradient(135deg, #FF1D25, #D90012)', boxShadow: '0 16px 40px rgba(255,29,37,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
             >
               Get a Free Quote
             </Link>
@@ -108,13 +109,28 @@ export default function AirportTransfersPage() {
         </div>
       </section>
 
+      {/* Service Image */}
+      <section className="px-4 py-12" style={{ background: '#050505' }}>
+        <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+          <div className="relative w-full h-72 sm:h-96">
+            <Image
+              src="/images/fleet/airport.png"
+              alt="Airport transfer service — Bittacy Cars"
+              fill
+              className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Airports we cover */}
       <section className="py-20 px-4" style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(255,29,37,0.12)', border: '1px solid rgba(255,29,37,0.3)', color: '#FF1D25' }}
+              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#C0392B' }}
             >
               Coverage
             </span>
@@ -134,7 +150,7 @@ export default function AirportTransfersPage() {
               >
                 <div
                   className="text-2xl font-black mb-2"
-                  style={{ color: '#FF1D25', letterSpacing: '-0.02em' }}
+                  style={{ color: '#C0392B', letterSpacing: '-0.02em' }}
                 >
                   {airport.code}
                 </div>
@@ -152,7 +168,7 @@ export default function AirportTransfersPage() {
           <div className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(255,29,37,0.12)', border: '1px solid rgba(255,29,37,0.3)', color: '#FF1D25' }}
+              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#C0392B' }}
             >
               Why Choose Us
             </span>
@@ -174,7 +190,7 @@ export default function AirportTransfersPage() {
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'linear-gradient(135deg, #FF1D25, #D90012)', boxShadow: '0 8px 20px rgba(255,29,37,0.3)' }}
+                    style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
                   >
                     <Icon size={22} className="text-white" />
                   </div>
@@ -195,7 +211,7 @@ export default function AirportTransfersPage() {
           <div className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(255,29,37,0.12)', border: '1px solid rgba(255,29,37,0.3)', color: '#FF1D25' }}
+              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#C0392B' }}
             >
               Simple Process
             </span>
@@ -212,7 +228,7 @@ export default function AirportTransfersPage() {
               <div key={item.step} className="text-center">
                 <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-black"
-                  style={{ background: 'linear-gradient(135deg, #FF1D25, #D90012)', color: 'white', boxShadow: '0 8px 24px rgba(255,29,37,0.35)' }}
+                  style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', color: 'white', boxShadow: '0 8px 24px rgba(192,57,43,0.35)' }}
                 >
                   {item.step}
                 </div>
@@ -229,8 +245,8 @@ export default function AirportTransfersPage() {
         <div
           className="max-w-4xl mx-auto rounded-3xl p-12 text-center relative overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #FF1D25 0%, #D90012 50%, #8B0000 100%)',
-            boxShadow: '0 40px 100px rgba(255,29,37,0.35)',
+            background: 'linear-gradient(135deg, #C0392B 0%, #A93226 50%, #8B0000 100%)',
+            boxShadow: '0 40px 100px rgba(192,57,43,0.35)',
           }}
         >
           <div
@@ -251,7 +267,7 @@ export default function AirportTransfersPage() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4"
-                style={{ background: '#FFFFFF', color: '#D90012', boxShadow: '0 8px 24px rgba(0,0,0,0.2)', textDecoration: 'none' }}
+                style={{ background: '#FFFFFF', color: '#A93226', boxShadow: '0 8px 24px rgba(0,0,0,0.2)', textDecoration: 'none' }}
               >
                 Get a Free Quote
               </Link>
