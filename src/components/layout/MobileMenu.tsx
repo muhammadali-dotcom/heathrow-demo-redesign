@@ -79,7 +79,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             href="/contact"
             onClick={onClose}
             className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-white font-semibold text-sm"
-            style={{ background: '#C0392B' }}
+            style={{ background: '#cc200e' }}
           >
             Contact Now
           </Link>

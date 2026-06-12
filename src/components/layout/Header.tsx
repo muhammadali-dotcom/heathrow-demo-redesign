@@ -67,7 +67,7 @@ export default function Header() {
               href="/contact"
               className="hidden lg:flex items-center gap-2 px-5 py-2.5 rounded-xl text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:brightness-110"
               style={{
-                background: '#C0392B',
+                background: '#cc200e',
                 boxShadow: '0 4px 16px rgba(192,57,43,0.28)',
               }}
             >

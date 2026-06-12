@@ -69,7 +69,7 @@ export default function LocalRidesPage() {
             style={{
               background: 'rgba(192,57,43,0.12)',
               border: '1px solid rgba(192,57,43,0.3)',
-              color: '#C0392B',
+              color: '#cc200e',
             }}
           >
             Local Rides
@@ -79,7 +79,7 @@ export default function LocalRidesPage() {
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Your Local{' '}
-            <span style={{ color: '#C0392B' }}>Taxi</span>
+            <span style={{ color: '#cc200e' }}>Taxi</span>
             <br />in North London
           </h1>
           <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed mb-10">
@@ -90,7 +90,7 @@ export default function LocalRidesPage() {
             <a
               href={`tel:${PHONE.replace(/\s/g, '')}`}
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white"
-              style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
             >
               <Phone size={16} />
               Call Now — {PHONE}
@@ -127,7 +127,7 @@ export default function LocalRidesPage() {
           <div className="text-center mb-10">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#C0392B' }}
+              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#cc200e' }}
             >
               Coverage
             </span>
@@ -145,7 +145,7 @@ export default function LocalRidesPage() {
                   border: '1px solid rgba(255,255,255,0.1)',
                 }}
               >
-                <MapPin size={12} className="inline mr-1.5" style={{ color: '#C0392B' }} />
+                <MapPin size={12} className="inline mr-1.5" style={{ color: '#cc200e' }} />
                 {area}
               </span>
             ))}
@@ -159,7 +159,7 @@ export default function LocalRidesPage() {
           <div className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#C0392B' }}
+              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#cc200e' }}
             >
               Why Bittacy Cars
             </span>
@@ -181,7 +181,7 @@ export default function LocalRidesPage() {
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
+                    style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
                   >
                     <Icon size={22} className="text-white" />
                   </div>
@@ -201,7 +201,7 @@ export default function LocalRidesPage() {
         <div
           className="max-w-4xl mx-auto rounded-3xl p-12 text-center relative overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #C0392B 0%, #A93226 50%, #8B0000 100%)',
+            background: 'linear-gradient(135deg, #cc200e 0%, #A93226 50%, #8B0000 100%)',
             boxShadow: '0 40px 100px rgba(192,57,43,0.35)',
           }}
         >

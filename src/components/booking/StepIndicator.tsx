@@ -32,14 +32,14 @@ export default function StepIndicator({ steps, currentStepNumber }: StepIndicato
                 {step.state === 'completed' ? (
                   <div
                     className="flex items-center justify-center w-9 h-9 rounded-full"
-                    style={{ backgroundColor: '#C0392B' }}
+                    style={{ backgroundColor: '#cc200e' }}
                   >
                     <Check className="w-5 h-5 text-white" strokeWidth={2.5} />
                   </div>
                 ) : step.state === 'active' ? (
                   <div
                     className="flex items-center justify-center w-9 h-9 rounded-full"
-                    style={{ backgroundColor: '#C0392B' }}
+                    style={{ backgroundColor: '#cc200e' }}
                     aria-current="step"
                   >
                     <span className="text-white font-bold text-sm leading-none">
@@ -74,7 +74,7 @@ export default function StepIndicator({ steps, currentStepNumber }: StepIndicato
                   className="flex-1 h-0.5 mx-2 mb-5"
                   style={{
                     backgroundColor:
-                      step.state === 'completed' ? '#C0392B' : 'rgba(255,255,255,0.15)',
+                      step.state === 'completed' ? '#cc200e' : 'rgba(255,255,255,0.15)',
                   }}
                 />
               )}

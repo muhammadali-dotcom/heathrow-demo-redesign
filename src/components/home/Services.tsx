@@ -102,7 +102,7 @@ export default function Services() {
                 <Link
                   href={service.href}
                   className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-200"
-                  style={{ color: '#C0392B' }}
+                  style={{ color: '#cc200e' }}
                 >
                   Learn More <ArrowRight size={14} />
                 </Link>

@@ -66,7 +66,7 @@ export default function ContactPage() {
             style={{
               background: 'rgba(192,57,43,0.12)',
               border: '1px solid rgba(192,57,43,0.3)',
-              color: '#C0392B',
+              color: '#cc200e',
             }}
           >
             Get In Touch
@@ -76,7 +76,7 @@ export default function ContactPage() {
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Contact{' '}
-            <span style={{ color: '#C0392B' }}>Us</span>
+            <span style={{ color: '#cc200e' }}>Us</span>
           </h1>
           <p className="text-lg text-[#A1A1AA] max-w-xl mx-auto leading-relaxed">
             Ready to book or have a question? We&apos;d love to hear from you.
@@ -108,7 +108,7 @@ export default function ContactPage() {
                     >
                       <div
                         className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                        style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 6px 16px rgba(192,57,43,0.3)' }}
+                        style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 6px 16px rgba(192,57,43,0.3)' }}
                       >
                         <Icon size={18} className="text-white" />
                       </div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                   <a
                     href={`tel:${PHONE.replace(/\s/g, '')}`}
                     className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-white transition-all duration-200"
-                    style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
+                    style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
                   >
                     <Phone size={15} />
                     {PHONE}
@@ -170,7 +170,7 @@ export default function ContactPage() {
                   <div className="text-center py-12">
                     <div
                       className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                      style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.35)' }}
+                      style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.35)' }}
                     >
                       <CheckCircle size={36} className="text-white" />
                     </div>
@@ -290,7 +290,7 @@ export default function ContactPage() {
                         type="submit"
                         className="w-full flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white transition-all duration-200"
                         style={{
-                          background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                          background: 'linear-gradient(135deg, #cc200e, #A93226)',
                           boxShadow: '0 16px 40px rgba(192,57,43,0.3)',
                         }}
                       >

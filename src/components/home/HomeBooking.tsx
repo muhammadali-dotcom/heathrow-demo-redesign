@@ -31,7 +31,7 @@ export default function HomeBooking() {
             style={{
               background: 'rgba(192,57,43,0.12)',
               border: '1px solid rgba(192,57,43,0.3)',
-              color: '#C0392B',
+              color: '#cc200e',
             }}
           >
             Book Now
@@ -60,7 +60,7 @@ export default function HomeBooking() {
               <div
                 className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
                 style={{
-                  background: '#C0392B',
+                  background: '#cc200e',
                   boxShadow: '0 16px 40px rgba(192,57,43,0.35)',
                 }}
               >
@@ -78,7 +78,7 @@ export default function HomeBooking() {
               <button
                 onClick={() => setSubmitted(false)}
                 className="mt-6 text-sm font-semibold transition-colors"
-                style={{ color: '#C0392B' }}
+                style={{ color: '#cc200e' }}
               >
                 Make another booking →
               </button>
@@ -89,7 +89,7 @@ export default function HomeBooking() {
               <div className="flex items-center gap-3 mb-7">
                 <div
                   className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)' }}
+                  style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)' }}
                 >
                   <Car size={16} className="text-white" />
                 </div>
@@ -108,7 +108,7 @@ export default function HomeBooking() {
                     Pickup Location
                   </label>
                   <div className="relative">
-                    <MapPin size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                    <MapPin size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                     <input
                       id="hb-pickup"
                       type="text"
@@ -128,7 +128,7 @@ export default function HomeBooking() {
                     Drop-off Location
                   </label>
                   <div className="relative">
-                    <Navigation size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                    <Navigation size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                     <input
                       id="hb-dropoff"
                       type="text"
@@ -148,7 +148,7 @@ export default function HomeBooking() {
                     Date
                   </label>
                   <div className="relative">
-                    <Calendar size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                    <Calendar size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                     <input
                       id="hb-date"
                       type="date"
@@ -167,7 +167,7 @@ export default function HomeBooking() {
                     Time
                   </label>
                   <div className="relative">
-                    <Clock size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                    <Clock size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                     <input
                       id="hb-time"
                       type="time"
@@ -186,7 +186,7 @@ export default function HomeBooking() {
                     Passengers
                   </label>
                   <div className="relative">
-                    <Users size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                    <Users size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                     <select
                       id="hb-passengers"
                       value={form.passengers}
@@ -209,7 +209,7 @@ export default function HomeBooking() {
                     Journey Type
                   </label>
                   <div className="relative">
-                    <Car size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                    <Car size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                     <select
                       id="hb-journey-type"
                       value={form.journeyType}
@@ -266,7 +266,7 @@ export default function HomeBooking() {
                 type="submit"
                 className="w-full flex items-center justify-center gap-2 rounded-xl font-bold text-base py-4 text-white transition-all duration-200"
                 style={{
-                  background: '#C0392B',
+                  background: '#cc200e',
                   boxShadow: '0 16px 40px rgba(192,57,43,0.3)',
                 }}
               >

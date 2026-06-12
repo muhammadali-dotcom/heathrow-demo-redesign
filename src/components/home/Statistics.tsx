@@ -56,7 +56,7 @@ export default function Statistics() {
             <div key={stat.label} className="text-center">
               <div
                 className="text-4xl sm:text-5xl font-black mb-2"
-                style={{ color: '#C0392B', letterSpacing: '-0.04em' }}
+                style={{ color: '#cc200e', letterSpacing: '-0.04em' }}
               >
                 <CountUp target={stat.value} suffix={stat.suffix} />
               </div>

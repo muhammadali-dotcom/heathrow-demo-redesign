@@ -45,7 +45,7 @@ export default function Hero() {
                 style={{
                   background: 'rgba(192,57,43,0.12)',
                   border: '1px solid rgba(192,57,43,0.3)',
-                  color: '#C0392B',
+                  color: '#cc200e',
                 }}
               >
                 Mill Hill Taxis, Airport Transfers &amp; School Runs
@@ -61,7 +61,7 @@ export default function Hero() {
             >
               Your Journey,<br />
               Our{' '}
-              <span style={{ color: '#C0392B' }}>Priority</span>
+              <span style={{ color: '#cc200e' }}>Priority</span>
             </motion.h1>
 
             <motion.p
@@ -95,7 +95,7 @@ export default function Hero() {
             >
               {trustPoints.map((point) => (
                 <div key={point} className="flex items-center gap-2 text-sm text-[#A1A1AA]">
-                  <CheckCircle size={15} style={{ color: '#C0392B', flexShrink: 0 }} />
+                  <CheckCircle size={15} style={{ color: '#cc200e', flexShrink: 0 }} />
                   {point}
                 </div>
               ))}

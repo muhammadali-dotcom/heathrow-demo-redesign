@@ -283,7 +283,7 @@ export default function BookingWizard() {
         <div className="text-center mb-10">
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-            style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#C0392B' }}
+            style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#cc200e' }}
           >
             Book Now
           </span>
@@ -330,7 +330,7 @@ export default function BookingWizard() {
                   <div>
                     <label htmlFor="pickup" className={labelClass}>Pickup Location</label>
                     <div className="relative">
-                      <MapPin size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                      <MapPin size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                       <input
                         id="pickup"
                         type="text"
@@ -355,7 +355,7 @@ export default function BookingWizard() {
                   <div>
                     <label htmlFor="dropoff" className={labelClass}>Drop-off Location</label>
                     <div className="relative">
-                      <Navigation size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                      <Navigation size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                       <input
                         id="dropoff"
                         type="text"
@@ -380,7 +380,7 @@ export default function BookingWizard() {
                 <button
                   onClick={handleStep1Next}
                   className="w-full mt-8 py-4 rounded-xl font-bold text-base text-white transition-all duration-200 hover:brightness-110"
-                  style={{ background: '#C0392B', boxShadow: '0 8px 24px rgba(192,57,43,0.3)' }}
+                  style={{ background: '#cc200e', boxShadow: '0 8px 24px rgba(192,57,43,0.3)' }}
                 >
                   See Price →
                 </button>
@@ -445,7 +445,7 @@ export default function BookingWizard() {
                   <div>
                     <label htmlFor="date" className={labelClass}>Date</label>
                     <div className="relative">
-                      <Calendar size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                      <Calendar size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                       <input
                         id="date"
                         type="date"
@@ -468,7 +468,7 @@ export default function BookingWizard() {
                   <div>
                     <label htmlFor="time" className={labelClass}>Time</label>
                     <div className="relative">
-                      <Clock size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                      <Clock size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                       <input
                         id="time"
                         type="time"
@@ -490,7 +490,7 @@ export default function BookingWizard() {
                   <div>
                     <label htmlFor="passengers" className={labelClass}>Passengers</label>
                     <div className="relative">
-                      <Users size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                      <Users size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                       <select
                         id="passengers"
                         value={state.fields.passengers}
@@ -509,7 +509,7 @@ export default function BookingWizard() {
                   <div>
                     <label htmlFor="luggage" className={labelClass}>Luggage</label>
                     <div className="relative">
-                      <Luggage size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#C0392B' }} />
+                      <Luggage size={15} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#cc200e' }} />
                       <select
                         id="luggage"
                         value={state.fields.luggage}
@@ -536,7 +536,7 @@ export default function BookingWizard() {
                   <button
                     onClick={handleStep2Next}
                     className="flex-1 py-3.5 rounded-xl font-bold text-base text-white transition-all duration-200 hover:brightness-110"
-                    style={{ background: '#C0392B', boxShadow: '0 8px 24px rgba(192,57,43,0.3)' }}
+                    style={{ background: '#cc200e', boxShadow: '0 8px 24px rgba(192,57,43,0.3)' }}
                   >
                     Next →
                   </button>
@@ -561,7 +561,7 @@ export default function BookingWizard() {
                 {/* Loading */}
                 {state.fareStatus === 'loading' && (
                   <div className="flex flex-col items-center justify-center py-16 gap-4">
-                    <Loader2 size={36} className="animate-spin" style={{ color: '#C0392B' }} />
+                    <Loader2 size={36} className="animate-spin" style={{ color: '#cc200e' }} />
                     <p className="text-[#A1A1AA] text-sm">Calculating your fare…</p>
                   </div>
                 )}
@@ -573,7 +573,7 @@ export default function BookingWizard() {
                     <button
                       onClick={handleRetryFare}
                       className="px-6 py-3 rounded-xl font-semibold text-sm text-white"
-                      style={{ background: '#C0392B' }}
+                      style={{ background: '#cc200e' }}
                     >
                       Retry
                     </button>
@@ -617,7 +617,7 @@ export default function BookingWizard() {
                     <button
                       onClick={() => dispatch({ type: 'NEXT_STEP' })}
                       className="flex-1 py-3.5 rounded-xl font-bold text-base text-white transition-all duration-200 hover:brightness-110"
-                      style={{ background: '#C0392B', boxShadow: '0 8px 24px rgba(192,57,43,0.3)' }}
+                      style={{ background: '#cc200e', boxShadow: '0 8px 24px rgba(192,57,43,0.3)' }}
                     >
                       Continue to Book →
                     </button>
@@ -673,7 +673,7 @@ export default function BookingWizard() {
                   onClick={handleSubmit}
                   disabled={state.submitting}
                   className="w-full py-5 rounded-xl font-black text-xl text-white transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-3 hover:brightness-110"
-                  style={{ background: '#C0392B', boxShadow: '0 12px 32px rgba(192,57,43,0.4)' }}
+                  style={{ background: '#cc200e', boxShadow: '0 12px 32px rgba(192,57,43,0.4)' }}
                 >
                   {state.submitting ? (
                     <>
@@ -698,7 +698,7 @@ export default function BookingWizard() {
               <div className="text-center py-8">
                 <div
                   className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ background: '#C0392B', boxShadow: '0 16px 40px rgba(192,57,43,0.35)' }}
+                  style={{ background: '#cc200e', boxShadow: '0 16px 40px rgba(192,57,43,0.35)' }}
                 >
                   <CheckCircle size={36} className="text-white" />
                 </div>

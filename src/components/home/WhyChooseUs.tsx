@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
           title={
             <>
               Experience the{' '}
-              <span style={{ color: '#C0392B' }}>Bittacy</span> Difference
+              <span style={{ color: '#cc200e' }}>Bittacy</span> Difference
             </>
           }
           subtitle="We go above and beyond to make every journey safe, comfortable, and on time."

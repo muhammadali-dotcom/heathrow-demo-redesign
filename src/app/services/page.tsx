@@ -24,7 +24,7 @@ const services = [
       'Available 24/7',
     ],
     href: '/airport-transfers',
-    color: '#C0392B',
+    color: '#cc200e',
   },
   {
     id: 'school-runs',
@@ -41,7 +41,7 @@ const services = [
       'Flexible scheduling',
     ],
     href: '/school-runs',
-    color: '#C0392B',
+    color: '#cc200e',
   },
   {
     id: 'local-rides',
@@ -58,7 +58,7 @@ const services = [
       'Friendly professional drivers',
     ],
     href: '/local-rides',
-    color: '#C0392B',
+    color: '#cc200e',
   },
   {
     id: 'corporate-travel',
@@ -75,7 +75,7 @@ const services = [
       'Professional uniformed drivers',
     ],
     href: '/corporate-travel',
-    color: '#C0392B',
+    color: '#cc200e',
   },
 ];
 
@@ -100,7 +100,7 @@ export default function ServicesPage() {
             style={{
               background: 'rgba(192,57,43,0.12)',
               border: '1px solid rgba(192,57,43,0.3)',
-              color: '#C0392B',
+              color: '#cc200e',
             }}
           >
             What We Offer
@@ -110,7 +110,7 @@ export default function ServicesPage() {
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Our{' '}
-            <span style={{ color: '#C0392B' }}>Services</span>
+            <span style={{ color: '#cc200e' }}>Services</span>
           </h1>
           <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed">
             From airport transfers to school runs, we provide comprehensive taxi services
@@ -152,7 +152,7 @@ export default function ServicesPage() {
                     <div
                       className="relative z-10 w-32 h-32 rounded-3xl flex items-center justify-center"
                       style={{
-                        background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                        background: 'linear-gradient(135deg, #cc200e, #A93226)',
                         boxShadow: '0 24px 60px rgba(192,57,43,0.4)',
                       }}
                     >
@@ -164,7 +164,7 @@ export default function ServicesPage() {
                   <div className="p-10 lg:p-14 lg:[direction:ltr]">
                     <span
                       className="inline-block text-xs font-bold tracking-widest uppercase mb-2"
-                      style={{ color: '#C0392B' }}
+                      style={{ color: '#cc200e' }}
                     >
                       {service.tagline}
                     </span>
@@ -175,7 +175,7 @@ export default function ServicesPage() {
                     <ul className="space-y-2 mb-8">
                       {service.features.map((f) => (
                         <li key={f} className="flex items-center gap-3 text-sm text-[#A1A1AA]">
-                          <CheckCircle size={15} style={{ color: '#C0392B', flexShrink: 0 }} />
+                          <CheckCircle size={15} style={{ color: '#cc200e', flexShrink: 0 }} />
                           {f}
                         </li>
                       ))}
@@ -184,7 +184,7 @@ export default function ServicesPage() {
                       href={service.href}
                       className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-white transition-all duration-200"
                       style={{
-                        background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                        background: 'linear-gradient(135deg, #cc200e, #A93226)',
                         boxShadow: '0 8px 24px rgba(192,57,43,0.3)',
                       }}
                     >
@@ -211,7 +211,7 @@ export default function ServicesPage() {
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white"
-              style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
             >
               Get a Quote
             </Link>

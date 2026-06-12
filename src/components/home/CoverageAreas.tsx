@@ -101,7 +101,7 @@ export default function CoverageAreas() {
             style={{
               background: 'rgba(192,57,43,0.12)',
               border: '1px solid rgba(192,57,43,0.3)',
-              color: '#C0392B',
+              color: '#cc200e',
             }}
           >
             Coverage
@@ -140,7 +140,7 @@ export default function CoverageAreas() {
                 <MapPin
                   size={16}
                   className="flex-shrink-0 mt-0.5 transition-colors duration-200"
-                  style={{ color: isActive ? '#C0392B' : '#A1A1AA' }}
+                  style={{ color: isActive ? '#cc200e' : '#A1A1AA' }}
                 />
                 <div>
                   <div
@@ -151,7 +151,7 @@ export default function CoverageAreas() {
                   </div>
                   <div
                     className="text-xs font-semibold mt-0.5 transition-colors duration-200"
-                    style={{ color: isActive ? '#C0392B' : '#71717A' }}
+                    style={{ color: isActive ? '#cc200e' : '#71717A' }}
                   >
                     {area.postcode}
                   </div>
@@ -185,7 +185,7 @@ export default function CoverageAreas() {
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                 style={{
-                  background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                  background: 'linear-gradient(135deg, #cc200e, #A93226)',
                   boxShadow: '0 8px 20px rgba(192,57,43,0.35)',
                 }}
               >
@@ -204,7 +204,7 @@ export default function CoverageAreas() {
                     style={{
                       background: 'rgba(192,57,43,0.15)',
                       border: '1px solid rgba(192,57,43,0.3)',
-                      color: '#C0392B',
+                      color: '#cc200e',
                     }}
                   >
                     {selected.postcode}
@@ -218,7 +218,7 @@ export default function CoverageAreas() {
                     href="/contact"
                     className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-5 py-2.5 text-white transition-all duration-200"
                     style={{
-                      background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                      background: 'linear-gradient(135deg, #cc200e, #A93226)',
                       boxShadow: '0 8px 20px rgba(192,57,43,0.3)',
                     }}
                   >

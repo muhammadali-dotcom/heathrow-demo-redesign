@@ -14,13 +14,13 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
         border: '1px solid rgba(255,255,255,0.08)',
       }}
     >
-      <Quote size={20} style={{ color: '#C0392B' }} />
+      <Quote size={20} style={{ color: '#cc200e' }} />
       <p className="text-[#A1A1AA] leading-relaxed text-sm flex-1">&ldquo;{testimonial.text}&rdquo;</p>
       <div className="flex items-center justify-between">
         <span className="text-white font-semibold text-sm">{testimonial.name}</span>
         <div className="flex gap-0.5">
           {[...Array(testimonial.rating)].map((_, i) => (
-            <Star key={i} size={13} fill="#C0392B" style={{ color: '#C0392B' }} />
+            <Star key={i} size={13} fill="#cc200e" style={{ color: '#cc200e' }} />
           ))}
         </div>
       </div>

@@ -11,7 +11,7 @@ export default <Config>{
         "dark-card": "#0B0B0D",
         "dark-soft": "#121214",
         "dark-border": "#262626",
-        "red-main": "#C0392B",
+        "red-main": "#cc200e",
         "red-dark": "#A93226",
         "red-soft": "#C95144",
         "red-glow": "rgba(255, 29, 37, 0.35)",

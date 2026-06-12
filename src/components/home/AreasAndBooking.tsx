@@ -98,7 +98,7 @@ export default function AreasAndBooking() {
             style={{
               background: 'rgba(192,57,43,0.12)',
               border: '1px solid rgba(192,57,43,0.3)',
-              color: '#C0392B',
+              color: '#cc200e',
             }}
           >
             Coverage &amp; Booking
@@ -126,7 +126,7 @@ export default function AreasAndBooking() {
             <button
               className="px-8 py-2.5 rounded-xl text-sm font-bold transition-all duration-200"
               style={{
-                background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                background: 'linear-gradient(135deg, #cc200e, #A93226)',
                 color: '#FFFFFF',
                 boxShadow: '0 4px 16px rgba(192,57,43,0.3)',
               }}
@@ -180,7 +180,7 @@ export default function AreasAndBooking() {
                     <MapPin
                       size={16}
                       className="flex-shrink-0 mt-0.5"
-                      style={{ color: isActive ? '#C0392B' : '#A1A1AA' }}
+                      style={{ color: isActive ? '#cc200e' : '#A1A1AA' }}
                     />
                     <div>
                       <div
@@ -191,7 +191,7 @@ export default function AreasAndBooking() {
                       </div>
                       <div
                         className="text-xs font-semibold mt-0.5"
-                        style={{ color: isActive ? '#C0392B' : '#71717A' }}
+                        style={{ color: isActive ? '#cc200e' : '#71717A' }}
                       >
                         {area.postcode}
                       </div>
@@ -224,7 +224,7 @@ export default function AreasAndBooking() {
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                     style={{
-                      background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                      background: 'linear-gradient(135deg, #cc200e, #A93226)',
                       boxShadow: '0 8px 20px rgba(192,57,43,0.35)',
                     }}
                   >
@@ -240,7 +240,7 @@ export default function AreasAndBooking() {
                         style={{
                           background: 'rgba(192,57,43,0.15)',
                           border: '1px solid rgba(192,57,43,0.3)',
-                          color: '#C0392B',
+                          color: '#cc200e',
                         }}
                       >
                         {selected.postcode}
@@ -254,7 +254,7 @@ export default function AreasAndBooking() {
                         href="/book"
                         className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-5 py-2.5 text-white transition-all duration-200"
                         style={{
-                          background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                          background: 'linear-gradient(135deg, #cc200e, #A93226)',
                           boxShadow: '0 8px 20px rgba(192,57,43,0.3)',
                         }}
                       >

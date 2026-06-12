@@ -43,7 +43,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       >
         <div
           className="w-16 h-16 rounded-2xl flex items-center justify-center"
-          style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 8px 24px rgba(192,57,43,0.35)' }}
+          style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 24px rgba(192,57,43,0.35)' }}
         >
           <Icon size={28} className="text-white" />
         </div>
@@ -58,7 +58,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
         <Link
           href={service.href}
           className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-200"
-          style={{ color: '#C0392B' }}
+          style={{ color: '#cc200e' }}
         >
           Learn More <ArrowRight size={14} />
         </Link>

@@ -66,7 +66,7 @@ export default function AboutPage() {
             style={{
               background: 'rgba(192,57,43,0.12)',
               border: '1px solid rgba(192,57,43,0.3)',
-              color: '#C0392B',
+              color: '#cc200e',
             }}
           >
             Our Story
@@ -76,7 +76,7 @@ export default function AboutPage() {
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             About{' '}
-            <span style={{ color: '#C0392B' }}>{COMPANY_NAME}</span>
+            <span style={{ color: '#cc200e' }}>{COMPANY_NAME}</span>
           </h1>
           <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed">
             Mill Hill&apos;s most trusted taxi service, delivering reliable, professional and
@@ -90,7 +90,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-4xl font-black text-white mb-1" style={{ color: '#C0392B', letterSpacing: '-0.03em' }}>
+              <div className="text-4xl font-black text-white mb-1" style={{ color: '#cc200e', letterSpacing: '-0.03em' }}>
                 {s.value}
               </div>
               <div className="text-sm text-[#A1A1AA] font-medium">{s.label}</div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 style={{
                   background: 'rgba(192,57,43,0.12)',
                   border: '1px solid rgba(192,57,43,0.3)',
-                  color: '#C0392B',
+                  color: '#cc200e',
                 }}
               >
                 Who We Are
@@ -144,7 +144,7 @@ export default function AboutPage() {
                   'Flight monitoring for airport pickups',
                 ].map((point) => (
                   <div key={point} className="flex items-center gap-3 text-sm text-[#A1A1AA]">
-                    <CheckCircle size={16} style={{ color: '#C0392B', flexShrink: 0 }} />
+                    <CheckCircle size={16} style={{ color: '#cc200e', flexShrink: 0 }} />
                     {point}
                   </div>
                 ))}
@@ -170,7 +170,7 @@ export default function AboutPage() {
                   <div className="flex items-center gap-4">
                     <div
                       className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 8px 24px rgba(192,57,43,0.35)' }}
+                      style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 24px rgba(192,57,43,0.35)' }}
                     >
                       <Award size={24} className="text-white" />
                     </div>
@@ -185,7 +185,7 @@ export default function AboutPage() {
                       className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                       style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.2)' }}
                     >
-                      <MapPin size={24} style={{ color: '#C0392B' }} />
+                      <MapPin size={24} style={{ color: '#cc200e' }} />
                     </div>
                     <div>
                       <div className="text-white font-bold text-lg">Local Experts</div>
@@ -198,7 +198,7 @@ export default function AboutPage() {
                       className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                       style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.2)' }}
                     >
-                      <Phone size={24} style={{ color: '#C0392B' }} />
+                      <Phone size={24} style={{ color: '#cc200e' }} />
                     </div>
                     <div>
                       <div className="text-white font-bold text-lg">Always Reachable</div>
@@ -221,7 +221,7 @@ export default function AboutPage() {
               style={{
                 background: 'rgba(192,57,43,0.12)',
                 border: '1px solid rgba(192,57,43,0.3)',
-                color: '#C0392B',
+                color: '#cc200e',
               }}
             >
               What Drives Us
@@ -244,7 +244,7 @@ export default function AboutPage() {
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
+                    style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
                   >
                     <Icon size={22} className="text-white" />
                   </div>
@@ -272,7 +272,7 @@ export default function AboutPage() {
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white transition-all duration-200"
-              style={{ background: 'linear-gradient(135deg, #C0392B, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
             >
               Get a Quote
             </Link>
