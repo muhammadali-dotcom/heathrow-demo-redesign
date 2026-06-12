@@ -10,95 +10,131 @@ export const metadata = {
 };
 
 const areas = [
-  'Mill Hill', 'Barnet', 'Hendon', 'Golders Green', 'Finchley',
-  'Edgware', 'Brent Cross', 'Hampstead', 'Harrow', 'Wembley',
-  'Cricklewood', 'Colindale', 'Burnt Oak', 'Totteridge', 'Whetstone',
+  'Mill Hill',
+  'Barnet',
+  'Hendon',
+  'Golders Green',
+  'Finchley',
+  'Edgware',
+  'Brent Cross',
+  'Hampstead',
+  'Harrow',
+  'Wembley',
+  'Cricklewood',
+  'Colindale',
+  'Burnt Oak',
+  'Totteridge',
+  'Whetstone',
 ];
 
 const features = [
   {
     icon: Zap,
     title: 'Instant Booking',
-    description: 'Need a ride right now? Call us and we can have a driver with you within minutes across the local area.',
+    description:
+      'Need a ride right now? Call us and we can have a driver with you within minutes across the local area.',
   },
   {
     icon: Clock,
     title: '24/7 Available',
-    description: 'Day or night, weekday or weekend — we are always available to get you where you need to go.',
+    description:
+      'Day or night, weekday or weekend — we are always available to get you where you need to go.',
   },
   {
     icon: CheckCircle,
     title: 'Fixed Prices',
-    description: 'Transparent, fixed pricing with no hidden charges. Know exactly what you\'ll pay before you book.',
+    description:
+      "Transparent, fixed pricing with no hidden charges. Know exactly what you'll pay before you book.",
   },
   {
     icon: Star,
     title: 'Top-Rated Drivers',
-    description: 'Our professional, friendly drivers know North London inside out and always find the quickest routes.',
+    description:
+      'Our professional, friendly drivers know North London inside out and always find the quickest routes.',
   },
   {
     icon: MapPin,
     title: 'Local Expertise',
-    description: 'Based in Mill Hill, we know every road in North London and use local knowledge to beat the traffic.',
+    description:
+      'Based in Mill Hill, we know every road in North London and use local knowledge to beat the traffic.',
   },
   {
     icon: Phone,
     title: 'Easy Booking',
-    description: 'Book by phone in seconds. No complicated apps — just a quick call and your driver is on the way.',
+    description:
+      'Book by phone in seconds. No complicated apps — just a quick call and your driver is on the way.',
   },
 ];
 
 export default function LocalRidesPage() {
   return (
-    <main style={{ background: '#050505', minHeight: '100vh' }}>
+    <main className="bg-[#050505] text-white">
       {/* Hero */}
       <section
-        className="relative pt-40 pb-24 px-4 overflow-hidden"
-        style={{ background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)' }}
+        className="relative overflow-hidden px-4 pb-24 pt-40"
+        style={{
+          background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)',
+        }}
       >
         <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
+          className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[700px] -translate-x-1/2"
           style={{
-            background: 'radial-gradient(ellipse, rgba(192,57,43,0.12) 0%, transparent 70%)',
+            background:
+              'radial-gradient(ellipse, rgba(229,9,20,0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
           <span
-            className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
+            className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
             style={{
-              background: 'rgba(192,57,43,0.12)',
-              border: '1px solid rgba(192,57,43,0.3)',
-              color: '#cc200e',
+              background: 'rgba(229,9,20,0.12)',
+              border: '1px solid rgba(229,9,20,0.3)',
+              color: '#e50914',
             }}
           >
+            <MapPin size={14} />
             Local Rides
           </span>
+
           <h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
+            className="mx-auto mb-6 max-w-4xl text-center text-5xl font-black text-white sm:text-6xl lg:text-7xl"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
-            Your Local{' '}
-            <span style={{ color: '#cc200e' }}>Taxi</span>
-            <br />in North London
+            Your Local <span style={{ color: '#e50914' }}>Taxi</span>
+            <br />
+            in North London
           </h1>
-          <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed mb-10">
-            Comfortable, reliable and affordable local taxi rides anywhere across Mill Hill
-            and North London. Available 24/7 with fixed, transparent prices.
+
+          <p className="mx-auto mb-10 max-w-2xl text-center text-lg leading-relaxed text-[#A1A1AA]">
+            Comfortable, reliable and affordable local taxi rides anywhere across
+            Mill Hill and North London. Available 24/7 with fixed, transparent
+            prices.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={`tel:${PHONE.replace(/\s/g, '')}`}
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white"
-              style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
+              className="inline-flex h-14 min-w-[210px] items-center justify-center gap-2 rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+              style={{
+                background: '#e50914',
+                boxShadow: '0 16px 40px rgba(229,9,20,0.3)',
+                textDecoration: 'none',
+              }}
             >
               <Phone size={16} />
-              Call Now — {PHONE}
+              Call Now
             </a>
+
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white"
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
+              className="inline-flex h-14 min-w-[210px] items-center justify-center rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                textDecoration: 'none',
+              }}
             >
               Get a Quote
             </Link>
@@ -108,8 +144,11 @@ export default function LocalRidesPage() {
 
       {/* Service Image */}
       <section className="px-4 py-12" style={{ background: '#050505' }}>
-        <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-          <div className="relative w-full h-72 sm:h-96">
+        <div
+          className="mx-auto max-w-4xl overflow-hidden rounded-3xl"
+          style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+        >
+          <div className="relative h-72 w-full sm:h-96">
             <Image
               src="/images/fleet/local.png"
               alt="Local taxi rides across North London — Bittacy Cars"
@@ -122,30 +161,46 @@ export default function LocalRidesPage() {
       </section>
 
       {/* Areas we cover */}
-      <section className="py-20 px-4" style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
+      <section
+        className="px-4 py-20"
+        style={{
+          background: '#0B0B0D',
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+          borderBottom: '1px solid rgba(255,255,255,0.06)',
+        }}
+      >
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-10 text-center">
             <span
-              className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#cc200e' }}
+              className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
+              style={{
+                background: 'rgba(229,9,20,0.12)',
+                border: '1px solid rgba(229,9,20,0.3)',
+                color: '#e50914',
+              }}
             >
               Coverage
             </span>
-            <h2 className="text-4xl font-black text-white" style={{ letterSpacing: '-0.04em' }}>
+
+            <h2
+              className="text-4xl font-black text-white"
+              style={{ letterSpacing: '-0.04em' }}
+            >
               Areas We Cover
             </h2>
           </div>
-          <div className="flex flex-wrap gap-3 justify-center">
+
+          <div className="flex flex-wrap justify-center gap-3">
             {areas.map((area) => (
               <span
                 key={area}
-                className="px-4 py-2 rounded-xl text-sm font-semibold text-white"
+                className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white"
                 style={{
                   background: 'rgba(255,255,255,0.05)',
                   border: '1px solid rgba(255,255,255,0.1)',
                 }}
               >
-                <MapPin size={12} className="inline mr-1.5" style={{ color: '#cc200e' }} />
+                <MapPin size={13} style={{ color: '#e50914' }} />
                 {area}
               </span>
             ))}
@@ -154,41 +209,62 @@ export default function LocalRidesPage() {
       </section>
 
       {/* Features */}
-      <section className="py-24 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+      <section className="px-4 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 text-center">
             <span
-              className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#cc200e' }}
+              className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
+              style={{
+                background: 'rgba(229,9,20,0.12)',
+                border: '1px solid rgba(229,9,20,0.3)',
+                color: '#e50914',
+              }}
             >
               Why Bittacy Cars
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black text-white" style={{ letterSpacing: '-0.04em' }}>
+
+            <h2
+              className="text-4xl font-black text-white sm:text-5xl"
+              style={{ letterSpacing: '-0.04em' }}
+            >
               The Local Choice
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => {
               const Icon = feature.icon;
+
               return (
                 <div
                   key={feature.title}
                   className="rounded-2xl p-7"
                   style={{
-                    background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
+                    background:
+                      'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
                     border: '1px solid rgba(255,255,255,0.08)',
                   }}
                 >
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
+                    className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
+                    style={{
+                      background: '#e50914',
+                      boxShadow: '0 8px 20px rgba(229,9,20,0.3)',
+                    }}
                   >
                     <Icon size={22} className="text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-lg mb-2" style={{ letterSpacing: '-0.02em' }}>
+
+                  <h3
+                    className="mb-2 text-lg font-bold text-white"
+                    style={{ letterSpacing: '-0.02em' }}
+                  >
                     {feature.title}
                   </h3>
-                  <p className="text-[#A1A1AA] text-sm leading-relaxed">{feature.description}</p>
+
+                  <p className="text-sm leading-relaxed text-[#A1A1AA]">
+                    {feature.description}
+                  </p>
                 </div>
               );
             })}
@@ -197,36 +273,64 @@ export default function LocalRidesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4" style={{ background: '#0B0B0D' }}>
-        <div
-          className="max-w-4xl mx-auto rounded-3xl p-12 text-center relative overflow-hidden"
-          style={{
-            background: 'linear-gradient(135deg, #cc200e 0%, #A93226 50%, #8B0000 100%)',
-            boxShadow: '0 40px 100px rgba(192,57,43,0.35)',
-          }}
-        >
+      <section className="px-4 py-20" style={{ background: '#0B0B0D' }}>
+        <div className="mx-auto max-w-7xl">
           <div
-            className="absolute inset-0 opacity-10 pointer-events-none"
+            className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"
             style={{
-              backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-              backgroundSize: '24px 24px',
+              background: '#0B0B0D',
+              border: '1px solid rgba(255,255,255,0.08)',
+              boxShadow: '0 30px 90px rgba(0,0,0,0.45)',
             }}
-          />
-          <div className="relative z-10">
-            <h2 className="text-4xl font-black text-white mb-4" style={{ letterSpacing: '-0.04em' }}>
-              Need a Ride Right Now?
-            </h2>
-            <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-              Call us and we&apos;ll have a driver with you in minutes.
-            </p>
-            <a
-              href={`tel:${PHONE.replace(/\s/g, '')}`}
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-10 py-4"
-              style={{ background: '#FFFFFF', color: '#A93226', boxShadow: '0 8px 24px rgba(0,0,0,0.2)', textDecoration: 'none' }}
-            >
-              <Phone size={18} />
-              Call {PHONE}
-            </a>
+          >
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl text-left">
+                <span
+                  className="mb-3 block text-xs font-black uppercase tracking-[0.22em]"
+                  style={{ color: '#e50914' }}
+                >
+                  Local Rides
+                </span>
+
+                <h2
+                  className="mb-3 text-4xl font-black text-white sm:text-5xl"
+                  style={{ letterSpacing: '-0.04em', lineHeight: 1.05 }}
+                >
+                  Need a Ride Right Now?
+                </h2>
+
+                <p className="max-w-xl text-base leading-relaxed text-[#A1A1AA] sm:text-lg">
+                  Call us and we&apos;ll have a driver with you in minutes.
+                </p>
+              </div>
+
+              <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-auto">
+                <a
+                  href={`tel:${PHONE.replace(/\s/g, '')}`}
+                  className="inline-flex h-14 min-w-[200px] items-center justify-center gap-2 rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+                  style={{
+                    background: '#e50914',
+                    boxShadow: '0 14px 35px rgba(229,9,20,0.25)',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <Phone size={16} />
+                  Call {PHONE}
+                </a>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex h-14 min-w-[180px] items-center justify-center rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+                  style={{
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Get a Quote
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

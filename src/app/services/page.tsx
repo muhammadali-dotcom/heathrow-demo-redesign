@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Plane, GraduationCap, MapPin, Briefcase, ArrowRight, CheckCircle, Phone } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, CheckCircle, Phone } from 'lucide-react';
 import { PHONE } from '@/lib/constants';
 
 export const metadata = {
@@ -11,7 +12,7 @@ export const metadata = {
 const services = [
   {
     id: 'airport-transfers',
-    icon: Plane,
+    image: '/images/fleet/airport.png',
     title: 'Airport Transfers',
     tagline: 'Never miss a flight again',
     description:
@@ -24,11 +25,10 @@ const services = [
       'Available 24/7',
     ],
     href: '/airport-transfers',
-    color: '#cc200e',
   },
   {
     id: 'school-runs',
-    icon: GraduationCap,
+    image: '/images/fleet/school.png',
     title: 'School Runs',
     tagline: 'Safe, punctual, reliable',
     description:
@@ -41,15 +41,14 @@ const services = [
       'Flexible scheduling',
     ],
     href: '/school-runs',
-    color: '#cc200e',
   },
   {
     id: 'local-rides',
-    icon: MapPin,
+    image: '/images/fleet/local.png',
     title: 'Local Rides',
     tagline: 'Comfort around North London',
     description:
-      'Quick, comfortable local taxi rides anywhere across Mill Hill and the wider North London area. Whether it\'s a shopping trip, night out, or medical appointment, we\'ve got you covered.',
+      "Quick, comfortable local taxi rides anywhere across Mill Hill and the wider North London area. Whether it's a shopping trip, night out, or medical appointment, we've got you covered.",
     features: [
       'Instant booking available',
       'Competitive local pricing',
@@ -58,11 +57,10 @@ const services = [
       'Friendly professional drivers',
     ],
     href: '/local-rides',
-    color: '#cc200e',
   },
   {
     id: 'corporate-travel',
-    icon: Briefcase,
+    image: '/images/fleet/corporate.png',
     title: 'Corporate Travel',
     tagline: 'Professional business transport',
     description:
@@ -75,7 +73,6 @@ const services = [
       'Professional uniformed drivers',
     ],
     href: '/corporate-travel',
-    color: '#cc200e',
   },
 ];
 
@@ -123,7 +120,6 @@ export default function ServicesPage() {
       <section className="py-24 px-4">
         <div className="max-w-7xl mx-auto space-y-8">
           {services.map((service, index) => {
-            const Icon = service.icon;
             const isEven = index % 2 === 0;
             return (
               <div
@@ -135,40 +131,38 @@ export default function ServicesPage() {
                 }}
               >
                 <div className={`grid lg:grid-cols-2 gap-0 ${isEven ? '' : 'lg:[direction:rtl]'}`}>
-                  {/* Color panel */}
-                  <div
-                    className="flex items-center justify-center p-16 relative overflow-hidden lg:[direction:ltr]"
-                    style={{
-                      background: `linear-gradient(135deg, rgba(192,57,43,0.15), rgba(139,0,0,0.08))`,
-                    }}
-                  >
+                  {/* Image panel */}
+                  <div className="relative overflow-hidden lg:[direction:ltr]" style={{ minHeight: '360px' }}>
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                    {/* Subtle gradient overlay so image edges blend into the card */}
                     <div
-                      className="absolute inset-0 pointer-events-none opacity-20"
+                      className="absolute inset-0 pointer-events-none"
                       style={{
-                        backgroundImage: 'radial-gradient(circle, rgba(192,57,43,0.4) 1px, transparent 1px)',
-                        backgroundSize: '32px 32px',
+                        background: isEven
+                          ? 'linear-gradient(to right, transparent 60%, rgba(5,5,5,0.6) 100%)'
+                          : 'linear-gradient(to left, transparent 60%, rgba(5,5,5,0.6) 100%)',
                       }}
                     />
-                    <div
-                      className="relative z-10 w-32 h-32 rounded-3xl flex items-center justify-center"
-                      style={{
-                        background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                        boxShadow: '0 24px 60px rgba(192,57,43,0.4)',
-                      }}
-                    >
-                      <Icon size={56} className="text-white" />
-                    </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-10 lg:p-14 lg:[direction:ltr]">
+                  <div className="p-10 lg:p-14 lg:[direction:ltr] flex flex-col justify-center">
                     <span
                       className="inline-block text-xs font-bold tracking-widest uppercase mb-2"
                       style={{ color: '#cc200e' }}
                     >
                       {service.tagline}
                     </span>
-                    <h2 className="text-3xl sm:text-4xl font-black text-white mb-4" style={{ letterSpacing: '-0.03em' }}>
+                    <h2
+                      className="text-3xl sm:text-4xl font-black text-white mb-4"
+                      style={{ letterSpacing: '-0.03em' }}
+                    >
                       {service.title}
                     </h2>
                     <p className="text-[#A1A1AA] leading-relaxed mb-7">{service.description}</p>
@@ -180,16 +174,18 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
-                    <Link
-                      href={service.href}
-                      className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-white transition-all duration-200"
-                      style={{
-                        background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                        boxShadow: '0 8px 24px rgba(192,57,43,0.3)',
-                      }}
-                    >
-                      Learn More <ArrowRight size={16} />
-                    </Link>
+                    <div>
+                      <Link
+                        href={service.href}
+                        className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-white transition-all duration-200 hover:brightness-110"
+                        style={{
+                          background: 'linear-gradient(135deg, #cc200e, #A93226)',
+                          boxShadow: '0 8px 24px rgba(192,57,43,0.3)',
+                        }}
+                      >
+                        Learn More <ArrowRight size={16} />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -210,15 +206,21 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white"
-              style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
+              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white hover:brightness-110 transition-all duration-200"
+              style={{
+                background: 'linear-gradient(135deg, #cc200e, #A93226)',
+                boxShadow: '0 16px 40px rgba(192,57,43,0.3)',
+              }}
             >
               Get a Quote
             </Link>
             <a
               href={`tel:${PHONE.replace(/\s/g, '')}`}
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white"
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
+              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white hover:bg-white/10 transition-all duration-200"
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.12)',
+              }}
             >
               <Phone size={16} />
               {PHONE}

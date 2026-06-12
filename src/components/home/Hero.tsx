@@ -2,138 +2,148 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
-import { CheckCircle } from 'lucide-react';
+import {
+  ArrowRight,
+  Car,
+  Clock,
+  CreditCard,
+  ShieldCheck,
+  UserCheck,
+} from 'lucide-react';
 import Button from '@/components/ui/Button';
 
 const trustPoints = [
-  '24/7 Always Available',
-  'On Time Every Time',
-  'Fixed Prices No Hidden Charges',
-  'Professional & Friendly Drivers',
+  { icon: Car, title: '24/7', text: 'Always Available' },
+  { icon: Clock, title: 'On Time', text: 'Every Time' },
+  { icon: CreditCard, title: 'Fixed Prices', text: 'No Hidden Charges' },
+  { icon: UserCheck, title: 'Professional', text: 'Friendly Drivers' },
 ];
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
-  const carVariants = shouldReduceMotion
-    ? {}
-    : {
-        initial: { scale: 0.65, opacity: 0, x: 180, y: 80, filter: 'blur(10px)' },
-        animate: { scale: 1, opacity: 1, x: 0, y: 0, filter: 'blur(0px)' },
-        transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] },
-      };
-
   return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{
-        background: '#050505',
-      }}
-    >
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative min-h-screen overflow-hidden bg-[#050607] text-white">
+      {/* Background */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/fleet/hero2.png"
+          alt="Bittacy premium taxi service"
+          fill
+          priority
+          className="object-cover object-[68%_center] opacity-90"
+          sizes="100vw"
+        />
+      </div>
 
-          {/* Left: Text Content */}
-          <div>
-            <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,6,7,0.98)_0%,rgba(5,6,7,0.90)_36%,rgba(5,6,7,0.55)_58%,rgba(5,6,7,0.18)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_50%,rgba(229,9,20,0.28),transparent_32%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-[#050607] via-[#050607]/80 to-transparent" />
+
+      {/* Light streaks */}
+      <div className="absolute right-[-12%] top-[20%] h-[2px] w-[58%] rotate-[-18deg] bg-[#e50914]/70 blur-[1px]" />
+      <div className="absolute right-[-15%] top-[30%] h-[1px] w-[65%] rotate-[-18deg] bg-[#ff2b24]/60 blur-[1px]" />
+      <div className="absolute left-0 bottom-[28%] h-[1px] w-[44%] bg-[#e50914]/35 blur-[1px]" />
+
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl items-center px-4 pt-32 pb-20 sm:px-6 lg:px-8">
+        <div className="grid w-full items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+          {/* Left Content */}
+          <div className="max-w-2xl">
+            <motion.p
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.45 }}
+              className="mb-5 text-xs font-black uppercase tracking-[0.22em] text-[#ff1f2d]"
             >
-              <span
-                className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
-                style={{
-                  background: 'rgba(192,57,43,0.12)',
-                  border: '1px solid rgba(192,57,43,0.3)',
-                  color: '#cc200e',
-                }}
-              >
-                Mill Hill Taxis, Airport Transfers &amp; School Runs
-              </span>
-            </motion.div>
+              Mill Hill Taxis, Airport Transfers &amp; School Runs
+            </motion.p>
 
             <motion.h1
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 26 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
-              style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-6 text-[44px] font-black leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl lg:text-[76px]"
             >
-              Your Journey,<br />
-              Our{' '}
-              <span style={{ color: '#cc200e' }}>Priority</span>
+              Your Journey,
+              <br />
+              Our <span className="text-[#e50914]">Priority</span>
             </motion.h1>
 
             <motion.p
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="text-lg text-[#A1A1AA] mb-8 max-w-lg leading-relaxed"
+              transition={{ duration: 0.5, delay: 0.22 }}
+              className="mb-8 max-w-[520px] text-base leading-relaxed text-[#d4d4d8] sm:text-lg"
             >
-              Reliable, punctual and comfortable taxi services across North London and beyond.
+              Reliable, punctual and comfortable taxi services across North London
+              and beyond.
             </motion.p>
 
             <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.45 }}
-              className="flex flex-col sm:flex-row gap-3 mb-10"
+              transition={{ duration: 0.5, delay: 0.34 }}
+              className="mb-11 flex flex-col gap-4 sm:flex-row"
             >
-              <Button variant="primary" href="/book" className="text-base px-8 py-4">
+              <Button
+                variant="primary"
+                href="/book"
+                className="group h-14 px-8 text-base font-bold shadow-[0_18px_50px_rgba(229,9,20,0.35)]"
+              >
                 Book a Ride
+                <ArrowRight
+                  size={18}
+                  className="transition-transform group-hover:translate-x-1"
+                />
               </Button>
-              <Button variant="outline" href="/contact" className="text-base px-8 py-4">
+
+              <Button
+                variant="outline"
+                href="/contact"
+                className="h-14 border-white/30 bg-black/25 px-8 text-base font-bold backdrop-blur-md hover:border-[#e50914] hover:text-[#e50914]"
+              >
                 Get a Quote
               </Button>
             </motion.div>
 
             <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-2"
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.46 }}
+              className="grid grid-cols-2 gap-4 sm:grid-cols-4"
             >
-              {trustPoints.map((point) => (
-                <div key={point} className="flex items-center gap-2 text-sm text-[#A1A1AA]">
-                  <CheckCircle size={15} style={{ color: '#cc200e', flexShrink: 0 }} />
-                  {point}
+              {trustPoints.map(({ icon: Icon, title, text }) => (
+                <div key={title} className="text-center">
+                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#e50914]/60 bg-[#e50914]/10 text-[#ff1f2d] shadow-[0_0_28px_rgba(229,9,20,0.18)]">
+                    <Icon size={21} strokeWidth={2} />
+                  </div>
+                  <h3 className="text-sm font-bold leading-tight text-white">{title}</h3>
+                  <p className="mt-1 text-xs leading-snug text-[#b8b8bf]">{text}</p>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Right: Car Animation */}
-          <div className="relative flex items-center justify-center">
-            <motion.div
-              {...(shouldReduceMotion
+          {/* Right Car Space */}
+          <motion.div
+            initial={
+              shouldReduceMotion
                 ? {}
-                : {
-                    initial: { scale: 0.65, opacity: 0, x: 180, y: 80, filter: 'blur(10px)' },
-                    animate: { scale: 1, opacity: 1, x: 0, y: 0, filter: 'blur(0px)' },
-                    transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] },
-                  })}
-              className="relative z-10 w-full"
-            >
-              {/* Idle float after entrance */}
-              <motion.div
-                animate={shouldReduceMotion ? {} : { y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1.4 }}
-              >
-                <div className="relative w-full h-64 sm:h-80 lg:h-96 flex items-center justify-center">
-                  <Image
-                    src="/images/fleet/hero-car.png"
-                    alt="Premium Taxi Service"
-                    fill
-                    priority
-                    className="object-cover animate-fade-in"
-                    sizes="(max-w-768px) 100vw, 50vw"
-                  />
-                </div>
-              </motion.div>
-            </motion.div>
-          </div>
+                : { opacity: 0, scale: 0.94, x: 70, filter: 'blur(8px)' }
+            }
+            animate={{ opacity: 1, scale: 1, x: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+            className="relative hidden min-h-[520px] lg:block"
+          >
+            <div className="absolute bottom-6 right-[-40px] h-[170px] w-[82%] rounded-full bg-[#e50914]/20 blur-[70px]" />
+            <div className="absolute bottom-10 right-[-30px] h-[90px] w-[78%] rounded-full bg-black/70 blur-[42px]" />
+          </motion.div>
         </div>
       </div>
+
+      {/* Bottom fade line */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-white/10" />
     </section>
   );
 }

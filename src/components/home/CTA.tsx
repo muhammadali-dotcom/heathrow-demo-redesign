@@ -2,42 +2,39 @@ import Button from '@/components/ui/Button';
 
 export default function CTA() {
   return (
-    <section className="py-24 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div
-          className="rounded-3xl p-12 text-center relative overflow-hidden"
-          style={{
-            background: '#A93226',
-            boxShadow: '0 40px 100px rgba(192,57,43,0.35)',
-          }}
-        >
-          <div className="relative z-10">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/70 mb-4 block">
-              Book Now
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-black text-white mb-4" style={{ letterSpacing: '-0.04em' }}>
-              Ready to Book Your Ride?
-            </h2>
-            <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-              Fast, reliable and professional taxi services just a click away.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+    <section className="bg-[#050607] px-4 py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="rounded-3xl border border-white/10 bg-[#0b0c0e] px-8 py-10 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:px-12 lg:px-16">
+          <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+            <div className="max-w-2xl text-left">
+              <span className="mb-3 block text-xs font-black uppercase tracking-[0.22em] text-[#e50914]">
+                Book Now
+              </span>
+
+              <h2
+                className="mb-3 text-4xl font-black leading-tight text-white sm:text-5xl"
+                style={{ letterSpacing: '-0.04em' }}
+              >
+                Ready to Book Your Ride?
+              </h2>
+
+              <p className="max-w-xl text-base leading-relaxed text-[#a1a1aa] sm:text-lg">
+                Fast, reliable and professional taxi services just a click away.
+              </p>
+            </div>
+
+            <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 transition-all duration-200 cursor-pointer cta-quote-btn"
-                style={{
-                  background: '#FFFFFF',
-                  color: '#A93226',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-                  textDecoration: 'none',
-                }}
+                className="inline-flex h-14 min-w-[170px] items-center justify-center rounded-xl bg-[#e50914] px-8 text-base font-bold text-white shadow-[0_14px_35px_rgba(229,9,20,0.25)] transition hover:bg-[#ff1f2d]"
               >
                 Get a Quote
               </a>
+
               <Button
                 variant="outline"
                 href="/book"
-                className="px-8 py-4 text-base font-bold border-2 border-white/40 hover:bg-white/10 hover:text-white"
+                className="h-14 min-w-[170px] border border-white/15 bg-white/[0.04] px-8 text-base font-bold text-white hover:border-[#e50914] hover:text-[#e50914]"
               >
                 Book Now
               </Button>
