@@ -85,199 +85,145 @@ const areas = [
 ];
 
 export default function AreasAndBooking() {
-  const [selected, setSelected] = useState<typeof areas[number] | null>(null);
+  const [selected, setSelected] = useState<(typeof areas)[number] | null>(null);
 
   return (
-    <section className="py-24 px-4" style={{ background: '#0B0B0D' }}>
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#050505] px-4 py-20 sm:py-24">      <div className="mx-auto max-w-6xl">
+      {/* Section header */}
+      <div className="mx-auto mb-14 flex max-w-4xl flex-col items-center text-center">
+        <span className="mb-5 inline-flex items-center justify-center rounded-full border border-[#e50914]/30 bg-[#e50914]/10 px-5 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#e50914]">
+          Coverage &amp; Booking
+        </span>
 
-        {/* Section header */}
-        <div className="text-center mb-12">
-          <span
-            className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
-            style={{
-              background: 'rgba(192,57,43,0.12)',
-              border: '1px solid rgba(192,57,43,0.3)',
-              color: '#cc200e',
-            }}
-          >
-            Coverage &amp; Booking
-          </span>
-          <h2
-            className="text-4xl sm:text-5xl font-black text-white"
-            style={{ letterSpacing: '-0.04em' }}
-          >
-            Areas We Serve
-          </h2>
-          <p className="text-[#A1A1AA] mt-4 text-base max-w-xl mx-auto leading-relaxed">
-            We cover North London and beyond. Click any area for details, or book your ride now.
-          </p>
-        </div>
-
-        {/* Tab-style switcher: Areas (active) + Book a Ride (link) */}
-        <div className="flex justify-center mb-8">
-          <div
-            className="inline-flex rounded-2xl p-1.5 gap-1"
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-            }}
-          >
-            <button
-              className="px-8 py-2.5 rounded-xl text-sm font-bold transition-all duration-200"
-              style={{
-                background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                color: '#FFFFFF',
-                boxShadow: '0 4px 16px rgba(192,57,43,0.3)',
-              }}
-            >
-              📍 Areas
-            </button>
-            <Link
-              href="/book"
-              className="px-8 py-2.5 rounded-xl text-sm font-bold transition-all duration-200"
-              style={{ color: '#A1A1AA' }}
-            >
-              🚖 Book a Ride
-            </Link>
-          </div>
-        </div>
-
-        {/* Areas panel */}
-        <div
-          className="rounded-3xl overflow-hidden"
-          style={{
-            background: 'linear-gradient(180deg, rgba(18,18,20,0.98), rgba(8,8,10,0.98))',
-            border: '1px solid rgba(255,255,255,0.1)',
-            boxShadow: '0 30px 80px rgba(0,0,0,0.55)',
-          }}
+        <h2
+          className="mb-4 text-center text-4xl font-black leading-[1.05] text-white sm:text-5xl lg:text-6xl"
+          style={{ letterSpacing: '-0.045em' }}
         >
-          <div className="p-8 sm:p-10">
-            <p className="text-[#A1A1AA] text-sm mb-8 leading-relaxed">
-              Click any area to see details about our service in that location.
-            </p>
+          Areas We Serve
+        </h2>
 
-            {/* Area grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-6">
-              {areas.map((area) => {
-                const isActive = selected?.id === area.id;
-                return (
-                  <button
-                    key={area.id}
-                    onClick={() => setSelected((prev) => (prev?.id === area.id ? null : area))}
-                    className="flex items-start gap-3 p-4 rounded-2xl text-left transition-all duration-200"
-                    style={{
-                      background: isActive
-                        ? 'linear-gradient(135deg, rgba(192,57,43,0.18), rgba(139,0,0,0.12))'
-                        : 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
-                      border: isActive
-                        ? '1px solid rgba(192,57,43,0.55)'
-                        : '1px solid rgba(255,255,255,0.08)',
-                      boxShadow: isActive ? '0 8px 30px rgba(192,57,43,0.15)' : 'none',
-                      transform: isActive ? 'translateY(-2px)' : '',
-                    }}
-                  >
-                    <MapPin
-                      size={16}
-                      className="flex-shrink-0 mt-0.5"
-                      style={{ color: isActive ? '#cc200e' : '#A1A1AA' }}
-                    />
-                    <div>
-                      <div
-                        className="font-bold text-sm leading-tight"
-                        style={{ color: isActive ? '#FFFFFF' : '#E4E4E7' }}
-                      >
-                        {area.name}
-                      </div>
-                      <div
-                        className="text-xs font-semibold mt-0.5"
-                        style={{ color: isActive ? '#cc200e' : '#71717A' }}
-                      >
-                        {area.postcode}
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+        <p className="mx-auto max-w-[760px] text-center text-base leading-8 text-[#A1A1AA] sm:text-lg">
+          We cover North London and beyond. Click any area for details, or book your ride now.
+        </p>
+      </div>
 
-            {/* Detail panel */}
-            {selected && (
-              <div
-                className="rounded-2xl p-6 sm:p-8 relative"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(192,57,43,0.1), rgba(139,0,0,0.06))',
-                  border: '1px solid rgba(192,57,43,0.3)',
-                  boxShadow: '0 16px 50px rgba(192,57,43,0.12)',
-                }}
-              >
+      {/* Switcher */}
+      <div className="mb-10 flex justify-center">
+        <div className="inline-flex rounded-2xl border border-white/10 bg-[#111114] p-1.5 shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
+          <button className="rounded-xl bg-[#e50914] px-10 py-3 text-sm font-bold text-white shadow-[0_8px_24px_rgba(229,9,20,0.28)]">
+            Areas
+          </button>
+
+          <Link
+            href="/book"
+            className="rounded-xl px-10 py-3 text-sm font-bold text-white transition hover:bg-white/[0.06]"
+          >
+            Book a Ride
+          </Link>
+        </div>
+      </div>
+
+      {/* Areas panel */}
+      <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#111114] shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
+        <div className="p-6 sm:p-10">
+          <p className="mb-8 text-center text-sm leading-relaxed text-[#A1A1AA]">
+            Click any area to see details about our service in that location.
+          </p>
+
+          <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {areas.map((area) => {
+              const isActive = selected?.id === area.id;
+
+              return (
                 <button
-                  onClick={() => setSelected(null)}
-                  aria-label="Close"
-                  className="absolute top-4 right-4 p-1.5 rounded-lg text-[#A1A1AA] hover:text-white transition-colors"
-                  style={{ background: 'rgba(255,255,255,0.06)' }}
+                  key={area.id}
+                  onClick={() =>
+                    setSelected((prev) => (prev?.id === area.id ? null : area))
+                  }
+                  className={`flex items-start gap-3 rounded-2xl border p-4 text-left transition-all duration-200 ${isActive
+                    ? 'border-[#e50914]/60 bg-[#e50914]/10 shadow-[0_8px_30px_rgba(229,9,20,0.14)]'
+                    : 'border-white/10 bg-white/[0.04] hover:border-[#e50914]/40 hover:bg-white/[0.06]'
+                    }`}
                 >
-                  <X size={16} />
-                </button>
+                  <MapPin
+                    size={16}
+                    className="mt-0.5 shrink-0"
+                    style={{ color: isActive ? '#e50914' : '#A1A1AA' }}
+                  />
 
-                <div className="flex items-start gap-4">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{
-                      background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                      boxShadow: '0 8px 20px rgba(192,57,43,0.35)',
-                    }}
-                  >
-                    <MapPin size={22} className="text-white" />
+                  <div>
+                    <div className="text-sm font-bold leading-tight text-white">
+                      {area.name}
+                    </div>
+
+                    <div
+                      className="mt-0.5 text-xs font-semibold"
+                      style={{ color: isActive ? '#e50914' : '#71717A' }}
+                    >
+                      {area.postcode}
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="text-xl font-black text-white" style={{ letterSpacing: '-0.02em' }}>
-                        {selected.name}
-                      </h3>
-                      <span
-                        className="text-xs font-bold px-2 py-0.5 rounded-full"
-                        style={{
-                          background: 'rgba(192,57,43,0.15)',
-                          border: '1px solid rgba(192,57,43,0.3)',
-                          color: '#cc200e',
-                        }}
-                      >
-                        {selected.postcode}
-                      </span>
-                    </div>
-                    <p className="text-[#A1A1AA] text-sm leading-relaxed mb-5">
-                      📍 {selected.description}
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <Link
-                        href="/book"
-                        className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-5 py-2.5 text-white transition-all duration-200"
-                        style={{
-                          background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                          boxShadow: '0 8px 20px rgba(192,57,43,0.3)',
-                        }}
-                      >
-                        Book from {selected.name} <ArrowRight size={14} />
-                      </Link>
-                      <Link
-                        href="/services"
-                        className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-5 py-2.5 text-white transition-all duration-200"
-                        style={{
-                          background: 'rgba(255,255,255,0.06)',
-                          border: '1px solid rgba(255,255,255,0.12)',
-                        }}
-                      >
-                        View Our Services
-                      </Link>
-                    </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {selected && (
+            <div className="relative rounded-2xl border border-[#e50914]/30 bg-[#e50914]/10 p-6 sm:p-8">
+              <button
+                onClick={() => setSelected(null)}
+                aria-label="Close"
+                className="absolute right-4 top-4 rounded-lg bg-white/10 p-1.5 text-[#A1A1AA] transition hover:text-white"
+              >
+                <X size={16} />
+              </button>
+
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#e50914] shadow-[0_8px_20px_rgba(229,9,20,0.3)]">
+                  <MapPin size={22} className="text-white" />
+                </div>
+
+                <div className="min-w-0 flex-1">
+                  <div className="mb-2 flex flex-wrap items-center gap-2">
+                    <h3
+                      className="text-xl font-black text-white"
+                      style={{ letterSpacing: '-0.02em' }}
+                    >
+                      {selected.name}
+                    </h3>
+
+                    <span className="rounded-full border border-[#e50914]/30 bg-[#e50914]/15 px-2 py-0.5 text-xs font-bold text-[#e50914]">
+                      {selected.postcode}
+                    </span>
+                  </div>
+
+                  <p className="mb-5 text-sm leading-relaxed text-[#A1A1AA]">
+                    {selected.description}
+                  </p>
+
+                  <div className="flex flex-col gap-3 sm:flex-row">
+                    <Link
+                      href="/book"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#e50914] px-5 py-2.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(229,9,20,0.25)] transition hover:bg-[#ff1f2d]"
+                    >
+                      Book from {selected.name}
+                      <ArrowRight size={14} />
+                    </Link>
+
+                    <Link
+                      href="/services"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-5 py-2.5 text-sm font-bold text-white transition hover:border-[#e50914] hover:text-[#e50914]"
+                    >
+                      View Our Services
+                    </Link>
                   </div>
                 </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
+    </div>
     </section>
   );
 }

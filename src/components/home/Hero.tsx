@@ -7,7 +7,6 @@ import {
   Car,
   Clock,
   CreditCard,
-  ShieldCheck,
   UserCheck,
 } from 'lucide-react';
 import Button from '@/components/ui/Button';

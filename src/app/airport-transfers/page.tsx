@@ -62,7 +62,7 @@ export default function AirportTransfersPage() {
     <main style={{ background: '#050505', minHeight: '100vh' }}>
       {/* Hero */}
       <section
-        className="relative pt-40 pb-24 px-4 overflow-hidden"
+        className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)' }}
       >
         <div
@@ -94,7 +94,7 @@ export default function AirportTransfersPage() {
             Transfers
           </h1>
 
-          <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed mb-10">
+          <p className="text-lg text-[#A1A1AA] mx-auto text-center leading-relaxed mb-10 p-4">
             From Mill Hill to all major London airports — reliable, punctual and affordable.
             We track your flight so you never have to worry.
           </p>
@@ -127,7 +127,7 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* Service Image */}
-      <section className="px-4 py-12" style={{ background: '#050505' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-12" style={{ background: '#050505' }}>
         <div
           className="max-w-4xl mx-auto rounded-3xl overflow-hidden"
           style={{ border: '1px solid rgba(255,255,255,0.08)' }}
@@ -146,7 +146,7 @@ export default function AirportTransfersPage() {
 
       {/* Airports we cover */}
       <section
-        className="py-20 px-4"
+        className="py-20 px-4 sm:px-6 lg:px-8"
         style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)' }}
       >
         <div className="max-w-5xl mx-auto">
@@ -192,7 +192,7 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* Features */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span
@@ -249,7 +249,7 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* How it works */}
-      <section className="py-24 px-4" style={{ background: '#0B0B0D' }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <span
@@ -307,7 +307,7 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 py-20" style={{ background: '#050505' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-20" style={{ background: '#050505' }}>
         <div className="max-w-7xl mx-auto">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"

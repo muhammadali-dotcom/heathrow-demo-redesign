@@ -50,7 +50,7 @@ export default function ContactPage() {
     <main style={{ background: '#050505', minHeight: '100vh' }}>
       {/* Hero */}
       <section
-        className="relative pt-40 pb-20 px-4 overflow-hidden"
+        className="relative pt-40 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)' }}
       >
         <div
@@ -60,7 +60,7 @@ export default function ContactPage() {
             filter: 'blur(40px)',
           }}
         />
-        <div className="max-w-3xl mx-auto text-center relative z-10">
+        <div className="max-w-3xl mx-auto text-center relative z-10" aria-labelledby="contact-hero-heading">
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
@@ -72,7 +72,8 @@ export default function ContactPage() {
             Get In Touch
           </span>
           <h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
+            id="contact-hero-heading"
+            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Contact{' '}
@@ -86,7 +87,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main content */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact info */}

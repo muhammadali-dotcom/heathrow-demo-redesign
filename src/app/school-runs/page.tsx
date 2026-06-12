@@ -61,7 +61,7 @@ export default function SchoolRunsPage() {
     <main className="bg-[#050505] text-white">
       {/* Hero */}
       <section
-        className="relative overflow-hidden px-4 pb-24 pt-40"
+        className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-40"
         style={{
           background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)',
         }}
@@ -89,7 +89,7 @@ export default function SchoolRunsPage() {
           </span>
 
           <h1
-            className="mx-auto mb-6 max-w-4xl text-center text-5xl font-black text-white sm:text-6xl lg:text-7xl"
+            className="mb-6 text-5xl font-black text-white sm:text-6xl lg:text-7xl"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Safe <span style={{ color: '#e50914' }}>School Runs</span>
@@ -97,7 +97,7 @@ export default function SchoolRunsPage() {
             Every Day
           </h1>
 
-          <p className="mx-auto mb-10 max-w-2xl text-center text-lg leading-relaxed text-[#A1A1AA]">
+          <p className="mb-10 text-lg leading-relaxed text-[#A1A1AA] p-4">
             Reliable, safe and punctual school transport for your children across
             North London. All drivers are fully DBS checked and trained for child
             welfare.
@@ -133,7 +133,7 @@ export default function SchoolRunsPage() {
       </section>
 
       {/* Service Image */}
-      <section className="px-4 py-12" style={{ background: '#050505' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-12" style={{ background: '#050505' }}>
         <div
           className="mx-auto max-w-4xl overflow-hidden rounded-3xl"
           style={{ border: '1px solid rgba(255,255,255,0.08)' }}
@@ -152,7 +152,7 @@ export default function SchoolRunsPage() {
 
       {/* Trust bar */}
       <section
-        className="px-4 py-12"
+        className="px-4 sm:px-6 lg:px-8 py-12"
         style={{
           background: '#0B0B0D',
           borderTop: '1px solid rgba(255,255,255,0.06)',
@@ -183,7 +183,7 @@ export default function SchoolRunsPage() {
       </section>
 
       {/* Features */}
-      <section className="px-4 py-24">
+      <section className="px-4 sm:px-6 lg:px-8 py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
             <span
@@ -247,7 +247,7 @@ export default function SchoolRunsPage() {
       </section>
 
       {/* How to set up */}
-      <section className="px-4 py-24" style={{ background: '#0B0B0D' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-24" style={{ background: '#0B0B0D' }}>
         <div className="mx-auto max-w-5xl">
           <div className="mb-16 text-center">
             <span
@@ -312,7 +312,7 @@ export default function SchoolRunsPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-20">
         <div className="mx-auto max-w-7xl">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"

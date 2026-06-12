@@ -47,7 +47,7 @@ export default function AboutPage() {
     <main style={{ background: '#050505', minHeight: '100vh' }}>
       {/* Hero */}
       <section
-        className="relative pt-40 pb-24 px-4 overflow-hidden"
+        className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{
           background: `linear-gradient(180deg, #0B0B0D 0%, #050505 100%)`,
         }}
@@ -86,7 +86,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats bar */}
-      <section className="py-12 px-4" style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section className="py-12 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
@@ -100,7 +100,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
               >
                 Who We Are
               </span>
-              <h2 className="text-4xl sm:text-5xl font-black text-white mb-6" style={{ letterSpacing: '-0.04em' }}>
+              <h2 className="text-4xl sm:text-5xl font-black text-white mb-6 leading-tight" style={{ letterSpacing: '-0.04em' }}>
                 Serving North London<br />with Pride
               </h2>
               <div className="space-y-4 text-[#A1A1AA] leading-relaxed">
@@ -213,7 +213,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-24 px-4" style={{ background: '#0B0B0D' }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D' }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span
@@ -260,7 +260,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-black text-white mb-4" style={{ letterSpacing: '-0.04em' }}>
             Ready to Ride with Us?

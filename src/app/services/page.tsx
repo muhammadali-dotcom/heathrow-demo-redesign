@@ -81,7 +81,7 @@ export default function ServicesPage() {
     <main style={{ background: '#050505', minHeight: '100vh' }}>
       {/* Hero */}
       <section
-        className="relative pt-40 pb-24 px-4 overflow-hidden"
+        className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)' }}
       >
         <div
@@ -117,7 +117,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services grid */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-8">
           {services.map((service, index) => {
             const isEven = index % 2 === 0;
@@ -195,7 +195,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4" style={{ background: '#0B0B0D' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D' }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-black text-white mb-4" style={{ letterSpacing: '-0.04em' }}>
             Not Sure Which Service?

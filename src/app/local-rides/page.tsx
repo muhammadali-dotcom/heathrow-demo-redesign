@@ -71,7 +71,7 @@ export default function LocalRidesPage() {
     <main className="bg-[#050505] text-white">
       {/* Hero */}
       <section
-        className="relative overflow-hidden px-4 pb-24 pt-40"
+        className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-40"
         style={{
           background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)',
         }}
@@ -85,7 +85,7 @@ export default function LocalRidesPage() {
           }}
         />
 
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
             style={{
@@ -99,7 +99,7 @@ export default function LocalRidesPage() {
           </span>
 
           <h1
-            className="mx-auto mb-6 max-w-4xl text-center text-5xl font-black text-white sm:text-6xl lg:text-7xl"
+            className="mb-6 text-5xl font-black text-white sm:text-6xl lg:text-7xl"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Your Local <span style={{ color: '#e50914' }}>Taxi</span>
@@ -107,7 +107,7 @@ export default function LocalRidesPage() {
             in North London
           </h1>
 
-          <p className="mx-auto mb-10 max-w-2xl text-center text-lg leading-relaxed text-[#A1A1AA]">
+          <p className="mb-10 text-lg leading-relaxed text-[#A1A1AA] p-4">
             Comfortable, reliable and affordable local taxi rides anywhere across
             Mill Hill and North London. Available 24/7 with fixed, transparent
             prices.
@@ -143,7 +143,7 @@ export default function LocalRidesPage() {
       </section>
 
       {/* Service Image */}
-      <section className="px-4 py-12" style={{ background: '#050505' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-12" style={{ background: '#050505' }}>
         <div
           className="mx-auto max-w-4xl overflow-hidden rounded-3xl"
           style={{ border: '1px solid rgba(255,255,255,0.08)' }}
@@ -162,7 +162,7 @@ export default function LocalRidesPage() {
 
       {/* Areas we cover */}
       <section
-        className="px-4 py-20"
+        className="px-4 sm:px-6 lg:px-8 py-20"
         style={{
           background: '#0B0B0D',
           borderTop: '1px solid rgba(255,255,255,0.06)',
@@ -209,7 +209,7 @@ export default function LocalRidesPage() {
       </section>
 
       {/* Features */}
-      <section className="px-4 py-24">
+      <section className="px-4 sm:px-6 lg:px-8 py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
             <span
@@ -273,7 +273,7 @@ export default function LocalRidesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 py-20" style={{ background: '#0B0B0D' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-20" style={{ background: '#0B0B0D' }}>
         <div className="mx-auto max-w-7xl">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"
