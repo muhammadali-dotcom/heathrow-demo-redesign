@@ -48,7 +48,7 @@ const contactItems = [
 export default function Footer() {
   return (
     <footer
-      className="border-t"
+      className="border-t relative z-10"
       style={{
         background: '#0B0B0D',
         borderColor: 'rgba(255,255,255,0.08)',
@@ -151,7 +151,7 @@ export default function Footer() {
                     >
                       <Icon
                         size={15}
-                        className="mt-0.5 text-[#C0392B] flex-shrink-0 group-hover:text-[#E74C3C] transition-colors"
+                        className="mt-0.5 text-[#cc200e] flex-shrink-0 group-hover:text-[#ff3a27] transition-colors"
                         strokeWidth={2}
                       />
                       <span>{label}</span>
@@ -160,7 +160,7 @@ export default function Footer() {
                     <span className="flex items-start gap-3 text-[#A1A1AA] text-sm">
                       <Icon
                         size={15}
-                        className="mt-0.5 text-[#C0392B] flex-shrink-0"
+                        className="mt-0.5 text-[#cc200e] flex-shrink-0"
                         strokeWidth={2}
                       />
                       <span>{label}</span>
@@ -174,7 +174,7 @@ export default function Footer() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-white text-sm font-bold transition-all duration-200 hover:brightness-110 w-full sm:w-auto"
               style={{
-                background: 'linear-gradient(135deg, #C0392B, #A93226)',
+                background: 'linear-gradient(135deg, #cc200e, #cc200e)',
                 boxShadow: '0 4px 16px rgba(192,57,43,0.28)',
               }}
             >

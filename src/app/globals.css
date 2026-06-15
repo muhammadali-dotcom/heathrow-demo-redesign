@@ -22,7 +22,9 @@
   --radius-xl: 32px;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -42,7 +44,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #ffffff;
   font-weight: 800;
   letter-spacing: -0.04em;
@@ -66,13 +73,25 @@ img {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-dark-main); }
-::-webkit-scrollbar-thumb { background: var(--color-dark-border); border-radius: 3px; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-border);
+  border-radius: 3px;
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
@@ -95,4 +114,47 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 input[type="date"]::-webkit-calendar-picker-indicator:hover,
 input[type="time"]::-webkit-calendar-picker-indicator:hover {
   opacity: 1;
+}
+
+/* ==========================================
+   Stacking & Transparency
+   FuturisticBackground canvas = z-0 (fixed)
+   Header / main / footer = z-10+
+   ========================================== */
+
+/* Pages & sections must be transparent so canvas bleeds through */
+main {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+main section,
+section[style*="background"] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Linear-gradient sections get a semi-transparent tint instead */
+section[style*="linear-gradient"] {
+  background: linear-gradient(180deg, rgba(11, 11, 13, 0.55) 0%, rgba(5, 5, 5, 0.15) 100%) !important;
+}
+
+/* Legacy solid-bg utility overrides */
+section.bg-\[\#050607\],
+.bg-\[\#050607\] {
+  background-color: rgba(5, 6, 7, 0.3) !important;
+  backdrop-filter: blur(2px);
+}
+
+section.bg-\[\#050505\],
+.bg-\[\#050505\] {
+  background-color: transparent !important;
+}
+
+/* Footer: frosted glass so canvas is hinted beneath */
+footer {
+  background: rgba(5, 5, 5, 0.55) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
