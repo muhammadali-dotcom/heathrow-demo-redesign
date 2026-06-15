@@ -382,8 +382,8 @@ export default function BookingWizard() {
                               color: isActive
                                 ? "#fff"
                                 : isCompleted
-                                ? "rgba(255,255,255,0.45)"
-                                : "rgba(255,255,255,0.2)",
+                                  ? "rgba(255,255,255,0.45)"
+                                  : "rgba(255,255,255,0.2)",
                             }}
                           >
                             {step.label}
@@ -563,7 +563,7 @@ export default function BookingWizard() {
                           dispatch({ type: "SET_FIELD", field: "date", value: e.target.value })
                         }
                         className={inputClass}
-                        style={{ ...(state.stepErrors.date ? inputErrorStyle : inputStyle), colorScheme: 'dark' }}
+                        style={{ ...(state.stepErrors.date ? inputErrorStyle : inputStyle), colorScheme: 'white' }}
                       />
                     </div>
                     {state.stepErrors.date && (
@@ -583,7 +583,7 @@ export default function BookingWizard() {
                           dispatch({ type: "SET_FIELD", field: "time", value: e.target.value })
                         }
                         className={inputClass}
-                        style={{ ...(state.stepErrors.time ? inputErrorStyle : inputStyle), colorScheme: 'dark' }}
+                        style={{ ...(state.stepErrors.time ? inputErrorStyle : inputStyle), colorScheme: 'white' }}
                       />
                     </div>
                     {state.stepErrors.time && (
