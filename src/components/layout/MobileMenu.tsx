@@ -34,7 +34,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
       {/* Drawer */}
       <div
-        className="absolute right-0 top-0 bottom-0 w-80 flex flex-col"
+        className="absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] flex flex-col"
         style={{ background: '#0B0B0D', borderLeft: '1px solid rgba(255,255,255,0.08)' }}
       >
         {/* Header */}

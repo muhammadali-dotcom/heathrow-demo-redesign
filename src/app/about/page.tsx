@@ -1,12 +1,15 @@
 import { CheckCircle, Clock, Shield, Star, Users, Award, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { PHONE, COMPANY_NAME, LOCATION } from '@/lib/constants';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: '/about',
   title: 'About Us | Bittacy Cars – Mill Hill Taxi Service',
   description:
     'Learn about Bittacy Cars, Mill Hill\'s most trusted taxi service. Serving North London with reliable airport transfers, school runs, and local rides since 2010.',
-};
+  keywords: ['about Bittacy Cars', 'Mill Hill taxi company', 'trusted North London taxi service'],
+});
 
 const values = [
   {
@@ -47,7 +50,7 @@ export default function AboutPage() {
     <main style={{ background: '#050505', minHeight: '100vh' }}>
       {/* Hero */}
       <section
-        className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{
           background: `linear-gradient(180deg, #0B0B0D 0%, #050505 100%)`,
         }}
@@ -72,7 +75,7 @@ export default function AboutPage() {
             Our Story
           </span>
           <h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             About{' '}

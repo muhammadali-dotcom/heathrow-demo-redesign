@@ -683,7 +683,7 @@ export default function BookingWizard() {
 
                 {state.fareStatus === "ready" && state.fareData && (
                   <div>
-                    <div className="mb-5 grid grid-cols-3 gap-4">
+                    <div className="mb-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
                       {[
                         { label: "Estimated Fare", value: state.fareData.fare },
                         { label: "Distance", value: state.fareData.distance },

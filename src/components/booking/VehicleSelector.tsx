@@ -35,7 +35,7 @@ export default function VehicleSelector({
         </span>
       </label>
 
-      <div className="grid grid-cols-4 gap-2.5">
+      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
         {vehicles.map((vehicle) => {
           const isDisabled = vehicle.passengers < passengers
           const isSelected = vehicle.id === selectedId

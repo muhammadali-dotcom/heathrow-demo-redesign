@@ -2,12 +2,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Plane, Clock, CheckCircle, MapPin, Phone, Star, Shield } from 'lucide-react';
 import { PHONE } from '@/lib/constants';
+import JsonLd from '@/components/seo/JsonLd';
+import { buildMetadata, serviceJsonLd } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: '/airport-transfers',
   title: 'Airport Transfers | Bittacy Cars – Mill Hill to All London Airports',
   description:
     'Stress-free airport transfers from Mill Hill to Heathrow, Gatwick, Stansted, Luton & City Airport. Fixed prices, flight tracking, 24/7 service.',
-};
+  image: '/images/fleet/airport.png',
+  keywords: [
+    'Mill Hill airport transfers',
+    'Heathrow taxi from Mill Hill',
+    'Gatwick taxi North London',
+    'Luton airport transfer Mill Hill',
+  ],
+});
 
 const airports = [
   { name: 'Heathrow Airport', code: 'LHR', terminals: '5 terminals' },
@@ -60,9 +70,10 @@ const features = [
 export default function AirportTransfersPage() {
   return (
     <main style={{ background: '#050505', minHeight: '100vh' }}>
+      <JsonLd data={serviceJsonLd('/airport-transfers')} />
       {/* Hero */}
       <section
-        className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)' }}
       >
         <div
@@ -86,7 +97,7 @@ export default function AirportTransfersPage() {
           </span>
 
           <h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Stress-Free <span style={{ color: '#cc200e' }}>Airport</span>

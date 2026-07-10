@@ -11,12 +11,21 @@ import {
   CreditCard,
 } from 'lucide-react';
 import { PHONE } from '@/lib/constants';
+import JsonLd from '@/components/seo/JsonLd';
+import { buildMetadata, serviceJsonLd } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: '/corporate-travel',
   title: 'Corporate Travel | Bittacy Cars – Business Transport North London',
   description:
     'Premium corporate travel solutions for businesses in North London. Executive vehicles, corporate accounts, monthly invoicing. Professional and reliable.',
-};
+  image: '/images/fleet/corporate.png',
+  keywords: [
+    'corporate travel North London',
+    'business taxi Mill Hill',
+    'executive car service North London',
+  ],
+});
 
 const features = [
   {
@@ -60,9 +69,10 @@ const features = [
 export default function CorporateTravelPage() {
   return (
     <main className="bg-[#050505] text-white">
+      <JsonLd data={serviceJsonLd('/corporate-travel')} />
       {/* Hero */}
       <section
-        className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-40"
+        className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-28 sm:pt-32 lg:pt-40"
         style={{
           background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)',
         }}
@@ -90,7 +100,7 @@ export default function CorporateTravelPage() {
           </span>
 
           <h1
-            className="mb-6 text-5xl font-black text-white sm:text-6xl lg:text-7xl"
+            className="mb-6 text-4xl font-black text-white sm:text-6xl lg:text-7xl"
             style={{
               letterSpacing: '-0.04em',
               lineHeight: 1.02,

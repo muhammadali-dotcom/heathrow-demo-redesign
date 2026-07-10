@@ -2,12 +2,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, CheckCircle, Phone } from 'lucide-react';
 import { PHONE } from '@/lib/constants';
+import JsonLd from '@/components/seo/JsonLd';
+import { buildMetadata, serviceJsonLd } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: '/services',
   title: 'Our Services | Bittacy Cars – Taxi Services in Mill Hill',
   description:
     'Explore all Bittacy Cars services: airport transfers, school runs, local rides and corporate travel across North London.',
-};
+  image: '/images/fleet/hero2.png',
+  keywords: ['taxi services Mill Hill', 'North London private hire services'],
+});
 
 const services = [
   {
@@ -79,9 +84,10 @@ const services = [
 export default function ServicesPage() {
   return (
     <main style={{ background: '#050505', minHeight: '100vh' }}>
+      <JsonLd data={serviceJsonLd('/services')} />
       {/* Hero */}
       <section
-        className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)' }}
       >
         <div
@@ -103,7 +109,7 @@ export default function ServicesPage() {
             What We Offer
           </span>
           <h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Our{' '}

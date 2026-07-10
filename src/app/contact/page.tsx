@@ -50,7 +50,7 @@ export default function ContactPage() {
     <main style={{ background: '#050505', minHeight: '100vh' }}>
       {/* Hero */}
       <section
-        className="relative pt-40 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 lg:pt-40 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)' }}
       >
         <div
@@ -73,7 +73,7 @@ export default function ContactPage() {
           </span>
           <h1
             id="contact-hero-heading"
-            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight"
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Contact{' '}

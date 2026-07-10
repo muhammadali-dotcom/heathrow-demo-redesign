@@ -10,12 +10,21 @@ import {
   Star,
 } from 'lucide-react';
 import { PHONE } from '@/lib/constants';
+import JsonLd from '@/components/seo/JsonLd';
+import { buildMetadata, serviceJsonLd } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: '/school-runs',
   title: 'School Runs | Bittacy Cars – Safe School Transport in Mill Hill',
   description:
     'Safe, reliable and punctual school runs across North London. All drivers are fully DBS checked. Book your regular school run with Bittacy Cars today.',
-};
+  image: '/images/fleet/school.png',
+  keywords: [
+    'school runs Mill Hill',
+    'DBS checked school transport',
+    'North London school taxi',
+  ],
+});
 
 const features = [
   {
@@ -59,9 +68,10 @@ const features = [
 export default function SchoolRunsPage() {
   return (
     <main className="bg-[#050505] text-white">
+      <JsonLd data={serviceJsonLd('/school-runs')} />
       {/* Hero */}
       <section
-        className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-40"
+        className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-28 sm:pt-32 lg:pt-40"
         style={{
           background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)',
         }}
@@ -89,7 +99,7 @@ export default function SchoolRunsPage() {
           </span>
 
           <h1
-            className="mb-6 text-5xl font-black text-white sm:text-6xl lg:text-7xl"
+            className="mb-6 text-4xl font-black text-white sm:text-6xl lg:text-7xl"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Safe <span style={{ color: '#e50914' }}>School Runs</span>

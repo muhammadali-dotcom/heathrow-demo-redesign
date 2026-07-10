@@ -2,12 +2,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Clock, CheckCircle, Phone, Star, Zap } from 'lucide-react';
 import { PHONE } from '@/lib/constants';
+import JsonLd from '@/components/seo/JsonLd';
+import { buildMetadata, serviceJsonLd } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: '/local-rides',
   title: 'Local Rides | Bittacy Cars – Taxis Across North London',
   description:
     'Comfortable, affordable local taxi rides across Mill Hill and North London. Available 24/7 with fixed prices. Book your local ride with Bittacy Cars.',
-};
+  image: '/images/fleet/local.png',
+  keywords: [
+    'local taxi Mill Hill',
+    'taxi Barnet',
+    'taxi Hendon',
+    'taxi Finchley',
+    'taxi Edgware',
+  ],
+});
 
 const areas = [
   'Mill Hill',
@@ -69,9 +80,10 @@ const features = [
 export default function LocalRidesPage() {
   return (
     <main className="bg-[#050505] text-white">
+      <JsonLd data={serviceJsonLd('/local-rides')} />
       {/* Hero */}
       <section
-        className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-40"
+        className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-28 sm:pt-32 lg:pt-40"
         style={{
           background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)',
         }}
@@ -99,7 +111,7 @@ export default function LocalRidesPage() {
           </span>
 
           <h1
-            className="mb-6 text-5xl font-black text-white sm:text-6xl lg:text-7xl"
+            className="mb-6 text-4xl font-black text-white sm:text-6xl lg:text-7xl"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Your Local <span style={{ color: '#e50914' }}>Taxi</span>
