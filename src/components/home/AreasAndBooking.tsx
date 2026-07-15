@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { MapPin, X, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Reveal from '@/components/ui/Reveal';
 
 const areas = [
   {
@@ -88,7 +89,8 @@ export default function AreasAndBooking() {
   const [selected, setSelected] = useState<(typeof areas)[number] | null>(null);
 
   return (
-    <section className="bg-[#050505] px-4 py-20 sm:py-24">      <div className="mx-auto max-w-6xl">
+    <section className="bg-[#050505] px-4 py-20 sm:py-24">
+      <Reveal className="mx-auto max-w-6xl">
       {/* Section header */}
       <div className="mx-auto mb-14 flex max-w-4xl flex-col items-center text-center">
         <span className="mb-5 inline-flex items-center justify-center rounded-full border border-[#e50914]/30 bg-[#e50914]/10 px-5 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#e50914]">
@@ -116,7 +118,7 @@ export default function AreasAndBooking() {
 
           <Link
             href="/book"
-            className="rounded-xl px-10 py-3 text-sm font-bold text-white transition hover:bg-white/[0.06]"
+            className="rounded-xl px-10 py-3 text-sm font-bold text-white transition-all duration-200 hover:bg-white/[0.08] hover:-translate-y-0.5"
           >
             Book a Ride
           </Link>
@@ -223,7 +225,7 @@ export default function AreasAndBooking() {
           )}
         </div>
       </div>
-    </div>
+      </Reveal>
     </section>
   );
 }

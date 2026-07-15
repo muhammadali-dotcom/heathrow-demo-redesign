@@ -4,6 +4,7 @@ import { Plane, Clock, CheckCircle, MapPin, Phone, Star, Shield } from 'lucide-r
 import { PHONE } from '@/lib/constants';
 import JsonLd from '@/components/seo/JsonLd';
 import { buildMetadata, serviceJsonLd } from '@/lib/seo';
+import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/airport-transfers',
@@ -84,7 +85,7 @@ export default function AirportTransfersPage() {
           }}
         />
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <Reveal className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
@@ -134,7 +135,7 @@ export default function AirportTransfersPage() {
               {PHONE}
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Service Image */}
@@ -161,7 +162,7 @@ export default function AirportTransfersPage() {
         style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)' }}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
@@ -176,12 +177,13 @@ export default function AirportTransfersPage() {
             <h2 className="text-4xl font-black text-white" style={{ letterSpacing: '-0.04em' }}>
               Airports We Serve
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {airports.map((airport) => (
-              <div
+            {airports.map((airport, index) => (
+              <Reveal
                 key={airport.code}
+                delay={index * 0.06}
                 className="rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1"
                 style={{
                   background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
@@ -196,7 +198,7 @@ export default function AirportTransfersPage() {
                 </div>
                 <div className="text-white font-semibold text-sm mb-1">{airport.name}</div>
                 <div className="text-[#A1A1AA] text-xs">{airport.terminals}</div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -205,7 +207,7 @@ export default function AirportTransfersPage() {
       {/* Features */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
@@ -220,15 +222,16 @@ export default function AirportTransfersPage() {
             <h2 className="text-4xl sm:text-5xl font-black text-white" style={{ letterSpacing: '-0.04em' }}>
               The Bittacy Difference
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature) => {
+            {features.map((feature, index) => {
               const Icon = feature.icon;
 
               return (
-                <div
+                <Reveal
                   key={feature.title}
+                  delay={index * 0.08}
                   className="rounded-2xl p-7"
                   style={{
                     background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
@@ -252,7 +255,7 @@ export default function AirportTransfersPage() {
                   <p className="text-[#A1A1AA] text-sm leading-relaxed">
                     {feature.description}
                   </p>
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -262,7 +265,7 @@ export default function AirportTransfersPage() {
       {/* How it works */}
       <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D' }}>
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
@@ -277,7 +280,7 @@ export default function AirportTransfersPage() {
             <h2 className="text-4xl font-black text-white" style={{ letterSpacing: '-0.04em' }}>
               How It Works
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
@@ -296,8 +299,8 @@ export default function AirportTransfersPage() {
                 title: 'Arrive in Comfort',
                 desc: 'Your driver greets you in arrivals and takes you directly to your destination.',
               },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
+            ].map((item, index) => (
+              <Reveal key={item.step} delay={index * 0.1} className="text-center">
                 <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-black"
                   style={{
@@ -311,7 +314,7 @@ export default function AirportTransfersPage() {
 
                 <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
                 <p className="text-[#A1A1AA] text-sm leading-relaxed">{item.desc}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -319,7 +322,7 @@ export default function AirportTransfersPage() {
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-20" style={{ background: '#050505' }}>
-        <div className="max-w-7xl mx-auto">
+        <Reveal className="max-w-7xl mx-auto">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"
             style={{
@@ -377,7 +380,7 @@ export default function AirportTransfersPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   );

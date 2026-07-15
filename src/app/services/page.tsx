@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, Phone } from 'lucide-react';
 import { PHONE } from '@/lib/constants';
 import JsonLd from '@/components/seo/JsonLd';
 import { buildMetadata, serviceJsonLd } from '@/lib/seo';
+import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/services',
@@ -97,7 +98,7 @@ export default function ServicesPage() {
             filter: 'blur(40px)',
           }}
         />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <Reveal className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
@@ -119,7 +120,7 @@ export default function ServicesPage() {
             From airport transfers to school runs, we provide comprehensive taxi services
             tailored to every journey across North London.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Services grid */}
@@ -128,8 +129,9 @@ export default function ServicesPage() {
           {services.map((service, index) => {
             const isEven = index % 2 === 0;
             return (
-              <div
+              <Reveal
                 key={service.id}
+                delay={Math.min(index * 0.08, 0.24)}
                 className="rounded-3xl overflow-hidden"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))',
@@ -194,7 +196,7 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>
@@ -202,7 +204,7 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D' }}>
-        <div className="max-w-3xl mx-auto text-center">
+        <Reveal className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-black text-white mb-4" style={{ letterSpacing: '-0.04em' }}>
             Not Sure Which Service?
           </h2>
@@ -232,7 +234,7 @@ export default function ServicesPage() {
               {PHONE}
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   );

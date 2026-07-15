@@ -2,6 +2,7 @@ import { CheckCircle, Clock, Shield, Star, Users, Award, MapPin, Phone } from 'l
 import Link from 'next/link';
 import { PHONE, COMPANY_NAME, LOCATION } from '@/lib/constants';
 import { buildMetadata } from '@/lib/seo';
+import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/about',
@@ -63,7 +64,7 @@ export default function AboutPage() {
             filter: 'blur(40px)',
           }}
         />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <Reveal className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
@@ -85,26 +86,26 @@ export default function AboutPage() {
             Mill Hill&apos;s most trusted taxi service, delivering reliable, professional and
             comfortable transportation across North London since 2010.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Stats bar */}
       <section className="py-12 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
+          {stats.map((s, index) => (
+            <Reveal key={s.label} delay={index * 0.08} className="text-center">
               <div className="text-4xl font-black text-white mb-1" style={{ color: '#cc200e', letterSpacing: '-0.03em' }}>
                 {s.value}
               </div>
               <div className="text-sm text-[#A1A1AA] font-medium">{s.label}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* Our Story */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <Reveal className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span
@@ -212,13 +213,13 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Our Values */}
       <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <Reveal className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
@@ -232,13 +233,14 @@ export default function AboutPage() {
             <h2 className="text-4xl sm:text-5xl font-black text-white" style={{ letterSpacing: '-0.04em' }}>
               Our Core Values
             </h2>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value) => {
+            {values.map((value, index) => {
               const Icon = value.icon;
               return (
-                <div
+                <Reveal
                   key={value.title}
+                  delay={index * 0.08}
                   className="rounded-2xl p-6"
                   style={{
                     background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
@@ -255,7 +257,7 @@ export default function AboutPage() {
                     {value.title}
                   </h3>
                   <p className="text-[#A1A1AA] text-sm leading-relaxed">{value.description}</p>
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -264,7 +266,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
+        <Reveal className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-black text-white mb-4" style={{ letterSpacing: '-0.04em' }}>
             Ready to Ride with Us?
           </h2>
@@ -288,7 +290,7 @@ export default function AboutPage() {
               Call {PHONE}
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   );

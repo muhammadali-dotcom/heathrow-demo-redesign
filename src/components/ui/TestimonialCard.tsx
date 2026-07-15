@@ -8,7 +8,7 @@ interface TestimonialCardProps {
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
     <div
-      className="p-6 rounded-2xl flex flex-col gap-4"
+      className="h-full p-6 rounded-2xl flex flex-col gap-4"
       style={{
         background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
         border: '1px solid rgba(255,255,255,0.08)',

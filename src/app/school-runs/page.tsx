@@ -12,6 +12,7 @@ import {
 import { PHONE } from '@/lib/constants';
 import JsonLd from '@/components/seo/JsonLd';
 import { buildMetadata, serviceJsonLd } from '@/lib/seo';
+import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/school-runs',
@@ -85,7 +86,7 @@ export default function SchoolRunsPage() {
           }}
         />
 
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <Reveal className="relative z-10 mx-auto max-w-4xl text-center">
           <span
             className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
             style={{
@@ -139,7 +140,7 @@ export default function SchoolRunsPage() {
               {PHONE}
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Service Image */}
@@ -175,8 +176,8 @@ export default function SchoolRunsPage() {
             { value: '5★', label: 'Parent Satisfaction' },
             { value: '10+', label: 'Years Experience' },
             { value: '24/7', label: 'Support Available' },
-          ].map((stat) => (
-            <div key={stat.label}>
+          ].map((stat, index) => (
+            <Reveal key={stat.label} delay={index * 0.08}>
               <div
                 className="mb-1 text-3xl font-black"
                 style={{ color: '#e50914', letterSpacing: '-0.03em' }}
@@ -187,7 +188,7 @@ export default function SchoolRunsPage() {
               <div className="text-sm font-medium text-[#A1A1AA]">
                 {stat.label}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -195,7 +196,7 @@ export default function SchoolRunsPage() {
       {/* Features */}
       <section className="px-4 sm:px-6 lg:px-8 py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
+          <Reveal className="mb-16 text-center">
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
               style={{
@@ -213,15 +214,16 @@ export default function SchoolRunsPage() {
             >
               Your Child&apos;s Safety is Our Priority
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => {
+            {features.map((feature, index) => {
               const Icon = feature.icon;
 
               return (
-                <div
+                <Reveal
                   key={feature.title}
+                  delay={index * 0.08}
                   className="rounded-2xl p-7"
                   style={{
                     background:
@@ -249,7 +251,7 @@ export default function SchoolRunsPage() {
                   <p className="text-sm leading-relaxed text-[#A1A1AA]">
                     {feature.description}
                   </p>
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -259,7 +261,7 @@ export default function SchoolRunsPage() {
       {/* How to set up */}
       <section className="px-4 sm:px-6 lg:px-8 py-24" style={{ background: '#0B0B0D' }}>
         <div className="mx-auto max-w-5xl">
-          <div className="mb-16 text-center">
+          <Reveal className="mb-16 text-center">
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
               style={{
@@ -277,7 +279,7 @@ export default function SchoolRunsPage() {
             >
               Set Up Your School Run
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {[
@@ -296,8 +298,8 @@ export default function SchoolRunsPage() {
                 title: 'Relax',
                 desc: 'Your child is collected and dropped off safely every day, on time, every time.',
               },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
+            ].map((item, index) => (
+              <Reveal key={item.step} delay={index * 0.1} className="text-center">
                 <div
                   className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl text-2xl font-black text-white"
                   style={{
@@ -315,7 +317,7 @@ export default function SchoolRunsPage() {
                 <p className="text-sm leading-relaxed text-[#A1A1AA]">
                   {item.desc}
                 </p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -323,7 +325,7 @@ export default function SchoolRunsPage() {
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="mx-auto max-w-7xl">
+        <Reveal className="mx-auto max-w-7xl">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"
             style={{
@@ -382,7 +384,7 @@ export default function SchoolRunsPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   );

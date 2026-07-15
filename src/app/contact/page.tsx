@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import { PHONE, EMAIL, LOCATION, COMPANY_NAME } from '@/lib/constants';
+import Reveal from '@/components/ui/Reveal';
 
 const contactInfo = [
   {
@@ -60,7 +61,7 @@ export default function ContactPage() {
             filter: 'blur(40px)',
           }}
         />
-        <div className="max-w-3xl mx-auto text-center relative z-10" aria-labelledby="contact-hero-heading">
+        <Reveal className="max-w-3xl mx-auto text-center relative z-10" aria-labelledby="contact-hero-heading">
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
@@ -83,7 +84,7 @@ export default function ContactPage() {
             Ready to book or have a question? We&apos;d love to hear from you.
             Reach out and we&apos;ll get back to you as quickly as possible.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Main content */}
@@ -92,12 +93,14 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact info */}
             <div>
-              <h2 className="text-3xl font-black text-white mb-8" style={{ letterSpacing: '-0.03em' }}>
-                Get In Touch
-              </h2>
+              <Reveal>
+                <h2 className="text-3xl font-black text-white mb-8" style={{ letterSpacing: '-0.03em' }}>
+                  Get In Touch
+                </h2>
+              </Reveal>
 
               <div className="space-y-4 mb-10">
-                {contactInfo.map((item) => {
+                {contactInfo.map((item, index) => {
                   const Icon = item.icon;
                   const content = (
                     <div
@@ -122,19 +125,23 @@ export default function ContactPage() {
                     </div>
                   );
 
-                  if (item.href) {
-                    return (
-                      <a key={item.label} href={item.href} className="block transition-opacity hover:opacity-80">
-                        {content}
-                      </a>
-                    );
-                  }
-                  return <div key={item.label}>{content}</div>;
+                  return (
+                    <Reveal key={item.label} delay={index * 0.08}>
+                      {item.href ? (
+                        <a href={item.href} className="block transition-opacity hover:opacity-80">
+                          {content}
+                        </a>
+                      ) : (
+                        content
+                      )}
+                    </Reveal>
+                  );
                 })}
               </div>
 
               {/* Quick call CTA */}
-              <div
+              <Reveal
+                delay={contactInfo.length * 0.08}
                 className="rounded-2xl p-6 relative overflow-hidden"
                 style={{
                   background: 'linear-gradient(135deg, rgba(192,57,43,0.15), rgba(139,0,0,0.08))',
@@ -155,11 +162,11 @@ export default function ContactPage() {
                     {PHONE}
                   </a>
                 </div>
-              </div>
+              </Reveal>
             </div>
 
             {/* Quote form */}
-            <div>
+            <Reveal delay={0.15}>
               <div
                 className="rounded-3xl p-8 sm:p-10"
                 style={{
@@ -302,7 +309,7 @@ export default function ContactPage() {
                   </>
                 )}
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>

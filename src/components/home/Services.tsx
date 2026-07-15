@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
+import Reveal from '@/components/ui/Reveal';
 
 const homeServices = [
   {
@@ -44,16 +45,18 @@ export default function Services() {
   return (
     <section className="py-24 px-4" style={{ background: '#050505' }}>
       <div className="max-w-7xl mx-auto">
-        <SectionTitle
-          label="Our Services"
-          title="Travel Solutions Tailored to You"
-          subtitle="From airport transfers to school runs, we cover every journey across North London."
-          centered
-        />
+        <Reveal>
+          <SectionTitle
+            label="Our Services"
+            title="Travel Solutions Tailored to You"
+            subtitle="From airport transfers to school runs, we cover every journey across North London."
+            centered
+          />
+        </Reveal>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          {homeServices.map((service) => (
+          {homeServices.map((service, index) => (
+            <Reveal key={service.id} delay={index * 0.08}>
             <div
-              key={service.id}
               className="group rounded-2xl overflow-hidden transition-all duration-300"
               style={{
                 background: 'rgba(255,255,255,0.04)',
@@ -108,6 +111,7 @@ export default function Services() {
                 </Link>
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

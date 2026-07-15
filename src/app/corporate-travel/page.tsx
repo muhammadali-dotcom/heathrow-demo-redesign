@@ -13,6 +13,7 @@ import {
 import { PHONE } from '@/lib/constants';
 import JsonLd from '@/components/seo/JsonLd';
 import { buildMetadata, serviceJsonLd } from '@/lib/seo';
+import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/corporate-travel',
@@ -86,7 +87,7 @@ export default function CorporateTravelPage() {
           }}
         />
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <Reveal className="max-w-4xl mx-auto text-center relative z-10">
           <span
             className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
             style={{
@@ -143,7 +144,7 @@ export default function CorporateTravelPage() {
               {PHONE}
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Service Image */}
@@ -179,8 +180,8 @@ export default function CorporateTravelPage() {
             { value: '100%', label: 'On-Time Rate' },
             { value: '24/7', label: 'Priority Support' },
             { value: '0', label: 'Hidden Fees' },
-          ].map((stat) => (
-            <div key={stat.label}>
+          ].map((stat, index) => (
+            <Reveal key={stat.label} delay={index * 0.08}>
               <div
                 className="mb-1 text-3xl font-black"
                 style={{ color: '#e50914', letterSpacing: '-0.03em' }}
@@ -191,7 +192,7 @@ export default function CorporateTravelPage() {
               <div className="text-sm font-medium text-[#A1A1AA]">
                 {stat.label}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -199,7 +200,7 @@ export default function CorporateTravelPage() {
       {/* Features */}
       <section className="px-4 sm:px-6 lg:px-8 py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
+          <Reveal className="mb-16 text-center">
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
               style={{
@@ -217,15 +218,16 @@ export default function CorporateTravelPage() {
             >
               Built for Business
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => {
+            {features.map((feature, index) => {
               const Icon = feature.icon;
 
               return (
-                <div
+                <Reveal
                   key={feature.title}
+                  delay={index * 0.08}
                   className="rounded-2xl p-7"
                   style={{
                     background:
@@ -253,7 +255,7 @@ export default function CorporateTravelPage() {
                   <p className="text-sm leading-relaxed text-[#A1A1AA]">
                     {feature.description}
                   </p>
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -262,7 +264,7 @@ export default function CorporateTravelPage() {
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-20" style={{ background: '#0B0B0D' }}>
-        <div className="mx-auto max-w-7xl">
+        <Reveal className="mx-auto max-w-7xl">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"
             style={{
@@ -321,7 +323,7 @@ export default function CorporateTravelPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   );

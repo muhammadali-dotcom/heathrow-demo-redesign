@@ -1,9 +1,10 @@
 import { faqs } from '@/lib/seo';
+import Reveal from '@/components/ui/Reveal';
 
 export default function FAQ() {
   return (
     <section className="px-4 py-24 sm:px-6 lg:px-8" style={{ background: '#0B0B0D' }}>
-      <div className="mx-auto max-w-5xl">
+      <Reveal className="mx-auto max-w-5xl">
         <div className="mb-12 text-center">
           <span
             className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
@@ -38,7 +39,7 @@ export default function FAQ() {
             </article>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
