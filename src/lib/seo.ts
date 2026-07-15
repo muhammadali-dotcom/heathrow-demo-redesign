@@ -170,7 +170,7 @@ export const faqs = [
   {
     question: 'How do I book a taxi with Bittacy Cars?',
     answer:
-      'You can book by calling 020 3761 7526 or by using the online booking form. Bittacy Cars offers local rides, airport transfers, school runs and corporate travel.',
+      'You can book by calling us at020 3761 7526 or by using the online booking form. Bittacy Cars offers local rides, airport transfers, school runs and corporate travel.',
   },
   {
     question: 'Does Bittacy Cars provide airport transfers from Mill Hill?',
