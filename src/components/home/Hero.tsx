@@ -15,7 +15,6 @@ const trustPoints = [
   { icon: Car, title: '24/7', text: 'Always Available' },
   { icon: Clock, title: 'On Time', text: 'Every Time' },
   { icon: CreditCard, title: 'Fixed Prices', text: 'No Hidden Charges' },
-  { icon: UserCheck, title: 'Professional', text: 'Friendly Drivers' },
 ];
 
 export default function Hero() {
@@ -26,7 +25,7 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="/images/fleet/hero2.png"
+          src="/images/fleet/hero5.png"
           alt="Bittacy premium taxi service"
           fill
           priority
@@ -110,7 +109,7 @@ export default function Hero() {
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.46 }}
-              className="grid grid-cols-2 gap-4 sm:grid-cols-4"
+              className="grid max-w-md grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4"
             >
               {trustPoints.map(({ icon: Icon, title, text }) => (
                 <div key={title} className="text-center">

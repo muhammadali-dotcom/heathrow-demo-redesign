@@ -83,10 +83,12 @@ export default function AboutPage() {
             About{' '}
             <span style={{ color: '#cc200e' }}>{COMPANY_NAME}</span>
           </h1>
-          <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed">
+          <div className="w-full flex justify-center">
+          <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed text-balance">
             Mill Hill&apos;s most trusted taxi service, delivering reliable, professional and
             comfortable transportation across North London since 2010.
           </p>
+          </div>
         </Reveal>
       </section>
 
