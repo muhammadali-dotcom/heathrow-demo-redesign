@@ -1,15 +1,29 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ChevronDown } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
+import { services } from '@/data/services';
 import { COMPANY_NAME } from '@/lib/constants';
 import MobileMenu from './MobileMenu';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -50,16 +64,58 @@ export default function Header() {
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-[#A1A1AA] hover:text-white rounded-lg transition-colors duration-200 whitespace-nowrap"
-                  style={{ transition: 'color 0.2s' }}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.label === 'Services' ? (
+                  <div key={link.href} className="relative" ref={servicesRef}>
+                    <button
+                      type="button"
+                      onClick={() => setServicesOpen((open) => !open)}
+                      aria-expanded={servicesOpen}
+                      aria-controls="header-services-dropdown"
+                      className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white hover:text-[#A1A1AA] rounded-lg transition-colors duration-200 whitespace-nowrap"
+                      style={{ transition: 'color 0.2s' }}
+                    >
+                      {link.label}
+                      <ChevronDown
+                        size={14}
+                        className="transition-transform duration-200"
+                        style={{ transform: servicesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                      />
+                    </button>
+                    {servicesOpen && (
+                      <div
+                        id="header-services-dropdown"
+                        className="absolute left-0 top-full mt-2 w-56 rounded-xl py-2 overflow-hidden"
+                        style={{
+                          background: '#111113',
+                          border: '1px solid rgba(255,255,255,0.1)',
+                          boxShadow: '0 12px 30px rgba(0,0,0,0.55)',
+                        }}
+                      >
+                        {services.map((s) => (
+                          <Link
+                            key={s.id}
+                            href={s.href}
+                            onClick={() => setServicesOpen(false)}
+                            className="block px-4 py-2.5 text-sm text-[#A1A1AA] hover:text-white hover:bg-white/5 transition-colors"
+                          >
+                            {s.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="px-4 py-2 text-sm font-medium text-[#A1A1AA] hover:text-white rounded-lg transition-colors duration-200 whitespace-nowrap"
+                    style={{ transition: 'color 0.2s' }}
+                  >
+                    {link.label}
+                  </Link>
+                ),
+              )}
             </nav>
 
             {/* Social Icons */}

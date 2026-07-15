@@ -104,8 +104,19 @@ export default function ScrollRouteLine({ containerRef }: ScrollRouteLineProps) 
           className="absolute inset-[-8px] rounded-full blur-[6px]"
           style={{ background: 'radial-gradient(circle, rgba(255,43,36,0.9) 0%, rgba(255,43,36,0) 70%)' }}
         />
-        <svg viewBox="0 0 24 24" className="relative w-4 h-4" fill="#ffffff">
-          <path d="M5 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm14 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM3.5 8.5 5 6h11l3 4.5 2 1v3h-2a3.5 3.5 0 0 0-7 0h-4a3.5 3.5 0 0 0-7 0H1v-3l2.5-3Z" />
+        <svg
+          viewBox="0 0 24 24"
+          className="relative w-4 h-4"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+          <circle cx="7" cy="17" r="2" />
+          <path d="M9 17h6" />
+          <circle cx="17" cy="17" r="2" />
         </svg>
       </motion.div>
     </div>

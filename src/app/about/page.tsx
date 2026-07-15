@@ -1,8 +1,9 @@
 import { CheckCircle, Clock, Shield, Star, Users, Award, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
-import { PHONE, COMPANY_NAME, LOCATION } from '@/lib/constants';
+import { PHONE, COMPANY_NAME, LOCATION, LOCATION_COORDS } from '@/lib/constants';
 import { buildMetadata } from '@/lib/seo';
 import Reveal from '@/components/ui/Reveal';
+import MapView from '@/components/map/MapView';
 
 export const metadata = buildMetadata({
   path: '/about',
@@ -86,6 +87,29 @@ export default function AboutPage() {
             Mill Hill&apos;s most trusted taxi service, delivering reliable, professional and
             comfortable transportation across North London since 2010.
           </p>
+        </Reveal>
+      </section>
+
+      {/* Location map */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-16">
+        <Reveal className="max-w-5xl mx-auto">
+          <MapView
+            height={320}
+            markers={[
+              {
+                position: [LOCATION_COORDS.lat, LOCATION_COORDS.lon],
+                popup: (
+                  <div>
+                    <strong>{COMPANY_NAME}</strong>
+                    <br />
+                    {LOCATION}
+                    <br />
+                    {PHONE}
+                  </div>
+                ),
+              },
+            ]}
+          />
         </Reveal>
       </section>
 

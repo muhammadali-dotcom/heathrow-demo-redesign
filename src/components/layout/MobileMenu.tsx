@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { X } from 'lucide-react';
+import { X, ChevronDown } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
+import { services } from '@/data/services';
 import { COMPANY_NAME } from '@/lib/constants';
 
 interface MobileMenuProps {
@@ -13,6 +14,8 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+  const [servicesOpen, setServicesOpen] = useState(false);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -61,16 +64,49 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
         {/* Nav Links */}
         <nav className="flex flex-col gap-1 p-4 flex-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={onClose}
-              className="px-4 py-3 text-[#A1A1AA] hover:text-white hover:bg-white/5 rounded-xl text-sm font-medium transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.label === 'Services' ? (
+              <div key={link.href}>
+                <button
+                  type="button"
+                  onClick={() => setServicesOpen((open) => !open)}
+                  aria-expanded={servicesOpen}
+                  aria-controls="mobile-services-list"
+                  className="flex items-center justify-between w-full px-4 py-3 text-[#A1A1AA] hover:text-white hover:bg-white/5 rounded-xl text-sm font-medium transition-colors"
+                >
+                  {link.label}
+                  <ChevronDown
+                    size={16}
+                    className="transition-transform duration-200"
+                    style={{ transform: servicesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                  />
+                </button>
+                {servicesOpen && (
+                  <div id="mobile-services-list" className="flex flex-col pl-4">
+                    {services.map((s) => (
+                      <Link
+                        key={s.id}
+                        href={s.href}
+                        onClick={onClose}
+                        className="px-4 py-2.5 text-[#A1A1AA] hover:text-white hover:bg-white/5 rounded-xl text-sm transition-colors"
+                      >
+                        {s.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={onClose}
+                className="px-4 py-3 text-[#A1A1AA] hover:text-white hover:bg-white/5 rounded-xl text-sm font-medium transition-colors"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         {/* Contact Now CTA */}

@@ -14,7 +14,12 @@ import {
 } from "lucide-react";
 import { StepInfo } from "./StepIndicator";
 import VehicleSelector from "./VehicleSelector";
+import AddressAutocomplete from "./AddressAutocomplete";
 import { fleet } from "@/data/fleet";
+import { SUGGESTED_ADDRESSES } from "@/data/suggestedAddresses";
+import MapView, { type MapMarker } from "@/components/map/MapView";
+import { geocodeAddress, type GeocodeResult } from "@/lib/geocode";
+import { fetchDrivingRoute } from "@/lib/route";
 
 type WizardStep = 1 | 2 | 3 | 4 | "confirmed";
 
@@ -38,6 +43,11 @@ interface WizardFields {
 
 type FareStatus = "idle" | "loading" | "ready" | "error";
 
+interface Coords {
+  lat: number;
+  lon: number;
+}
+
 interface WizardState {
   currentStep: WizardStep;
   fields: WizardFields;
@@ -46,6 +56,9 @@ interface WizardState {
   stepErrors: Partial<Record<keyof WizardFields, string>>;
   submitError: string | null;
   submitting: boolean;
+  pickupCoords: Coords | null;
+  dropoffCoords: Coords | null;
+  route: [number, number][] | null;
 }
 
 type WizardAction =
@@ -58,6 +71,9 @@ type WizardAction =
   | { type: "SET_FARE_ERROR" }
   | { type: "SET_SUBMITTING"; value: boolean }
   | { type: "SET_SUBMIT_ERROR"; message: string | null }
+  | { type: "SET_PICKUP_COORDS"; coords: Coords | null }
+  | { type: "SET_DROPOFF_COORDS"; coords: Coords | null }
+  | { type: "SET_ROUTE"; route: [number, number][] | null }
   | { type: "CONFIRM" }
   | { type: "RESET" };
 
@@ -79,6 +95,9 @@ export const initialState: WizardState = {
   stepErrors: {},
   submitError: null,
   submitting: false,
+  pickupCoords: null,
+  dropoffCoords: null,
+  route: null,
 };
 
 export function wizardReducer(
@@ -90,6 +109,8 @@ export function wizardReducer(
       return {
         ...state,
         fields: { ...state.fields, [action.field]: action.value },
+        ...(action.field === "pickup" ? { pickupCoords: null, route: null } : {}),
+        ...(action.field === "dropoff" ? { dropoffCoords: null, route: null } : {}),
       };
     case "SET_STEP_ERRORS":
       return { ...state, stepErrors: action.errors };
@@ -117,6 +138,12 @@ export function wizardReducer(
       return { ...state, submitting: action.value };
     case "SET_SUBMIT_ERROR":
       return { ...state, submitError: action.message };
+    case "SET_PICKUP_COORDS":
+      return { ...state, pickupCoords: action.coords, route: null };
+    case "SET_DROPOFF_COORDS":
+      return { ...state, dropoffCoords: action.coords, route: null };
+    case "SET_ROUTE":
+      return { ...state, route: action.route };
     case "CONFIRM":
       return { ...state, currentStep: "confirmed" };
     case "RESET":
@@ -249,6 +276,80 @@ export default function BookingWizard() {
       mockFareCalculation(dispatch);
     }
   }, [state.currentStep, state.fareStatus]);
+
+  useEffect(() => {
+    const query = state.fields.pickup.trim();
+    if (query.length < 3) return;
+
+    const timer = setTimeout(() => {
+      geocodeAddress(query).then((result: GeocodeResult | null) => {
+        dispatch({
+          type: "SET_PICKUP_COORDS",
+          coords: result ? { lat: result.lat, lon: result.lon } : null,
+        });
+      });
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, [state.fields.pickup]);
+
+  useEffect(() => {
+    const query = state.fields.dropoff.trim();
+    if (query.length < 3) return;
+
+    const timer = setTimeout(() => {
+      geocodeAddress(query).then((result: GeocodeResult | null) => {
+        dispatch({
+          type: "SET_DROPOFF_COORDS",
+          coords: result ? { lat: result.lat, lon: result.lon } : null,
+        });
+      });
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, [state.fields.dropoff]);
+
+  useEffect(() => {
+    if (!state.pickupCoords || !state.dropoffCoords) return;
+
+    let cancelled = false;
+    fetchDrivingRoute(state.pickupCoords, state.dropoffCoords).then((route) => {
+      if (!cancelled) dispatch({ type: "SET_ROUTE", route });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [state.pickupCoords, state.dropoffCoords]);
+
+  const bothLocationsResolved = Boolean(state.pickupCoords && state.dropoffCoords);
+
+  const routeMarkers: MapMarker[] = [
+    ...(state.pickupCoords
+      ? [
+          {
+            position: [state.pickupCoords.lat, state.pickupCoords.lon] as [
+              number,
+              number,
+            ],
+            label: "Pickup",
+            color: "pickup" as const,
+          },
+        ]
+      : []),
+    ...(state.dropoffCoords
+      ? [
+          {
+            position: [state.dropoffCoords.lat, state.dropoffCoords.lon] as [
+              number,
+              number,
+            ],
+            label: "Destination",
+            color: "dropoff" as const,
+          },
+        ]
+      : []),
+  ];
 
   const stepLabels = ["Route", "Details", "Fare", "Confirm"];
   const numericStep =
@@ -434,25 +535,24 @@ export default function BookingWizard() {
                     <label htmlFor="bw-pickup" className={labelClass}>
                       Pickup
                     </label>
-                    <div className="relative">
-                      <MapPin
-                        size={14}
-                        className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2"
-                        style={{ color: RED }}
-                      />
-                      <input
-                        id="bw-pickup"
-                        type="text"
-                        required
-                        value={state.fields.pickup}
-                        onChange={(e) =>
-                          dispatch({ type: "SET_FIELD", field: "pickup", value: e.target.value })
-                        }
-                        placeholder="e.g. Mill Hill Broadway Station"
-                        className={inputClass}
-                        style={state.stepErrors.pickup ? inputErrorStyle : inputStyle}
-                      />
-                    </div>
+                    <AddressAutocomplete
+                      id="bw-pickup"
+                      value={state.fields.pickup}
+                      onChange={(value) =>
+                        dispatch({ type: "SET_FIELD", field: "pickup", value })
+                      }
+                      suggestions={SUGGESTED_ADDRESSES}
+                      placeholder="e.g. Mill Hill Broadway Station"
+                      icon={
+                        <MapPin
+                          size={14}
+                          className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 z-10"
+                          style={{ color: RED }}
+                        />
+                      }
+                      inputClassName={inputClass}
+                      inputStyle={state.stepErrors.pickup ? inputErrorStyle : inputStyle}
+                    />
                     {state.stepErrors.pickup && (
                       <p className="mt-1.5 text-xs text-red-400">{state.stepErrors.pickup}</p>
                     )}
@@ -462,30 +562,35 @@ export default function BookingWizard() {
                     <label htmlFor="bw-dropoff" className={labelClass}>
                       Destination
                     </label>
-                    <div className="relative">
-                      <Navigation
-                        size={14}
-                        className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2"
-                        style={{ color: RED }}
-                      />
-                      <input
-                        id="bw-dropoff"
-                        type="text"
-                        required
-                        value={state.fields.dropoff}
-                        onChange={(e) =>
-                          dispatch({ type: "SET_FIELD", field: "dropoff", value: e.target.value })
-                        }
-                        placeholder="e.g. Heathrow Terminal 5"
-                        className={inputClass}
-                        style={state.stepErrors.dropoff ? inputErrorStyle : inputStyle}
-                      />
-                    </div>
+                    <AddressAutocomplete
+                      id="bw-dropoff"
+                      value={state.fields.dropoff}
+                      onChange={(value) =>
+                        dispatch({ type: "SET_FIELD", field: "dropoff", value })
+                      }
+                      suggestions={SUGGESTED_ADDRESSES}
+                      placeholder="e.g. Heathrow Terminal 5"
+                      icon={
+                        <Navigation
+                          size={14}
+                          className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 z-10"
+                          style={{ color: RED }}
+                        />
+                      }
+                      inputClassName={inputClass}
+                      inputStyle={state.stepErrors.dropoff ? inputErrorStyle : inputStyle}
+                    />
                     {state.stepErrors.dropoff && (
                       <p className="mt-1.5 text-xs text-red-400">{state.stepErrors.dropoff}</p>
                     )}
                   </div>
                 </div>
+
+                {bothLocationsResolved && (
+                  <div className="mt-4">
+                    <MapView markers={routeMarkers} route={state.route ?? undefined} height={220} />
+                  </div>
+                )}
 
                 <p className="mt-4 text-xs text-[#71717A]">
                   Popular:{" "}
@@ -518,6 +623,7 @@ export default function BookingWizard() {
                     <input
                       id="bw-name"
                       type="text"
+                      autoComplete="off"
                       maxLength={100}
                       value={state.fields.name}
                       onChange={(e) =>
@@ -537,6 +643,7 @@ export default function BookingWizard() {
                     <input
                       id="bw-phone"
                       type="tel"
+                      autoComplete="off"
                       value={state.fields.phone}
                       onChange={(e) =>
                         dispatch({ type: "SET_FIELD", field: "phone", value: e.target.value })
