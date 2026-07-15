@@ -25,7 +25,7 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="/images/fleet/hero5.png"
+          src="/images/fleet/Hero5.png"
           alt="Bittacy premium taxi service"
           fill
           priority
