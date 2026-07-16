@@ -12,6 +12,7 @@ const wizardFieldsArb = fc.record({
   dropoff: fc.string(),
   name: fc.string(),
   phone: fc.string(),
+  vehicle: fc.string(),
   passengers: fc.integer({ min: 1, max: 6 }),
   luggage: fc.integer({ min: 0, max: 6 }),
   date: fc.string(),

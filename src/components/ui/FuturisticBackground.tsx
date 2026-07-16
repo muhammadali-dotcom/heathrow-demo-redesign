@@ -101,6 +101,7 @@ export default function FuturisticBackground() {
   const smoothScrollRef = useRef(0);
   const frameRef = useRef(0);
   const dimensionsRef = useRef({ w: 0, h: 0 });
+  const drawRef = useRef<() => void>(() => {});
 
   // ── init particles & scan lines ──────────────────────────────────────────
   const init = useCallback(() => {
@@ -266,8 +267,12 @@ export default function FuturisticBackground() {
     }
     ctx.restore();
 
-    rafRef.current = requestAnimationFrame(draw);
+    rafRef.current = requestAnimationFrame(() => drawRef.current());
   }, []);
+
+  useEffect(() => {
+    drawRef.current = draw;
+  }, [draw]);
 
   // ── lifecycle ────────────────────────────────────────────────────────────
   useEffect(() => {
@@ -284,14 +289,14 @@ export default function FuturisticBackground() {
     window.addEventListener('resize', onResize, { passive: true });
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    rafRef.current = requestAnimationFrame(draw);
+    rafRef.current = requestAnimationFrame(() => drawRef.current());
 
     return () => {
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener('resize', onResize);
       window.removeEventListener('scroll', onScroll);
     };
-  }, [init, draw]);
+  }, [init]);
 
   return (
     <canvas
