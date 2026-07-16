@@ -29,7 +29,7 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={combinedClassName} {...(props as any)}>
+      <Link href={href} className={combinedClassName} {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {children}
       </Link>
     );

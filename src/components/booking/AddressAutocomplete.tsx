@@ -11,6 +11,7 @@ interface AddressAutocompleteProps {
   icon: ReactNode;
   inputClassName: string;
   inputStyle: CSSProperties;
+  errorId?: string;
 }
 
 export default function AddressAutocomplete({
@@ -22,6 +23,7 @@ export default function AddressAutocomplete({
   icon,
   inputClassName,
   inputStyle,
+  errorId,
 }: AddressAutocompleteProps) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -53,6 +55,7 @@ export default function AddressAutocomplete({
         aria-expanded={open && filtered.length > 0}
         aria-autocomplete="list"
         aria-controls={`${id}-listbox`}
+        aria-describedby={errorId}
         value={value}
         onChange={(e) => {
           onChange(e.target.value);

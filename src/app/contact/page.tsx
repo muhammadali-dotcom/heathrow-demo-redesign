@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
-import { PHONE, EMAIL, LOCATION, COMPANY_NAME } from "@/lib/constants";
+import { PHONE, EMAIL, LOCATION } from "@/lib/constants";
 import Reveal from "@/components/ui/Reveal";
 
 const contactInfo = [

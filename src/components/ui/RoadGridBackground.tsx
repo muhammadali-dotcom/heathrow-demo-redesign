@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useVelocity, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useIsMounted } from '@/hooks/useIsMounted';
 
 // Fixed array of particles to avoid hydration mismatches
 const STATIC_PARTICLES = Array.from({ length: 30 }, (_, i) => {
@@ -21,15 +22,8 @@ const STATIC_PARTICLES = Array.from({ length: 30 }, (_, i) => {
 });
 
 export default function RoadGridBackground() {
-  const [isMounted, setIsMounted] = useState(false);
+  const isMounted = useIsMounted();
   const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-
-  // Smooth scroll velocity to prevent sudden jumps
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400,
-  });
 
   // Calculate grid scroll translation (looping every 60px)
   const gridY = useTransform(scrollY, (val) => {
@@ -42,8 +36,6 @@ export default function RoadGridBackground() {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
       setIsHovering(true);

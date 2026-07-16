@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { useIsMounted } from '@/hooks/useIsMounted';
 
 const ROUTE_PATH =
   'M 15,0 C 40,60 -5,120 20,190 C 45,260 85,300 60,380 C 35,460 5,500 30,580 ' +
@@ -12,7 +13,7 @@ interface ScrollRouteLineProps {
 }
 
 export default function ScrollRouteLine({ containerRef }: ScrollRouteLineProps) {
-  const [isMounted, setIsMounted] = useState(false);
+  const isMounted = useIsMounted();
   const pathRef = useRef<SVGPathElement>(null);
   const [pathLength, setPathLength] = useState(0);
 
@@ -38,10 +39,6 @@ export default function ScrollRouteLine({ containerRef }: ScrollRouteLineProps) 
     return `${(point?.y ?? 0) / 10}%`;
   });
   const markerOpacity = useTransform(smoothProgress, [0, 0.05], [0, 1]);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   useLayoutEffect(() => {
     if (pathRef.current) {

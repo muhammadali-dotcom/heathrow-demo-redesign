@@ -32,7 +32,6 @@ describe('Property 5: fareStatus only transitions idle → loading → ready|err
   test('fareStatus cannot jump from idle to ready without loading first', () => {
     fc.assert(
       fc.property(fc.constant('idle' as const), () => {
-        const state = { ...initialState, fareStatus: 'idle' as const }
         // SET_FARE_READY without prior SET_FARE_LOADING should not happen in real flow
         // but reducer must still accept it gracefully — the important property is that
         // no action except SET_FARE_LOADING transitions from ready back to loading

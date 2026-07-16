@@ -552,9 +552,10 @@ export default function BookingWizard() {
                       }
                       inputClassName={inputClass}
                       inputStyle={state.stepErrors.pickup ? inputErrorStyle : inputStyle}
+                      errorId={state.stepErrors.pickup ? "pickup-error" : undefined}
                     />
                     {state.stepErrors.pickup && (
-                      <p className="mt-1.5 text-xs text-red-400">{state.stepErrors.pickup}</p>
+                      <p id="pickup-error" className="mt-1.5 text-xs text-red-400">{state.stepErrors.pickup}</p>
                     )}
                   </div>
 
@@ -579,9 +580,10 @@ export default function BookingWizard() {
                       }
                       inputClassName={inputClass}
                       inputStyle={state.stepErrors.dropoff ? inputErrorStyle : inputStyle}
+                      errorId={state.stepErrors.dropoff ? "dropoff-error" : undefined}
                     />
                     {state.stepErrors.dropoff && (
-                      <p className="mt-1.5 text-xs text-red-400">{state.stepErrors.dropoff}</p>
+                      <p id="dropoff-error" className="mt-1.5 text-xs text-red-400">{state.stepErrors.dropoff}</p>
                     )}
                   </div>
                 </div>
