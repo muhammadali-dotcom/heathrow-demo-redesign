@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import {
   MapContainer,
-  TileLayer,
   Marker,
   Popup,
   Polyline,
@@ -100,6 +99,31 @@ function createIcon(markerColor: NonNullable<MapMarker["color"]>) {
 
 const DEFAULT_CENTER: [number, number] = [51.6155, -0.2405];
 
+function DarkTileLayer() {
+  const map = useMap();
+
+  useEffect(() => {
+    const darkTiles = L.tileLayer(
+      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+      {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: "abcd",
+        maxZoom: 20,
+        className: "google-like-dark-layer",
+      }
+    );
+
+    darkTiles.addTo(map);
+
+    return () => {
+      darkTiles.remove();
+    };
+  }, [map]);
+
+  return null;
+}
+
 function FitBounds({
   markers,
   route,
@@ -140,11 +164,9 @@ export default function LeafletMap({
 
   return (
     <div
+      className="map-wrapper"
       style={{
         height,
-        borderRadius: 12,
-        overflow: "hidden",
-        border: "1px solid rgba(255,255,255,0.08)",
         position: "relative",
         zIndex: 0,
         isolation: "isolate",
@@ -156,12 +178,7 @@ export default function LeafletMap({
         scrollWheelZoom={false}
         style={{ height: "100%", width: "100%", background: "#0B0B0D" }}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-          subdomains="abcd"
-          maxZoom={20}
-        />
+        <DarkTileLayer />
         {route && route.length > 1 && (
           <Polyline
             positions={route}

@@ -200,9 +200,9 @@ export default function AboutPage() {
                   <div className="flex items-center gap-4">
                     <div
                       className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 24px rgba(192,57,43,0.35)' }}
+                      style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.2)' }}
                     >
-                      <Award size={24} className="text-white" />
+                      <Award size={24} style={{ color: '#cc200e' }} />
                     </div>
                     <div>
                       <div className="text-white font-bold text-lg">Award-Winning Service</div>

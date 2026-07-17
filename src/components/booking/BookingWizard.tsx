@@ -1,6 +1,7 @@
 "use client";
 
-import { useReducer, useEffect, useRef } from "react";
+import { useReducer, useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   MapPin,
   Navigation,
@@ -11,6 +12,10 @@ import {
   CheckCircle,
   ArrowLeft,
   Luggage,
+  User,
+  Phone,
+  DollarSign,
+  Route as RouteIcon,
 } from "lucide-react";
 import { StepInfo } from "./StepIndicator";
 import VehicleSelector from "./VehicleSelector";
@@ -225,6 +230,134 @@ function mockBookingSubmit(dispatch: React.Dispatch<WizardAction>) {
 }
 
 const RED = "#e50914";
+
+function useCountUp(target: number, durationMs = 700) {
+  const reduceMotion = useReducedMotion();
+  const [value, setValue] = useState(reduceMotion ? target : 0);
+
+  useEffect(() => {
+    if (reduceMotion) return;
+
+    let frame: number;
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / durationMs, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(target * eased);
+      if (progress < 1) frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [target, durationMs, reduceMotion]);
+
+  return value;
+}
+
+function FareResult({
+  fare,
+  distance,
+  duration,
+  vehicleName,
+}: {
+  fare: string;
+  distance: string;
+  duration: string;
+  vehicleName: string | null;
+}) {
+  const currencyMatch = fare.match(/^(\D*)([\d,.]+)/);
+  const currencySymbol = currencyMatch?.[1] ?? "";
+  const numericFare = currencyMatch ? parseFloat(currencyMatch[2].replace(/,/g, "")) : 0;
+  const animatedFare = useCountUp(numericFare);
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <motion.div
+      key={fare}
+      initial={reduceMotion ? {} : { opacity: 0, y: 16, scale: 0.97 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {/* Hero fare card */}
+      <motion.div
+        initial={reduceMotion ? {} : { opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        className="relative mb-4 overflow-hidden rounded-2xl p-6 text-center"
+        style={{
+          background: "rgba(229,9,20,0.1)",
+          border: "1px solid rgba(229,9,20,0.3)",
+          boxShadow: "0 12px 40px rgba(229,9,20,0.18)",
+        }}
+      >
+        <div
+          className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full"
+          style={{ background: "rgba(229,9,20,0.2)", border: "1px solid rgba(229,9,20,0.4)" }}
+        >
+          <DollarSign size={20} style={{ color: RED }} />
+        </div>
+        <p className="mb-1.5 text-xs font-bold uppercase tracking-widest text-[#A1A1AA]">
+          Estimated Fare
+        </p>
+        <p
+          className="text-4xl font-black text-white"
+          style={{ letterSpacing: "-0.03em", textShadow: "0 0 24px rgba(229,9,20,0.45)" }}
+        >
+          {currencySymbol}
+          {animatedFare.toFixed(2)}
+        </p>
+      </motion.div>
+
+      {/* Distance & duration */}
+      <div className="mb-5 grid grid-cols-2 gap-3">
+        {[
+          { label: "Distance", value: distance, Icon: RouteIcon },
+          { label: "Duration", value: duration, Icon: Clock },
+        ].map(({ label, value, Icon }, i) => (
+          <motion.div
+            key={label}
+            initial={reduceMotion ? {} : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.15 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-3 rounded-xl p-4"
+            style={{
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(255,255,255,0.08)",
+            }}
+          >
+            <Icon size={16} style={{ color: RED }} />
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-[#A1A1AA]">
+                {label}
+              </p>
+              <p className="text-sm font-bold text-white">{value}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {vehicleName && (
+        <div
+          className="mb-5 flex items-center gap-3 rounded-xl px-4 py-3"
+          style={{
+            background: "rgba(229,9,20,0.08)",
+            border: "1px solid rgba(229,9,20,0.2)",
+          }}
+        >
+          <CheckCircle size={14} style={{ color: RED, flexShrink: 0 }} />
+          <p className="text-sm text-white">
+            Vehicle: <span className="font-semibold">{vehicleName}</span>
+          </p>
+        </div>
+      )}
+
+      <p className="text-center text-xs text-[#71717A]">
+        * Estimates are approximate and may vary based on actual route.
+      </p>
+    </motion.div>
+  );
+}
 
 const inputStyle = {
   background: "rgba(255,255,255,0.05)",
@@ -615,9 +748,7 @@ export default function BookingWizard() {
                 >
                   Your journey details
                 </h3>
-                <p className="mb-6 text-sm text-[#A1A1AA]">
-                  Tell us about your trip so we can prepare the right vehicle.
-                </p>
+
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   <div className="sm:col-span-2">
@@ -771,9 +902,15 @@ export default function BookingWizard() {
                 </p>
 
                 {state.fareStatus === "loading" && (
-                  <div className="flex flex-col items-center justify-center gap-4 py-16">
-                    <Loader2 size={36} className="animate-spin" style={{ color: RED }} />
-                    <p className="text-sm text-[#A1A1AA]">Calculating your fare…</p>
+                  <div className="flex flex-col items-center justify-center gap-5 py-16">
+                    <div className="relative flex h-16 w-16 items-center justify-center">
+                      <span
+                        className="absolute inset-0 animate-ping rounded-full"
+                        style={{ background: "rgba(229,9,20,0.25)" }}
+                      />
+                      <Loader2 size={32} className="relative animate-spin" style={{ color: RED }} />
+                    </div>
+                    <p className="text-sm font-medium text-[#A1A1AA]">Calculating your fare…</p>
                   </div>
                 )}
 
@@ -791,50 +928,12 @@ export default function BookingWizard() {
                 )}
 
                 {state.fareStatus === "ready" && state.fareData && (
-                  <div>
-                    <div className="mb-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                      {[
-                        { label: "Estimated Fare", value: state.fareData.fare },
-                        { label: "Distance", value: state.fareData.distance },
-                        { label: "Duration", value: state.fareData.duration },
-                      ].map(({ label, value }) => (
-                        <div
-                          key={label}
-                          className="rounded-xl p-4 text-center"
-                          style={{
-                            background: "rgba(255,255,255,0.04)",
-                            border: "1px solid rgba(255,255,255,0.08)",
-                          }}
-                        >
-                          <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-[#A1A1AA]">
-                            {label}
-                          </p>
-                          <p className="text-xl font-black text-white" style={{ letterSpacing: "-0.03em" }}>
-                            {value}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-
-                    {selectedVehicleName && (
-                      <div
-                        className="mb-5 flex items-center gap-3 rounded-xl px-4 py-3"
-                        style={{
-                          background: "rgba(229,9,20,0.08)",
-                          border: "1px solid rgba(229,9,20,0.2)",
-                        }}
-                      >
-                        <CheckCircle size={14} style={{ color: RED, flexShrink: 0 }} />
-                        <p className="text-sm text-white">
-                          Vehicle: <span className="font-semibold">{selectedVehicleName}</span>
-                        </p>
-                      </div>
-                    )}
-
-                    <p className="text-center text-xs text-[#71717A]">
-                      * Estimates are approximate and may vary based on actual route.
-                    </p>
-                  </div>
+                  <FareResult
+                    fare={state.fareData.fare}
+                    distance={state.fareData.distance}
+                    duration={state.fareData.duration}
+                    vehicleName={selectedVehicleName}
+                  />
                 )}
               </div>
             )}
@@ -853,6 +952,85 @@ export default function BookingWizard() {
                   Review your journey details below.
                 </p>
 
+                {/* Fare + vehicle highlight tiles */}
+                <div className="mb-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div
+                    className="rounded-xl p-4 text-center"
+                    style={{
+                      background: "rgba(255,255,255,0.04)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-[#A1A1AA]">
+                      Est. Fare
+                    </p>
+                    <p className="text-xl font-black text-white" style={{ letterSpacing: "-0.03em" }}>
+                      {state.fareData?.fare ?? "—"}
+                    </p>
+                  </div>
+
+                  {selectedVehicleName ? (
+                    <div
+                      className="flex items-center justify-center gap-3 rounded-xl px-4 py-3"
+                      style={{
+                        background: "rgba(229,9,20,0.08)",
+                        border: "1px solid rgba(229,9,20,0.2)",
+                      }}
+                    >
+                      <CheckCircle size={14} style={{ color: RED, flexShrink: 0 }} />
+                      <p className="text-sm text-white">
+                        Vehicle: <span className="font-semibold">{selectedVehicleName}</span>
+                      </p>
+                    </div>
+                  ) : (
+                    <div
+                      className="rounded-xl p-4 text-center"
+                      style={{
+                        background: "rgba(255,255,255,0.04)",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                      }}
+                    >
+                      <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-[#A1A1AA]">
+                        Vehicle
+                      </p>
+                      <p className="text-xl font-black text-white" style={{ letterSpacing: "-0.03em" }}>
+                        Any
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Journey */}
+                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#71717A]">
+                  Journey
+                </p>
+                <div
+                  className="mb-5 grid grid-cols-1 gap-x-8 gap-y-3 rounded-xl p-5 sm:grid-cols-2"
+                  style={{
+                    background: "rgba(255,255,255,0.03)",
+                    border: "1px solid rgba(255,255,255,0.07)",
+                  }}
+                >
+                  {[
+                    { label: "Pickup", value: state.fields.pickup, Icon: MapPin },
+                    { label: "Drop-off", value: state.fields.dropoff, Icon: Navigation },
+                    { label: "Date", value: state.fields.date, Icon: Calendar },
+                    { label: "Time", value: state.fields.time, Icon: Clock },
+                  ].map(({ label, value, Icon }) => (
+                    <div key={label} className="flex items-center justify-between gap-4">
+                      <span className="flex items-center gap-2 flex-shrink-0 text-sm text-[#A1A1AA]">
+                        <Icon size={14} style={{ color: RED }} />
+                        {label}
+                      </span>
+                      <span className="text-right text-sm font-medium text-white">{value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Passenger & contact details */}
+                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#71717A]">
+                  Passenger &amp; contact details
+                </p>
                 <div
                   className="grid grid-cols-1 gap-x-8 gap-y-3 rounded-xl p-5 sm:grid-cols-2"
                   style={{
@@ -861,28 +1039,21 @@ export default function BookingWizard() {
                   }}
                 >
                   {[
-                    { label: "Pickup", value: state.fields.pickup },
-                    { label: "Drop-off", value: state.fields.dropoff },
-                    { label: "Name", value: state.fields.name },
-                    { label: "Phone", value: state.fields.phone },
-                    { label: "Date", value: state.fields.date },
-                    { label: "Time", value: state.fields.time },
-                    { label: "Passengers", value: String(state.fields.passengers) },
+                    { label: "Name", value: state.fields.name, Icon: User },
+                    { label: "Phone", value: state.fields.phone, Icon: Phone },
+                    { label: "Passengers", value: String(state.fields.passengers), Icon: Users },
                     {
                       label: "Luggage",
                       value: `${state.fields.luggage} bag${state.fields.luggage !== 1 ? "s" : ""}`,
+                      Icon: Luggage,
                     },
-                    ...(selectedVehicleName ? [{ label: "Vehicle", value: selectedVehicleName }] : []),
-                    { label: "Est. Fare", value: state.fareData?.fare ?? "—" },
-                  ].map(({ label, value }) => (
-                    <div key={label} className="flex items-start justify-between gap-4">
-                      <span className="flex-shrink-0 text-sm text-[#A1A1AA]">{label}</span>
-                      <span
-                        className="text-right text-sm font-medium"
-                        style={{ color: label === "Vehicle" ? RED : "white" }}
-                      >
-                        {value}
+                  ].map(({ label, value, Icon }) => (
+                    <div key={label} className="flex items-center justify-between gap-4">
+                      <span className="flex items-center gap-2 flex-shrink-0 text-sm text-[#A1A1AA]">
+                        <Icon size={14} style={{ color: RED }} />
+                        {label}
                       </span>
+                      <span className="text-right text-sm font-medium text-white">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -895,67 +1066,118 @@ export default function BookingWizard() {
 
             {/* CONFIRMED */}
             {state.currentStep === "confirmed" && (
-              <div className="flex flex-col items-center justify-center py-10 text-center">
-                <div
-                  className="mb-6 flex h-20 w-20 items-center justify-center rounded-full"
-                  style={{ background: RED, boxShadow: "0 16px 40px rgba(229,9,20,0.35)" }}
-                >
-                  <CheckCircle size={36} className="text-white" />
+              <div className="text-left">
+                {/* Header */}
+                <div className="relative mb-6 pr-20">
+                  <h3
+                    ref={confirmRef}
+                    className={`mb-2 text-3xl font-black text-white ${headingFocusClass}`}
+                    style={{ letterSpacing: "-0.03em" }}
+                  >
+                    Confirmed and ready
+                  </h3>
+                  <p className="text-sm leading-relaxed text-[#A1A1AA]">
+                    Your ride has been booked. We&apos;ll be in touch shortly to confirm the details.
+                  </p>
+                  <div
+                    className="absolute right-0 top-0 flex h-14 w-14 items-center justify-center rounded-2xl"
+                    style={{ background: RED, boxShadow: "0 12px 30px rgba(229,9,20,0.4)" }}
+                  >
+                    <CheckCircle size={26} className="text-white" />
+                  </div>
                 </div>
 
-                <h3
-                  ref={confirmRef}
-                  className={`mb-3 text-3xl font-black text-white ${headingFocusClass}`}
-                  style={{ letterSpacing: "-0.03em" }}
-                >
-                  Booking Confirmed!
-                </h3>
-
-                <p className="mx-auto mb-8 max-w-sm leading-relaxed text-[#A1A1AA]">
-                  Your ride has been booked. We&apos;ll be in touch shortly to confirm the details.
-                </p>
-
-                <div
-                  className="mb-6 w-full grid grid-cols-1 gap-x-8 gap-y-3 rounded-xl p-5 text-left sm:grid-cols-2"
-                  style={{
-                    background: "rgba(255,255,255,0.03)",
-                    border: "1px solid rgba(255,255,255,0.07)",
-                  }}
-                >
-                  {[
-                    { label: "Pickup", value: state.fields.pickup },
-                    { label: "Drop-off", value: state.fields.dropoff },
-                    { label: "Name", value: state.fields.name },
-                    { label: "Phone", value: state.fields.phone },
-                    { label: "Date", value: state.fields.date },
-                    { label: "Time", value: state.fields.time },
-                    { label: "Passengers", value: String(state.fields.passengers) },
-                    {
-                      label: "Luggage",
-                      value: `${state.fields.luggage} bag${state.fields.luggage !== 1 ? "s" : ""}`,
-                    },
-                    ...(selectedVehicleName ? [{ label: "Vehicle", value: selectedVehicleName }] : []),
-                    { label: "Est. Fare", value: state.fareData?.fare ?? "—" },
-                  ].map(({ label, value }) => (
-                    <div key={label} className="flex items-start justify-between gap-4">
-                      <span className="flex-shrink-0 text-sm text-[#A1A1AA]">{label}</span>
-                      <span
-                        className="text-right text-sm font-medium"
-                        style={{ color: label === "Vehicle" ? RED : "white" }}
-                      >
-                        {value}
-                      </span>
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  {/* Left column: route + trip tiles */}
+                  <div className="flex flex-col gap-4">
+                    <div
+                      className="rounded-xl p-5"
+                      style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
+                    >
+                      <div className="relative pl-6">
+                        <span
+                          className="absolute left-0 top-1.5 h-2.5 w-2.5 rounded-full"
+                          style={{ background: RED }}
+                        />
+                        <span
+                          className="absolute bottom-4 left-[4px] top-4 w-px"
+                          style={{ background: "rgba(229,9,20,0.35)" }}
+                        />
+                        <div className="mb-5">
+                          <p className="mb-1 text-xs text-[#A1A1AA]">Pickup</p>
+                          <p className="text-base font-bold text-white">{state.fields.pickup}</p>
+                        </div>
+                        <span
+                          className="absolute bottom-1.5 left-0 h-2.5 w-2.5 rounded-full"
+                          style={{ background: RED }}
+                        />
+                        <div>
+                          <p className="mb-1 text-xs text-[#A1A1AA]">Drop-off</p>
+                          <p className="text-base font-bold text-white">{state.fields.dropoff}</p>
+                        </div>
+                      </div>
                     </div>
-                  ))}
-                </div>
 
-                <button
-                  onClick={() => dispatch({ type: "RESET" })}
-                  className="text-sm font-semibold transition-colors hover:opacity-80"
-                  style={{ color: RED }}
-                >
-                  Book another ride →
-                </button>
+                    <div className="grid grid-cols-2 gap-4">
+                      {[
+                        { label: "Date", value: state.fields.date },
+                        { label: "Time", value: state.fields.time },
+                        { label: "Passengers", value: String(state.fields.passengers) },
+                        {
+                          label: "Luggage",
+                          value: `${state.fields.luggage} bag${state.fields.luggage !== 1 ? "s" : ""}`,
+                        },
+                      ].map(({ label, value }) => (
+                        <div
+                          key={label}
+                          className="rounded-xl p-4"
+                          style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
+                        >
+                          <p className="mb-1 text-xs text-[#A1A1AA]">{label}</p>
+                          <p className="text-base font-bold text-white">{value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right column: customer + fare details */}
+                  <div
+                    className="flex flex-col rounded-xl p-5"
+                    style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
+                  >
+                    <div className="flex-1">
+                      {[
+                        { label: "Customer", value: state.fields.name, block: true },
+                        { label: "Phone", value: state.fields.phone },
+                        ...(selectedVehicleName ? [{ label: "Vehicle", value: selectedVehicleName, red: true }] : []),
+                        { label: "Fare", value: state.fareData?.fare ?? "—" },
+                      ].map(({ label, value, block, red }, i, arr) => (
+                        <div
+                          key={label}
+                          className={`${i < arr.length - 1 ? "mb-3 border-b border-white/10 pb-3" : ""} ${
+                            block ? "" : "flex items-center justify-between gap-4"
+                          }`}
+                        >
+                          <p className={`text-xs text-[#A1A1AA] ${block ? "mb-1" : ""}`}>{label}</p>
+                          <p
+                            className={`font-bold text-white ${block ? "text-lg" : "text-base"}`}
+                            style={red ? { color: RED } : undefined}
+                          >
+                            {value}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <button
+                      onClick={() => dispatch({ type: "RESET" })}
+                      className="mt-4 w-full rounded-full px-6 py-3.5 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
+                      style={{ background: RED, boxShadow: "0 8px 24px rgba(229,9,20,0.35)" }}
+                    >
+                      Book another ride
+                    </button>
+                  </div>
+                </div>
               </div>
             )}
           </div>

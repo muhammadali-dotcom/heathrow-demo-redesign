@@ -57,7 +57,7 @@ export default function Services() {
           {homeServices.map((service, index) => (
             <Reveal key={service.id} delay={index * 0.08}>
             <div
-              className="group rounded-2xl overflow-hidden transition-all duration-300"
+              className="group rounded-2xl overflow-hidden transition-all duration-300 h-full flex flex-col"
               style={{
                 background: 'rgba(255,255,255,0.04)',
                 border: '1px solid rgba(255,255,255,0.08)',
@@ -91,7 +91,7 @@ export default function Services() {
               </div>
 
               {/* Content */}
-              <div className="p-5">
+              <div className="p-5 flex flex-col flex-1">
                 <h3
                   className="text-white font-bold text-lg mb-2"
                   style={{ letterSpacing: '-0.02em' }}
@@ -99,7 +99,7 @@ export default function Services() {
                   {service.title}
                 </h3>
                 <p
-                  className="text-[#A1A1AA] text-sm leading-relaxed mb-4"
+                  className="text-[#A1A1AA] text-sm leading-relaxed mb-4 flex-1"
                   dangerouslySetInnerHTML={{ __html: service.description }}
                 />
                 <Link
