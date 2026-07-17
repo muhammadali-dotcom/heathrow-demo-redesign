@@ -3,7 +3,7 @@ import type { Config } from "tailwindcss";
 
 export default <Config>{
   darkMode: "class",
-  content: ["./src/**/*.{js,ts,jsx,tsx}", "./app/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -20,7 +20,7 @@ export default <Config>{
         "muted": "#A1A1AA",
       },
       fontFamily: {
-        sans: ["Inter", "Arial", "sans-serif"],
+        sans: ["var(--font-inter)", "Arial", "sans-serif"],
       },
       borderRadius: {
         sm: "10px",

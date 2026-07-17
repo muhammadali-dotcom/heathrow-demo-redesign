@@ -20,15 +20,15 @@ export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#050607] text-white">
+    <section className="relative min-h-[800px] overflow-hidden bg-[#050607] text-white lg:min-h-screen">
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="/images/fleet/Hero5.png"
+          src="/images/fleet/Hero5.jpg"
           alt="Bittacy premium taxi service"
           fill
           priority
-          className="object-cover object-[68%_center] opacity-90"
+          className="object-cover object-[36%_center] opacity-90 lg:object-[68%_center]"
           sizes="100vw"
         />
       </div>
@@ -43,7 +43,7 @@ export default function Hero() {
       <div className="absolute right-[-15%] top-[30%] h-[1px] w-[65%] rotate-[-18deg] bg-[#ff2b24]/60 blur-[1px]" />
       <div className="absolute left-0 bottom-[28%] h-[1px] w-[44%] bg-[#e50914]/35 blur-[1px]" />
 
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl items-center px-4 pt-24 pb-28 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[800px] w-full max-w-7xl items-center px-4 pt-24 pb-28 sm:px-6 lg:min-h-screen lg:px-8">
         <div className="grid w-full items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
           {/* Left Content */}
           <div className="max-w-2xl">
@@ -108,7 +108,7 @@ export default function Hero() {
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.46 }}
-              className="grid max-w-md grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4"
+              className="hidden max-w-md grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid"
             >
               {trustPoints.map(({ icon: Icon, title, text }) => (
                 <div key={title} className="text-center">
