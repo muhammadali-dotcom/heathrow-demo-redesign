@@ -92,27 +92,27 @@ export default function CoverageAreas() {
   };
 
   return (
-    <section className="py-24 px-4" style={{ background: '#0B0B0D' }}>
+    <section className="py-24 px-4" style={{ background: 'var(--color-bg-alt)' }}>
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-14">
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
             style={{
-              background: 'rgba(192,57,43,0.12)',
-              border: '1px solid rgba(192,57,43,0.3)',
+              background: 'rgba(204,32,14,0.12)',
+              border: '1px solid rgba(204,32,14,0.3)',
               color: '#cc200e',
             }}
           >
             Coverage
           </span>
           <h2
-            className="text-4xl sm:text-5xl font-black text-white"
+            className="text-4xl sm:text-5xl font-black text-fg"
             style={{ letterSpacing: '-0.04em' }}
           >
             Areas We Serve
           </h2>
-          <p className="text-[#A1A1AA] mt-4 text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-muted mt-4 text-base max-w-xl mx-auto leading-relaxed">
             Click any area to see more details about our service in that location.
           </p>
         </div>
@@ -128,30 +128,30 @@ export default function CoverageAreas() {
                 className="flex items-start gap-3 p-4 rounded-2xl text-left transition-all duration-250 group"
                 style={{
                   background: isActive
-                    ? 'linear-gradient(135deg, rgba(192,57,43,0.18), rgba(139,0,0,0.12))'
-                    : 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
+                    ? 'linear-gradient(135deg, rgba(204,32,14,0.18), rgba(139,0,0,0.12))'
+                    : 'var(--color-surface)',
                   border: isActive
-                    ? '1px solid rgba(192,57,43,0.55)'
-                    : '1px solid rgba(255,255,255,0.08)',
-                  boxShadow: isActive ? '0 8px 30px rgba(192,57,43,0.15)' : 'none',
+                    ? '1px solid rgba(204,32,14,0.55)'
+                    : '1px solid var(--color-line)',
+                  boxShadow: isActive ? '0 8px 30px rgba(204,32,14,0.15)' : 'none',
                   transform: isActive ? 'translateY(-2px)' : '',
                 }}
               >
                 <MapPin
                   size={16}
                   className="flex-shrink-0 mt-0.5 transition-colors duration-200"
-                  style={{ color: isActive ? '#cc200e' : '#A1A1AA' }}
+                  style={{ color: isActive ? '#cc200e' : 'var(--color-muted)' }}
                 />
                 <div>
                   <div
                     className="font-bold text-sm leading-tight transition-colors duration-200"
-                    style={{ color: isActive ? '#FFFFFF' : '#E4E4E7' }}
+                    style={{ color: isActive ? 'var(--color-fg)' : 'var(--color-fg-soft)' }}
                   >
                     {area.name}
                   </div>
                   <div
                     className="text-xs font-semibold mt-0.5 transition-colors duration-200"
-                    style={{ color: isActive ? '#cc200e' : '#71717A' }}
+                    style={{ color: isActive ? '#cc200e' : 'var(--color-muted)' }}
                   >
                     {area.postcode}
                   </div>
@@ -166,17 +166,17 @@ export default function CoverageAreas() {
           <div
             className="rounded-2xl p-6 sm:p-8 relative transition-all duration-300"
             style={{
-              background: 'linear-gradient(135deg, rgba(192,57,43,0.1), rgba(139,0,0,0.06))',
-              border: '1px solid rgba(192,57,43,0.3)',
-              boxShadow: '0 16px 50px rgba(192,57,43,0.12)',
+              background: 'linear-gradient(135deg, rgba(204,32,14,0.1), rgba(139,0,0,0.06))',
+              border: '1px solid rgba(204,32,14,0.3)',
+              boxShadow: '0 16px 50px rgba(204,32,14,0.12)',
             }}
           >
             {/* Close button */}
             <button
               onClick={() => setSelected(null)}
               aria-label="Close"
-              className="absolute top-4 right-4 p-1.5 rounded-lg text-[#A1A1AA] hover:text-white transition-colors"
-              style={{ background: 'rgba(255,255,255,0.06)' }}
+              className="absolute top-4 right-4 p-1.5 rounded-lg text-muted hover:text-fg transition-colors"
+              style={{ background: 'var(--color-surface-soft)' }}
             >
               <X size={16} />
             </button>
@@ -186,7 +186,7 @@ export default function CoverageAreas() {
                 className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                 style={{
                   background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                  boxShadow: '0 8px 20px rgba(192,57,43,0.35)',
+                  boxShadow: '0 8px 20px rgba(204,32,14,0.35)',
                 }}
               >
                 <MapPin size={22} className="text-white" />
@@ -194,7 +194,7 @@ export default function CoverageAreas() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
                   <h3
-                    className="text-xl font-black text-white"
+                    className="text-xl font-black text-fg"
                     style={{ letterSpacing: '-0.02em' }}
                   >
                     {selected.name}
@@ -202,15 +202,15 @@ export default function CoverageAreas() {
                   <span
                     className="text-xs font-bold px-2 py-0.5 rounded-full"
                     style={{
-                      background: 'rgba(192,57,43,0.15)',
-                      border: '1px solid rgba(192,57,43,0.3)',
+                      background: 'rgba(204,32,14,0.15)',
+                      border: '1px solid rgba(204,32,14,0.3)',
                       color: '#cc200e',
                     }}
                   >
                     {selected.postcode}
                   </span>
                 </div>
-                <p className="text-[#A1A1AA] text-sm leading-relaxed mb-5">
+                <p className="text-muted text-sm leading-relaxed mb-5">
                   📍 {selected.description}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -219,17 +219,17 @@ export default function CoverageAreas() {
                     className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-5 py-2.5 text-white transition-all duration-200"
                     style={{
                       background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                      boxShadow: '0 8px 20px rgba(192,57,43,0.3)',
+                      boxShadow: '0 8px 20px rgba(204,32,14,0.3)',
                     }}
                   >
                     Book from {selected.name} <ArrowRight size={14} />
                   </Link>
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-5 py-2.5 text-white transition-all duration-200"
+                    className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-5 py-2.5 text-fg transition-all duration-200"
                     style={{
-                      background: 'rgba(255,255,255,0.06)',
-                      border: '1px solid rgba(255,255,255,0.12)',
+                      background: 'var(--color-surface-soft)',
+                      border: '1px solid var(--color-line)',
                     }}
                   >
                     View Our Services

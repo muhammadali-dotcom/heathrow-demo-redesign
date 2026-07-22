@@ -12,8 +12,8 @@ export default function Card({ children, className, style }: CardProps) {
     <div
       className={cn('rounded-3xl overflow-hidden', className)}
       style={{
-        background: 'linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025))',
-        border: '1px solid rgba(255,255,255,0.1)',
+        background: 'var(--color-surface)',
+        border: '1px solid var(--color-line)',
         ...style,
       }}
     >

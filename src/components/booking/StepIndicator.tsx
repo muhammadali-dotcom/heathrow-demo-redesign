@@ -32,14 +32,14 @@ export default function StepIndicator({ steps, currentStepNumber }: StepIndicato
                 {step.state === 'completed' ? (
                   <div
                     className="flex items-center justify-center w-9 h-9 rounded-full"
-                    style={{ backgroundColor: '#cc200e' }}
+                    style={{ backgroundColor: 'var(--color-accent)' }}
                   >
                     <Check className="w-5 h-5 text-white" strokeWidth={2.5} />
                   </div>
                 ) : step.state === 'active' ? (
                   <div
                     className="flex items-center justify-center w-9 h-9 rounded-full"
-                    style={{ backgroundColor: '#cc200e' }}
+                    style={{ backgroundColor: 'var(--color-accent)' }}
                     aria-current="step"
                   >
                     <span className="text-white font-bold text-sm leading-none">
@@ -48,8 +48,8 @@ export default function StepIndicator({ steps, currentStepNumber }: StepIndicato
                   </div>
                 ) : (
                   /* upcoming */
-                  <div className="flex items-center justify-center w-9 h-9 rounded-full border-2 border-white/20">
-                    <span className="text-white/40 text-sm leading-none">{stepNumber}</span>
+                  <div className="flex items-center justify-center w-9 h-9 rounded-full border-2 border-line">
+                    <span className="text-muted text-sm leading-none">{stepNumber}</span>
                   </div>
                 )}
 
@@ -57,10 +57,10 @@ export default function StepIndicator({ steps, currentStepNumber }: StepIndicato
                 <span
                   className={
                     step.state === 'active'
-                      ? 'text-white text-xs font-medium whitespace-nowrap'
+                      ? 'text-fg text-xs font-medium whitespace-nowrap'
                       : step.state === 'completed'
-                      ? 'text-white/60 text-xs whitespace-nowrap'
-                      : 'text-white/30 text-xs whitespace-nowrap'
+                      ? 'text-muted text-xs whitespace-nowrap'
+                      : 'text-muted/60 text-xs whitespace-nowrap'
                   }
                 >
                   {step.label}
@@ -74,7 +74,7 @@ export default function StepIndicator({ steps, currentStepNumber }: StepIndicato
                   className="flex-1 h-0.5 mx-2 mb-5"
                   style={{
                     backgroundColor:
-                      step.state === 'completed' ? '#cc200e' : 'rgba(255,255,255,0.15)',
+                      step.state === 'completed' ? 'var(--color-accent)' : 'var(--color-line)',
                   }}
                 />
               )}

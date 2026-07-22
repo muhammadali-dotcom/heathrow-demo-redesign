@@ -58,7 +58,7 @@ export default function ScrollRouteLine({ containerRef }: ScrollRouteLineProps) 
       >
         <defs>
           <linearGradient id="routeLineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#ff2b24" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#A93226" stopOpacity="0.9" />
             <stop offset="100%" stopColor="#cc200e" stopOpacity="0.9" />
           </linearGradient>
           <filter id="routeLineGlow" x="-50%" y="-20%" width="200%" height="140%">
@@ -72,7 +72,7 @@ export default function ScrollRouteLine({ containerRef }: ScrollRouteLineProps) 
         <path
           d={ROUTE_PATH}
           fill="none"
-          stroke="rgba(255,255,255,0.06)"
+          stroke="var(--color-line)"
           strokeWidth="1"
           vectorEffect="non-scaling-stroke"
         />

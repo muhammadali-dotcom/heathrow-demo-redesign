@@ -5,7 +5,7 @@ import Reveal from '@/components/ui/Reveal';
 
 export default function Fleet() {
   return (
-    <section className="py-24 px-4" style={{ background: '#050505' }}>
+    <section className="py-24 px-4" style={{ background: 'var(--color-bg)' }}>
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <SectionTitle

@@ -10,6 +10,7 @@ import {
 } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { useTheme } from "next-themes";
 
 export interface MapMarker {
   position: [number, number];
@@ -46,7 +47,8 @@ const OFFICE_PATHS = `
   <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" />
 `;
 
-function createCarIcon(color: string) {
+function createCarIcon(color: string, isDark: boolean) {
+  const ringColor = isDark ? "#fff" : "#1a1a1a";
   return L.divIcon({
     className: "",
     html: `<div style="
@@ -55,7 +57,7 @@ function createCarIcon(color: string) {
       justify-content:center;
       width:28px;height:28px;
       background:${color};
-      border:2px solid #fff;
+      border:2px solid ${ringColor};
       border-radius:50%;
       box-shadow:0 1px 6px rgba(0,0,0,0.55);
     ">
@@ -69,7 +71,8 @@ function createCarIcon(color: string) {
   });
 }
 
-function createOfficeIcon(color: string) {
+function createOfficeIcon(color: string, isDark: boolean) {
+  const ringColor = isDark ? "#fff" : "#1a1a1a";
   return L.divIcon({
     className: "",
     html: `<div style="
@@ -78,7 +81,7 @@ function createOfficeIcon(color: string) {
       justify-content:center;
       width:40px;height:40px;
       background:${color};
-      border:3px solid #fff;
+      border:3px solid ${ringColor};
       border-radius:50%;
       box-shadow:0 2px 8px rgba(0,0,0,0.55);
     ">
@@ -92,34 +95,36 @@ function createOfficeIcon(color: string) {
   });
 }
 
-function createIcon(markerColor: NonNullable<MapMarker["color"]>) {
+function createIcon(markerColor: NonNullable<MapMarker["color"]>, isDark: boolean) {
   const color = MARKER_COLORS[markerColor];
-  return markerColor === "default" ? createOfficeIcon(color) : createCarIcon(color);
+  return markerColor === "default" ? createOfficeIcon(color, isDark) : createCarIcon(color, isDark);
 }
 
 const DEFAULT_CENTER: [number, number] = [51.6155, -0.2405];
 
 function DarkTileLayer() {
   const map = useMap();
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme !== "light";
 
   useEffect(() => {
-    const darkTiles = L.tileLayer(
+    const tiles = L.tileLayer(
       "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
       {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: "abcd",
         maxZoom: 20,
-        className: "google-like-dark-layer",
+        className: isDark ? "google-like-dark-layer" : "",
       }
     );
 
-    darkTiles.addTo(map);
+    tiles.addTo(map);
 
     return () => {
-      darkTiles.remove();
+      tiles.remove();
     };
-  }, [map]);
+  }, [map, isDark]);
 
   return null;
 }
@@ -160,6 +165,8 @@ export default function LeafletMap({
   height = 260,
   zoom = 12,
 }: LeafletMapProps) {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme !== "light";
   const initialCenter = markers[0]?.position ?? DEFAULT_CENTER;
 
   return (
@@ -176,7 +183,7 @@ export default function LeafletMap({
         center={initialCenter}
         zoom={zoom}
         scrollWheelZoom={false}
-        style={{ height: "100%", width: "100%", background: "#0B0B0D" }}
+        style={{ height: "100%", width: "100%", background: "var(--color-surface)" }}
       >
         <DarkTileLayer />
         {route && route.length > 1 && (
@@ -189,7 +196,7 @@ export default function LeafletMap({
           <Marker
             key={i}
             position={marker.position}
-            icon={createIcon(marker.color ?? "default")}
+            icon={createIcon(marker.color ?? "default", isDark)}
           >
             {(marker.popup || marker.label) && (
               <Popup>{marker.popup ?? marker.label}</Popup>

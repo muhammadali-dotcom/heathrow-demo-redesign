@@ -70,17 +70,17 @@ const features = [
 
 export default function AirportTransfersPage() {
   return (
-    <main style={{ background: '#050505', minHeight: '100vh' }}>
+    <main style={{ background: 'var(--color-bg)', minHeight: '100vh' }}>
       <JsonLd data={serviceJsonLd('/airport-transfers')} />
       {/* Hero */}
       <section
         className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        style={{ background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)' }}
+        style={{ background: 'linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)' }}
       >
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(192,57,43,0.13) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(204,32,14,0.13) 0%, transparent 70%)',
             filter: 'blur(50px)',
           }}
         />
@@ -89,8 +89,8 @@ export default function AirportTransfersPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(192,57,43,0.12)',
-              border: '1px solid rgba(192,57,43,0.3)',
+              background: 'rgba(204,32,14,0.12)',
+              border: '1px solid rgba(204,32,14,0.3)',
               color: '#cc200e',
             }}
           >
@@ -98,7 +98,7 @@ export default function AirportTransfersPage() {
           </span>
 
           <h1
-            className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-fg mb-6"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Stress-Free <span style={{ color: '#cc200e' }}>Airport</span>
@@ -106,7 +106,7 @@ export default function AirportTransfersPage() {
             Transfers
           </h1>
 
-          <p className="text-lg text-[#A1A1AA] mx-auto text-center leading-relaxed mb-10 p-4">
+          <p className="text-lg text-muted mx-auto text-center leading-relaxed mb-10 p-4">
             From Mill Hill to all major London airports — reliable, punctual and affordable.
             We track your flight so you never have to worry.
           </p>
@@ -117,7 +117,7 @@ export default function AirportTransfersPage() {
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white transition-all duration-200"
               style={{
                 background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                boxShadow: '0 16px 40px rgba(192,57,43,0.3)',
+                boxShadow: '0 16px 40px rgba(204,32,14,0.3)',
               }}
             >
               Get a Free Quote
@@ -125,10 +125,10 @@ export default function AirportTransfersPage() {
 
             <a
               href={`tel:${PHONE.replace(/\s/g, '')}`}
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-fg transition-all duration-200"
               style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                background: 'var(--color-surface-soft)',
+                border: '1px solid var(--color-line)',
               }}
             >
               <Phone size={16} />
@@ -139,10 +139,10 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* Service Image */}
-      <section className="px-4 sm:px-6 lg:px-8 py-12" style={{ background: '#050505' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-12" style={{ background: 'var(--color-bg)' }}>
         <div
           className="max-w-4xl mx-auto rounded-3xl overflow-hidden"
-          style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+          style={{ border: '1px solid var(--color-line)' }}
         >
           <div className="relative w-full h-72 sm:h-96">
             <Image
@@ -159,22 +159,22 @@ export default function AirportTransfersPage() {
       {/* Airports we cover */}
       <section
         className="py-20 px-4 sm:px-6 lg:px-8"
-        style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)' }}
+        style={{ background: 'var(--color-bg-alt)', borderTop: '1px solid var(--color-line)' }}
       >
         <div className="max-w-5xl mx-auto">
           <Reveal className="text-center mb-12">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
-                background: 'rgba(192,57,43,0.12)',
-                border: '1px solid rgba(192,57,43,0.3)',
+                background: 'rgba(204,32,14,0.12)',
+                border: '1px solid rgba(204,32,14,0.3)',
                 color: '#cc200e',
               }}
             >
               Coverage
             </span>
 
-            <h2 className="text-4xl font-black text-white" style={{ letterSpacing: '-0.04em' }}>
+            <h2 className="text-4xl font-black text-fg" style={{ letterSpacing: '-0.04em' }}>
               Airports We Serve
             </h2>
           </Reveal>
@@ -186,8 +186,8 @@ export default function AirportTransfersPage() {
                 delay={index * 0.06}
                 className="rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1"
                 style={{
-                  background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'var(--color-surface)',
+                  border: '1px solid var(--color-line)',
                 }}
               >
                 <div
@@ -196,8 +196,8 @@ export default function AirportTransfersPage() {
                 >
                   {airport.code}
                 </div>
-                <div className="text-white font-semibold text-sm mb-1">{airport.name}</div>
-                <div className="text-[#A1A1AA] text-xs">{airport.terminals}</div>
+                <div className="text-fg font-semibold text-sm mb-1">{airport.name}</div>
+                <div className="text-muted text-xs">{airport.terminals}</div>
               </Reveal>
             ))}
           </div>
@@ -211,15 +211,15 @@ export default function AirportTransfersPage() {
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
-                background: 'rgba(192,57,43,0.12)',
-                border: '1px solid rgba(192,57,43,0.3)',
+                background: 'rgba(204,32,14,0.12)',
+                border: '1px solid rgba(204,32,14,0.3)',
                 color: '#cc200e',
               }}
             >
               Why Choose Us
             </span>
 
-            <h2 className="text-4xl sm:text-5xl font-black text-white" style={{ letterSpacing: '-0.04em' }}>
+            <h2 className="text-4xl sm:text-5xl font-black text-fg" style={{ letterSpacing: '-0.04em' }}>
               The Bittacy Difference
             </h2>
           </Reveal>
@@ -234,25 +234,25 @@ export default function AirportTransfersPage() {
                   delay={index * 0.08}
                   className="rounded-2xl p-7"
                   style={{
-                    background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
-                    border: '1px solid rgba(255,255,255,0.08)',
+                    background: 'var(--color-surface)',
+                    border: '1px solid var(--color-line)',
                   }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                     style={{
                       background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                      boxShadow: '0 8px 20px rgba(192,57,43,0.3)',
+                      boxShadow: '0 8px 20px rgba(204,32,14,0.3)',
                     }}
                   >
                     <Icon size={22} className="text-white" />
                   </div>
 
-                  <h3 className="text-white font-bold text-lg mb-2" style={{ letterSpacing: '-0.02em' }}>
+                  <h3 className="text-fg font-bold text-lg mb-2" style={{ letterSpacing: '-0.02em' }}>
                     {feature.title}
                   </h3>
 
-                  <p className="text-[#A1A1AA] text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </Reveal>
@@ -263,21 +263,21 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* How it works */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D' }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: 'var(--color-bg-alt)' }}>
         <div className="max-w-5xl mx-auto">
           <Reveal className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
-                background: 'rgba(192,57,43,0.12)',
-                border: '1px solid rgba(192,57,43,0.3)',
+                background: 'rgba(204,32,14,0.12)',
+                border: '1px solid rgba(204,32,14,0.3)',
                 color: '#cc200e',
               }}
             >
               Simple Process
             </span>
 
-            <h2 className="text-4xl font-black text-white" style={{ letterSpacing: '-0.04em' }}>
+            <h2 className="text-4xl font-black text-fg" style={{ letterSpacing: '-0.04em' }}>
               How It Works
             </h2>
           </Reveal>
@@ -306,14 +306,14 @@ export default function AirportTransfersPage() {
                   style={{
                     background: 'linear-gradient(135deg, #cc200e, #A93226)',
                     color: 'white',
-                    boxShadow: '0 8px 24px rgba(192,57,43,0.35)',
+                    boxShadow: '0 8px 24px rgba(204,32,14,0.35)',
                   }}
                 >
                   {item.step}
                 </div>
 
-                <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-[#A1A1AA] text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-fg font-bold text-lg mb-2">{item.title}</h3>
+                <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
               </Reveal>
             ))}
           </div>
@@ -321,13 +321,13 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20" style={{ background: '#050505' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-20" style={{ background: 'var(--color-bg)' }}>
         <Reveal className="max-w-7xl mx-auto">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"
             style={{
-              background: '#0B0B0D',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--color-bg-alt)',
+              border: '1px solid var(--color-line)',
               boxShadow: '0 30px 90px rgba(0,0,0,0.45)',
             }}
           >
@@ -341,13 +341,13 @@ export default function AirportTransfersPage() {
                 </span>
 
                 <h2
-                  className="text-4xl sm:text-5xl font-black text-white mb-3"
+                  className="text-4xl sm:text-5xl font-black text-fg mb-3"
                   style={{ letterSpacing: '-0.04em', lineHeight: 1.05 }}
                 >
                   Book Your Airport Transfer
                 </h2>
 
-                <p className="text-[#A1A1AA] text-base sm:text-lg leading-relaxed max-w-xl">
+                <p className="text-muted text-base sm:text-lg leading-relaxed max-w-xl">
                   Get a fixed price quote in minutes. No hidden fees, no surprises.
                 </p>
               </div>
@@ -357,8 +357,8 @@ export default function AirportTransfersPage() {
                   href="/contact"
                   className="inline-flex h-14 min-w-[180px] items-center justify-center rounded-xl font-bold text-base text-white transition-all duration-200"
                   style={{
-                    background: '#e50914',
-                    boxShadow: '0 14px 35px rgba(229,9,20,0.25)',
+                    background: '#cc200e',
+                    boxShadow: '0 14px 35px rgba(204,32,14,0.25)',
                     textDecoration: 'none',
                   }}
                 >
@@ -367,10 +367,10 @@ export default function AirportTransfersPage() {
 
                 <a
                   href={`tel:${PHONE.replace(/\s/g, '')}`}
-                  className="inline-flex h-14 min-w-[200px] items-center justify-center gap-2 rounded-xl font-bold text-base text-white transition-all duration-200"
+                  className="inline-flex h-14 min-w-[200px] items-center justify-center gap-2 rounded-xl font-bold text-base text-fg transition-all duration-200"
                   style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.15)',
+                    background: 'var(--color-surface-soft)',
+                    border: '1px solid var(--color-line)',
                     textDecoration: 'none',
                   }}
                 >

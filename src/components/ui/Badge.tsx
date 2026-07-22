@@ -7,8 +7,8 @@ interface BadgeProps {
 
 export default function Badge({ children, variant = 'red' }: BadgeProps) {
   const styles = {
-    red: { background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.3)', color: '#cc200e' },
-    dark: { background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#A1A1AA' },
+    red: { background: 'rgba(204,32,14,0.12)', border: '1px solid rgba(204,32,14,0.3)', color: '#cc200e' },
+    dark: { background: 'var(--color-surface-soft)', border: '1px solid var(--color-line)', color: 'var(--color-muted)' },
   };
   return (
     <span

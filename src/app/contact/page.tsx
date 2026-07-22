@@ -48,19 +48,19 @@ export default function ContactPage() {
   };
 
   return (
-    <main style={{ background: "#050505", minHeight: "100vh" }}>
+    <main style={{ background: "var(--color-bg)", minHeight: "100vh" }}>
       {/* Hero */}
       <section
         className="relative pt-28 sm:pt-32 lg:pt-40 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{
-          background: "linear-gradient(180deg, #0B0B0D 0%, #050505 100%)",
+          background: "linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)",
         }}
       >
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse, rgba(192,57,43,0.12) 0%, transparent 70%)",
+              "radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)",
             filter: "blur(40px)",
           }}
         />
@@ -71,8 +71,8 @@ export default function ContactPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: "rgba(192,57,43,0.12)",
-              border: "1px solid rgba(192,57,43,0.3)",
+              background: "rgba(204,32,14,0.12)",
+              border: "1px solid rgba(204,32,14,0.3)",
               color: "#cc200e",
             }}
           >
@@ -80,13 +80,13 @@ export default function ContactPage() {
           </span>
           <h1
             id="contact-hero-heading"
-            className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight"
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-fg mb-6 leading-tight"
             style={{ letterSpacing: "-0.04em", lineHeight: 1.02 }}
           >
             Contact <span style={{ color: "#cc200e" }}>Us</span>
           </h1>
           <div className="w-full flex justify-center">
-            <p className="max-w-xl text-center text-lg leading-relaxed text-balance text-[#A1A1AA]">
+            <p className="max-w-xl text-center text-lg leading-relaxed text-balance text-muted">
               Ready to book or have a question? We&apos;d love to hear from you.
               Reach out and we&apos;ll get back to you as quickly as possible.
             </p>
@@ -102,7 +102,7 @@ export default function ContactPage() {
             <div>
               <Reveal>
                 <h2
-                  className="text-3xl font-black text-white mb-8"
+                  className="text-3xl font-black text-fg mb-8"
                   style={{ letterSpacing: "-0.03em" }}
                 >
                   Get In Touch
@@ -116,9 +116,8 @@ export default function ContactPage() {
                     <div
                       className="flex items-start gap-4 p-5 rounded-2xl"
                       style={{
-                        background:
-                          "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
-                        border: "1px solid rgba(255,255,255,0.08)",
+                        background: "var(--color-surface)",
+                        border: "1px solid var(--color-line)",
                       }}
                     >
                       <div
@@ -126,16 +125,16 @@ export default function ContactPage() {
                         style={{
                           background:
                             "linear-gradient(135deg, #cc200e, #A93226)",
-                          boxShadow: "0 6px 16px rgba(192,57,43,0.3)",
+                          boxShadow: "0 6px 16px rgba(204,32,14,0.3)",
                         }}
                       >
                         <Icon size={18} className="text-white" />
                       </div>
                       <div>
-                        <div className="text-xs font-bold uppercase tracking-widest text-[#A1A1AA] mb-1">
+                        <div className="text-xs font-bold uppercase tracking-widest text-muted mb-1">
                           {item.label}
                         </div>
-                        <div className="text-white font-semibold text-base">
+                        <div className="text-fg font-semibold text-base">
                           {item.value}
                         </div>
                       </div>
@@ -165,15 +164,15 @@ export default function ContactPage() {
                 className="rounded-2xl p-6 relative overflow-hidden"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(192,57,43,0.15), rgba(139,0,0,0.08))",
-                  border: "1px solid rgba(192,57,43,0.25)",
+                    "linear-gradient(135deg, rgba(204,32,14,0.15), rgba(139,0,0,0.08))",
+                  border: "1px solid rgba(204,32,14,0.25)",
                 }}
               >
                 <div className="relative z-10">
-                  <div className="text-sm font-bold text-white mb-1">
+                  <div className="text-sm font-bold text-fg mb-1">
                     Prefer to call?
                   </div>
-                  <div className="text-[#A1A1AA] text-sm mb-4">
+                  <div className="text-muted text-sm mb-4">
                     For immediate bookings, give us a call and we can arrange a
                     driver for you right away.
                   </div>
@@ -182,7 +181,7 @@ export default function ContactPage() {
                     className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-white transition-all duration-200"
                     style={{
                       background: "linear-gradient(135deg, #cc200e, #A93226)",
-                      boxShadow: "0 8px 20px rgba(192,57,43,0.3)",
+                      boxShadow: "0 8px 20px rgba(204,32,14,0.3)",
                     }}
                   >
                     <Phone size={15} />
@@ -197,9 +196,8 @@ export default function ContactPage() {
               <div
                 className="rounded-3xl p-8 sm:p-10"
                 style={{
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "var(--color-surface)",
+                  border: "1px solid var(--color-line)",
                 }}
               >
                 {submitted ? (
@@ -208,18 +206,18 @@ export default function ContactPage() {
                       className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
                       style={{
                         background: "linear-gradient(135deg, #cc200e, #A93226)",
-                        boxShadow: "0 16px 40px rgba(192,57,43,0.35)",
+                        boxShadow: "0 16px 40px rgba(204,32,14,0.35)",
                       }}
                     >
                       <CheckCircle size={36} className="text-white" />
                     </div>
                     <h3
-                      className="text-2xl font-black text-white mb-3"
+                      className="text-2xl font-black text-fg mb-3"
                       style={{ letterSpacing: "-0.03em" }}
                     >
                       Message Sent!
                     </h3>
-                    <p className="text-[#A1A1AA] leading-relaxed">
+                    <p className="text-muted leading-relaxed">
                       Thank you for getting in touch. A member of our team will
                       contact you shortly.
                     </p>
@@ -227,19 +225,19 @@ export default function ContactPage() {
                 ) : (
                   <>
                     <h2
-                      className="text-2xl font-black text-white mb-2"
+                      className="text-2xl font-black text-fg mb-2"
                       style={{ letterSpacing: "-0.03em" }}
                     >
                       Get a Free Quote
                     </h2>
-                    <p className="text-[#A1A1AA] text-sm mb-7">
+                    <p className="text-muted text-sm mb-7">
                       Fill in your details and we&apos;ll get back to you with a
                       fixed price quote.
                     </p>
                     <form onSubmit={handleSubmit} className="space-y-4">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-widest text-[#A1A1AA] mb-2">
+                          <label className="block text-xs font-bold uppercase tracking-widest text-muted mb-2">
                             Full Name *
                           </label>
                           <input
@@ -251,15 +249,15 @@ export default function ContactPage() {
                               setForm({ ...form, name: e.target.value })
                             }
                             placeholder="John Smith"
-                            className="w-full px-4 py-3 rounded-xl text-white text-sm font-medium outline-none transition-all duration-200"
+                            className="w-full px-4 py-3 rounded-xl text-fg text-sm font-medium outline-none transition-all duration-200"
                             style={{
-                              background: "rgba(255,255,255,0.05)",
-                              border: "1px solid rgba(255,255,255,0.1)",
+                              background: "var(--color-surface-soft)",
+                              border: "1px solid var(--color-line)",
                             }}
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-widest text-[#A1A1AA] mb-2">
+                          <label className="block text-xs font-bold uppercase tracking-widest text-muted mb-2">
                             Phone Number *
                           </label>
                           <input
@@ -271,16 +269,16 @@ export default function ContactPage() {
                               setForm({ ...form, phone: e.target.value })
                             }
                             placeholder="07700 000000"
-                            className="w-full px-4 py-3 rounded-xl text-white text-sm font-medium outline-none transition-all duration-200"
+                            className="w-full px-4 py-3 rounded-xl text-fg text-sm font-medium outline-none transition-all duration-200"
                             style={{
-                              background: "rgba(255,255,255,0.05)",
-                              border: "1px solid rgba(255,255,255,0.1)",
+                              background: "var(--color-surface-soft)",
+                              border: "1px solid var(--color-line)",
                             }}
                           />
                         </div>
                       </div>
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-widest text-[#A1A1AA] mb-2">
+                        <label className="block text-xs font-bold uppercase tracking-widest text-muted mb-2">
                           Email Address
                         </label>
                         <input
@@ -291,15 +289,15 @@ export default function ContactPage() {
                             setForm({ ...form, email: e.target.value })
                           }
                           placeholder="john@example.com"
-                          className="w-full px-4 py-3 rounded-xl text-white text-sm font-medium outline-none transition-all duration-200"
+                          className="w-full px-4 py-3 rounded-xl text-fg text-sm font-medium outline-none transition-all duration-200"
                           style={{
-                            background: "rgba(255,255,255,0.05)",
-                            border: "1px solid rgba(255,255,255,0.1)",
+                            background: "var(--color-surface-soft)",
+                            border: "1px solid var(--color-line)",
                           }}
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-widest text-[#A1A1AA] mb-2">
+                        <label className="block text-xs font-bold uppercase tracking-widest text-muted mb-2">
                           Service Required
                         </label>
                         <select
@@ -308,50 +306,50 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setForm({ ...form, service: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl text-white text-sm font-medium outline-none transition-all duration-200"
+                          className="w-full px-4 py-3 rounded-xl text-fg text-sm font-medium outline-none transition-all duration-200"
                           style={{
-                            background: "rgba(255,255,255,0.05)",
-                            border: "1px solid rgba(255,255,255,0.1)",
-                            color: form.service ? "white" : "#A1A1AA",
+                            background: "var(--color-surface-soft)",
+                            border: "1px solid var(--color-line)",
+                            color: form.service ? "var(--color-fg)" : "var(--color-muted)",
                           }}
                         >
-                          <option value="" style={{ background: "#1a1a1a" }}>
+                          <option value="" style={{ background: "var(--color-surface)" }}>
                             Select a service...
                           </option>
                           <option
                             value="airport-transfer"
-                            style={{ background: "#1a1a1a" }}
+                            style={{ background: "var(--color-surface)" }}
                           >
                             Airport Transfer
                           </option>
                           <option
                             value="school-run"
-                            style={{ background: "#1a1a1a" }}
+                            style={{ background: "var(--color-surface)" }}
                           >
                             School Run
                           </option>
                           <option
                             value="local-ride"
-                            style={{ background: "#1a1a1a" }}
+                            style={{ background: "var(--color-surface)" }}
                           >
                             Local Ride
                           </option>
                           <option
                             value="corporate"
-                            style={{ background: "#1a1a1a" }}
+                            style={{ background: "var(--color-surface)" }}
                           >
                             Corporate Travel
                           </option>
                           <option
                             value="other"
-                            style={{ background: "#1a1a1a" }}
+                            style={{ background: "var(--color-surface)" }}
                           >
                             Other
                           </option>
                         </select>
                       </div>
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-widest text-[#A1A1AA] mb-2">
+                        <label className="block text-xs font-bold uppercase tracking-widest text-muted mb-2">
                           Message / Journey Details
                         </label>
                         <textarea
@@ -362,10 +360,10 @@ export default function ContactPage() {
                             setForm({ ...form, message: e.target.value })
                           }
                           placeholder="Tell us about your journey, dates, pickup address, destination..."
-                          className="w-full px-4 py-3 rounded-xl text-white text-sm font-medium outline-none transition-all duration-200 resize-none"
+                          className="w-full px-4 py-3 rounded-xl text-fg text-sm font-medium outline-none transition-all duration-200 resize-none"
                           style={{
-                            background: "rgba(255,255,255,0.05)",
-                            border: "1px solid rgba(255,255,255,0.1)",
+                            background: "var(--color-surface-soft)",
+                            border: "1px solid var(--color-line)",
                           }}
                         />
                       </div>
@@ -376,7 +374,7 @@ export default function ContactPage() {
                         style={{
                           background:
                             "linear-gradient(135deg, #cc200e, #A93226)",
-                          boxShadow: "0 16px 40px rgba(192,57,43,0.3)",
+                          boxShadow: "0 16px 40px rgba(204,32,14,0.3)",
                         }}
                       >
                         <Send size={16} />

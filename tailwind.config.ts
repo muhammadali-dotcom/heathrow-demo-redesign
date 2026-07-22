@@ -7,17 +7,21 @@ export default <Config>{
   theme: {
     extend: {
       colors: {
-        "dark-main": "#050505",
-        "dark-card": "#0B0B0D",
-        "dark-soft": "#121214",
-        "dark-border": "#262626",
+        "bg": "var(--color-bg)",
+        "bg-alt": "var(--color-bg-alt)",
+        "surface": "var(--color-surface)",
+        "surface-soft": "var(--color-surface-soft)",
+        "line": "var(--color-line)",
+        "fg": "var(--color-fg)",
+        "fg-soft": "var(--color-fg-soft)",
+        "muted": "var(--color-muted)",
+        "overlay": "var(--color-overlay)",
         "red-main": "#cc200e",
         "red-dark": "#A93226",
         "red-soft": "#C95144",
         "red-glow": "rgba(255, 29, 37, 0.35)",
         "white": "#FFFFFF",
         "white-soft": "#F5F5F5",
-        "muted": "#A1A1AA",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Arial", "sans-serif"],

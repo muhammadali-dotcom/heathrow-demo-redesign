@@ -11,7 +11,7 @@ const stats = [
 
 export default function Statistics() {
   return (
-    <section className="py-20 px-4" style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+    <section className="py-20 px-4" style={{ background: 'var(--color-bg-alt)', borderTop: '1px solid var(--color-line)' }}>
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -23,7 +23,7 @@ export default function Statistics() {
                 {stat.value.toLocaleString()}
                 {stat.suffix}
               </div>
-              <p className="text-[#A1A1AA] text-sm font-medium">{stat.label}</p>
+              <p className="text-muted text-sm font-medium">{stat.label}</p>
             </Reveal>
           ))}
         </div>

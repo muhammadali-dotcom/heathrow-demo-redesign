@@ -14,12 +14,12 @@ function MapSkeleton({ height = 260 }: { height?: number }) {
       style={{
         height,
         borderRadius: 12,
-        border: "1px solid rgba(255,255,255,0.08)",
-        background: "#0B0B0D",
+        border: "1px solid var(--color-line)",
+        background: "var(--color-bg-alt)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        color: "#71717A",
+        color: "var(--color-muted)",
         fontSize: 13,
       }}
     >

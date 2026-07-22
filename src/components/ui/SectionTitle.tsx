@@ -15,19 +15,19 @@ export default function SectionTitle({ label, title, subtitle, centered, classNa
       {label && (
         <span
           className="text-xs font-bold tracking-[0.2em] uppercase mb-3 block"
-          style={{ color: '#cc200e' }}
+          style={{ color: 'var(--color-accent)' }}
         >
           {label}
         </span>
       )}
       <h2
-        className="text-3xl sm:text-4xl font-black text-white mb-4"
+        className="text-3xl sm:text-4xl font-black text-fg mb-4"
         style={{ letterSpacing: '-0.04em', lineHeight: 1.05 }}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className="text-[#A1A1AA] leading-relaxed text-base">{subtitle}</p>
+        <p className="text-muted leading-relaxed text-base">{subtitle}</p>
       )}
     </div>
   );

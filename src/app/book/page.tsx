@@ -11,7 +11,7 @@ export const metadata = buildMetadata({
 
 export default function BookPage() {
   return (
-    <main style={{ background: '#050505', minHeight: '100vh', paddingTop: '80px' }}>
+    <main style={{ background: 'var(--color-bg)', minHeight: '100vh', paddingTop: '80px' }}>
       <BookingWizard />
     </main>
   );

@@ -229,7 +229,7 @@ function mockBookingSubmit(dispatch: React.Dispatch<WizardAction>) {
   }, 1500);
 }
 
-const RED = "#e50914";
+const RED = "var(--color-accent)";
 
 function useCountUp(target: number, durationMs = 700) {
   const reduceMotion = useReducedMotion();
@@ -286,23 +286,23 @@ function FareResult({
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="relative mb-4 overflow-hidden rounded-2xl p-6 text-center"
         style={{
-          background: "rgba(229,9,20,0.1)",
-          border: "1px solid rgba(229,9,20,0.3)",
-          boxShadow: "0 12px 40px rgba(229,9,20,0.18)",
+          background: "rgba(204,32,14,0.1)",
+          border: "1px solid rgba(204,32,14,0.3)",
+          boxShadow: "0 12px 40px rgba(204,32,14,0.18)",
         }}
       >
         <div
           className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full"
-          style={{ background: "rgba(229,9,20,0.2)", border: "1px solid rgba(229,9,20,0.4)" }}
+          style={{ background: "rgba(204,32,14,0.2)", border: "1px solid rgba(204,32,14,0.4)" }}
         >
           <DollarSign size={20} style={{ color: RED }} />
         </div>
-        <p className="mb-1.5 text-xs font-bold uppercase tracking-widest text-[#A1A1AA]">
+        <p className="mb-1.5 text-xs font-bold uppercase tracking-widest text-muted">
           Estimated Fare
         </p>
         <p
-          className="text-4xl font-black text-white"
-          style={{ letterSpacing: "-0.03em", textShadow: "0 0 24px rgba(229,9,20,0.45)" }}
+          className="text-4xl font-black text-fg"
+          style={{ letterSpacing: "-0.03em", textShadow: "0 0 24px rgba(204,32,14,0.45)" }}
         >
           {currencySymbol}
           {animatedFare.toFixed(2)}
@@ -322,16 +322,16 @@ function FareResult({
             transition={{ duration: 0.4, delay: 0.15 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center gap-3 rounded-xl p-4"
             style={{
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.08)",
+              background: "var(--color-surface)",
+              border: "1px solid var(--color-line)",
             }}
           >
             <Icon size={16} style={{ color: RED }} />
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-widest text-[#A1A1AA]">
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-muted">
                 {label}
               </p>
-              <p className="text-sm font-bold text-white">{value}</p>
+              <p className="text-sm font-bold text-fg">{value}</p>
             </div>
           </motion.div>
         ))}
@@ -341,18 +341,18 @@ function FareResult({
         <div
           className="mb-5 flex items-center gap-3 rounded-xl px-4 py-3"
           style={{
-            background: "rgba(229,9,20,0.08)",
-            border: "1px solid rgba(229,9,20,0.2)",
+            background: "rgba(204,32,14,0.08)",
+            border: "1px solid rgba(204,32,14,0.2)",
           }}
         >
           <CheckCircle size={14} style={{ color: RED, flexShrink: 0 }} />
-          <p className="text-sm text-white">
+          <p className="text-sm text-fg">
             Vehicle: <span className="font-semibold">{vehicleName}</span>
           </p>
         </div>
       )}
 
-      <p className="text-center text-xs text-[#71717A]">
+      <p className="text-center text-xs text-muted">
         * Estimates are approximate and may vary based on actual route.
       </p>
     </motion.div>
@@ -360,21 +360,21 @@ function FareResult({
 }
 
 const inputStyle = {
-  background: "rgba(255,255,255,0.05)",
-  border: "1px solid rgba(255,255,255,0.1)",
+  background: "var(--color-surface-soft)",
+  border: "1px solid var(--color-line)",
 };
 
 const inputErrorStyle = {
-  background: "rgba(255,255,255,0.05)",
-  border: "1px solid rgba(229,9,20,0.5)",
+  background: "var(--color-surface-soft)",
+  border: "1px solid rgba(204,32,14,0.5)",
 };
 
 const labelClass =
-  "mb-2 block text-xs font-bold uppercase tracking-widest text-[#A1A1AA]";
+  "mb-2 block text-xs font-bold uppercase tracking-widest text-muted";
 const inputClass =
-  "w-full rounded-xl py-3 pl-9 pr-4 text-sm text-white placeholder-[#71717A] outline-none";
+  "w-full rounded-xl py-3 pl-9 pr-4 text-sm text-fg placeholder-muted outline-none";
 const inputNoIconClass =
-  "w-full rounded-xl px-4 py-3 text-sm text-white placeholder-[#71717A] outline-none";
+  "w-full rounded-xl px-4 py-3 text-sm text-fg placeholder-muted outline-none";
 const headingFocusClass =
   "outline-none focus:outline-none focus-visible:outline-none";
 
@@ -552,8 +552,8 @@ export default function BookingWizard() {
     <section
       className="flex items-center justify-center px-4 py-10 sm:px-6 lg:px-8"
       style={{
-        background: "#050505",
-        minHeight: "calc(100vh - 80px)",
+        background: "var(--color-bg)",
+        minHeight: "calc(100dvh - 80px)",
       }}
     >
       <div className="w-full max-w-4xl">
@@ -561,31 +561,30 @@ export default function BookingWizard() {
         {/* Title above frame */}
         <div className="mb-6 text-center">
           <h2
-            className="text-3xl font-black text-white sm:text-4xl"
+            className="text-3xl font-black text-fg sm:text-4xl"
             style={{ letterSpacing: "-0.04em" }}
           >
             Book Your Ride
           </h2>
-          <p className="mt-2 text-sm text-[#A1A1AA]">
+          <p className="mt-2 text-sm text-muted">
             Fast, fixed-price quotes. No hidden fees.
           </p>
         </div>
 
         {/* Fixed frame */}
         <div
-          className="flex flex-col rounded-2xl overflow-hidden"
+          className="flex flex-col rounded-2xl overflow-hidden sm:min-h-[520px]"
           style={{
-            background: "#111113",
-            border: "1px solid rgba(255,255,255,0.1)",
+            background: "var(--color-surface)",
+            border: "1px solid var(--color-line)",
             boxShadow: "0 30px 80px rgba(0,0,0,0.6)",
-            minHeight: "520px",
           }}
         >
           {/* ── Top bar: step indicator + step label ── */}
           {state.currentStep !== "confirmed" && (
             <div
               className="flex items-center justify-between px-6 py-4 flex-shrink-0"
-              style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}
+              style={{ borderBottom: "1px solid var(--color-line)" }}
             >
               {/* Inline step pills */}
               <nav aria-label={`Step ${numericStep} of 4`}>
@@ -600,8 +599,8 @@ export default function BookingWizard() {
                           <div
                             className="flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold flex-shrink-0"
                             style={{
-                              background: isCompleted || isActive ? RED : "rgba(255,255,255,0.08)",
-                              color: isCompleted || isActive ? "#fff" : "rgba(255,255,255,0.3)",
+                              background: isCompleted || isActive ? RED : "var(--color-surface-soft)",
+                              color: isCompleted || isActive ? "#fff" : "var(--color-muted)",
                             }}
                           >
                             {isCompleted ? (
@@ -614,10 +613,10 @@ export default function BookingWizard() {
                             className="hidden sm:block text-xs font-semibold uppercase tracking-widest"
                             style={{
                               color: isActive
-                                ? "#fff"
+                                ? "var(--color-fg)"
                                 : isCompleted
-                                  ? "rgba(255,255,255,0.45)"
-                                  : "rgba(255,255,255,0.2)",
+                                  ? "var(--color-fg-soft)"
+                                  : "var(--color-muted)",
                             }}
                           >
                             {step.label}
@@ -629,7 +628,7 @@ export default function BookingWizard() {
                             style={{
                               background: isCompleted
                                 ? RED
-                                : "rgba(255,255,255,0.12)",
+                                : "var(--color-line)",
                             }}
                           />
                         )}
@@ -640,8 +639,11 @@ export default function BookingWizard() {
               </nav>
 
               {/* Step label right side */}
-              <span className="hidden md:block text-xs text-[#A1A1AA] flex-shrink-0 ml-4">
-                Step {numericStep} of 4 — {stepDesc}
+              <span className="text-xs text-muted flex-shrink-0 ml-4">
+                <span className="sm:hidden">Step {numericStep} of 4</span>
+                <span className="hidden sm:inline">
+                  Step {numericStep} of 4 — {stepDesc}
+                </span>
               </span>
             </div>
           )}
@@ -654,12 +656,12 @@ export default function BookingWizard() {
               <div>
                 <h3
                   ref={step1Ref}
-                  className={`mb-1 text-lg font-black text-white ${headingFocusClass}`}
+                  className={`mb-1 text-lg font-black text-fg ${headingFocusClass}`}
                   style={{ letterSpacing: "-0.03em" }}
                 >
                   Where are you going?
                 </h3>
-                <p className="mb-6 text-sm text-[#A1A1AA]">
+                <p className="mb-6 text-sm text-muted">
                   Enter your pickup and drop-off to see a price.
                 </p>
 
@@ -727,7 +729,7 @@ export default function BookingWizard() {
                   </div>
                 )}
 
-                <p className="mt-4 text-xs text-[#71717A]">
+                <p className="mt-4 text-xs text-muted">
                   Popular:{" "}
                   <span style={{ color: RED }}>NW7 → Heathrow T5</span>
                   {" · "}
@@ -743,7 +745,7 @@ export default function BookingWizard() {
               <div>
                 <h3
                   ref={step2Ref}
-                  className={`mb-1 text-lg font-black text-white ${headingFocusClass}`}
+                  className={`mb-1 text-lg font-black text-fg ${headingFocusClass}`}
                   style={{ letterSpacing: "-0.03em" }}
                 >
                   Your journey details
@@ -841,11 +843,11 @@ export default function BookingWizard() {
                         onChange={(e) =>
                           dispatch({ type: "SET_FIELD", field: "passengers", value: parseInt(e.target.value) })
                         }
-                        className="w-full appearance-none rounded-xl py-3 pl-9 pr-4 text-sm text-white outline-none"
+                        className="w-full appearance-none rounded-xl py-3 pl-9 pr-4 text-sm text-fg outline-none"
                         style={inputStyle}
                       >
                         {[1, 2, 3, 4, 5, 6].map((n) => (
-                          <option key={n} value={n} style={{ background: "#1a1a1a" }}>
+                          <option key={n} value={n} style={{ background: "var(--color-surface)" }}>
                             {n} Passenger{n > 1 ? "s" : ""}
                           </option>
                         ))}
@@ -863,11 +865,11 @@ export default function BookingWizard() {
                         onChange={(e) =>
                           dispatch({ type: "SET_FIELD", field: "luggage", value: parseInt(e.target.value) })
                         }
-                        className="w-full appearance-none rounded-xl py-3 pl-9 pr-4 text-sm text-white outline-none"
+                        className="w-full appearance-none rounded-xl py-3 pl-9 pr-4 text-sm text-fg outline-none"
                         style={inputStyle}
                       >
                         {[0, 1, 2, 3, 4, 5, 6].map((n) => (
-                          <option key={n} value={n} style={{ background: "#1a1a1a" }}>
+                          <option key={n} value={n} style={{ background: "var(--color-surface)" }}>
                             {n} {n === 1 ? "Bag" : "Bags"}
                           </option>
                         ))}
@@ -892,12 +894,12 @@ export default function BookingWizard() {
               <div>
                 <h3
                   ref={step3Ref}
-                  className={`mb-1 text-lg font-black text-white ${headingFocusClass}`}
+                  className={`mb-1 text-lg font-black text-fg ${headingFocusClass}`}
                   style={{ letterSpacing: "-0.03em" }}
                 >
                   Your estimated fare
                 </h3>
-                <p className="mb-6 text-sm text-[#A1A1AA]">
+                <p className="mb-6 text-sm text-muted">
                   {state.fields.pickup} → {state.fields.dropoff}
                 </p>
 
@@ -906,17 +908,17 @@ export default function BookingWizard() {
                     <div className="relative flex h-16 w-16 items-center justify-center">
                       <span
                         className="absolute inset-0 animate-ping rounded-full"
-                        style={{ background: "rgba(229,9,20,0.25)" }}
+                        style={{ background: "rgba(204,32,14,0.25)" }}
                       />
                       <Loader2 size={32} className="relative animate-spin" style={{ color: RED }} />
                     </div>
-                    <p className="text-sm font-medium text-[#A1A1AA]">Calculating your fare…</p>
+                    <p className="text-sm font-medium text-muted">Calculating your fare…</p>
                   </div>
                 )}
 
                 {state.fareStatus === "error" && (
                   <div className="py-12 text-center">
-                    <p className="mb-4 text-[#A1A1AA]">Unable to calculate fare. Please try again.</p>
+                    <p className="mb-4 text-muted">Unable to calculate fare. Please try again.</p>
                     <button
                       onClick={handleRetryFare}
                       className="rounded-xl px-6 py-3 text-sm font-semibold text-white"
@@ -943,12 +945,12 @@ export default function BookingWizard() {
               <div>
                 <h3
                   ref={step4Ref}
-                  className={`mb-1 text-lg font-black text-white ${headingFocusClass}`}
+                  className={`mb-1 text-lg font-black text-fg ${headingFocusClass}`}
                   style={{ letterSpacing: "-0.03em" }}
                 >
                   Confirm your booking
                 </h3>
-                <p className="mb-5 text-sm text-[#A1A1AA]">
+                <p className="mb-5 text-sm text-muted">
                   Review your journey details below.
                 </p>
 
@@ -957,14 +959,14 @@ export default function BookingWizard() {
                   <div
                     className="rounded-xl p-4 text-center"
                     style={{
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.08)",
+                      background: "var(--color-surface)",
+                      border: "1px solid var(--color-line)",
                     }}
                   >
-                    <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-[#A1A1AA]">
+                    <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-muted">
                       Est. Fare
                     </p>
-                    <p className="text-xl font-black text-white" style={{ letterSpacing: "-0.03em" }}>
+                    <p className="text-xl font-black text-fg" style={{ letterSpacing: "-0.03em" }}>
                       {state.fareData?.fare ?? "—"}
                     </p>
                   </div>
@@ -973,12 +975,12 @@ export default function BookingWizard() {
                     <div
                       className="flex items-center justify-center gap-3 rounded-xl px-4 py-3"
                       style={{
-                        background: "rgba(229,9,20,0.08)",
-                        border: "1px solid rgba(229,9,20,0.2)",
+                        background: "rgba(204,32,14,0.08)",
+                        border: "1px solid rgba(204,32,14,0.2)",
                       }}
                     >
                       <CheckCircle size={14} style={{ color: RED, flexShrink: 0 }} />
-                      <p className="text-sm text-white">
+                      <p className="text-sm text-fg">
                         Vehicle: <span className="font-semibold">{selectedVehicleName}</span>
                       </p>
                     </div>
@@ -986,14 +988,14 @@ export default function BookingWizard() {
                     <div
                       className="rounded-xl p-4 text-center"
                       style={{
-                        background: "rgba(255,255,255,0.04)",
-                        border: "1px solid rgba(255,255,255,0.08)",
+                        background: "var(--color-surface)",
+                        border: "1px solid var(--color-line)",
                       }}
                     >
-                      <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-[#A1A1AA]">
+                      <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-muted">
                         Vehicle
                       </p>
-                      <p className="text-xl font-black text-white" style={{ letterSpacing: "-0.03em" }}>
+                      <p className="text-xl font-black text-fg" style={{ letterSpacing: "-0.03em" }}>
                         Any
                       </p>
                     </div>
@@ -1001,14 +1003,14 @@ export default function BookingWizard() {
                 </div>
 
                 {/* Journey */}
-                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#71717A]">
+                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-muted">
                   Journey
                 </p>
                 <div
                   className="mb-5 grid grid-cols-1 gap-x-8 gap-y-3 rounded-xl p-5 sm:grid-cols-2"
                   style={{
-                    background: "rgba(255,255,255,0.03)",
-                    border: "1px solid rgba(255,255,255,0.07)",
+                    background: "var(--color-surface)",
+                    border: "1px solid var(--color-line)",
                   }}
                 >
                   {[
@@ -1018,24 +1020,24 @@ export default function BookingWizard() {
                     { label: "Time", value: state.fields.time, Icon: Clock },
                   ].map(({ label, value, Icon }) => (
                     <div key={label} className="flex items-center justify-between gap-4">
-                      <span className="flex items-center gap-2 flex-shrink-0 text-sm text-[#A1A1AA]">
+                      <span className="flex items-center gap-2 flex-shrink-0 text-sm text-muted">
                         <Icon size={14} style={{ color: RED }} />
                         {label}
                       </span>
-                      <span className="text-right text-sm font-medium text-white">{value}</span>
+                      <span className="text-right text-sm font-medium text-fg">{value}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Passenger & contact details */}
-                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#71717A]">
+                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-muted">
                   Passenger &amp; contact details
                 </p>
                 <div
                   className="grid grid-cols-1 gap-x-8 gap-y-3 rounded-xl p-5 sm:grid-cols-2"
                   style={{
-                    background: "rgba(255,255,255,0.03)",
-                    border: "1px solid rgba(255,255,255,0.07)",
+                    background: "var(--color-surface)",
+                    border: "1px solid var(--color-line)",
                   }}
                 >
                   {[
@@ -1049,11 +1051,11 @@ export default function BookingWizard() {
                     },
                   ].map(({ label, value, Icon }) => (
                     <div key={label} className="flex items-center justify-between gap-4">
-                      <span className="flex items-center gap-2 flex-shrink-0 text-sm text-[#A1A1AA]">
+                      <span className="flex items-center gap-2 flex-shrink-0 text-sm text-muted">
                         <Icon size={14} style={{ color: RED }} />
                         {label}
                       </span>
-                      <span className="text-right text-sm font-medium text-white">{value}</span>
+                      <span className="text-right text-sm font-medium text-fg">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -1071,17 +1073,17 @@ export default function BookingWizard() {
                 <div className="relative mb-6 pr-20">
                   <h3
                     ref={confirmRef}
-                    className={`mb-2 text-3xl font-black text-white ${headingFocusClass}`}
+                    className={`mb-2 text-3xl font-black text-fg ${headingFocusClass}`}
                     style={{ letterSpacing: "-0.03em" }}
                   >
                     Confirmed and ready
                   </h3>
-                  <p className="text-sm leading-relaxed text-[#A1A1AA]">
+                  <p className="text-sm leading-relaxed text-muted">
                     Your ride has been booked. We&apos;ll be in touch shortly to confirm the details.
                   </p>
                   <div
                     className="absolute right-0 top-0 flex h-14 w-14 items-center justify-center rounded-2xl"
-                    style={{ background: RED, boxShadow: "0 12px 30px rgba(229,9,20,0.4)" }}
+                    style={{ background: RED, boxShadow: "0 12px 30px rgba(204,32,14,0.4)" }}
                   >
                     <CheckCircle size={26} className="text-white" />
                   </div>
@@ -1092,7 +1094,7 @@ export default function BookingWizard() {
                   <div className="flex flex-col gap-4">
                     <div
                       className="rounded-xl p-5"
-                      style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
+                      style={{ background: "var(--color-surface)", border: "1px solid var(--color-line)" }}
                     >
                       <div className="relative pl-6">
                         <span
@@ -1101,19 +1103,19 @@ export default function BookingWizard() {
                         />
                         <span
                           className="absolute bottom-4 left-[4px] top-4 w-px"
-                          style={{ background: "rgba(229,9,20,0.35)" }}
+                          style={{ background: "rgba(204,32,14,0.35)" }}
                         />
                         <div className="mb-5">
-                          <p className="mb-1 text-xs text-[#A1A1AA]">Pickup</p>
-                          <p className="text-base font-bold text-white">{state.fields.pickup}</p>
+                          <p className="mb-1 text-xs text-muted">Pickup</p>
+                          <p className="text-base font-bold text-fg">{state.fields.pickup}</p>
                         </div>
                         <span
                           className="absolute bottom-1.5 left-0 h-2.5 w-2.5 rounded-full"
                           style={{ background: RED }}
                         />
                         <div>
-                          <p className="mb-1 text-xs text-[#A1A1AA]">Drop-off</p>
-                          <p className="text-base font-bold text-white">{state.fields.dropoff}</p>
+                          <p className="mb-1 text-xs text-muted">Drop-off</p>
+                          <p className="text-base font-bold text-fg">{state.fields.dropoff}</p>
                         </div>
                       </div>
                     </div>
@@ -1131,10 +1133,10 @@ export default function BookingWizard() {
                         <div
                           key={label}
                           className="rounded-xl p-4"
-                          style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
+                          style={{ background: "var(--color-surface)", border: "1px solid var(--color-line)" }}
                         >
-                          <p className="mb-1 text-xs text-[#A1A1AA]">{label}</p>
-                          <p className="text-base font-bold text-white">{value}</p>
+                          <p className="mb-1 text-xs text-muted">{label}</p>
+                          <p className="text-base font-bold text-fg">{value}</p>
                         </div>
                       ))}
                     </div>
@@ -1143,7 +1145,7 @@ export default function BookingWizard() {
                   {/* Right column: customer + fare details */}
                   <div
                     className="flex flex-col rounded-xl p-5"
-                    style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
+                    style={{ background: "var(--color-surface)", border: "1px solid var(--color-line)" }}
                   >
                     <div className="flex-1">
                       {[
@@ -1154,13 +1156,13 @@ export default function BookingWizard() {
                       ].map(({ label, value, block, red }, i, arr) => (
                         <div
                           key={label}
-                          className={`${i < arr.length - 1 ? "mb-3 border-b border-white/10 pb-3" : ""} ${
+                          className={`${i < arr.length - 1 ? "mb-3 border-b border-line pb-3" : ""} ${
                             block ? "" : "flex items-center justify-between gap-4"
                           }`}
                         >
-                          <p className={`text-xs text-[#A1A1AA] ${block ? "mb-1" : ""}`}>{label}</p>
+                          <p className={`text-xs text-muted ${block ? "mb-1" : ""}`}>{label}</p>
                           <p
-                            className={`font-bold text-white ${block ? "text-lg" : "text-base"}`}
+                            className={`font-bold text-fg ${block ? "text-lg" : "text-base"}`}
                             style={red ? { color: RED } : undefined}
                           >
                             {value}
@@ -1172,7 +1174,7 @@ export default function BookingWizard() {
                     <button
                       onClick={() => dispatch({ type: "RESET" })}
                       className="mt-4 w-full rounded-full px-6 py-3.5 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
-                      style={{ background: RED, boxShadow: "0 8px 24px rgba(229,9,20,0.35)" }}
+                      style={{ background: RED, boxShadow: "0 8px 24px rgba(204,32,14,0.35)" }}
                     >
                       Book another ride
                     </button>
@@ -1186,14 +1188,17 @@ export default function BookingWizard() {
           {state.currentStep !== "confirmed" && (
             <div
               className="flex items-center justify-between gap-3 px-6 py-4 flex-shrink-0"
-              style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
+              style={{
+                borderTop: "1px solid var(--color-line)",
+                paddingBottom: "calc(1rem + env(safe-area-inset-bottom))",
+              }}
             >
               {/* Back button (hidden on step 1) */}
               {typeof state.currentStep === "number" && state.currentStep > 1 ? (
                 <button
                   onClick={handleBack}
-                  className="flex items-center gap-1.5 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/10"
-                  style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                  className="flex items-center gap-1.5 rounded-xl px-5 py-2.5 text-sm font-semibold text-fg transition-all duration-200 hover:bg-fg/10"
+                  style={{ border: "1px solid var(--color-line)" }}
                 >
                   <ArrowLeft size={14} /> Back
                 </button>
@@ -1208,7 +1213,7 @@ export default function BookingWizard() {
                   className="flex items-center gap-2 rounded-xl px-7 py-2.5 text-sm font-bold text-white transition-all duration-200 hover:brightness-110"
                   style={{
                     background: RED,
-                    boxShadow: "0 6px 20px rgba(229,9,20,0.35)",
+                    boxShadow: "0 6px 20px rgba(204,32,14,0.35)",
                   }}
                 >
                   Continue →
@@ -1221,7 +1226,7 @@ export default function BookingWizard() {
                   className="flex items-center gap-2 rounded-xl px-7 py-2.5 text-sm font-bold text-white transition-all duration-200 hover:brightness-110"
                   style={{
                     background: RED,
-                    boxShadow: "0 6px 20px rgba(229,9,20,0.35)",
+                    boxShadow: "0 6px 20px rgba(204,32,14,0.35)",
                   }}
                 >
                   Continue →
@@ -1234,7 +1239,7 @@ export default function BookingWizard() {
                   className="flex items-center gap-2 rounded-xl px-7 py-2.5 text-sm font-bold text-white transition-all duration-200 hover:brightness-110"
                   style={{
                     background: RED,
-                    boxShadow: "0 6px 20px rgba(229,9,20,0.35)",
+                    boxShadow: "0 6px 20px rgba(204,32,14,0.35)",
                   }}
                 >
                   Continue to Book →
@@ -1252,7 +1257,7 @@ export default function BookingWizard() {
                   className="flex items-center gap-2 rounded-xl px-7 py-2.5 text-sm font-bold text-white transition-all duration-200 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
                   style={{
                     background: RED,
-                    boxShadow: "0 6px 20px rgba(229,9,20,0.35)",
+                    boxShadow: "0 6px 20px rgba(204,32,14,0.35)",
                   }}
                 >
                   {state.submitting ? (

@@ -49,19 +49,19 @@ const stats = [
 
 export default function AboutPage() {
   return (
-    <main style={{ background: '#050505', minHeight: '100vh' }}>
+    <main style={{ background: 'var(--color-bg)', minHeight: '100vh' }}>
       {/* Hero */}
       <section
         className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{
-          background: `linear-gradient(180deg, #0B0B0D 0%, #050505 100%)`,
+          background: `linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)`,
         }}
       >
         {/* Red glow */}
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(192,57,43,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -69,22 +69,22 @@ export default function AboutPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(192,57,43,0.12)',
-              border: '1px solid rgba(192,57,43,0.3)',
+              background: 'rgba(204,32,14,0.12)',
+              border: '1px solid rgba(204,32,14,0.3)',
               color: '#cc200e',
             }}
           >
             Our Story
           </span>
           <h1
-            className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-fg mb-6"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             About{' '}
             <span style={{ color: '#cc200e' }}>{COMPANY_NAME}</span>
           </h1>
           <div className="w-full flex justify-center">
-          <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed text-balance">
+          <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed text-balance">
             Mill Hill&apos;s most trusted taxi service, delivering reliable, professional and
             comfortable transportation across North London since 2010.
           </p>
@@ -116,14 +116,14 @@ export default function AboutPage() {
       </section>
 
       {/* Stats bar */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <section className="py-12 px-4 sm:px-6 lg:px-8" style={{ background: 'var(--color-bg-alt)', borderTop: '1px solid var(--color-line)', borderBottom: '1px solid var(--color-line)' }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s, index) => (
             <Reveal key={s.label} delay={index * 0.08} className="text-center">
-              <div className="text-4xl font-black text-white mb-1" style={{ color: '#cc200e', letterSpacing: '-0.03em' }}>
+              <div className="text-4xl font-black text-fg mb-1" style={{ color: '#cc200e', letterSpacing: '-0.03em' }}>
                 {s.value}
               </div>
-              <div className="text-sm text-[#A1A1AA] font-medium">{s.label}</div>
+              <div className="text-sm text-muted font-medium">{s.label}</div>
             </Reveal>
           ))}
         </div>
@@ -137,17 +137,17 @@ export default function AboutPage() {
               <span
                 className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
                 style={{
-                  background: 'rgba(192,57,43,0.12)',
-                  border: '1px solid rgba(192,57,43,0.3)',
+                  background: 'rgba(204,32,14,0.12)',
+                  border: '1px solid rgba(204,32,14,0.3)',
                   color: '#cc200e',
                 }}
               >
                 Who We Are
               </span>
-              <h2 className="text-4xl sm:text-5xl font-black text-white mb-6 leading-tight" style={{ letterSpacing: '-0.04em' }}>
+              <h2 className="text-4xl sm:text-5xl font-black text-fg mb-6 leading-tight" style={{ letterSpacing: '-0.04em' }}>
                 Serving North London<br />with Pride
               </h2>
-              <div className="space-y-4 text-[#A1A1AA] leading-relaxed">
+              <div className="space-y-4 text-muted leading-relaxed">
                 <p>
                   Founded in Mill Hill, Bittacy Cars has been at the heart of North London&apos;s
                   transportation needs for over a decade. We started with a simple mission: to
@@ -173,7 +173,7 @@ export default function AboutPage() {
                   'Fixed prices — no hidden charges',
                   'Flight monitoring for airport pickups',
                 ].map((point) => (
-                  <div key={point} className="flex items-center gap-3 text-sm text-[#A1A1AA]">
+                  <div key={point} className="flex items-center gap-3 text-sm text-muted">
                     <CheckCircle size={16} style={{ color: '#cc200e', flexShrink: 0 }} />
                     {point}
                   </div>
@@ -186,53 +186,53 @@ export default function AboutPage() {
               <div
                 className="rounded-3xl p-8 relative overflow-hidden"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(192,57,43,0.08), rgba(192,57,43,0.02))',
-                  border: '1px solid rgba(192,57,43,0.2)',
+                  background: 'linear-gradient(135deg, rgba(204,32,14,0.08), rgba(204,32,14,0.02))',
+                  border: '1px solid rgba(204,32,14,0.2)',
                 }}
               >
                 <div
                   className="absolute -top-20 -right-20 w-64 h-64 rounded-full pointer-events-none"
                   style={{
-                    background: 'radial-gradient(circle, rgba(192,57,43,0.15) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(204,32,14,0.15) 0%, transparent 70%)',
                   }}
                 />
                 <div className="relative z-10 space-y-6">
                   <div className="flex items-center gap-4">
                     <div
                       className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.2)' }}
+                      style={{ background: 'rgba(204,32,14,0.12)', border: '1px solid rgba(204,32,14,0.2)' }}
                     >
                       <Award size={24} style={{ color: '#cc200e' }} />
                     </div>
                     <div>
-                      <div className="text-white font-bold text-lg">Award-Winning Service</div>
-                      <div className="text-[#A1A1AA] text-sm">Recognised locally for excellence</div>
+                      <div className="text-fg font-bold text-lg">Award-Winning Service</div>
+                      <div className="text-muted text-sm">Recognised locally for excellence</div>
                     </div>
                   </div>
-                  <div className="h-px" style={{ background: 'rgba(255,255,255,0.06)' }} />
+                  <div className="h-px" style={{ background: 'var(--color-line)' }} />
                   <div className="flex items-center gap-4">
                     <div
                       className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.2)' }}
+                      style={{ background: 'rgba(204,32,14,0.12)', border: '1px solid rgba(204,32,14,0.2)' }}
                     >
                       <MapPin size={24} style={{ color: '#cc200e' }} />
                     </div>
                     <div>
-                      <div className="text-white font-bold text-lg">Local Experts</div>
-                      <div className="text-[#A1A1AA] text-sm">{LOCATION}</div>
+                      <div className="text-fg font-bold text-lg">Local Experts</div>
+                      <div className="text-muted text-sm">{LOCATION}</div>
                     </div>
                   </div>
-                  <div className="h-px" style={{ background: 'rgba(255,255,255,0.06)' }} />
+                  <div className="h-px" style={{ background: 'var(--color-line)' }} />
                   <div className="flex items-center gap-4">
                     <div
                       className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'rgba(192,57,43,0.12)', border: '1px solid rgba(192,57,43,0.2)' }}
+                      style={{ background: 'rgba(204,32,14,0.12)', border: '1px solid rgba(204,32,14,0.2)' }}
                     >
                       <Phone size={24} style={{ color: '#cc200e' }} />
                     </div>
                     <div>
-                      <div className="text-white font-bold text-lg">Always Reachable</div>
-                      <div className="text-[#A1A1AA] text-sm">{PHONE} — 24/7</div>
+                      <div className="text-fg font-bold text-lg">Always Reachable</div>
+                      <div className="text-muted text-sm">{PHONE} — 24/7</div>
                     </div>
                   </div>
                 </div>
@@ -243,20 +243,20 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D' }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: 'var(--color-bg-alt)' }}>
         <div className="max-w-7xl mx-auto">
           <Reveal className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
-                background: 'rgba(192,57,43,0.12)',
-                border: '1px solid rgba(192,57,43,0.3)',
+                background: 'rgba(204,32,14,0.12)',
+                border: '1px solid rgba(204,32,14,0.3)',
                 color: '#cc200e',
               }}
             >
               What Drives Us
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black text-white" style={{ letterSpacing: '-0.04em' }}>
+            <h2 className="text-4xl sm:text-5xl font-black text-fg" style={{ letterSpacing: '-0.04em' }}>
               Our Core Values
             </h2>
           </Reveal>
@@ -269,20 +269,20 @@ export default function AboutPage() {
                   delay={index * 0.08}
                   className="rounded-2xl p-6"
                   style={{
-                    background: 'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
-                    border: '1px solid rgba(255,255,255,0.08)',
+                    background: 'var(--color-surface)',
+                    border: '1px solid var(--color-line)',
                   }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 20px rgba(192,57,43,0.3)' }}
+                    style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 20px rgba(204,32,14,0.3)' }}
                   >
                     <Icon size={22} className="text-white" />
                   </div>
-                  <h3 className="text-white font-bold text-lg mb-2" style={{ letterSpacing: '-0.02em' }}>
+                  <h3 className="text-fg font-bold text-lg mb-2" style={{ letterSpacing: '-0.02em' }}>
                     {value.title}
                   </h3>
-                  <p className="text-[#A1A1AA] text-sm leading-relaxed">{value.description}</p>
+                  <p className="text-muted text-sm leading-relaxed">{value.description}</p>
                 </Reveal>
               );
             })}
@@ -293,24 +293,24 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <Reveal className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-black text-white mb-4" style={{ letterSpacing: '-0.04em' }}>
+          <h2 className="text-4xl font-black text-fg mb-4" style={{ letterSpacing: '-0.04em' }}>
             Ready to Ride with Us?
           </h2>
-          <p className="text-[#A1A1AA] text-lg mb-8 leading-relaxed">
+          <p className="text-muted text-lg mb-8 leading-relaxed">
             Experience the Bittacy Cars difference. Book your journey today or get in touch to find out more.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white transition-all duration-200"
-              style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 16px 40px rgba(192,57,43,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 16px 40px rgba(204,32,14,0.3)' }}
             >
               Get a Quote
             </Link>
             <a
               href={`tel:${PHONE.replace(/\s/g, '')}`}
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white transition-all duration-200"
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
+              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-fg transition-all duration-200"
+              style={{ background: 'var(--color-surface-soft)', border: '1px solid var(--color-line)' }}
             >
               <Phone size={16} />
               Call {PHONE}

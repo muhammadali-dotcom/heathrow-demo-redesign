@@ -57,7 +57,7 @@ export default function RoadGridBackground() {
   if (!isMounted) return null;
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#050505]">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-bg">
       {/* 3D Perspective Road Grid */}
       <div 
         className="absolute inset-0 w-full h-full" 
@@ -68,15 +68,15 @@ export default function RoadGridBackground() {
           style={{
             transform: 'rotateX(72deg) translateY(-25%) scale(1.4)',
             backgroundImage: `
-              linear-gradient(to right, rgba(229, 9, 20, 0.09) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(229, 9, 20, 0.09) 1px, transparent 1px)
+              linear-gradient(to right, rgba(204,32,14, 0.09) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(204,32,14, 0.09) 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px',
             y: gridY,
           }}
         />
         {/* Soft grid fade out towards horizon */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/65 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg/65 to-transparent pointer-events-none" />
       </div>
 
       {/* Floating Ambient Glows (Car Taillights/Neon Reflections) */}
@@ -92,7 +92,7 @@ export default function RoadGridBackground() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute left-[15%] top-[25%] w-[350px] h-[350px] rounded-full bg-[#e50914] opacity-[0.08] blur-[110px]"
+          className="absolute left-[15%] top-[25%] w-[350px] h-[350px] rounded-full bg-[#cc200e] opacity-[0.08] blur-[110px]"
         />
         {/* Center vertical glow */}
         <motion.div
@@ -105,7 +105,7 @@ export default function RoadGridBackground() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute left-[50%] top-[30%] -translate-x-1/2 w-[150px] h-[400px] rounded-full bg-[#e50914] opacity-[0.16] blur-[90px]"
+          className="absolute left-[50%] top-[30%] -translate-x-1/2 w-[150px] h-[400px] rounded-full bg-[#cc200e] opacity-[0.16] blur-[90px]"
         />
         {/* Right glow */}
         <motion.div
@@ -118,7 +118,7 @@ export default function RoadGridBackground() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute right-[10%] top-[45%] w-[300px] h-[300px] rounded-full bg-[#e50914] opacity-[0.07] blur-[100px]"
+          className="absolute right-[10%] top-[45%] w-[300px] h-[300px] rounded-full bg-[#cc200e] opacity-[0.07] blur-[100px]"
         />
       </div>
 
@@ -128,7 +128,7 @@ export default function RoadGridBackground() {
         style={{
           x: mousePos.x - 225,
           y: mousePos.y - 225,
-          background: 'radial-gradient(circle, rgba(229, 9, 20, 0.15) 0%, rgba(229, 9, 20, 0.03) 45%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(204,32,14, 0.15) 0%, rgba(204,32,14, 0.03) 45%, transparent 70%)',
           filter: 'blur(40px)',
         }}
         animate={{
@@ -141,9 +141,9 @@ export default function RoadGridBackground() {
       <svg className="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#e50914" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#ff2b24" stopOpacity="0.45" />
-            <stop offset="100%" stopColor="#e50914" stopOpacity="0.0" />
+            <stop offset="0%" stopColor="#cc200e" stopOpacity="0.8" />
+            <stop offset="50%" stopColor="#A93226" stopOpacity="0.45" />
+            <stop offset="100%" stopColor="#cc200e" stopOpacity="0.0" />
           </linearGradient>
           <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="8" result="blur" />
@@ -177,7 +177,7 @@ export default function RoadGridBackground() {
         {STATIC_PARTICLES.map((particle) => (
           <motion.div
             key={particle.id}
-            className="absolute rounded-sm bg-[#ff2b24]"
+            className="absolute rounded-sm bg-[#A93226]"
             style={{
               left: particle.left,
               top: particle.top,

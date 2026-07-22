@@ -8,6 +8,7 @@ import { navLinks } from '@/data/navigation';
 import { services } from '@/data/services';
 import { COMPANY_NAME } from '@/lib/constants';
 import MobileMenu from './MobileMenu';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,13 +36,13 @@ export default function Header() {
     <>
       <header
         style={{
-          background: scrolled ? 'rgba(5,5,5,0.92)' : 'rgba(5,5,5,0.75)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
           transition: 'background 0.3s ease',
         }}
-        className="fixed top-0 left-0 right-0 z-50"
+        className={`fixed top-0 left-0 right-0 z-50 border-b border-line ${
+          scrolled ? 'bg-bg-alt/92' : 'bg-bg-alt/75'
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
@@ -57,7 +58,7 @@ export default function Header() {
                   priority
                 />
               </div>
-              <span className="text-white font-bold text-lg tracking-tight hidden sm:block">
+              <span className="text-fg font-bold text-lg tracking-tight hidden sm:block">
                 {COMPANY_NAME}
               </span>
             </Link>
@@ -72,7 +73,7 @@ export default function Header() {
                       onClick={() => setServicesOpen((open) => !open)}
                       aria-expanded={servicesOpen}
                       aria-controls="header-services-dropdown"
-                      className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white hover:text-[#A1A1AA] rounded-lg transition-colors duration-200 whitespace-nowrap"
+                      className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-fg hover:text-muted rounded-lg transition-colors duration-200 whitespace-nowrap"
                       style={{ transition: 'color 0.2s' }}
                     >
                       {link.label}
@@ -85,19 +86,14 @@ export default function Header() {
                     {servicesOpen && (
                       <div
                         id="header-services-dropdown"
-                        className="absolute left-0 top-full mt-2 w-56 rounded-xl py-2 overflow-hidden"
-                        style={{
-                          background: '#111113',
-                          border: '1px solid rgba(255,255,255,0.1)',
-                          boxShadow: '0 12px 30px rgba(0,0,0,0.55)',
-                        }}
+                        className="absolute left-0 top-full mt-2 w-56 rounded-xl py-2 overflow-hidden bg-surface border border-line shadow-[0_12px_30px_rgba(0,0,0,0.25)] dark:shadow-[0_12px_30px_rgba(0,0,0,0.55)]"
                       >
                         {services.map((s) => (
                           <Link
                             key={s.id}
                             href={s.href}
                             onClick={() => setServicesOpen(false)}
-                            className="block px-4 py-2.5 text-sm text-[#A1A1AA] hover:text-white hover:bg-white/5 transition-colors"
+                            className="block px-4 py-2.5 text-sm text-muted hover:text-fg hover:bg-fg/5 transition-colors"
                           >
                             {s.title}
                           </Link>
@@ -109,7 +105,7 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="px-4 py-2 text-sm font-medium text-[#A1A1AA] hover:text-white rounded-lg transition-colors duration-200 whitespace-nowrap"
+                    className="px-4 py-2 text-sm font-medium text-muted hover:text-fg rounded-lg transition-colors duration-200 whitespace-nowrap"
                     style={{ transition: 'color 0.2s' }}
                   >
                     {link.label}
@@ -123,23 +119,30 @@ export default function Header() {
               href="/contact"
               className="hidden lg:flex items-center gap-2 px-5 py-2.5 rounded-xl text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:brightness-110"
               style={{
-                background: '#cc200e',
-                boxShadow: '0 4px 16px rgba(192,57,43,0.28)',
+                background: 'var(--color-accent)',
+                boxShadow: '0 4px 16px rgba(204,32,14,0.28)',
               }}
             >
               Contact Now
-            </Link> 
+            </Link>
 
-            {/* Hamburger */}
-            <button
-              onClick={() => setMenuOpen(true)}
-              aria-label="Open menu"
-              className="lg:hidden flex flex-col gap-1.5 p-2 rounded-lg"
-            >
-              <span className="block w-6 h-0.5 bg-white rounded-full" />
-              <span className="block w-6 h-0.5 bg-white rounded-full" />
-              <span className="block w-4 h-0.5 bg-white rounded-full" />
-            </button>
+            <div className="hidden lg:flex items-center">
+              <ThemeToggle className="ml-2" />
+            </div>
+
+            {/* Mobile: toggle + hamburger grouped top-right */}
+            <div className="flex items-center gap-2 lg:hidden">
+              <ThemeToggle iconSize={18} />
+              <button
+                onClick={() => setMenuOpen(true)}
+                aria-label="Open menu"
+                className="flex flex-col gap-1.5 p-2 rounded-lg"
+              >
+                <span className="block w-6 h-0.5 rounded-full" style={{ background: 'var(--color-fg)' }} />
+                <span className="block w-6 h-0.5 rounded-full" style={{ background: 'var(--color-fg)' }} />
+                <span className="block w-4 h-0.5 rounded-full" style={{ background: 'var(--color-fg)' }} />
+              </button>
+            </div>
           </div>
         </div>
       </header>

@@ -72,8 +72,8 @@ export default function AddressAutocomplete({
           role="listbox"
           className="absolute z-20 mt-1.5 max-h-56 w-full overflow-y-auto rounded-xl py-1"
           style={{
-            background: "#17171A",
-            border: "1px solid rgba(255,255,255,0.1)",
+            background: "var(--color-surface)",
+            border: "1px solid var(--color-line)",
             boxShadow: "0 12px 30px rgba(0,0,0,0.55)",
           }}
         >
@@ -81,7 +81,7 @@ export default function AddressAutocomplete({
             <li key={suggestion}>
               <button
                 type="button"
-                className="w-full px-4 py-2.5 text-left text-sm text-white transition-colors hover:bg-white/5"
+                className="w-full px-4 py-2.5 text-left text-sm text-fg transition-colors hover:bg-fg/5"
                 onMouseDown={(e) => e.preventDefault()}
                 onClick={() => {
                   onChange(suggestion);

@@ -80,20 +80,20 @@ const features = [
 
 export default function LocalRidesPage() {
   return (
-    <main className="bg-[#050505] text-white">
+    <main className="bg-bg text-fg">
       <JsonLd data={serviceJsonLd('/local-rides')} />
       {/* Hero */}
       <section
         className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-28 sm:pt-32 lg:pt-40"
         style={{
-          background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)',
+          background: 'linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)',
         }}
       >
         <div
           className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[700px] -translate-x-1/2"
           style={{
             background:
-              'radial-gradient(ellipse, rgba(229,9,20,0.12) 0%, transparent 70%)',
+              'radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -102,9 +102,9 @@ export default function LocalRidesPage() {
           <span
             className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
             style={{
-              background: 'rgba(229,9,20,0.12)',
-              border: '1px solid rgba(229,9,20,0.3)',
-              color: '#e50914',
+              background: 'rgba(204,32,14,0.12)',
+              border: '1px solid rgba(204,32,14,0.3)',
+              color: '#cc200e',
             }}
           >
             <MapPin size={14} />
@@ -112,15 +112,15 @@ export default function LocalRidesPage() {
           </span>
 
           <h1
-            className="mb-6 text-4xl font-black text-white sm:text-6xl lg:text-7xl"
+            className="mb-6 text-4xl font-black text-fg sm:text-6xl lg:text-7xl"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
-            Your Local <span style={{ color: '#e50914' }}>Taxi</span>
+            Your Local <span style={{ color: '#cc200e' }}>Taxi</span>
             <br />
             in North London
           </h1>
 
-          <p className="mb-10 text-lg leading-relaxed text-[#A1A1AA] p-4">
+          <p className="mb-10 text-lg leading-relaxed text-muted p-4">
             Comfortable, reliable and affordable local taxi rides anywhere across
             Mill Hill and North London. Available 24/7 with fixed, transparent
             prices.
@@ -131,8 +131,8 @@ export default function LocalRidesPage() {
               href={`tel:${PHONE.replace(/\s/g, '')}`}
               className="inline-flex h-14 min-w-[210px] items-center justify-center gap-2 rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
               style={{
-                background: '#e50914',
-                boxShadow: '0 16px 40px rgba(229,9,20,0.3)',
+                background: '#cc200e',
+                boxShadow: '0 16px 40px rgba(204,32,14,0.3)',
                 textDecoration: 'none',
               }}
             >
@@ -142,10 +142,10 @@ export default function LocalRidesPage() {
 
             <Link
               href="/contact"
-              className="inline-flex h-14 min-w-[210px] items-center justify-center rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+              className="inline-flex h-14 min-w-[210px] items-center justify-center rounded-xl px-8 text-base font-bold text-fg transition-all duration-200"
               style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                background: 'var(--color-surface-soft)',
+                border: '1px solid var(--color-line)',
                 textDecoration: 'none',
               }}
             >
@@ -156,10 +156,10 @@ export default function LocalRidesPage() {
       </section>
 
       {/* Service Image */}
-      <section className="px-4 sm:px-6 lg:px-8 py-12" style={{ background: '#050505' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-12" style={{ background: 'var(--color-bg)' }}>
         <div
           className="mx-auto max-w-4xl overflow-hidden rounded-3xl"
-          style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+          style={{ border: '1px solid var(--color-line)' }}
         >
           <div className="relative h-72 w-full sm:h-96">
             <Image
@@ -177,9 +177,9 @@ export default function LocalRidesPage() {
       <section
         className="px-4 sm:px-6 lg:px-8 py-20"
         style={{
-          background: '#0B0B0D',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
+          background: 'var(--color-bg-alt)',
+          borderTop: '1px solid var(--color-line)',
+          borderBottom: '1px solid var(--color-line)',
         }}
       >
         <div className="mx-auto max-w-5xl">
@@ -187,16 +187,16 @@ export default function LocalRidesPage() {
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
               style={{
-                background: 'rgba(229,9,20,0.12)',
-                border: '1px solid rgba(229,9,20,0.3)',
-                color: '#e50914',
+                background: 'rgba(204,32,14,0.12)',
+                border: '1px solid rgba(204,32,14,0.3)',
+                color: '#cc200e',
               }}
             >
               Coverage
             </span>
 
             <h2
-              className="text-4xl font-black text-white"
+              className="text-4xl font-black text-fg"
               style={{ letterSpacing: '-0.04em' }}
             >
               Areas We Cover
@@ -207,13 +207,13 @@ export default function LocalRidesPage() {
             {areas.map((area) => (
               <span
                 key={area}
-                className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white"
+                className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-fg"
                 style={{
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: 'var(--color-surface-soft)',
+                  border: '1px solid var(--color-line)',
                 }}
               >
-                <MapPin size={13} style={{ color: '#e50914' }} />
+                <MapPin size={13} style={{ color: '#cc200e' }} />
                 {area}
               </span>
             ))}
@@ -228,16 +228,16 @@ export default function LocalRidesPage() {
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
               style={{
-                background: 'rgba(229,9,20,0.12)',
-                border: '1px solid rgba(229,9,20,0.3)',
-                color: '#e50914',
+                background: 'rgba(204,32,14,0.12)',
+                border: '1px solid rgba(204,32,14,0.3)',
+                color: '#cc200e',
               }}
             >
               Why Bittacy Cars
             </span>
 
             <h2
-              className="text-4xl font-black text-white sm:text-5xl"
+              className="text-4xl font-black text-fg sm:text-5xl"
               style={{ letterSpacing: '-0.04em' }}
             >
               The Local Choice
@@ -255,28 +255,28 @@ export default function LocalRidesPage() {
                   className="rounded-2xl p-7"
                   style={{
                     background:
-                      'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
-                    border: '1px solid rgba(255,255,255,0.08)',
+                      'var(--color-surface)',
+                    border: '1px solid var(--color-line)',
                   }}
                 >
                   <div
                     className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
                     style={{
-                      background: '#e50914',
-                      boxShadow: '0 8px 20px rgba(229,9,20,0.3)',
+                      background: '#cc200e',
+                      boxShadow: '0 8px 20px rgba(204,32,14,0.3)',
                     }}
                   >
                     <Icon size={22} className="text-white" />
                   </div>
 
                   <h3
-                    className="mb-2 text-lg font-bold text-white"
+                    className="mb-2 text-lg font-bold text-fg"
                     style={{ letterSpacing: '-0.02em' }}
                   >
                     {feature.title}
                   </h3>
 
-                  <p className="text-sm leading-relaxed text-[#A1A1AA]">
+                  <p className="text-sm leading-relaxed text-muted">
                     {feature.description}
                   </p>
                 </Reveal>
@@ -287,13 +287,13 @@ export default function LocalRidesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20" style={{ background: '#0B0B0D' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-20" style={{ background: 'var(--color-bg-alt)' }}>
         <Reveal className="mx-auto max-w-7xl">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"
             style={{
-              background: '#0B0B0D',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--color-bg-alt)',
+              border: '1px solid var(--color-line)',
               boxShadow: '0 30px 90px rgba(0,0,0,0.45)',
             }}
           >
@@ -301,19 +301,19 @@ export default function LocalRidesPage() {
               <div className="max-w-2xl text-left">
                 <span
                   className="mb-3 block text-xs font-black uppercase tracking-[0.22em]"
-                  style={{ color: '#e50914' }}
+                  style={{ color: '#cc200e' }}
                 >
                   Local Rides
                 </span>
 
                 <h2
-                  className="mb-3 text-4xl font-black text-white sm:text-5xl"
+                  className="mb-3 text-4xl font-black text-fg sm:text-5xl"
                   style={{ letterSpacing: '-0.04em', lineHeight: 1.05 }}
                 >
                   Need a Ride Right Now?
                 </h2>
 
-                <p className="max-w-xl text-base leading-relaxed text-[#A1A1AA] sm:text-lg">
+                <p className="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
                   Call us and we&apos;ll have a driver with you in minutes.
                 </p>
               </div>
@@ -323,8 +323,8 @@ export default function LocalRidesPage() {
                   href={`tel:${PHONE.replace(/\s/g, '')}`}
                   className="inline-flex h-14 min-w-[200px] items-center justify-center gap-2 rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
                   style={{
-                    background: '#e50914',
-                    boxShadow: '0 14px 35px rgba(229,9,20,0.25)',
+                    background: '#cc200e',
+                    boxShadow: '0 14px 35px rgba(204,32,14,0.25)',
                     textDecoration: 'none',
                   }}
                 >
@@ -334,10 +334,10 @@ export default function LocalRidesPage() {
 
                 <Link
                   href="/contact"
-                  className="inline-flex h-14 min-w-[180px] items-center justify-center rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+                  className="inline-flex h-14 min-w-[180px] items-center justify-center rounded-xl px-8 text-base font-bold text-fg transition-all duration-200"
                   style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.15)',
+                    background: 'var(--color-surface-soft)',
+                    border: '1px solid var(--color-line)',
                     textDecoration: 'none',
                   }}
                 >

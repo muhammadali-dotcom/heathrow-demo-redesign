@@ -50,8 +50,8 @@ export default function Footer() {
     <footer
       className="border-t relative z-10"
       style={{
-        background: '#0B0B0D',
-        borderColor: 'rgba(255,255,255,0.08)',
+        background: 'var(--color-bg-alt)',
+        borderColor: 'var(--color-line)',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -69,10 +69,10 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-white font-bold text-base tracking-wide">{COMPANY_NAME}</span>
+              <span className="text-fg font-bold text-base tracking-wide">{COMPANY_NAME}</span>
             </div>
 
-            <p className="text-[#A1A1AA] text-sm leading-relaxed mb-6">
+            <p className="text-muted text-sm leading-relaxed mb-6">
               Mill Hill&apos;s most trusted taxi service. Reliable, professional and
               always on time for airport transfers, school runs and local rides across
               North London.
@@ -85,10 +85,10 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 flex items-center justify-center rounded-xl text-[#A1A1AA] hover:text-white transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-xl text-muted hover:text-fg transition-colors"
                   style={{
-                    background: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,255,255,0.1)',
+                    background: 'var(--color-surface-soft)',
+                    border: '1px solid var(--color-line)',
                   }}
                 >
                   <Icon />
@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col">
-            <h3 className="text-white font-semibold text-sm uppercase tracking-widest mb-4" style={{ minHeight: '28px', display: 'flex', alignItems: 'center' }}>
+            <h3 className="text-fg font-semibold text-sm uppercase tracking-widest mb-4" style={{ minHeight: '28px', display: 'flex', alignItems: 'center' }}>
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -107,7 +107,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#A1A1AA] hover:text-[#C0392B] text-sm transition-colors duration-200"
+                    className="text-muted hover:text-[var(--color-accent-hover)] text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -118,7 +118,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="flex flex-col">
-            <h3 className="text-white font-semibold text-sm uppercase tracking-widest mb-4" style={{ minHeight: '28px', display: 'flex', alignItems: 'center' }}>
+            <h3 className="text-fg font-semibold text-sm uppercase tracking-widest mb-4" style={{ minHeight: '28px', display: 'flex', alignItems: 'center' }}>
               Services
             </h3>
             <ul className="space-y-3">
@@ -126,7 +126,7 @@ export default function Footer() {
                 <li key={s.id}>
                   <Link
                     href={s.href}
-                    className="text-[#A1A1AA] hover:text-[#C0392B] text-sm transition-colors duration-200"
+                    className="text-muted hover:text-[var(--color-accent-hover)] text-sm transition-colors duration-200"
                   >
                     {s.title}
                   </Link>
@@ -137,7 +137,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="flex flex-col">
-            <h3 className="text-white font-semibold text-sm uppercase tracking-widest mb-4" style={{ minHeight: '28px', display: 'flex', alignItems: 'center' }}>
+            <h3 className="text-fg font-semibold text-sm uppercase tracking-widest mb-4" style={{ minHeight: '28px', display: 'flex', alignItems: 'center' }}>
               Contact
             </h3>
 
@@ -147,20 +147,20 @@ export default function Footer() {
                   {href ? (
                     <a
                       href={href}
-                      className="flex items-start gap-3 text-[#A1A1AA] hover:text-white text-sm transition-colors group"
+                      className="flex items-start gap-3 text-muted hover:text-fg text-sm transition-colors group"
                     >
                       <Icon
                         size={15}
-                        className="mt-0.5 text-[#cc200e] flex-shrink-0 group-hover:text-[#ff3a27] transition-colors"
+                        className="mt-0.5 text-[var(--color-accent)] flex-shrink-0 group-hover:text-[var(--color-accent-hover)] transition-colors"
                         strokeWidth={2}
                       />
                       <span>{label}</span>
                     </a>
                   ) : (
-                    <span className="flex items-start gap-3 text-[#A1A1AA] text-sm">
+                    <span className="flex items-start gap-3 text-muted text-sm">
                       <Icon
                         size={15}
-                        className="mt-0.5 text-[#cc200e] flex-shrink-0"
+                        className="mt-0.5 text-[var(--color-accent)] flex-shrink-0"
                         strokeWidth={2}
                       />
                       <span>{label}</span>
@@ -174,8 +174,8 @@ export default function Footer() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-white text-sm font-bold transition-all duration-200 hover:brightness-110 w-full sm:w-auto"
               style={{
-                background: 'linear-gradient(135deg, #cc200e, #cc200e)',
-                boxShadow: '0 4px 16px rgba(192,57,43,0.28)',
+                background: 'var(--color-accent)',
+                boxShadow: '0 4px 16px rgba(204,32,14,0.28)',
               }}
             >
               Contact Now
@@ -185,15 +185,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-14 pt-6 border-t border-[#262626] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#A1A1AA] text-xs">
+        <div className="mt-14 pt-6 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-muted text-xs">
             &copy; {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/privacy-policy" className="text-[#A1A1AA] hover:text-white text-xs transition-colors">
+            <Link href="/privacy-policy" className="text-muted hover:text-fg text-xs transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-[#A1A1AA] hover:text-white text-xs transition-colors">
+            <Link href="/terms" className="text-muted hover:text-fg text-xs transition-colors">
               Terms &amp; Conditions
             </Link>
           </div>

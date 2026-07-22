@@ -43,7 +43,7 @@ const homeServices = [
 
 export default function Services() {
   return (
-    <section className="py-24 px-4" style={{ background: '#050505' }}>
+    <section className="py-24 px-4" style={{ background: 'var(--color-bg)' }}>
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <SectionTitle
@@ -59,19 +59,19 @@ export default function Services() {
             <div
               className="group rounded-2xl overflow-hidden transition-all duration-300 h-full flex flex-col"
               style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: 'var(--color-surface)',
+                border: '1px solid var(--color-line)',
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
                 el.style.transform = 'translateY(-8px)';
-                el.style.borderColor = 'rgba(192,57,43,0.45)';
-                el.style.boxShadow = '0 24px 60px rgba(192,57,43,0.12)';
+                el.style.borderColor = 'rgba(204,32,14,0.45)';
+                el.style.boxShadow = '0 24px 60px rgba(204,32,14,0.12)';
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
                 el.style.transform = '';
-                el.style.borderColor = 'rgba(255,255,255,0.08)';
+                el.style.borderColor = 'var(--color-line)';
                 el.style.boxShadow = '';
               }}
             >
@@ -83,23 +83,23 @@ export default function Services() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* subtle dark overlay so card bg bleeds in slightly */}
+                {/* subtle bottom-edge scrim for a clean seam into the card body, theme-invariant */}
                 <div
                   className="absolute inset-0"
-                  style={{ background: 'rgba(5,5,5,0.25)' }}
+                  style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45), transparent 45%)' }}
                 />
               </div>
 
               {/* Content */}
               <div className="p-5 flex flex-col flex-1">
                 <h3
-                  className="text-white font-bold text-lg mb-2"
+                  className="text-fg font-bold text-lg mb-2"
                   style={{ letterSpacing: '-0.02em' }}
                 >
                   {service.title}
                 </h3>
                 <p
-                  className="text-[#A1A1AA] text-sm leading-relaxed mb-4 flex-1"
+                  className="text-muted text-sm leading-relaxed mb-4 flex-1"
                   dangerouslySetInnerHTML={{ __html: service.description }}
                 />
                 <Link

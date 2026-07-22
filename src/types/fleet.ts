@@ -4,4 +4,5 @@ export interface FleetVehicle {
   passengers: number;
   luggage: number;
   image: string;
+  imageLight?: string;
 }

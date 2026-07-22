@@ -3,23 +3,23 @@ import Reveal from '@/components/ui/Reveal';
 
 export default function CTA() {
   return (
-    <section className="bg-[#050607] px-4 py-24">
+    <section className="bg-bg-alt px-4 py-24">
       <Reveal className="mx-auto max-w-7xl">
-        <div className="rounded-3xl border border-white/10 bg-[#0b0c0e] px-8 py-10 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:px-12 lg:px-16">
+        <div className="rounded-3xl border border-line bg-surface px-8 py-10 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:px-12 lg:px-16">
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-2xl text-left">
-              <span className="mb-3 block text-xs font-black uppercase tracking-[0.22em] text-[#e50914]">
+              <span className="mb-3 block text-xs font-black uppercase tracking-[0.22em] text-[#cc200e]">
                 Book Now
               </span>
 
               <h2
-                className="mb-3 text-4xl font-black leading-tight text-white sm:text-5xl"
+                className="mb-3 text-4xl font-black leading-tight text-fg sm:text-5xl"
                 style={{ letterSpacing: '-0.04em' }}
               >
                 Ready to Book Your Ride?
               </h2>
 
-              <p className="max-w-xl text-base leading-relaxed text-[#a1a1aa] sm:text-lg">
+              <p className="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
                 Fast, reliable and professional taxi services just a click away.
               </p>
             </div>
@@ -27,7 +27,7 @@ export default function CTA() {
             <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
               <a
                 href="/contact"
-                className="inline-flex h-14 min-w-[170px] items-center justify-center rounded-xl bg-[#e50914] px-8 text-base font-bold text-white shadow-[0_14px_35px_rgba(229,9,20,0.25)] transition hover:bg-[#ff1f2d]"
+                className="inline-flex h-14 min-w-[170px] items-center justify-center rounded-xl bg-[#cc200e] px-8 text-base font-bold text-white shadow-[0_14px_35px_rgba(204,32,14,0.25)] transition hover:bg-[#A93226]"
               >
                 Get a Quote
               </a>
@@ -35,7 +35,7 @@ export default function CTA() {
               <Button
                 variant="outline"
                 href="/book"
-                className="h-14 min-w-[170px] border border-white/15 bg-white/[0.04] px-8 text-base font-bold text-white hover:border-[#e50914] hover:text-[#e50914]"
+                className="h-14 min-w-[170px] border border-line bg-surface-soft px-8 text-base font-bold text-fg hover:border-[#cc200e] hover:text-[#cc200e]"
               >
                 Book Now
               </Button>

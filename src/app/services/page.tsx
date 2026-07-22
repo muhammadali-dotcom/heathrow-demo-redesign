@@ -84,17 +84,17 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main style={{ background: '#050505', minHeight: '100vh' }}>
+    <main style={{ background: 'var(--color-bg)', minHeight: '100vh' }}>
       <JsonLd data={serviceJsonLd('/services')} />
       {/* Hero */}
       <section
         className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        style={{ background: 'linear-gradient(180deg, #0B0B0D 0%, #050505 100%)' }}
+        style={{ background: 'linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)' }}
       >
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(192,57,43,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -102,21 +102,21 @@ export default function ServicesPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(192,57,43,0.12)',
-              border: '1px solid rgba(192,57,43,0.3)',
+              background: 'rgba(204,32,14,0.12)',
+              border: '1px solid rgba(204,32,14,0.3)',
               color: '#cc200e',
             }}
           >
             What We Offer
           </span>
           <h1
-            className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6"
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-fg mb-6"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Our{' '}
             <span style={{ color: '#cc200e' }}>Services</span>
           </h1>
-          <p className="text-lg text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed">
             From airport transfers to school runs, we provide comprehensive taxi services
             tailored to every journey across North London.
           </p>
@@ -134,8 +134,8 @@ export default function ServicesPage() {
                 delay={Math.min(index * 0.08, 0.24)}
                 className="rounded-3xl overflow-hidden"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'var(--color-surface)',
+                  border: '1px solid var(--color-line)',
                 }}
               >
                 <div className={`grid lg:grid-cols-2 gap-0 ${isEven ? '' : 'lg:[direction:rtl]'}`}>
@@ -153,8 +153,8 @@ export default function ServicesPage() {
                       className="absolute inset-0 pointer-events-none"
                       style={{
                         background: isEven
-                          ? 'linear-gradient(to right, transparent 60%, rgba(5,5,5,0.6) 100%)'
-                          : 'linear-gradient(to left, transparent 60%, rgba(5,5,5,0.6) 100%)',
+                          ? 'linear-gradient(to right, transparent 70%, var(--color-surface) 100%)'
+                          : 'linear-gradient(to left, transparent 70%, var(--color-surface) 100%)',
                       }}
                     />
                   </div>
@@ -168,15 +168,15 @@ export default function ServicesPage() {
                       {service.tagline}
                     </span>
                     <h2
-                      className="text-3xl sm:text-4xl font-black text-white mb-4"
+                      className="text-3xl sm:text-4xl font-black text-fg mb-4"
                       style={{ letterSpacing: '-0.03em' }}
                     >
                       {service.title}
                     </h2>
-                    <p className="text-[#A1A1AA] leading-relaxed mb-7">{service.description}</p>
+                    <p className="text-muted leading-relaxed mb-7">{service.description}</p>
                     <ul className="space-y-2 mb-8">
                       {service.features.map((f) => (
-                        <li key={f} className="flex items-center gap-3 text-sm text-[#A1A1AA]">
+                        <li key={f} className="flex items-center gap-3 text-sm text-muted">
                           <CheckCircle size={15} style={{ color: '#cc200e', flexShrink: 0 }} />
                           {f}
                         </li>
@@ -188,7 +188,7 @@ export default function ServicesPage() {
                         className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-white transition-all duration-200 hover:brightness-110"
                         style={{
                           background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                          boxShadow: '0 8px 24px rgba(192,57,43,0.3)',
+                          boxShadow: '0 8px 24px rgba(204,32,14,0.3)',
                         }}
                       >
                         Learn More <ArrowRight size={16} />
@@ -203,12 +203,12 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0B0B0D' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'var(--color-bg-alt)' }}>
         <Reveal className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-black text-white mb-4" style={{ letterSpacing: '-0.04em' }}>
+          <h2 className="text-4xl font-black text-fg mb-4" style={{ letterSpacing: '-0.04em' }}>
             Not Sure Which Service?
           </h2>
-          <p className="text-[#A1A1AA] text-lg mb-8">
+          <p className="text-muted text-lg mb-8">
             Call us and we&apos;ll find the best option for your journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -217,17 +217,17 @@ export default function ServicesPage() {
               className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white hover:brightness-110 transition-all duration-200"
               style={{
                 background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                boxShadow: '0 16px 40px rgba(192,57,43,0.3)',
+                boxShadow: '0 16px 40px rgba(204,32,14,0.3)',
               }}
             >
               Get a Quote
             </Link>
             <a
               href={`tel:${PHONE.replace(/\s/g, '')}`}
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white hover:bg-white/10 transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-fg hover:bg-fg/10 transition-all duration-200"
               style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                background: 'var(--color-surface-soft)',
+                border: '1px solid var(--color-line)',
               }}
             >
               <Phone size={16} />

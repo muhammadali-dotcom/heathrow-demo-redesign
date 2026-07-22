@@ -5,7 +5,7 @@ import Reveal from '@/components/ui/Reveal';
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 px-4" style={{ background: '#0B0B0D' }}>
+    <section className="py-24 px-4" style={{ background: 'var(--color-bg-alt)' }}>
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <SectionTitle

@@ -1,7 +1,9 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
 import {
   ArrowRight,
   Car,
@@ -18,13 +20,22 @@ const trustPoints = [
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const isLight = mounted && resolvedTheme === 'light';
+
+  const heroTextColor = isLight ? 'text-fg' : 'text-white';
+  const heroSubTextColor = isLight ? 'text-muted' : 'text-white-soft/80';
+  const trustTextColor = isLight ? 'text-fg' : 'text-white';
+  const trustSubTextColor = isLight ? 'text-muted' : 'text-white-soft/70';
 
   return (
-    <section className="relative min-h-[800px] overflow-hidden bg-[#050607] text-white lg:min-h-screen">
+    <section className={`relative min-h-[800px] overflow-hidden bg-bg-alt ${heroTextColor} lg:min-h-screen`}>
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="/images/fleet/Hero5.jpg"
+          src={isLight ? '/images/fleet/herolight2.png' : '/images/fleet/Hero5.jpg'}
           alt="Bittacy premium taxi service"
           fill
           priority
@@ -34,16 +45,20 @@ export default function Hero() {
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,6,7,0.98)_0%,rgba(5,6,7,0.90)_36%,rgba(5,6,7,0.55)_58%,rgba(5,6,7,0.18)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_50%,rgba(229,9,20,0.28),transparent_32%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-[#050607] via-[#050607]/80 to-transparent" />
+      {isLight ? (
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.94)_0%,rgba(255,255,255,0.88)_36%,rgba(255,255,255,0.5)_58%,rgba(255,255,255,0.08)_100%)]" />
+      ) : (
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,6,7,0.98)_0%,rgba(5,6,7,0.90)_36%,rgba(5,6,7,0.55)_58%,rgba(5,6,7,0.18)_100%)]" />
+      )}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_50%,rgba(204,32,14,0.28),transparent_32%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-bg-alt via-bg-alt/80 to-transparent" />
 
       {/* Light streaks */}
-      <div className="absolute right-[-12%] top-[20%] h-[2px] w-[58%] rotate-[-18deg] bg-[#e50914]/70 blur-[1px]" />
-      <div className="absolute right-[-15%] top-[30%] h-[1px] w-[65%] rotate-[-18deg] bg-[#ff2b24]/60 blur-[1px]" />
-      <div className="absolute left-0 bottom-[28%] h-[1px] w-[44%] bg-[#e50914]/35 blur-[1px]" />
+      <div className="absolute right-[-12%] top-[20%] h-[2px] w-[58%] rotate-[-18deg] bg-[#cc200e]/70 blur-[1px]" />
+      <div className="absolute right-[-15%] top-[30%] h-[1px] w-[65%] rotate-[-18deg] bg-[#A93226]/60 blur-[1px]" />
+      <div className="absolute left-0 bottom-[28%] h-[1px] w-[44%] bg-[#cc200e]/35 blur-[1px]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[800px] w-full max-w-7xl items-center px-4 pt-24 pb-28 sm:px-6 lg:min-h-screen lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[800px] w-full max-w-7xl items-center px-4 pt-14 pb-24 sm:px-6 sm:pt-20 lg:min-h-screen lg:px-8 lg:pt-24 lg:pb-28">
         <div className="grid w-full items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
           {/* Left Content */}
           <div className="max-w-2xl">
@@ -51,7 +66,7 @@ export default function Hero() {
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="mb-5 text-xs font-black uppercase tracking-[0.22em] text-[#ff1f2d]"
+              className="mb-5 text-xs font-black uppercase tracking-[0.22em] text-[#A93226]"
             >
               Mill Hill Taxis, Airport Transfers &amp; School Runs
             </motion.p>
@@ -60,18 +75,18 @@ export default function Hero() {
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 26 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mb-6 text-[44px] font-black leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl lg:text-[76px]"
+              className={`mb-6 text-[44px] font-black leading-[1.02] tracking-[-0.045em] ${heroTextColor} sm:text-6xl lg:text-[76px]`}
             >
               Your Journey,
               <br />
-              Our <span className="text-[#e50914]">Priority</span>
+              Our <span className="text-[#cc200e]">Priority</span>
             </motion.h1>
 
             <motion.p
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.22 }}
-              className="mb-8 max-w-[520px] text-base leading-relaxed text-[#d4d4d8] sm:text-lg"
+              className={`mb-8 max-w-[520px] text-base leading-relaxed ${heroSubTextColor} sm:text-lg`}
             >
               Reliable, punctual and comfortable taxi services across North London
               and beyond.
@@ -86,7 +101,7 @@ export default function Hero() {
               <Button
                 variant="primary"
                 href="/book"
-                className="group h-14 px-8 text-base font-bold shadow-[0_18px_50px_rgba(229,9,20,0.35)]"
+                className="group h-14 px-8 text-base font-bold shadow-[0_18px_50px_rgba(204,32,14,0.35)]"
               >
                 Book a Ride
                 <ArrowRight
@@ -98,7 +113,11 @@ export default function Hero() {
               <Button
                 variant="outline"
                 href="/contact"
-                className="h-14 border-white/30 bg-black/25 px-8 text-base font-bold backdrop-blur-md hover:border-[#e50914] hover:text-[#e50914]"
+                className={`h-14 px-8 text-base font-bold backdrop-blur-md hover:border-[#cc200e] hover:text-[#cc200e] ${
+                  isLight
+                    ? 'border-fg/20 bg-white/60 text-fg'
+                    : 'border-white/30 bg-black/25 text-white'
+                }`}
               >
                 Get a Quote
               </Button>
@@ -112,11 +131,11 @@ export default function Hero() {
             >
               {trustPoints.map(({ icon: Icon, title, text }) => (
                 <div key={title} className="text-center">
-                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#e50914]/60 bg-[#e50914]/10 text-[#ff1f2d] shadow-[0_0_28px_rgba(229,9,20,0.18)]">
+                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#cc200e]/60 bg-[#cc200e]/10 text-[#A93226] shadow-[0_0_28px_rgba(204,32,14,0.18)]">
                     <Icon size={21} strokeWidth={2} />
                   </div>
                   <h3 className="text-sm font-bold leading-tight text-white">{title}</h3>
-                  <p className="mt-1 text-xs leading-snug text-[#b8b8bf]">{text}</p>
+                  <p className="mt-1 text-xs leading-snug text-white-soft/70">{text}</p>
                 </div>
               ))}
             </motion.div>
@@ -133,14 +152,14 @@ export default function Hero() {
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             className="relative hidden min-h-[520px] lg:block"
           >
-            <div className="absolute bottom-6 right-[-40px] h-[170px] w-[82%] rounded-full bg-[#e50914]/20 blur-[70px]" />
-            <div className="absolute bottom-10 right-[-30px] h-[90px] w-[78%] rounded-full bg-black/70 blur-[42px]" />
+            <div className="absolute bottom-6 right-[-40px] h-[170px] w-[82%] rounded-full bg-[#cc200e]/20 blur-[70px]" />
+            <div className="absolute bottom-10 right-[-30px] h-[90px] w-[78%] rounded-full bg-overlay blur-[42px]" />
           </motion.div>
         </div>
       </div>
 
       {/* Bottom fade line */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-white/10" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-line" />
     </section>
   );
 }

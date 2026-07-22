@@ -15,10 +15,10 @@ export default function FloatingWidgets() {
           className="fixed bottom-4 left-4 z-50 animate-fade-in sm:bottom-5 sm:left-5"
           style={{
             maxWidth: 'min(260px, calc(100vw - 32px))',
-            background: 'rgba(20, 20, 22, 0.92)',
+            background: 'var(--color-surface)',
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
-            border: '1px solid rgba(255,255,255,0.1)',
+            border: '1px solid var(--color-line)',
             borderRadius: 12,
             padding: '14px 16px',
             boxShadow: '0 8px 32px rgba(0,0,0,0.45)',
@@ -27,7 +27,7 @@ export default function FloatingWidgets() {
           {/* Header row */}
           <div className="flex items-center justify-between mb-2">
             <span
-              className="text-xs font-bold uppercase tracking-wider text-white"
+              className="text-xs font-bold uppercase tracking-wider text-fg"
               style={{ letterSpacing: '0.08em' }}
             >
               COVID-19 Precaution
@@ -35,7 +35,7 @@ export default function FloatingWidgets() {
             <button
               onClick={() => setCovidVisible(false)}
               aria-label="Dismiss COVID notice"
-              className="text-[#A1A1AA] hover:text-white transition-colors ml-3"
+              className="text-muted hover:text-fg transition-colors ml-3"
               style={{ lineHeight: 1 }}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -46,11 +46,11 @@ export default function FloatingWidgets() {
           </div>
 
           {/* Body */}
-          <p className="text-[#A1A1AA] text-xs leading-relaxed">
+          <p className="text-muted text-xs leading-relaxed">
             For Covid-19 precautionary measures in our services{' '}
             <Link
               href="/covid-19"
-              className="text-[#cc200e] hover:text-[#ff3a27] font-medium transition-colors"
+              className="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-medium transition-colors"
             >
               read more here
             </Link>

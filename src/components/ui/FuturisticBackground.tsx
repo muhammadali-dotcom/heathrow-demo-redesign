@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useCallback } from 'react';
+import { useTheme } from 'next-themes';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -93,6 +94,7 @@ function buildScanLines(): ScanLine[] {
 const PARTICLE_COUNT = 80;
 
 export default function FuturisticBackground() {
+  const { resolvedTheme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const scanLinesRef = useRef<ScanLine[]>([]);
@@ -102,6 +104,11 @@ export default function FuturisticBackground() {
   const frameRef = useRef(0);
   const dimensionsRef = useRef({ w: 0, h: 0 });
   const drawRef = useRef<() => void>(() => {});
+  const isDarkRef = useRef(true);
+
+  useEffect(() => {
+    isDarkRef.current = resolvedTheme !== 'light';
+  }, [resolvedTheme]);
 
   // ── init particles & scan lines ──────────────────────────────────────────
   const init = useCallback(() => {
@@ -131,25 +138,35 @@ export default function FuturisticBackground() {
     const scrollProgress = smoothScrollRef.current /
       Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
 
+    const isDark = isDarkRef.current;
+
     ctx.clearRect(0, 0, w, h);
 
     // ── Ambient gradient background ──────────────────────────────────────
     const bg = ctx.createLinearGradient(0, 0, 0, h);
-    bg.addColorStop(0, '#050505');
-    bg.addColorStop(0.5, '#07050a');
-    bg.addColorStop(1, '#050505');
+    if (isDark) {
+      bg.addColorStop(0, '#050505');
+      bg.addColorStop(0.5, '#07050a');
+      bg.addColorStop(1, '#050505');
+    } else {
+      bg.addColorStop(0, '#FFFFFF');
+      bg.addColorStop(0.5, '#F3F3F5');
+      bg.addColorStop(1, '#FFFFFF');
+    }
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, w, h);
 
     // ── Subtle radial glow (top-left and bottom-right) ───────────────────
+    const glowAlpha1 = isDark ? 0.045 : 0.02;
+    const glowAlpha2 = isDark ? 0.015 : 0.008;
     const glow1 = ctx.createRadialGradient(w * 0.15, h * 0.22, 0, w * 0.15, h * 0.22, w * 0.38);
-    glow1.addColorStop(0, 'rgba(204,32,14,0.045)');
+    glow1.addColorStop(0, `rgba(204,32,14,${glowAlpha1})`);
     glow1.addColorStop(1, 'transparent');
     ctx.fillStyle = glow1;
     ctx.fillRect(0, 0, w, h);
 
     const glow2 = ctx.createRadialGradient(w * 0.82, h * 0.65, 0, w * 0.82, h * 0.65, w * 0.32);
-    glow2.addColorStop(0, 'rgba(204,32,14,0.015)');
+    glow2.addColorStop(0, `rgba(204,32,14,${glowAlpha2})`);
     glow2.addColorStop(1, 'transparent');
     ctx.fillStyle = glow2;
     ctx.fillRect(0, 0, w, h);
@@ -193,10 +210,10 @@ export default function FuturisticBackground() {
         ctx.shadowBlur = 0;
       }
 
-      ctx.globalAlpha = p.opacity;
-      ctx.fillStyle = p.layer > 0.65
-        ? `rgba(255,255,255,1)`
-        : `rgba(180,180,200,1)`;
+      ctx.globalAlpha = isDark ? p.opacity : p.opacity * 0.5;
+      ctx.fillStyle = isDark
+        ? (p.layer > 0.65 ? `rgba(255,255,255,1)` : `rgba(180,180,200,1)`)
+        : (p.layer > 0.65 ? `rgba(20,20,25,1)` : `rgba(90,90,110,1)`);
 
       const half = p.size / 2;
       ctx.fillRect(-half, -half, p.size, p.size);
@@ -249,8 +266,8 @@ export default function FuturisticBackground() {
 
     // ── Fine grid overlay (very subtle) ──────────────────────────────────
     ctx.save();
-    ctx.globalAlpha = 0.025;
-    ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+    ctx.globalAlpha = isDark ? 0.025 : 0.02;
+    ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.5)';
     ctx.lineWidth = 0.5;
     const gridSize = 80;
     for (let gx = 0; gx < w; gx += gridSize) {
