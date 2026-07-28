@@ -15,7 +15,7 @@ export default function FloatingWidgets() {
           className="fixed bottom-4 left-4 z-50 animate-fade-in sm:bottom-5 sm:left-5"
           style={{
             maxWidth: 'min(260px, calc(100vw - 32px))',
-            background: 'var(--color-surface)',
+            background: 'var(--color-overlay)',
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
             border: '1px solid var(--color-line)',

@@ -81,6 +81,7 @@ export default function Services() {
                   src={service.image}
                   alt={service.title}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* subtle bottom-edge scrim for a clean seam into the card body, theme-invariant */}

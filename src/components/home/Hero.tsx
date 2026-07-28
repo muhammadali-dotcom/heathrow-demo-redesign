@@ -35,7 +35,7 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src={isLight ? '/images/fleet/herolight2.png' : '/images/fleet/Hero5.jpg'}
+          src={isLight ? '/images/fleet/herolight2.jpg' : '/images/fleet/Hero5.jpg'}
           alt="Bittacy premium taxi service"
           fill
           priority
