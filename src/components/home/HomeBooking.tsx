@@ -22,8 +22,8 @@ export default function HomeBooking() {
   };
 
   return (
-    <section className="py-24 px-4" id="booking" style={{ background: 'var(--color-bg)' }}>
-      <div className="max-w-5xl mx-auto">
+    <section className="py-24" id="booking" style={{ background: 'var(--color-bg)' }}>
+      <div className="max-w-5xl mx-auto section-padding">
         {/* Section header */}
         <div className="text-center mb-12">
           <span

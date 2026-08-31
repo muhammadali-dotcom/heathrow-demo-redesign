@@ -5,8 +5,8 @@ import Reveal from '@/components/ui/Reveal';
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 px-4" style={{ background: 'var(--color-bg-alt)' }}>
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24" style={{ background: 'var(--color-bg-alt)' }}>
+      <div className="max-w-7xl mx-auto section-padding">
         <Reveal>
           <SectionTitle
             label="Why Choose Us"

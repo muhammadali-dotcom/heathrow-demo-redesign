@@ -31,7 +31,7 @@ export default function Covid19Page() {
   return (
     <main style={{ background: 'var(--color-bg)', minHeight: '100vh' }}>
       <section
-        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 overflow-hidden"
         style={{
           background: `linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)`,
         }}
@@ -43,7 +43,7 @@ export default function Covid19Page() {
             filter: 'blur(40px)',
           }}
         />
-        <Reveal className="max-w-3xl mx-auto relative z-10">
+        <Reveal className="max-w-3xl mx-auto section-padding relative z-10">
           <span
             className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{

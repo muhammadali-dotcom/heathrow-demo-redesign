@@ -73,7 +73,7 @@ export default function CorporateTravelPage() {
       <JsonLd data={serviceJsonLd('/corporate-travel')} />
       {/* Hero */}
       <section
-        className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-28 sm:pt-32 lg:pt-40"
+        className="relative overflow-hidden pb-24 pt-28 sm:pt-32 lg:pt-40"
         style={{
           background: 'linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)',
         }}
@@ -87,7 +87,7 @@ export default function CorporateTravelPage() {
           }}
         />
 
-        <Reveal className="max-w-4xl mx-auto text-center relative z-10">
+        <Reveal className="max-w-4xl mx-auto section-padding text-center relative z-10">
           <span
             className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
             style={{
@@ -112,7 +112,7 @@ export default function CorporateTravelPage() {
             Transport
           </h1>
 
-          <p className="mb-10 text-lg leading-relaxed text-muted p-4">
+          <p className="mb-10 text-lg leading-relaxed text-muted">
             Professional corporate travel solutions for businesses across North
             London. Executive vehicles, corporate accounts, and priority service —
             every time.
@@ -148,33 +148,32 @@ export default function CorporateTravelPage() {
       </section>
 
       {/* Service Image */}
-      <section className="px-4 sm:px-6 lg:px-8 py-12" style={{ background: 'var(--color-bg)' }}>
-        <div
-          className="mx-auto max-w-4xl overflow-hidden rounded-3xl"
-          style={{ border: '1px solid var(--color-line)' }}
-        >
-          <div className="relative h-72 w-full sm:h-96">
-            <Image
-              src="/images/fleet/corporate.png"
-              alt="Corporate travel service — Bittacy Cars"
-              fill
-              className="object-cover"
-              sizes="(max-width: 896px) 100vw, 896px"
-            />
+      <section className="py-12" style={{ background: 'var(--color-bg)' }}>
+        <div className="mx-auto max-w-4xl section-padding">
+          <div className="overflow-hidden rounded-3xl" style={{ border: '1px solid var(--color-line)' }}>
+            <div className="relative h-72 w-full sm:h-96">
+              <Image
+                src="/images/fleet/corporate.png"
+                alt="Corporate travel service — Bittacy Cars"
+                fill
+                className="object-cover"
+                sizes="(max-width: 896px) 100vw, 896px"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats */}
       <section
-        className="px-4 sm:px-6 lg:px-8 py-12"
+        className="py-12"
         style={{
           background: 'var(--color-bg-alt)',
           borderTop: '1px solid var(--color-line)',
           borderBottom: '1px solid var(--color-line)',
         }}
       >
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 text-center lg:grid-cols-4">
+        <div className="mx-auto grid max-w-5xl section-padding grid-cols-2 gap-6 text-center lg:grid-cols-4">
           {[
             { value: '50+', label: 'Business Clients' },
             { value: '100%', label: 'On-Time Rate' },
@@ -198,8 +197,8 @@ export default function CorporateTravelPage() {
       </section>
 
       {/* Features */}
-      <section className="px-4 sm:px-6 lg:px-8 py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl section-padding">
           <Reveal className="mb-16 text-center">
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
@@ -262,8 +261,8 @@ export default function CorporateTravelPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20" style={{ background: 'var(--color-bg-alt)' }}>
-        <Reveal className="mx-auto max-w-7xl">
+      <section className="py-20" style={{ background: 'var(--color-bg-alt)' }}>
+        <Reveal className="mx-auto max-w-7xl section-padding">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"
             style={{

@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import Reveal from '@/components/ui/Reveal';
 
@@ -42,9 +44,16 @@ const homeServices = [
 ];
 
 export default function Services() {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const isLight = mounted && resolvedTheme === 'light';
+  const scrim = isLight
+    ? 'linear-gradient(to top, rgba(0,0,0,0.18), transparent 45%)'
+    : 'linear-gradient(to top, rgba(0,0,0,0.55), transparent 45%)';
   return (
-    <section className="py-24 px-4" style={{ background: 'var(--color-bg)' }}>
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24" style={{ background: 'var(--color-bg)' }}>
+      <div className="max-w-7xl mx-auto section-padding">
         <Reveal>
           <SectionTitle
             label="Our Services"
@@ -84,10 +93,10 @@ export default function Services() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* subtle bottom-edge scrim for a clean seam into the card body, theme-invariant */}
+                {/* subtle bottom-edge scrim for a clean seam into the card body */}
                 <div
                   className="absolute inset-0"
-                  style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45), transparent 45%)' }}
+                  style={{ background: scrim }}
                 />
               </div>
 

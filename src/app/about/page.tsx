@@ -52,7 +52,7 @@ export default function AboutPage() {
     <main style={{ background: 'var(--color-bg)', minHeight: '100vh' }}>
       {/* Hero */}
       <section
-        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 overflow-hidden"
         style={{
           background: `linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)`,
         }}
@@ -65,7 +65,7 @@ export default function AboutPage() {
             filter: 'blur(40px)',
           }}
         />
-        <Reveal className="max-w-4xl mx-auto text-center relative z-10">
+        <Reveal className="max-w-4xl mx-auto section-padding text-center relative z-10">
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
@@ -93,8 +93,8 @@ export default function AboutPage() {
       </section>
 
       {/* Location map */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-16">
-        <Reveal className="max-w-5xl mx-auto">
+      <section className="pb-16">
+        <Reveal className="max-w-5xl mx-auto section-padding">
           <MapView
             height={320}
             markers={[
@@ -116,8 +116,8 @@ export default function AboutPage() {
       </section>
 
       {/* Stats bar */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8" style={{ background: 'var(--color-bg-alt)', borderTop: '1px solid var(--color-line)', borderBottom: '1px solid var(--color-line)' }}>
-        <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="py-12" style={{ background: 'var(--color-bg-alt)', borderTop: '1px solid var(--color-line)', borderBottom: '1px solid var(--color-line)' }}>
+        <div className="max-w-5xl mx-auto section-padding grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s, index) => (
             <Reveal key={s.label} delay={index * 0.08} className="text-center">
               <div className="text-4xl font-black text-fg mb-1" style={{ color: '#cc200e', letterSpacing: '-0.03em' }}>
@@ -130,8 +130,8 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <Reveal className="max-w-7xl mx-auto">
+      <section className="py-24">
+        <Reveal className="max-w-7xl mx-auto section-padding">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span
@@ -243,8 +243,8 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: 'var(--color-bg-alt)' }}>
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24" style={{ background: 'var(--color-bg-alt)' }}>
+        <div className="max-w-7xl mx-auto section-padding">
           <Reveal className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
@@ -291,8 +291,8 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <Reveal className="max-w-3xl mx-auto text-center">
+      <section className="py-24">
+        <Reveal className="max-w-3xl mx-auto section-padding text-center">
           <h2 className="text-4xl font-black text-fg mb-4" style={{ letterSpacing: '-0.04em' }}>
             Ready to Ride with Us?
           </h2>

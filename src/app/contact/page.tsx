@@ -51,7 +51,7 @@ export default function ContactPage() {
     <main style={{ background: "var(--color-bg)", minHeight: "100vh" }}>
       {/* Hero */}
       <section
-        className="relative pt-28 sm:pt-32 lg:pt-40 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 lg:pt-40 pb-20 overflow-hidden"
         style={{
           background: "linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)",
         }}
@@ -65,7 +65,7 @@ export default function ContactPage() {
           }}
         />
         <Reveal
-          className="max-w-3xl mx-auto text-center relative z-10"
+          className="max-w-3xl mx-auto section-padding text-center relative z-10"
           aria-labelledby="contact-hero-heading"
         >
           <span
@@ -95,8 +95,8 @@ export default function ContactPage() {
       </section>
 
       {/* Main content */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto section-padding">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact info */}
             <div>

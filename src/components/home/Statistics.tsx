@@ -11,8 +11,8 @@ const stats = [
 
 export default function Statistics() {
   return (
-    <section className="py-20 px-4" style={{ background: 'var(--color-bg-alt)', borderTop: '1px solid var(--color-line)' }}>
-      <div className="max-w-5xl mx-auto">
+    <section className="py-20" style={{ background: 'var(--color-bg-alt)', borderTop: '1px solid var(--color-line)' }}>
+      <div className="max-w-5xl mx-auto section-padding">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.08} className="text-center">

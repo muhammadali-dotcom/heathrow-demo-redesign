@@ -89,8 +89,8 @@ export default function AreasAndBooking() {
   const [selected, setSelected] = useState<(typeof areas)[number] | null>(null);
 
   return (
-    <section className="bg-bg px-4 py-20 sm:py-24">
-      <Reveal className="mx-auto max-w-6xl">
+    <section className="bg-bg py-20 sm:py-24">
+      <Reveal className="mx-auto max-w-6xl section-padding">
       {/* Section header */}
       <div className="mx-auto mb-14 flex max-w-4xl flex-col items-center text-center">
         <span className="mb-5 inline-flex items-center justify-center rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 px-5 py-2 text-xs font-black uppercase tracking-[0.28em] text-[var(--color-accent)]">

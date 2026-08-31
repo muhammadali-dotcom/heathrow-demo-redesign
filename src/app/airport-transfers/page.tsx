@@ -74,7 +74,7 @@ export default function AirportTransfersPage() {
       <JsonLd data={serviceJsonLd('/airport-transfers')} />
       {/* Hero */}
       <section
-        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)' }}
       >
         <div
@@ -85,7 +85,7 @@ export default function AirportTransfersPage() {
           }}
         />
 
-        <Reveal className="max-w-4xl mx-auto text-center relative z-10">
+        <Reveal className="max-w-4xl mx-auto section-padding text-center relative z-10">
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
@@ -106,7 +106,7 @@ export default function AirportTransfersPage() {
             Transfers
           </h1>
 
-          <p className="text-lg text-muted mx-auto text-center leading-relaxed mb-10 p-4">
+          <p className="text-lg text-muted mx-auto text-center leading-relaxed mb-10">
             From Mill Hill to all major London airports — reliable, punctual and affordable.
             We track your flight so you never have to worry.
           </p>
@@ -139,12 +139,13 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* Service Image */}
-      <section className="px-4 sm:px-6 lg:px-8 py-12" style={{ background: 'var(--color-bg)' }}>
-        <div
-          className="max-w-4xl mx-auto rounded-3xl overflow-hidden"
-          style={{ border: '1px solid var(--color-line)' }}
-        >
-          <div className="relative w-full h-72 sm:h-96">
+      <section className="py-12" style={{ background: 'var(--color-bg)' }}>
+        <div className="max-w-4xl mx-auto section-padding">
+          <div
+            className="overflow-hidden rounded-3xl"
+            style={{ border: '1px solid var(--color-line)' }}
+          >
+            <div className="relative w-full h-72 sm:h-96">
             <Image
               src="/images/fleet/airport.png"
               alt="Airport transfer service — Bittacy Cars"
@@ -152,16 +153,17 @@ export default function AirportTransfersPage() {
               className="object-cover"
               sizes="(max-width: 896px) 100vw, 896px"
             />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Airports we cover */}
       <section
-        className="py-20 px-4 sm:px-6 lg:px-8"
+        className="py-20"
         style={{ background: 'var(--color-bg-alt)', borderTop: '1px solid var(--color-line)' }}
       >
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto section-padding">
           <Reveal className="text-center mb-12">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
@@ -205,8 +207,8 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* Features */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto section-padding">
           <Reveal className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
@@ -263,8 +265,8 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* How it works */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: 'var(--color-bg-alt)' }}>
-        <div className="max-w-5xl mx-auto">
+      <section className="py-24" style={{ background: 'var(--color-bg-alt)' }}>
+        <div className="max-w-5xl mx-auto section-padding">
           <Reveal className="text-center mb-16">
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
@@ -321,8 +323,8 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20" style={{ background: 'var(--color-bg)' }}>
-        <Reveal className="max-w-7xl mx-auto">
+      <section className="py-20" style={{ background: 'var(--color-bg)' }}>
+        <Reveal className="max-w-7xl mx-auto section-padding">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"
             style={{

@@ -14,8 +14,8 @@ const fields = [
 
 export default function QuickBooking() {
   return (
-    <section className="relative z-20 py-8 px-4">
-      <div className="max-w-5xl mx-auto">
+    <section className="relative z-20 py-8">
+      <div className="max-w-5xl mx-auto section-padding">
         <div
           className="rounded-3xl p-8"
           style={{

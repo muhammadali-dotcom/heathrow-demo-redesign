@@ -92,8 +92,8 @@ export default function CoverageAreas() {
   };
 
   return (
-    <section className="py-24 px-4" style={{ background: 'var(--color-bg-alt)' }}>
-      <div className="max-w-6xl mx-auto">
+    <section className="py-24" style={{ background: 'var(--color-bg-alt)' }}>
+      <div className="max-w-6xl mx-auto section-padding">
         {/* Section header */}
         <div className="text-center mb-14">
           <span

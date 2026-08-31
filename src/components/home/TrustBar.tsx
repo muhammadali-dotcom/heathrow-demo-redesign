@@ -11,7 +11,7 @@ const trustItems = [
 export default function TrustBar() {
   return (
     <section className="py-6 border-y" style={{ borderColor: 'var(--color-line)', background: 'var(--color-bg-alt)' }}>
-      <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Reveal className="max-w-7xl mx-auto section-padding">
         <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
           {trustItems.map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-2.5">

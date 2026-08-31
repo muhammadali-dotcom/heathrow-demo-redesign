@@ -72,7 +72,7 @@ export default function SchoolRunsPage() {
       <JsonLd data={serviceJsonLd('/school-runs')} />
       {/* Hero */}
       <section
-        className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pb-24 pt-28 sm:pt-32 lg:pt-40"
+        className="relative overflow-hidden pb-24 pt-28 sm:pt-32 lg:pt-40"
         style={{
           background: 'linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)',
         }}
@@ -86,7 +86,7 @@ export default function SchoolRunsPage() {
           }}
         />
 
-        <Reveal className="relative z-10 mx-auto max-w-4xl text-center">
+        <Reveal className="relative z-10 mx-auto max-w-4xl section-padding text-center">
           <span
             className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
             style={{
@@ -108,7 +108,7 @@ export default function SchoolRunsPage() {
             Every Day
           </h1>
 
-          <p className="mb-10 text-lg leading-relaxed text-muted p-4">
+          <p className="mb-10 text-lg leading-relaxed text-muted">
             Reliable, safe and punctual school transport for your children across
             North London. All drivers are fully DBS checked and trained for child
             welfare.
@@ -144,12 +144,10 @@ export default function SchoolRunsPage() {
       </section>
 
       {/* Service Image */}
-      <section className="px-4 sm:px-6 lg:px-8 py-12" style={{ background: 'var(--color-bg)' }}>
-        <div
-          className="mx-auto max-w-4xl overflow-hidden rounded-3xl"
-          style={{ border: '1px solid var(--color-line)' }}
-        >
-          <div className="relative h-72 w-full sm:h-96">
+      <section className="py-12" style={{ background: 'var(--color-bg)' }}>
+        <div className="mx-auto max-w-4xl section-padding">
+          <div className="overflow-hidden rounded-3xl" style={{ border: '1px solid var(--color-line)' }}>
+            <div className="relative h-72 w-full sm:h-96">
             <Image
               src="/images/fleet/school.png"
               alt="Safe school run service — Bittacy Cars"
@@ -157,20 +155,21 @@ export default function SchoolRunsPage() {
               className="object-cover"
               sizes="(max-width: 896px) 100vw, 896px"
             />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Trust bar */}
       <section
-        className="px-4 sm:px-6 lg:px-8 py-12"
+        className="py-12"
         style={{
           background: 'var(--color-bg-alt)',
           borderTop: '1px solid var(--color-line)',
           borderBottom: '1px solid var(--color-line)',
         }}
       >
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 text-center lg:grid-cols-4">
+        <div className="mx-auto grid max-w-5xl section-padding grid-cols-2 gap-6 text-center lg:grid-cols-4">
           {[
             { value: '100%', label: 'DBS Checked Drivers' },
             { value: '5★', label: 'Parent Satisfaction' },
@@ -194,8 +193,8 @@ export default function SchoolRunsPage() {
       </section>
 
       {/* Features */}
-      <section className="px-4 sm:px-6 lg:px-8 py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl section-padding">
           <Reveal className="mb-16 text-center">
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
@@ -259,8 +258,8 @@ export default function SchoolRunsPage() {
       </section>
 
       {/* How to set up */}
-      <section className="px-4 sm:px-6 lg:px-8 py-24" style={{ background: 'var(--color-bg-alt)' }}>
-        <div className="mx-auto max-w-5xl">
+      <section className="py-24" style={{ background: 'var(--color-bg-alt)' }}>
+        <div className="mx-auto max-w-5xl section-padding">
           <Reveal className="mb-16 text-center">
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
@@ -324,8 +323,8 @@ export default function SchoolRunsPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20">
-        <Reveal className="mx-auto max-w-7xl">
+      <section className="py-20">
+        <Reveal className="mx-auto max-w-7xl section-padding">
           <div
             className="rounded-3xl px-8 py-10 sm:px-12 lg:px-16"
             style={{

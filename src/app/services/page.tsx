@@ -88,7 +88,7 @@ export default function ServicesPage() {
       <JsonLd data={serviceJsonLd('/services')} />
       {/* Hero */}
       <section
-        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative pt-28 sm:pt-32 lg:pt-40 pb-24 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%)' }}
       >
         <div
@@ -98,7 +98,7 @@ export default function ServicesPage() {
             filter: 'blur(40px)',
           }}
         />
-        <Reveal className="max-w-4xl mx-auto text-center relative z-10">
+        <Reveal className="max-w-4xl mx-auto section-padding text-center relative z-10">
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
@@ -124,8 +124,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Services grid */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-8">
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto section-padding space-y-8">
           {services.map((service, index) => {
             const isEven = index % 2 === 0;
             return (
@@ -203,8 +203,8 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: 'var(--color-bg-alt)' }}>
-        <Reveal className="max-w-3xl mx-auto text-center">
+      <section className="py-20" style={{ background: 'var(--color-bg-alt)' }}>
+        <Reveal className="max-w-3xl mx-auto section-padding text-center">
           <h2 className="text-4xl font-black text-fg mb-4" style={{ letterSpacing: '-0.04em' }}>
             Not Sure Which Service?
           </h2>

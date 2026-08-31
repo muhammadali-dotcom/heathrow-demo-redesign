@@ -53,12 +53,16 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_50%,rgba(204,32,14,0.28),transparent_32%)]" />
       <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-bg-alt via-bg-alt/80 to-transparent" />
 
-      {/* Light streaks */}
-      <div className="absolute right-[-12%] top-[20%] h-[2px] w-[58%] rotate-[-18deg] bg-[#cc200e]/70 blur-[1px]" />
-      <div className="absolute right-[-15%] top-[30%] h-[1px] w-[65%] rotate-[-18deg] bg-[#A93226]/60 blur-[1px]" />
-      <div className="absolute left-0 bottom-[28%] h-[1px] w-[44%] bg-[#cc200e]/35 blur-[1px]" />
+      {/* Light streaks — dark mode only */}
+      {!isLight && (
+        <>
+          <div className="absolute right-[-12%] top-[20%] h-[2px] w-[58%] rotate-[-18deg] bg-[#cc200e]/70 blur-[1px]" />
+          <div className="absolute right-[-15%] top-[30%] h-[1px] w-[65%] rotate-[-18deg] bg-[#A93226]/60 blur-[1px]" />
+          <div className="absolute left-0 bottom-[28%] h-[1px] w-[44%] bg-[#cc200e]/35 blur-[1px]" />
+        </>
+      )}
 
-      <div className="relative z-10 mx-auto flex min-h-[800px] w-full max-w-7xl items-center px-4 pt-14 pb-24 sm:px-6 sm:pt-20 lg:min-h-screen lg:px-8 lg:pt-24 lg:pb-28">
+      <div className="relative z-10 mx-auto flex min-h-[800px] w-full max-w-7xl items-center section-padding pt-14 pb-24 sm:pt-20 lg:min-h-screen lg:pt-24 lg:pb-28">
         <div className="grid w-full items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
           {/* Left Content */}
           <div className="max-w-2xl">
@@ -134,8 +138,8 @@ export default function Hero() {
                   <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#cc200e]/60 bg-[#cc200e]/10 text-[#A93226] shadow-[0_0_28px_rgba(204,32,14,0.18)]">
                     <Icon size={21} strokeWidth={2} />
                   </div>
-                  <h3 className="text-sm font-bold leading-tight text-white">{title}</h3>
-                  <p className="mt-1 text-xs leading-snug text-white-soft/70">{text}</p>
+                  <h3 className={`text-sm font-bold leading-tight ${trustTextColor}`}>{title}</h3>
+                  <p className={`mt-1 text-xs leading-snug ${trustSubTextColor}`}>{text}</p>
                 </div>
               ))}
             </motion.div>
@@ -153,7 +157,9 @@ export default function Hero() {
             className="relative hidden min-h-[520px] lg:block"
           >
             <div className="absolute bottom-6 right-[-40px] h-[170px] w-[82%] rounded-full bg-[#cc200e]/20 blur-[70px]" />
-            <div className="absolute bottom-10 right-[-30px] h-[90px] w-[78%] rounded-full bg-overlay blur-[42px]" />
+            {!isLight && (
+              <div className="absolute bottom-10 right-[-30px] h-[90px] w-[78%] rounded-full bg-overlay blur-[42px]" />
+            )}
           </motion.div>
         </div>
       </div>

@@ -1,30 +1,25 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Plane, GraduationCap, MapPin, Briefcase } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
 import { services } from '@/data/services';
 import { COMPANY_NAME } from '@/lib/constants';
 import MobileMenu from './MobileMenu';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 
+const serviceIcons: Record<string, React.ElementType> = {
+  'airport-transfers': Plane,
+  'school-runs': GraduationCap,
+  'local-rides': MapPin,
+  'corporate-travel': Briefcase,
+};
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const servicesRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
-        setServicesOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -44,7 +39,7 @@ export default function Header() {
           scrolled ? 'bg-bg-alt/92' : 'bg-bg-alt/75'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto section-padding">
           <div className="flex items-center justify-between h-16 lg:h-20">
 
             {/* Logo */}
@@ -67,46 +62,85 @@ export default function Header() {
             <nav className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) =>
                 link.label === 'Services' ? (
-                  <div key={link.href} className="relative" ref={servicesRef}>
+                  /* ── Hover dropdown ── */
+                  <div key={link.href} className="relative group">
                     <button
                       type="button"
-                      onClick={() => setServicesOpen((open) => !open)}
-                      aria-expanded={servicesOpen}
-                      aria-controls="header-services-dropdown"
-                      className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-fg hover:text-muted rounded-lg transition-colors duration-200 whitespace-nowrap"
-                      style={{ transition: 'color 0.2s' }}
+                      aria-haspopup="true"
+                      className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted hover:text-fg rounded-lg transition-colors duration-200 whitespace-nowrap"
                     >
                       {link.label}
                       <ChevronDown
                         size={14}
-                        className="transition-transform duration-200"
-                        style={{ transform: servicesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                        className="transition-transform duration-200 group-hover:rotate-180"
                       />
                     </button>
-                    {servicesOpen && (
+
+                    {/* Dropdown panel */}
+                    <div
+                      className="absolute left-0 top-full pt-2 w-64 opacity-0 invisible translate-y-1
+                                 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                                 transition-all duration-200 ease-out"
+                      role="menu"
+                      id="header-services-dropdown"
+                    >
                       <div
-                        id="header-services-dropdown"
-                        className="absolute left-0 top-full mt-2 w-56 rounded-xl py-2 overflow-hidden bg-surface border border-line shadow-[0_12px_30px_rgba(0,0,0,0.25)] dark:shadow-[0_12px_30px_rgba(0,0,0,0.55)]"
+                        className="rounded-2xl overflow-hidden py-2"
+                        style={{
+                          background: 'var(--color-surface)',
+                          border: '1px solid var(--color-line)',
+                          boxShadow: '0 16px 40px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.08)',
+                        }}
                       >
-                        {services.map((s) => (
+                        {services.map((s) => {
+                          const Icon = serviceIcons[s.id] ?? MapPin;
+                          return (
+                            <Link
+                              key={s.id}
+                              href={s.href}
+                              role="menuitem"
+                              className="group/item flex items-center gap-3 px-4 py-3 transition-colors duration-150 hover:bg-fg/5"
+                            >
+                              <span
+                                className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg transition-colors duration-150"
+                                style={{
+                                  background: 'rgba(204,32,14,0.1)',
+                                  border: '1px solid rgba(204,32,14,0.18)',
+                                }}
+                              >
+                                <Icon size={14} style={{ color: '#cc200e' }} />
+                              </span>
+                              <div>
+                                <div className="text-sm font-semibold text-fg leading-tight">
+                                  {s.title}
+                                </div>
+                                <div className="text-xs text-muted leading-tight mt-0.5">
+                                  {s.description}
+                                </div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+
+                        {/* Footer link */}
+                        <div className="mx-4 mt-1 pt-2" style={{ borderTop: '1px solid var(--color-line)' }}>
                           <Link
-                            key={s.id}
-                            href={s.href}
-                            onClick={() => setServicesOpen(false)}
-                            className="block px-4 py-2.5 text-sm text-muted hover:text-fg hover:bg-fg/5 transition-colors"
+                            href="/services"
+                            className="flex items-center justify-between py-2 text-xs font-bold uppercase tracking-widest transition-colors duration-150"
+                            style={{ color: '#cc200e' }}
                           >
-                            {s.title}
+                            View All Services
+                            <ChevronDown size={12} className="-rotate-90" />
                           </Link>
-                        ))}
+                        </div>
                       </div>
-                    )}
+                    </div>
                   </div>
                 ) : (
                   <Link
                     key={link.href}
                     href={link.href}
                     className="px-4 py-2 text-sm font-medium text-muted hover:text-fg rounded-lg transition-colors duration-200 whitespace-nowrap"
-                    style={{ transition: 'color 0.2s' }}
                   >
                     {link.label}
                   </Link>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   MapContainer,
   Marker,
@@ -105,16 +105,21 @@ const DEFAULT_CENTER: [number, number] = [51.6155, -0.2405];
 function DarkTileLayer() {
   const map = useMap();
   const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme !== "light";
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  // Before mount resolvedTheme is undefined — default to dark (matches site defaultTheme)
+  const isDark = mounted ? resolvedTheme !== "light" : true;
 
   useEffect(() => {
+    // Use OpenStreetMap tiles — completely free, no API key, no domain restrictions.
+    // For dark mode we apply a CSS invert filter via the className.
     const tiles = L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       {
         attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: "abcd",
-        maxZoom: 20,
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        subdomains: "abc",
+        maxZoom: 19,
         className: isDark ? "google-like-dark-layer" : "",
       }
     );
@@ -166,7 +171,9 @@ export default function LeafletMap({
   zoom = 12,
 }: LeafletMapProps) {
   const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme !== "light";
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const isDark = mounted ? resolvedTheme !== "light" : true;
   const initialCenter = markers[0]?.position ?? DEFAULT_CENTER;
 
   return (

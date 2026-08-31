@@ -3,8 +3,8 @@ import Reveal from '@/components/ui/Reveal';
 
 export default function CTA() {
   return (
-    <section className="bg-bg-alt px-4 py-24">
-      <Reveal className="mx-auto max-w-7xl">
+    <section className="bg-bg-alt py-24">
+      <Reveal className="mx-auto max-w-7xl section-padding">
         <div className="rounded-3xl border border-line bg-surface px-8 py-10 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:px-12 lg:px-16">
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-2xl text-left">
