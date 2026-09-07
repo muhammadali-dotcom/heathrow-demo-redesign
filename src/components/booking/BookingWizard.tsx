@@ -1093,8 +1093,7 @@ export default function BookingWizard() {
                   {/* Left column: route + trip tiles */}
                   <div className="flex flex-col gap-4">
                     <div
-                      className="rounded-xl p-5"
-                      style={{ background: "var(--color-surface)", border: "1px solid var(--color-line)" }}
+                      className="rounded-xl border border-line bg-surface p-5"
                     >
                       <div className="relative pl-6">
                         <span
@@ -1132,8 +1131,7 @@ export default function BookingWizard() {
                       ].map(({ label, value }) => (
                         <div
                           key={label}
-                          className="rounded-xl p-4"
-                          style={{ background: "var(--color-surface)", border: "1px solid var(--color-line)" }}
+                          className="rounded-xl border border-line bg-surface p-4"
                         >
                           <p className="mb-1 text-xs text-muted">{label}</p>
                           <p className="text-base font-bold text-fg">{value}</p>
@@ -1144,8 +1142,7 @@ export default function BookingWizard() {
 
                   {/* Right column: customer + fare details */}
                   <div
-                    className="flex flex-col rounded-xl p-5"
-                    style={{ background: "var(--color-surface)", border: "1px solid var(--color-line)" }}
+                    className="flex flex-col rounded-xl border border-line bg-surface p-5"
                   >
                     <div className="flex-1">
                       {[

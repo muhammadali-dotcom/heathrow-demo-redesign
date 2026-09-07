@@ -40,9 +40,6 @@ bittacy-cars/
 │   │   ├── corporate-travel/
 │   │   │   └── page.tsx
 │   │   │
-│   │   ├── fleet/
-│   │   │   └── page.tsx
-│   │   │
 │   │   └── contact/
 │   │       └── page.tsx
 │   │
@@ -54,7 +51,6 @@ bittacy-cars/
 │   │   │
 │   │   ├── home/
 │   │   │   ├── Hero.tsx
-│   │   │   ├── QuickBooking.tsx
 │   │   │   ├── TrustBar.tsx
 │   │   │   ├── Services.tsx
 │   │   │   ├── WhyChooseUs.tsx

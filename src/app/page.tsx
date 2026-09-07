@@ -6,7 +6,6 @@ import WhyChooseUs from '@/components/home/WhyChooseUs';
 import Fleet from '@/components/home/Fleet';
 import AreasAndBooking from '@/components/home/AreasAndBooking';
 import Testimonials from '@/components/home/Testimonials';
-import Statistics from '@/components/home/Statistics';
 import FAQ from '@/components/home/FAQ';
 import CTA from '@/components/home/CTA';
 import JsonLd from '@/components/seo/JsonLd';
@@ -32,7 +31,6 @@ export default function HomePage() {
       <Fleet />
       <AreasAndBooking />
       <Testimonials />
-      <Statistics />
       <FAQ />
       <CTA />
     </>
