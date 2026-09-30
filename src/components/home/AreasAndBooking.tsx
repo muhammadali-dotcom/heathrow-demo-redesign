@@ -7,81 +7,81 @@ import Reveal from '@/components/ui/Reveal';
 
 const areas = [
   {
-    id: 'finchley-central',
-    name: 'Finchley Central',
-    postcode: 'N3',
+    id: 'heathrow',
+    name: 'Heathrow Airport',
+    postcode: 'TW6',
     description:
-      'Reliable Finchley Central taxis and minicabs for fast local travel and airport transfers.',
+      'Meet & greet minicabs at Heathrow Terminals 2, 3, 4 and 5 with live flight tracking.',
   },
   {
-    id: 'east-finchley',
-    name: 'East Finchley',
-    postcode: 'N2',
+    id: 'hounslow',
+    name: 'Hounslow',
+    postcode: 'TW3',
     description:
-      'Premium East Finchley cabs and minicab service for comfortable city car transfers.',
+      'Reliable Hounslow taxis and minicabs for fast local travel and Heathrow transfers.',
   },
   {
-    id: 'north-finchley',
-    name: 'North Finchley',
-    postcode: 'N12',
+    id: 'hayes',
+    name: 'Hayes',
+    postcode: 'UB3',
     description:
-      'Professional North Finchley taxi service providing affordable cars and reliable transfers.',
+      'Quick Hayes cabs and minicabs available 24/7 for all your airport transfer needs.',
   },
   {
-    id: 'hendon',
-    name: 'Hendon',
-    postcode: 'NW4',
+    id: 'harlington',
+    name: 'Harlington',
+    postcode: 'UB3',
     description:
-      'Quick Hendon cabs and minicabs available 24/7 for all your airport transfer needs.',
+      'Professional Harlington minicab service minutes from Heathrow, day and night.',
   },
   {
-    id: 'colindale',
-    name: 'Colindale',
-    postcode: 'NW9',
+    id: 'west-drayton',
+    name: 'West Drayton',
+    postcode: 'UB7',
     description:
-      'Efficient Colindale minicab service offering luxury cars for safe local and long transfers.',
+      'Dependable West Drayton taxis for airport hotels, stations and local journeys.',
   },
   {
-    id: 'edgware',
-    name: 'Edgware',
-    postcode: 'HA8',
+    id: 'feltham',
+    name: 'Feltham',
+    postcode: 'TW13',
     description:
-      'Top-rated Edgware taxis and cabs providing seamless airport transfer service daily.',
+      'Affordable Feltham minicabs and private hire cars for local and airport transfers.',
   },
   {
-    id: 'friern-barnet',
-    name: 'Friern Barnet',
-    postcode: 'N11',
+    id: 'staines',
+    name: 'Staines',
+    postcode: 'TW18',
     description:
-      'Dependable Friern Barnet minicabs and taxis for timely car transfers across the city.',
+      'Comfortable Staines cabs with fixed-price transfers to every Heathrow terminal.',
   },
   {
-    id: 'whetstone',
-    name: 'Whetstone',
-    postcode: 'N20',
+    id: 'uxbridge',
+    name: 'Uxbridge',
+    postcode: 'UB8',
     description:
-      'Modern Whetstone cars and minicab service tailored for fast and easy airport transfers.',
+      'Trusted Uxbridge taxis offering premium airport and business transfers at low rates.',
   },
   {
-    id: 'high-barnet',
-    name: 'High Barnet – Cockfosters',
-    postcode: 'EN4',
+    id: 'slough',
+    name: 'Slough',
+    postcode: 'SL1',
     description:
-      'Trusted High Barnet taxis and cabs offering premium transfer service at low rates.',
+      'Fast Slough minicab service for Heathrow flights and journeys into London.',
   },
   {
-    id: 'barnet',
-    name: 'Barnet',
-    postcode: 'EN5',
+    id: 'ealing',
+    name: 'Ealing',
+    postcode: 'W5',
     description:
-      'Quality Barnet minicabs and private hire cars for all your local taxi transfers.',
+      'Modern Ealing cars and minicab service tailored for easy Heathrow transfers.',
   },
   {
-    id: 'golders-green',
-    name: 'Golders Green',
-    postcode: 'NW11',
+    id: 'southall',
+    name: 'Southall',
+    postcode: 'UB1',
     description:
-      'Fast Golders Green cabs and minicab service for professional airport car transfers.',
+      'Quality Southall minicabs and private hire cars for all your local taxi journeys.',
   },
 ];
 
@@ -105,14 +105,14 @@ export default function AreasAndBooking() {
         </h2>
 
         <p className="mx-auto max-w-[760px] text-center text-base leading-8 text-muted sm:text-lg">
-          We cover North London and beyond. Click any area for details, or book your ride now.
+          We cover Heathrow, West London and beyond. Click any area for details, or book your ride now.
         </p>
       </div>
 
       {/* Switcher */}
       <div className="mb-10 flex justify-center">
         <div className="inline-flex rounded-2xl border border-line bg-surface p-1.5 shadow-[0_18px_45px_rgba(0,0,0,0.12)] dark:shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
-          <button className="rounded-xl bg-[var(--color-accent)] px-10 py-3 text-sm font-bold text-white shadow-[0_8px_24px_rgba(204,32,14,0.28)]">
+          <button className="rounded-xl bg-[var(--color-accent-solid)] px-10 py-3 text-sm font-bold text-[var(--color-accent-solid-fg)] shadow-[0_8px_24px_rgba(var(--color-accent-rgb),0.28)]">
             Areas
           </button>
 
@@ -143,7 +143,7 @@ export default function AreasAndBooking() {
                     setSelected((prev) => (prev?.id === area.id ? null : area))
                   }
                   className={`flex items-start gap-3 rounded-2xl border p-4 text-left transition-all duration-200 ${isActive
-                    ? 'border-[var(--color-accent)]/60 bg-[var(--color-accent)]/10 shadow-[0_8px_30px_rgba(204,32,14,0.14)]'
+                    ? 'border-[var(--color-accent)]/60 bg-[var(--color-accent)]/10 shadow-[0_8px_30px_rgba(var(--color-accent-rgb),0.14)]'
                     : 'border-line bg-surface-soft hover:border-[var(--color-accent)]/40 hover:bg-fg/5'
                     }`}
                 >
@@ -181,8 +181,8 @@ export default function AreasAndBooking() {
               </button>
 
               <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[var(--color-accent)] shadow-[0_8px_20px_rgba(204,32,14,0.3)]">
-                  <MapPin size={22} className="text-white" />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[var(--color-accent-solid)] shadow-[0_8px_20px_rgba(var(--color-accent-rgb),0.3)]">
+                  <MapPin size={22} className="text-[var(--color-accent-solid-fg)]" />
                 </div>
 
                 <div className="min-w-0 flex-1">
@@ -206,7 +206,7 @@ export default function AreasAndBooking() {
                   <div className="flex flex-col gap-3 sm:flex-row">
                     <Link
                       href="/book"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(204,32,14,0.25)] transition hover:bg-[var(--color-accent-hover)]"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-accent-solid)] px-5 py-2.5 text-sm font-bold text-[var(--color-accent-solid-fg)] shadow-[0_8px_20px_rgba(var(--color-accent-rgb),0.25)] transition hover:bg-[var(--color-accent-solid-hover)]"
                     >
                       Book from {selected.name}
                       <ArrowRight size={14} />

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Mail, MapPin, Clock, Phone } from 'lucide-react';
+import Logo from '@/components/ui/Logo';
 import { navLinks } from '@/data/navigation';
 import { services } from '@/data/services';
 import { EMAIL, LOCATION, COMPANY_NAME, PHONE } from '@/lib/constants';
@@ -61,21 +61,13 @@ export default function Footer() {
           <div className="flex flex-col">
             {/* Logo — same vertical height as the headings in other columns */}
             <div className="flex items-center gap-3 mb-4" style={{ minHeight: '28px' }}>
-              <div className="relative w-9 h-9 flex-shrink-0">
-                <Image
-                  src="/images/fleet/bittacylogo.png"
-                  alt="Bittacy Cars Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-fg font-bold text-base tracking-wide">{COMPANY_NAME}</span>
+              <Logo className="h-12 w-auto" />
             </div>
 
             <p className="text-muted text-sm leading-relaxed mb-6">
-              Mill Hill&apos;s most trusted taxi service. Reliable, professional and
+              Heathrow&apos;s trusted minicab service. Reliable, professional and
               always on time for airport transfers, school runs and local rides across
-              North London.
+              West London.
             </p>
 
             {/* Social icons */}
@@ -172,10 +164,10 @@ export default function Footer() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-white text-sm font-bold transition-all duration-200 hover:brightness-110 w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-[var(--color-accent-solid-fg)] text-sm font-bold transition-all duration-200 hover:brightness-110 w-full sm:w-auto"
               style={{
-                background: 'var(--color-accent)',
-                boxShadow: '0 4px 16px rgba(204,32,14,0.28)',
+                background: 'var(--color-accent-solid)',
+                boxShadow: '0 4px 16px rgba(var(--color-accent-rgb), 0.28)',
               }}
             >
               Contact Now

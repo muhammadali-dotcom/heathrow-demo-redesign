@@ -1,11 +1,11 @@
-# Bittacy Cars
+# Heathrow Mini Cab
 
-> Bittacy Cars is a Mill Hill, North London taxi and private hire company offering airport transfers, school runs, local rides and corporate travel.
+> Heathrow Mini Cab is a Heathrow and West London minicab and private hire company offering airport transfers, school runs, local rides and corporate travel.
 
 Website: https://www.bittacycars.com
 Phone: 020 3761 7526
 Email: info@bittacycars.com
-Location: Mill Hill, North London, United Kingdom
+Location: Heathrow, London, United Kingdom
 
 ## Important Pages
 
@@ -20,9 +20,9 @@ Location: Mill Hill, North London, United Kingdom
 
 ## Services
 
-- Airport transfers from Mill Hill and North London to Heathrow, Gatwick, Stansted, Luton, London City and Southend Airport.
-- School runs across North London with DBS-checked drivers and regular route planning.
-- Local taxi rides across Mill Hill, Edgware, Hendon, Finchley, Barnet, Stanmore, Colindale, Golders Green, Wembley and nearby areas.
+- Airport transfers to and from Heathrow Terminals 2, 3, 4 and 5, plus Gatwick, Stansted, Luton, London City and Southend Airport.
+- School runs across West London with DBS-checked drivers and regular route planning.
+- Local minicab rides across Heathrow, Hounslow, Hayes, Harlington, West Drayton, Feltham, Staines, Uxbridge, Slough, Ealing, Southall, Twickenham and nearby areas.
 - Corporate travel with executive vehicles, priority booking, corporate accounts and monthly invoicing.
 
 ## Booking

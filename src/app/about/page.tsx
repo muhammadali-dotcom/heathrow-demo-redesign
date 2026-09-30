@@ -7,10 +7,10 @@ import MapView from '@/components/map/MapView';
 
 export const metadata = buildMetadata({
   path: '/about',
-  title: 'About Us | Bittacy Cars – Mill Hill Taxi Service',
+  title: 'About Us | Heathrow Mini Cab – Heathrow Minicab Service',
   description:
-    'Learn about Bittacy Cars, Mill Hill\'s most trusted taxi service. Serving North London with reliable airport transfers, school runs, and local rides since 2010.',
-  keywords: ['about Bittacy Cars', 'Mill Hill taxi company', 'trusted North London taxi service'],
+    'Learn about Heathrow Mini Cab, a trusted minicab service serving Heathrow and West London with reliable airport transfers, school runs and local rides.',
+  keywords: ['about Heathrow Mini Cab', 'Heathrow minicab company', 'trusted West London taxi service'],
 });
 
 const values = [
@@ -36,7 +36,7 @@ const values = [
     icon: Users,
     title: 'Community Focused',
     description:
-      'Rooted in Mill Hill, we are proud to serve our local community and the wider North London area with dedication.',
+      'Based around Heathrow, we are proud to serve travellers, local residents and businesses across West London with dedication.',
   },
 ];
 
@@ -61,7 +61,7 @@ export default function AboutPage() {
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(var(--color-accent-rgb), 0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -69,9 +69,9 @@ export default function AboutPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(204,32,14,0.12)',
-              border: '1px solid rgba(204,32,14,0.3)',
-              color: '#cc200e',
+              background: 'rgba(var(--color-accent-rgb), 0.12)',
+              border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+              color: 'var(--color-accent)',
             }}
           >
             Our Story
@@ -81,12 +81,12 @@ export default function AboutPage() {
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             About{' '}
-            <span style={{ color: '#cc200e' }}>{COMPANY_NAME}</span>
+            <span className="accent-word">{COMPANY_NAME}</span>
           </h1>
           <div className="w-full flex justify-center">
           <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed text-balance">
-            Mill Hill&apos;s most trusted taxi service, delivering reliable, professional and
-            comfortable transportation across North London since 2010.
+            Heathrow&apos;s trusted minicab service, delivering reliable, professional and
+            comfortable transportation to and from the airport and across West London.
           </p>
           </div>
         </Reveal>
@@ -120,7 +120,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto section-padding grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s, index) => (
             <Reveal key={s.label} delay={index * 0.08} className="text-center">
-              <div className="text-4xl font-black text-fg mb-1" style={{ color: '#cc200e', letterSpacing: '-0.03em' }}>
+              <div className="text-4xl font-black text-fg mb-1" style={{ color: 'var(--color-accent)', letterSpacing: '-0.03em' }}>
                 {s.value}
               </div>
               <div className="text-sm text-muted font-medium">{s.label}</div>
@@ -137,21 +137,21 @@ export default function AboutPage() {
               <span
                 className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
                 style={{
-                  background: 'rgba(204,32,14,0.12)',
-                  border: '1px solid rgba(204,32,14,0.3)',
-                  color: '#cc200e',
+                  background: 'rgba(var(--color-accent-rgb), 0.12)',
+                  border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+                  color: 'var(--color-accent)',
                 }}
               >
                 Who We Are
               </span>
               <h2 className="text-4xl sm:text-5xl font-black text-fg mb-6 leading-tight" style={{ letterSpacing: '-0.04em' }}>
-                Serving North London<br />with Pride
+                Serving Heathrow<br />with Pride
               </h2>
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  Founded in Mill Hill, Bittacy Cars has been at the heart of North London&apos;s
-                  transportation needs for over a decade. We started with a simple mission: to
-                  provide a taxi service that people could genuinely rely on.
+                  Heathrow Mini Cab looks after airport travellers, local residents and businesses
+                  across Heathrow and West London. Our mission is simple: to provide a minicab
+                  service that people can genuinely rely on, whatever time their flight lands.
                 </p>
                 <p>
                   Today, we are proud to be one of the most trusted names in the area, known for
@@ -174,7 +174,7 @@ export default function AboutPage() {
                   'Flight monitoring for airport pickups',
                 ].map((point) => (
                   <div key={point} className="flex items-center gap-3 text-sm text-muted">
-                    <CheckCircle size={16} style={{ color: '#cc200e', flexShrink: 0 }} />
+                    <CheckCircle size={16} style={{ color: 'var(--color-accent)', flexShrink: 0 }} />
                     {point}
                   </div>
                 ))}
@@ -186,23 +186,23 @@ export default function AboutPage() {
               <div
                 className="rounded-3xl p-8 relative overflow-hidden"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(204,32,14,0.08), rgba(204,32,14,0.02))',
-                  border: '1px solid rgba(204,32,14,0.2)',
+                  background: 'linear-gradient(135deg, rgba(var(--color-accent-rgb), 0.08), rgba(var(--color-accent-rgb), 0.02))',
+                  border: '1px solid rgba(var(--color-accent-rgb), 0.2)',
                 }}
               >
                 <div
                   className="absolute -top-20 -right-20 w-64 h-64 rounded-full pointer-events-none"
                   style={{
-                    background: 'radial-gradient(circle, rgba(204,32,14,0.15) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(var(--color-accent-rgb), 0.15) 0%, transparent 70%)',
                   }}
                 />
                 <div className="relative z-10 space-y-6">
                   <div className="flex items-center gap-4">
                     <div
                       className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'rgba(204,32,14,0.12)', border: '1px solid rgba(204,32,14,0.2)' }}
+                      style={{ background: 'rgba(var(--color-accent-rgb), 0.12)', border: '1px solid rgba(var(--color-accent-rgb), 0.2)' }}
                     >
-                      <Award size={24} style={{ color: '#cc200e' }} />
+                      <Award size={24} style={{ color: 'var(--color-accent)' }} />
                     </div>
                     <div>
                       <div className="text-fg font-bold text-lg">Award-Winning Service</div>
@@ -213,9 +213,9 @@ export default function AboutPage() {
                   <div className="flex items-center gap-4">
                     <div
                       className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'rgba(204,32,14,0.12)', border: '1px solid rgba(204,32,14,0.2)' }}
+                      style={{ background: 'rgba(var(--color-accent-rgb), 0.12)', border: '1px solid rgba(var(--color-accent-rgb), 0.2)' }}
                     >
-                      <MapPin size={24} style={{ color: '#cc200e' }} />
+                      <MapPin size={24} style={{ color: 'var(--color-accent)' }} />
                     </div>
                     <div>
                       <div className="text-fg font-bold text-lg">Local Experts</div>
@@ -226,9 +226,9 @@ export default function AboutPage() {
                   <div className="flex items-center gap-4">
                     <div
                       className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'rgba(204,32,14,0.12)', border: '1px solid rgba(204,32,14,0.2)' }}
+                      style={{ background: 'rgba(var(--color-accent-rgb), 0.12)', border: '1px solid rgba(var(--color-accent-rgb), 0.2)' }}
                     >
-                      <Phone size={24} style={{ color: '#cc200e' }} />
+                      <Phone size={24} style={{ color: 'var(--color-accent)' }} />
                     </div>
                     <div>
                       <div className="text-fg font-bold text-lg">Always Reachable</div>
@@ -249,9 +249,9 @@ export default function AboutPage() {
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
-                background: 'rgba(204,32,14,0.12)',
-                border: '1px solid rgba(204,32,14,0.3)',
-                color: '#cc200e',
+                background: 'rgba(var(--color-accent-rgb), 0.12)',
+                border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+                color: 'var(--color-accent)',
               }}
             >
               What Drives Us
@@ -275,9 +275,9 @@ export default function AboutPage() {
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                    style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 20px rgba(204,32,14,0.3)' }}
+                    style={{ background: 'linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))', boxShadow: '0 8px 20px rgba(var(--color-accent-rgb), 0.3)' }}
                   >
-                    <Icon size={22} className="text-white" />
+                    <Icon size={22} className="text-[var(--color-accent-solid-fg)]" />
                   </div>
                   <h3 className="text-fg font-bold text-lg mb-2" style={{ letterSpacing: '-0.02em' }}>
                     {value.title}
@@ -297,13 +297,13 @@ export default function AboutPage() {
             Ready to Ride with Us?
           </h2>
           <p className="text-muted text-lg mb-8 leading-relaxed">
-            Experience the Bittacy Cars difference. Book your journey today or get in touch to find out more.
+            Experience the Heathrow Mini Cab difference. Book your journey today or get in touch to find out more.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white transition-all duration-200"
-              style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 16px 40px rgba(204,32,14,0.3)' }}
+              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-[var(--color-accent-solid-fg)] transition-all duration-200"
+              style={{ background: 'linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))', boxShadow: '0 16px 40px rgba(var(--color-accent-rgb), 0.3)' }}
             >
               Get a Quote
             </Link>

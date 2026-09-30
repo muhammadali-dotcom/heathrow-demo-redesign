@@ -8,15 +8,15 @@ import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/airport-transfers',
-  title: 'Airport Transfers | Bittacy Cars – Mill Hill to All London Airports',
+  title: 'Airport Transfers | Heathrow Mini Cab – Heathrow Terminals 2–5 & All London Airports',
   description:
-    'Stress-free airport transfers from Mill Hill to Heathrow, Gatwick, Stansted, Luton & City Airport. Fixed prices, flight tracking, 24/7 service.',
-  image: '/images/fleet/airport.png',
+    'Stress-free transfers to and from Heathrow Terminals 2, 3, 4 and 5, plus Gatwick, Stansted, Luton & City Airport. Fixed prices, flight tracking, meet & greet, 24/7.',
+  image: '/images/fleet/airport-branded.jpg',
   keywords: [
-    'Mill Hill airport transfers',
-    'Heathrow taxi from Mill Hill',
-    'Gatwick taxi North London',
-    'Luton airport transfer Mill Hill',
+    'Heathrow airport transfers',
+    'Heathrow Terminal 5 taxi',
+    'Heathrow to Gatwick transfer',
+    'Heathrow meet and greet minicab',
   ],
 });
 
@@ -80,7 +80,7 @@ export default function AirportTransfersPage() {
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(204,32,14,0.13) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(var(--color-accent-rgb), 0.13) 0%, transparent 70%)',
             filter: 'blur(50px)',
           }}
         />
@@ -89,9 +89,9 @@ export default function AirportTransfersPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(204,32,14,0.12)',
-              border: '1px solid rgba(204,32,14,0.3)',
-              color: '#cc200e',
+              background: 'rgba(var(--color-accent-rgb), 0.12)',
+              border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+              color: 'var(--color-accent)',
             }}
           >
             Airport Transfers
@@ -101,23 +101,23 @@ export default function AirportTransfersPage() {
             className="text-4xl sm:text-6xl lg:text-7xl font-black text-fg mb-6"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
-            Stress-Free <span style={{ color: '#cc200e' }}>Airport</span>
+            Stress-Free <span className="accent-word">Airport</span>
             <br />
             Transfers
           </h1>
 
           <p className="text-lg text-muted mx-auto text-center leading-relaxed mb-10">
-            From Mill Hill to all major London airports — reliable, punctual and affordable.
+            Heathrow specialists covering Terminals 2, 3, 4 and 5, plus every major London airport — reliable, punctual and affordable.
             We track your flight so you never have to worry.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-[var(--color-accent-solid-fg)] transition-all duration-200"
               style={{
-                background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                boxShadow: '0 16px 40px rgba(204,32,14,0.3)',
+                background: 'linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))',
+                boxShadow: '0 16px 40px rgba(var(--color-accent-rgb), 0.3)',
               }}
             >
               Get a Free Quote
@@ -147,8 +147,8 @@ export default function AirportTransfersPage() {
           >
             <div className="relative w-full h-72 sm:h-96">
             <Image
-              src="/images/fleet/airport.png"
-              alt="Airport transfer service — Bittacy Cars"
+              src="/images/fleet/airport-branded.jpg"
+              alt="Airport transfer service — Heathrow Mini Cab"
               fill
               className="object-cover"
               sizes="(max-width: 896px) 100vw, 896px"
@@ -168,9 +168,9 @@ export default function AirportTransfersPage() {
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
-                background: 'rgba(204,32,14,0.12)',
-                border: '1px solid rgba(204,32,14,0.3)',
-                color: '#cc200e',
+                background: 'rgba(var(--color-accent-rgb), 0.12)',
+                border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+                color: 'var(--color-accent)',
               }}
             >
               Coverage
@@ -194,7 +194,7 @@ export default function AirportTransfersPage() {
               >
                 <div
                   className="text-2xl font-black mb-2"
-                  style={{ color: '#cc200e', letterSpacing: '-0.02em' }}
+                  style={{ color: 'var(--color-accent)', letterSpacing: '-0.02em' }}
                 >
                   {airport.code}
                 </div>
@@ -213,16 +213,16 @@ export default function AirportTransfersPage() {
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
-                background: 'rgba(204,32,14,0.12)',
-                border: '1px solid rgba(204,32,14,0.3)',
-                color: '#cc200e',
+                background: 'rgba(var(--color-accent-rgb), 0.12)',
+                border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+                color: 'var(--color-accent)',
               }}
             >
               Why Choose Us
             </span>
 
             <h2 className="text-4xl sm:text-5xl font-black text-fg" style={{ letterSpacing: '-0.04em' }}>
-              The Bittacy Difference
+              The Heathrow Mini Cab Difference
             </h2>
           </Reveal>
 
@@ -243,11 +243,11 @@ export default function AirportTransfersPage() {
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                     style={{
-                      background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                      boxShadow: '0 8px 20px rgba(204,32,14,0.3)',
+                      background: 'linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))',
+                      boxShadow: '0 8px 20px rgba(var(--color-accent-rgb), 0.3)',
                     }}
                   >
-                    <Icon size={22} className="text-white" />
+                    <Icon size={22} className="text-[var(--color-accent-solid-fg)]" />
                   </div>
 
                   <h3 className="text-fg font-bold text-lg mb-2" style={{ letterSpacing: '-0.02em' }}>
@@ -271,9 +271,9 @@ export default function AirportTransfersPage() {
             <span
               className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-4"
               style={{
-                background: 'rgba(204,32,14,0.12)',
-                border: '1px solid rgba(204,32,14,0.3)',
-                color: '#cc200e',
+                background: 'rgba(var(--color-accent-rgb), 0.12)',
+                border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+                color: 'var(--color-accent)',
               }}
             >
               Simple Process
@@ -306,9 +306,9 @@ export default function AirportTransfersPage() {
                 <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-black"
                   style={{
-                    background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                    color: 'white',
-                    boxShadow: '0 8px 24px rgba(204,32,14,0.35)',
+                    background: 'linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))',
+                    color: 'var(--color-accent-solid-fg)',
+                    boxShadow: '0 8px 24px rgba(var(--color-accent-rgb), 0.35)',
                   }}
                 >
                   {item.step}
@@ -337,7 +337,7 @@ export default function AirportTransfersPage() {
               <div className="max-w-2xl text-left">
                 <span
                   className="block text-xs font-black uppercase tracking-[0.22em] mb-3"
-                  style={{ color: '#cc200e' }}
+                  style={{ color: 'var(--color-accent)' }}
                 >
                   Airport Transfers
                 </span>
@@ -357,10 +357,10 @@ export default function AirportTransfersPage() {
               <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                 <Link
                   href="/contact"
-                  className="inline-flex h-14 min-w-[180px] items-center justify-center rounded-xl font-bold text-base text-white transition-all duration-200"
+                  className="inline-flex h-14 min-w-[180px] items-center justify-center rounded-xl font-bold text-base text-[var(--color-accent-solid-fg)] transition-all duration-200"
                   style={{
-                    background: '#cc200e',
-                    boxShadow: '0 14px 35px rgba(204,32,14,0.25)',
+                    background: 'var(--color-accent-solid)',
+                    boxShadow: '0 14px 35px rgba(var(--color-accent-rgb), 0.25)',
                     textDecoration: 'none',
                   }}
                 >

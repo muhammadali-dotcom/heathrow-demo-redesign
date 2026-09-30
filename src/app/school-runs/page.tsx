@@ -16,14 +16,14 @@ import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/school-runs',
-  title: 'School Runs | Bittacy Cars – Safe School Transport in Mill Hill',
+  title: 'School Runs | Heathrow Mini Cab – Safe School Transport in West London',
   description:
-    'Safe, reliable and punctual school runs across North London. All drivers are fully DBS checked. Book your regular school run with Bittacy Cars today.',
-  image: '/images/fleet/school.png',
+    'Safe, reliable and punctual school runs across Hounslow, Hayes and West London. All drivers are fully DBS checked. Book your regular school run with Heathrow Mini Cab today.',
+  image: '/images/fleet/school-branded.jpg',
   keywords: [
-    'school runs Mill Hill',
+    'school runs Hounslow',
     'DBS checked school transport',
-    'North London school taxi',
+    'West London school taxi',
   ],
 });
 
@@ -81,7 +81,7 @@ export default function SchoolRunsPage() {
           className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[700px] -translate-x-1/2"
           style={{
             background:
-              'radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)',
+              'radial-gradient(ellipse, rgba(var(--color-accent-rgb), 0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -90,9 +90,9 @@ export default function SchoolRunsPage() {
           <span
             className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
             style={{
-              background: 'rgba(204,32,14,0.12)',
-              border: '1px solid rgba(204,32,14,0.3)',
-              color: '#cc200e',
+              background: 'rgba(var(--color-accent-rgb), 0.12)',
+              border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+              color: 'var(--color-accent)',
             }}
           >
             <GraduationCap size={14} />
@@ -103,24 +103,24 @@ export default function SchoolRunsPage() {
             className="mb-6 text-4xl font-black text-fg sm:text-6xl lg:text-7xl"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
-            Safe <span style={{ color: '#cc200e' }}>School Runs</span>
+            Safe <span className="accent-word">School Runs</span>
             <br />
             Every Day
           </h1>
 
           <p className="mb-10 text-lg leading-relaxed text-muted">
             Reliable, safe and punctual school transport for your children across
-            North London. All drivers are fully DBS checked and trained for child
+            West London. All drivers are fully DBS checked and trained for child
             welfare.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex h-14 min-w-[210px] items-center justify-center rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+              className="inline-flex h-14 min-w-[210px] items-center justify-center rounded-xl px-8 text-base font-bold text-[var(--color-accent-solid-fg)] transition-all duration-200"
               style={{
-                background: '#cc200e',
-                boxShadow: '0 16px 40px rgba(204,32,14,0.3)',
+                background: 'var(--color-accent-solid)',
+                boxShadow: '0 16px 40px rgba(var(--color-accent-rgb), 0.3)',
                 textDecoration: 'none',
               }}
             >
@@ -149,8 +149,8 @@ export default function SchoolRunsPage() {
           <div className="overflow-hidden rounded-3xl" style={{ border: '1px solid var(--color-line)' }}>
             <div className="relative h-72 w-full sm:h-96">
             <Image
-              src="/images/fleet/school.png"
-              alt="Safe school run service — Bittacy Cars"
+              src="/images/fleet/school-branded.jpg"
+              alt="Safe school run service — Heathrow Mini Cab"
               fill
               className="object-cover"
               sizes="(max-width: 896px) 100vw, 896px"
@@ -179,7 +179,7 @@ export default function SchoolRunsPage() {
             <Reveal key={stat.label} delay={index * 0.08}>
               <div
                 className="mb-1 text-3xl font-black"
-                style={{ color: '#cc200e', letterSpacing: '-0.03em' }}
+                style={{ color: 'var(--color-accent)', letterSpacing: '-0.03em' }}
               >
                 {stat.value}
               </div>
@@ -199,9 +199,9 @@ export default function SchoolRunsPage() {
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
               style={{
-                background: 'rgba(204,32,14,0.12)',
-                border: '1px solid rgba(204,32,14,0.3)',
-                color: '#cc200e',
+                background: 'rgba(var(--color-accent-rgb), 0.12)',
+                border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+                color: 'var(--color-accent)',
               }}
             >
               Our Commitment
@@ -233,11 +233,11 @@ export default function SchoolRunsPage() {
                   <div
                     className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
                     style={{
-                      background: '#cc200e',
-                      boxShadow: '0 8px 20px rgba(204,32,14,0.3)',
+                      background: 'var(--color-accent-solid)',
+                      boxShadow: '0 8px 20px rgba(var(--color-accent-rgb), 0.3)',
                     }}
                   >
-                    <Icon size={22} className="text-white" />
+                    <Icon size={22} className="text-[var(--color-accent-solid-fg)]" />
                   </div>
 
                   <h3
@@ -264,9 +264,9 @@ export default function SchoolRunsPage() {
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
               style={{
-                background: 'rgba(204,32,14,0.12)',
-                border: '1px solid rgba(204,32,14,0.3)',
-                color: '#cc200e',
+                background: 'rgba(var(--color-accent-rgb), 0.12)',
+                border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+                color: 'var(--color-accent)',
               }}
             >
               Getting Started
@@ -300,10 +300,10 @@ export default function SchoolRunsPage() {
             ].map((item, index) => (
               <Reveal key={item.step} delay={index * 0.1} className="text-center">
                 <div
-                  className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl text-2xl font-black text-fg"
+                  className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl text-2xl font-black text-[var(--color-accent-solid-fg)]"
                   style={{
-                    background: '#cc200e',
-                    boxShadow: '0 8px 24px rgba(204,32,14,0.35)',
+                    background: 'var(--color-accent-solid)',
+                    boxShadow: '0 8px 24px rgba(var(--color-accent-rgb), 0.35)',
                   }}
                 >
                   {item.step}
@@ -337,7 +337,7 @@ export default function SchoolRunsPage() {
               <div className="max-w-2xl text-left">
                 <span
                   className="mb-3 block text-xs font-black uppercase tracking-[0.22em]"
-                  style={{ color: '#cc200e' }}
+                  style={{ color: 'var(--color-accent)' }}
                 >
                   School Runs
                 </span>
@@ -351,17 +351,17 @@ export default function SchoolRunsPage() {
 
                 <p className="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
                   Give your child the safest and most reliable school transport
-                  in North London.
+                  in West London.
                 </p>
               </div>
 
               <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-auto">
                 <Link
                   href="/contact"
-                  className="inline-flex h-14 min-w-[180px] items-center justify-center rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+                  className="inline-flex h-14 min-w-[180px] items-center justify-center rounded-xl px-8 text-base font-bold text-[var(--color-accent-solid-fg)] transition-all duration-200"
                   style={{
-                    background: '#cc200e',
-                    boxShadow: '0 14px 35px rgba(204,32,14,0.25)',
+                    background: 'var(--color-accent-solid)',
+                    boxShadow: '0 14px 35px rgba(var(--color-accent-rgb), 0.25)',
                     textDecoration: 'none',
                   }}
                 >

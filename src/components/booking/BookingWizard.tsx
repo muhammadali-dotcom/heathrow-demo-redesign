@@ -286,14 +286,14 @@ function FareResult({
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="relative mb-4 overflow-hidden rounded-2xl p-6 text-center"
         style={{
-          background: "rgba(204,32,14,0.1)",
-          border: "1px solid rgba(204,32,14,0.3)",
-          boxShadow: "0 12px 40px rgba(204,32,14,0.18)",
+          background: "rgba(var(--color-accent-rgb), 0.1)",
+          border: "1px solid rgba(var(--color-accent-rgb), 0.3)",
+          boxShadow: "0 12px 40px rgba(var(--color-accent-rgb), 0.18)",
         }}
       >
         <div
           className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full"
-          style={{ background: "rgba(204,32,14,0.2)", border: "1px solid rgba(204,32,14,0.4)" }}
+          style={{ background: "rgba(var(--color-accent-rgb), 0.2)", border: "1px solid rgba(var(--color-accent-rgb), 0.4)" }}
         >
           <DollarSign size={20} style={{ color: RED }} />
         </div>
@@ -302,7 +302,7 @@ function FareResult({
         </p>
         <p
           className="text-4xl font-black text-fg"
-          style={{ letterSpacing: "-0.03em", textShadow: "0 0 24px rgba(204,32,14,0.45)" }}
+          style={{ letterSpacing: "-0.03em", textShadow: "0 0 24px rgba(var(--color-accent-rgb), 0.45)" }}
         >
           {currencySymbol}
           {animatedFare.toFixed(2)}
@@ -341,8 +341,8 @@ function FareResult({
         <div
           className="mb-5 flex items-center gap-3 rounded-xl px-4 py-3"
           style={{
-            background: "rgba(204,32,14,0.08)",
-            border: "1px solid rgba(204,32,14,0.2)",
+            background: "rgba(var(--color-accent-rgb), 0.08)",
+            border: "1px solid rgba(var(--color-accent-rgb), 0.2)",
           }}
         >
           <CheckCircle size={14} style={{ color: RED, flexShrink: 0 }} />
@@ -366,7 +366,7 @@ const inputStyle = {
 
 const inputErrorStyle = {
   background: "var(--color-surface-soft)",
-  border: "1px solid rgba(204,32,14,0.5)",
+  border: "1px solid rgba(var(--color-accent-rgb), 0.5)",
 };
 
 const labelClass =
@@ -677,7 +677,7 @@ export default function BookingWizard() {
                         dispatch({ type: "SET_FIELD", field: "pickup", value })
                       }
                       suggestions={SUGGESTED_ADDRESSES}
-                      placeholder="e.g. Mill Hill Broadway Station"
+                      placeholder="e.g. Heathrow Terminal 5"
                       icon={
                         <MapPin
                           size={14}
@@ -731,11 +731,11 @@ export default function BookingWizard() {
 
                 <p className="mt-4 text-xs text-muted">
                   Popular:{" "}
-                  <span style={{ color: RED }}>NW7 → Heathrow T5</span>
+                  <span style={{ color: RED }}>Hounslow → Heathrow T5</span>
                   {" · "}
-                  <span style={{ color: RED }}>N3 → Luton</span>
+                  <span style={{ color: RED }}>Heathrow T2 → Gatwick</span>
                   {" · "}
-                  <span style={{ color: RED }}>NW4 → Gatwick</span>
+                  <span style={{ color: RED }}>Heathrow T4 → Central London</span>
                 </p>
               </div>
             )}
@@ -908,7 +908,7 @@ export default function BookingWizard() {
                     <div className="relative flex h-16 w-16 items-center justify-center">
                       <span
                         className="absolute inset-0 animate-ping rounded-full"
-                        style={{ background: "rgba(204,32,14,0.25)" }}
+                        style={{ background: "rgba(var(--color-accent-rgb), 0.25)" }}
                       />
                       <Loader2 size={32} className="relative animate-spin" style={{ color: RED }} />
                     </div>
@@ -975,8 +975,8 @@ export default function BookingWizard() {
                     <div
                       className="flex items-center justify-center gap-3 rounded-xl px-4 py-3"
                       style={{
-                        background: "rgba(204,32,14,0.08)",
-                        border: "1px solid rgba(204,32,14,0.2)",
+                        background: "rgba(var(--color-accent-rgb), 0.08)",
+                        border: "1px solid rgba(var(--color-accent-rgb), 0.2)",
                       }}
                     >
                       <CheckCircle size={14} style={{ color: RED, flexShrink: 0 }} />
@@ -1083,7 +1083,7 @@ export default function BookingWizard() {
                   </p>
                   <div
                     className="absolute right-0 top-0 flex h-14 w-14 items-center justify-center rounded-2xl"
-                    style={{ background: RED, boxShadow: "0 12px 30px rgba(204,32,14,0.4)" }}
+                    style={{ background: RED, boxShadow: "0 12px 30px rgba(var(--color-accent-rgb), 0.4)" }}
                   >
                     <CheckCircle size={26} className="text-white" />
                   </div>
@@ -1102,7 +1102,7 @@ export default function BookingWizard() {
                         />
                         <span
                           className="absolute bottom-4 left-[4px] top-4 w-px"
-                          style={{ background: "rgba(204,32,14,0.35)" }}
+                          style={{ background: "rgba(var(--color-accent-rgb), 0.35)" }}
                         />
                         <div className="mb-5">
                           <p className="mb-1 text-xs text-muted">Pickup</p>
@@ -1171,7 +1171,7 @@ export default function BookingWizard() {
                     <button
                       onClick={() => dispatch({ type: "RESET" })}
                       className="mt-4 w-full rounded-full px-6 py-3.5 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
-                      style={{ background: RED, boxShadow: "0 8px 24px rgba(204,32,14,0.35)" }}
+                      style={{ background: RED, boxShadow: "0 8px 24px rgba(var(--color-accent-rgb), 0.35)" }}
                     >
                       Book another ride
                     </button>
@@ -1210,7 +1210,7 @@ export default function BookingWizard() {
                   className="flex items-center gap-2 rounded-xl px-7 py-2.5 text-sm font-bold text-white transition-all duration-200 hover:brightness-110"
                   style={{
                     background: RED,
-                    boxShadow: "0 6px 20px rgba(204,32,14,0.35)",
+                    boxShadow: "0 6px 20px rgba(var(--color-accent-rgb), 0.35)",
                   }}
                 >
                   Continue →
@@ -1223,7 +1223,7 @@ export default function BookingWizard() {
                   className="flex items-center gap-2 rounded-xl px-7 py-2.5 text-sm font-bold text-white transition-all duration-200 hover:brightness-110"
                   style={{
                     background: RED,
-                    boxShadow: "0 6px 20px rgba(204,32,14,0.35)",
+                    boxShadow: "0 6px 20px rgba(var(--color-accent-rgb), 0.35)",
                   }}
                 >
                   Continue →
@@ -1236,7 +1236,7 @@ export default function BookingWizard() {
                   className="flex items-center gap-2 rounded-xl px-7 py-2.5 text-sm font-bold text-white transition-all duration-200 hover:brightness-110"
                   style={{
                     background: RED,
-                    boxShadow: "0 6px 20px rgba(204,32,14,0.35)",
+                    boxShadow: "0 6px 20px rgba(var(--color-accent-rgb), 0.35)",
                   }}
                 >
                   Continue to Book →
@@ -1254,7 +1254,7 @@ export default function BookingWizard() {
                   className="flex items-center gap-2 rounded-xl px-7 py-2.5 text-sm font-bold text-white transition-all duration-200 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
                   style={{
                     background: RED,
-                    boxShadow: "0 6px 20px rgba(204,32,14,0.35)",
+                    boxShadow: "0 6px 20px rgba(var(--color-accent-rgb), 0.35)",
                   }}
                 >
                   {state.submitting ? (

@@ -4,10 +4,10 @@ import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/covid-19',
-  title: 'COVID-19 Precautionary Measures | Bittacy Cars',
+  title: 'COVID-19 Precautionary Measures | Heathrow Mini Cab',
   description:
-    'Learn about the COVID-19 health and safety precautionary measures Bittacy Cars follows to keep passengers and drivers safe on every journey.',
-  keywords: ['COVID-19 taxi safety', 'Bittacy Cars precautions', 'safe minicab Mill Hill'],
+    'Learn about the COVID-19 health and safety precautionary measures Heathrow Mini Cab follows to keep passengers and drivers safe on every journey.',
+  keywords: ['COVID-19 taxi safety', 'Heathrow Mini Cab precautions', 'safe minicab Heathrow'],
 });
 
 const measures = [
@@ -39,7 +39,7 @@ export default function Covid19Page() {
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(var(--color-accent-rgb), 0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -47,9 +47,9 @@ export default function Covid19Page() {
           <span
             className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(204,32,14,0.12)',
-              border: '1px solid rgba(204,32,14,0.3)',
-              color: '#cc200e',
+              background: 'rgba(var(--color-accent-rgb), 0.12)',
+              border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+              color: 'var(--color-accent)',
             }}
           >
             <ShieldCheck size={14} />
@@ -64,13 +64,13 @@ export default function Covid19Page() {
 
           <div className="space-y-4 text-muted leading-relaxed text-base">
             <p>
-              The outbreak of coronavirus is now the biggest treat to the lives of people. Bittacy
-              Cars being a responsible and renowned 24 hours minicab service in London strictly
+              The outbreak of coronavirus is now the biggest treat to the lives of people. Heathrow Mini
+              Cab being a responsible and renowned 24 hours minicab service in London strictly
               follows the Standard Operating Procedures (SOPs). Our London minicab firm
               prioritises your security, health and safety. The situation of coronavirus is
               worsening day by day and in the light of the current situation, our London minicab
-              transportation has enforced strict safety measures. The staff members of Bittacy
-              Cars ensures that the cars are disinfected, sprayed and washed properly after each
+              transportation has enforced strict safety measures. The staff members of Heathrow Mini
+              Cab ensures that the cars are disinfected, sprayed and washed properly after each
               ride.
             </p>
             <p>
@@ -87,7 +87,7 @@ export default function Covid19Page() {
               >
                 <span
                   className="mt-2 h-1.5 w-1.5 rounded-full flex-shrink-0"
-                  style={{ background: '#cc200e' }}
+                  style={{ background: 'var(--color-accent-solid)' }}
                 />
                 {measure}
               </li>

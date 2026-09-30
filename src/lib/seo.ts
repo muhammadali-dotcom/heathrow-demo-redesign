@@ -10,24 +10,24 @@ export const siteConfig = {
   location: LOCATION,
   phone: PHONE,
   email: EMAIL,
-  logo: '/images/fleet/bittacylogo.png',
-  defaultImage: '/images/fleet/hero-car.png',
+  logo: '/images/logo/hm-logo-light.png',
+  defaultImage: '/images/fleet/share-car-yellow.jpg',
   keywords: [
-    'Mill Hill taxis',
-    'taxi Mill Hill',
-    'North London taxi',
-    'airport transfers Mill Hill',
-    'school runs North London',
-    'private hire Mill Hill',
-    'corporate travel North London',
-    'Bittacy Cars',
+    'Heathrow minicab',
+    'Heathrow taxi',
+    'Heathrow airport transfers',
+    'minicab Hounslow',
+    'West London taxi',
+    'Heathrow meet and greet',
+    'private hire Heathrow',
+    'Heathrow Mini Cab',
   ],
 };
 
 export const defaultSEO = {
-  title: 'Mill Hill Taxis, Airport Transfers & School Runs | Bittacy Cars',
+  title: 'Heathrow Minicabs & Airport Transfers | Heathrow Mini Cab',
   description:
-    'Book reliable Mill Hill taxis, airport transfers, school runs and private hire cars across North London with Bittacy Cars. Call 020 3761 7526.',
+    'Book reliable Heathrow minicabs, fixed-price airport transfers and private hire cars across Hounslow, Hayes and West London with Heathrow Mini Cab. Call 020 3761 7526.',
   keywords: siteConfig.keywords.join(', '),
 };
 
@@ -87,7 +87,7 @@ export function buildMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${siteConfig.name} taxi service in Mill Hill`,
+          alt: `${siteConfig.name} minicab service at Heathrow`,
         },
       ],
     },
@@ -104,92 +104,92 @@ export function buildMetadata({
 export const servicePages = [
   {
     path: '/',
-    name: 'Mill Hill taxis and private hire cars',
+    name: 'Heathrow minicabs and private hire cars',
     description: defaultSEO.description,
     image: siteConfig.defaultImage,
   },
   {
     path: '/services',
-    name: 'Taxi services in Mill Hill and North London',
+    name: 'Minicab services at Heathrow and West London',
     description:
-      'Airport transfers, school runs, local rides and corporate travel from Bittacy Cars.',
-    image: '/images/fleet/hero2.png',
+      'Airport transfers, school runs, local rides and corporate travel from Heathrow Mini Cab.',
+    image: '/images/fleet/hero-yellow-dark.jpg',
   },
   {
     path: '/airport-transfers',
-    name: 'Airport transfers from Mill Hill',
+    name: 'Heathrow airport transfers',
     description:
-      'Fixed-price airport transfers from Mill Hill to Heathrow, Gatwick, Stansted, Luton and London City Airport.',
-    image: '/images/fleet/airport.png',
+      'Fixed-price transfers to and from Heathrow Terminals 2, 3, 4 and 5, plus Gatwick, Stansted, Luton and London City Airport.',
+    image: '/images/fleet/airport-branded.jpg',
   },
   {
     path: '/school-runs',
-    name: 'School runs in Mill Hill and North London',
+    name: 'School runs in Hounslow, Hayes and West London',
     description:
-      'Safe, punctual school transport with DBS-checked drivers across North London.',
-    image: '/images/fleet/school.png',
+      'Safe, punctual school transport with DBS-checked drivers across West London.',
+    image: '/images/fleet/school-branded.jpg',
   },
   {
     path: '/local-rides',
-    name: 'Local taxi rides across North London',
+    name: 'Local minicab rides across West London',
     description:
-      'Reliable local taxi rides across Mill Hill, Barnet, Hendon, Finchley, Edgware and nearby areas.',
-    image: '/images/fleet/local.png',
+      'Reliable local minicab rides across Hounslow, Hayes, Feltham, West Drayton, Uxbridge and nearby areas.',
+    image: '/images/fleet/local-branded.jpg',
   },
   {
     path: '/corporate-travel',
-    name: 'Corporate travel in North London',
+    name: 'Corporate travel around Heathrow and West London',
     description:
       'Professional business transport, executive vehicles, priority booking and corporate accounts.',
     image: '/images/fleet/corporate.png',
   },
   {
     path: '/book',
-    name: 'Book a taxi with Bittacy Cars',
+    name: 'Book a taxi with Heathrow Mini Cab',
     description:
-      'Book a fixed-price taxi, airport transfer, school run or local ride with Bittacy Cars.',
+      'Book a fixed-price taxi, airport transfer, school run or local ride with Heathrow Mini Cab.',
     image: siteConfig.defaultImage,
   },
   {
     path: '/contact',
-    name: 'Contact Bittacy Cars',
+    name: 'Contact Heathrow Mini Cab',
     description:
-      'Call, email or request a quote from Bittacy Cars for taxi services across Mill Hill and North London.',
+      'Call, email or request a quote from Heathrow Mini Cab for minicab services at Heathrow and across West London.',
     image: siteConfig.defaultImage,
   },
   {
     path: '/about',
-    name: 'About Bittacy Cars',
+    name: 'About Heathrow Mini Cab',
     description:
-      'Learn about Bittacy Cars, a trusted Mill Hill taxi service for airport transfers, school runs and local rides.',
+      'Learn about Heathrow Mini Cab, a trusted Heathrow minicab service for airport transfers, school runs and local rides.',
     image: siteConfig.defaultImage,
   },
 ];
 
 export const faqs = [
   {
-    question: 'How do I book a taxi with Bittacy Cars?',
+    question: 'How do I book a taxi with Heathrow Mini Cab?',
     answer:
-      'You can book by calling us at020 3761 7526 or by using the online booking form. Bittacy Cars offers local rides, airport transfers, school runs and corporate travel.',
+      'You can book by calling us at 020 3761 7526 or by using the online booking form. Heathrow Mini Cab offers local rides, airport transfers, school runs and corporate travel.',
   },
   {
-    question: 'Does Bittacy Cars provide airport transfers from Mill Hill?',
+    question: 'Does Heathrow Mini Cab cover all Heathrow terminals?',
     answer:
-      'Yes. Bittacy Cars provides fixed-price airport transfers from Mill Hill and North London to Heathrow, Gatwick, Stansted, Luton, London City and Southend Airport.',
+      'Yes. Heathrow Mini Cab provides fixed-price transfers to and from Heathrow Terminals 2, 3, 4 and 5, with flight tracking and meet & greet. We also cover Gatwick, Stansted, Luton, London City and Southend Airport.',
   },
   {
     question: 'Are school run drivers DBS checked?',
     answer:
-      'Yes. School run drivers are DBS checked and trained to provide safe, reliable and punctual transport for children across North London.',
+      'Yes. School run drivers are DBS checked and trained to provide safe, reliable and punctual transport for children across West London.',
   },
   {
-    question: 'Which areas does Bittacy Cars cover?',
-    answer: `Bittacy Cars covers ${coverageAreas.join(', ')} and nearby North London areas.`,
+    question: 'Which areas does Heathrow Mini Cab cover?',
+    answer: `Heathrow Mini Cab covers ${coverageAreas.join(', ')} and nearby West London areas.`,
   },
   {
-    question: 'Is Bittacy Cars available 24/7?',
+    question: 'Is Heathrow Mini Cab available 24/7?',
     answer:
-      'Yes. Bittacy Cars is available 24 hours a day, 7 days a week for taxis, airport transfers and pre-booked journeys.',
+      'Yes. Heathrow Mini Cab is available 24 hours a day, 7 days a week for taxis, airport transfers and pre-booked journeys.',
   },
 ];
 
@@ -208,7 +208,7 @@ export function localBusinessJsonLd() {
     description: defaultSEO.description,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Mill Hill',
+      addressLocality: 'Heathrow',
       addressRegion: 'London',
       addressCountry: 'GB',
     },

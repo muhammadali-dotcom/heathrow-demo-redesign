@@ -68,12 +68,12 @@ function buildParticles(count: number, w: number, h: number): Particle[] {
 
 function buildScanLines(): ScanLine[] {
   const palette = [
-    'rgba(204, 32, 14, ALPHA)',   // brand red
-    'rgba(204, 32, 14, ALPHA)',
-    'rgba(204, 32, 14, ALPHA)',
-    'rgba(204, 32, 14, ALPHA)',
-    'rgba(204, 32, 14, ALPHA)',
-    'rgba(204, 32, 14, ALPHA)',
+    'rgba(255, 208, 0, ALPHA)',   // brand Heathrow yellow
+    'rgba(255, 208, 0, ALPHA)',
+    'rgba(255, 208, 0, ALPHA)',
+    'rgba(255, 208, 0, ALPHA)',
+    'rgba(255, 208, 0, ALPHA)',
+    'rgba(255, 208, 0, ALPHA)',
   ];
   const rng = seededRng(99);
   return Array.from({ length: 6 }, (_, i) => ({
@@ -160,13 +160,13 @@ export default function FuturisticBackground() {
     const glowAlpha1 = isDark ? 0.045 : 0.02;
     const glowAlpha2 = isDark ? 0.015 : 0.008;
     const glow1 = ctx.createRadialGradient(w * 0.15, h * 0.22, 0, w * 0.15, h * 0.22, w * 0.38);
-    glow1.addColorStop(0, `rgba(204,32,14,${glowAlpha1})`);
+    glow1.addColorStop(0, `rgba(255, 208, 0,${glowAlpha1})`);
     glow1.addColorStop(1, 'transparent');
     ctx.fillStyle = glow1;
     ctx.fillRect(0, 0, w, h);
 
     const glow2 = ctx.createRadialGradient(w * 0.82, h * 0.65, 0, w * 0.82, h * 0.65, w * 0.32);
-    glow2.addColorStop(0, `rgba(204,32,14,${glowAlpha2})`);
+    glow2.addColorStop(0, `rgba(255, 208, 0,${glowAlpha2})`);
     glow2.addColorStop(1, 'transparent');
     ctx.fillStyle = glow2;
     ctx.fillRect(0, 0, w, h);
@@ -205,7 +205,7 @@ export default function FuturisticBackground() {
       // glow for closer (higher layer) particles
       if (p.layer > 0.7) {
         ctx.shadowBlur = p.size * 2.5;
-        ctx.shadowColor = `rgba(204,32,14,${p.opacity * 0.6})`;
+        ctx.shadowColor = `rgba(255, 208, 0,${p.opacity * 0.6})`;
       } else {
         ctx.shadowBlur = 0;
       }

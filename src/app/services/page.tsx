@@ -8,17 +8,17 @@ import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/services',
-  title: 'Our Services | Bittacy Cars – Taxi Services in Mill Hill',
+  title: 'Our Services | Heathrow Mini Cab – Minicab Services at Heathrow',
   description:
-    'Explore all Bittacy Cars services: airport transfers, school runs, local rides and corporate travel across North London.',
-  image: '/images/fleet/hero2.png',
-  keywords: ['taxi services Mill Hill', 'North London private hire services'],
+    'Explore all Heathrow Mini Cab services: airport transfers, school runs, local rides and corporate travel across Heathrow and West London.',
+  image: '/images/fleet/hero-yellow-dark.jpg',
+  keywords: ['minicab services Heathrow', 'West London private hire services'],
 });
 
 const services = [
   {
     id: 'airport-transfers',
-    image: '/images/fleet/airport.png',
+    image: '/images/fleet/airport-branded.jpg',
     title: 'Airport Transfers',
     tagline: 'Never miss a flight again',
     description:
@@ -34,11 +34,11 @@ const services = [
   },
   {
     id: 'school-runs',
-    image: '/images/fleet/school.png',
+    image: '/images/fleet/school-branded.jpg',
     title: 'School Runs',
     tagline: 'Safe, punctual, reliable',
     description:
-      'Give your children the safest and most reliable school run service in North London. All our drivers are fully DBS checked and trained to provide a safe and comfortable journey for your children.',
+      'Give your children the safest and most reliable school run service in West London. All our drivers are fully DBS checked and trained to provide a safe and comfortable journey for your children.',
     features: [
       'DBS-checked drivers',
       'Regular route planning',
@@ -50,15 +50,15 @@ const services = [
   },
   {
     id: 'local-rides',
-    image: '/images/fleet/local.png',
+    image: '/images/fleet/local-branded.jpg',
     title: 'Local Rides',
-    tagline: 'Comfort around North London',
+    tagline: 'Comfort around West London',
     description:
-      "Quick, comfortable local taxi rides anywhere across Mill Hill and the wider North London area. Whether it's a shopping trip, night out, or medical appointment, we've got you covered.",
+      "Quick, comfortable local taxi rides anywhere across Hounslow, Hayes, Feltham and the wider West London area. Whether it's a shopping trip, night out, or medical appointment, we've got you covered.",
     features: [
       'Instant booking available',
       'Competitive local pricing',
-      'Covers all North London',
+      'Covers Heathrow & West London',
       'Comfortable modern vehicles',
       'Friendly professional drivers',
     ],
@@ -94,7 +94,7 @@ export default function ServicesPage() {
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(var(--color-accent-rgb), 0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -102,9 +102,9 @@ export default function ServicesPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: 'rgba(204,32,14,0.12)',
-              border: '1px solid rgba(204,32,14,0.3)',
-              color: '#cc200e',
+              background: 'rgba(var(--color-accent-rgb), 0.12)',
+              border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+              color: 'var(--color-accent)',
             }}
           >
             What We Offer
@@ -114,11 +114,11 @@ export default function ServicesPage() {
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
             Our{' '}
-            <span style={{ color: '#cc200e' }}>Services</span>
+            <span className="accent-word">Services</span>
           </h1>
           <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed">
             From airport transfers to school runs, we provide comprehensive taxi services
-            tailored to every journey across North London.
+            tailored to every journey to and from Heathrow and across West London.
           </p>
         </Reveal>
       </section>
@@ -163,7 +163,7 @@ export default function ServicesPage() {
                   <div className="p-10 lg:p-14 lg:[direction:ltr] flex flex-col justify-center">
                     <span
                       className="inline-block text-xs font-bold tracking-widest uppercase mb-2"
-                      style={{ color: '#cc200e' }}
+                      style={{ color: 'var(--color-accent)' }}
                     >
                       {service.tagline}
                     </span>
@@ -177,7 +177,7 @@ export default function ServicesPage() {
                     <ul className="space-y-2 mb-8">
                       {service.features.map((f) => (
                         <li key={f} className="flex items-center gap-3 text-sm text-muted">
-                          <CheckCircle size={15} style={{ color: '#cc200e', flexShrink: 0 }} />
+                          <CheckCircle size={15} style={{ color: 'var(--color-accent)', flexShrink: 0 }} />
                           {f}
                         </li>
                       ))}
@@ -185,10 +185,10 @@ export default function ServicesPage() {
                     <div>
                       <Link
                         href={service.href}
-                        className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-white transition-all duration-200 hover:brightness-110"
+                        className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-[var(--color-accent-solid-fg)] transition-all duration-200 hover:brightness-110"
                         style={{
-                          background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                          boxShadow: '0 8px 24px rgba(204,32,14,0.3)',
+                          background: 'linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))',
+                          boxShadow: '0 8px 24px rgba(var(--color-accent-rgb), 0.3)',
                         }}
                       >
                         Learn More <ArrowRight size={16} />
@@ -214,10 +214,10 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white hover:brightness-110 transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-[var(--color-accent-solid-fg)] hover:brightness-110 transition-all duration-200"
               style={{
-                background: 'linear-gradient(135deg, #cc200e, #A93226)',
-                boxShadow: '0 16px 40px rgba(204,32,14,0.3)',
+                background: 'linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))',
+                boxShadow: '0 16px 40px rgba(var(--color-accent-rgb), 0.3)',
               }}
             >
               Get a Quote

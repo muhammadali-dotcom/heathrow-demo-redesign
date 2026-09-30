@@ -8,7 +8,7 @@ export default function CTA() {
         <div className="rounded-3xl border border-line bg-surface px-8 py-10 shadow-[0_30px_90px_rgba(0,0,0,0.45)] sm:px-12 lg:px-16">
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-2xl text-left">
-              <span className="mb-3 block text-xs font-black uppercase tracking-[0.22em] text-[#cc200e]">
+              <span className="mb-3 block text-xs font-black uppercase tracking-[0.22em] text-[var(--color-accent)]">
                 Book Now
               </span>
 
@@ -27,7 +27,7 @@ export default function CTA() {
             <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
               <a
                 href="/contact"
-                className="inline-flex h-14 min-w-[170px] items-center justify-center rounded-xl bg-[#cc200e] px-8 text-base font-bold text-white shadow-[0_14px_35px_rgba(204,32,14,0.25)] transition hover:bg-[#A93226]"
+                className="inline-flex h-14 min-w-[170px] items-center justify-center rounded-xl bg-[var(--color-accent-solid)] px-8 text-base font-bold text-[var(--color-accent-solid-fg)] shadow-[0_14px_35px_rgba(var(--color-accent-rgb),0.25)] transition hover:bg-[var(--color-accent-solid-hover)]"
               >
                 Get a Quote
               </a>
@@ -35,7 +35,7 @@ export default function CTA() {
               <Button
                 variant="outline"
                 href="/book"
-                className="h-14 min-w-[170px] border border-line bg-surface-soft px-8 text-base font-bold text-fg hover:border-[#cc200e] hover:text-[#cc200e]"
+                className="h-14 min-w-[170px] border border-line bg-surface-soft px-8 text-base font-bold text-fg hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
               >
                 Book Now
               </Button>

@@ -1,6 +1,9 @@
 export const SUGGESTED_ADDRESSES = [
-  "Mill Hill Broadway Station",
+  "Heathrow Airport Terminal 2",
+  "Heathrow Airport Terminal 3",
+  "Heathrow Airport Terminal 4",
   "Heathrow Airport Terminal 5",
+  "Hounslow Central Station",
   "Gatwick Airport",
   "Luton Airport",
   "Stansted Airport",

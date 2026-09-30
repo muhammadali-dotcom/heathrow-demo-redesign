@@ -60,7 +60,7 @@ export default function ContactPage() {
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)",
+              "radial-gradient(ellipse, rgba(var(--color-accent-rgb), 0.12) 0%, transparent 70%)",
             filter: "blur(40px)",
           }}
         />
@@ -71,9 +71,9 @@ export default function ContactPage() {
           <span
             className="inline-block text-xs font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full mb-6"
             style={{
-              background: "rgba(204,32,14,0.12)",
-              border: "1px solid rgba(204,32,14,0.3)",
-              color: "#cc200e",
+              background: "rgba(var(--color-accent-rgb), 0.12)",
+              border: "1px solid rgba(var(--color-accent-rgb), 0.3)",
+              color: "var(--color-accent)",
             }}
           >
             Get In Touch
@@ -83,7 +83,7 @@ export default function ContactPage() {
             className="text-4xl sm:text-6xl lg:text-7xl font-black text-fg mb-6 leading-tight"
             style={{ letterSpacing: "-0.04em", lineHeight: 1.02 }}
           >
-            Contact <span style={{ color: "#cc200e" }}>Us</span>
+            Contact <span style={{ color: "var(--color-accent)" }}>Us</span>
           </h1>
           <div className="w-full flex justify-center">
             <p className="max-w-xl text-center text-lg leading-relaxed text-balance text-muted">
@@ -124,11 +124,11 @@ export default function ContactPage() {
                         className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
                         style={{
                           background:
-                            "linear-gradient(135deg, #cc200e, #A93226)",
-                          boxShadow: "0 6px 16px rgba(204,32,14,0.3)",
+                            "linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))",
+                          boxShadow: "0 6px 16px rgba(var(--color-accent-rgb), 0.3)",
                         }}
                       >
-                        <Icon size={18} className="text-white" />
+                        <Icon size={18} className="text-[var(--color-accent-solid-fg)]" />
                       </div>
                       <div>
                         <div className="text-xs font-bold uppercase tracking-widest text-muted mb-1">
@@ -164,8 +164,8 @@ export default function ContactPage() {
                 className="rounded-2xl p-6 relative overflow-hidden"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(204,32,14,0.15), rgba(139,0,0,0.08))",
-                  border: "1px solid rgba(204,32,14,0.25)",
+                    "linear-gradient(135deg, rgba(var(--color-accent-rgb), 0.15), rgba(139,0,0,0.08))",
+                  border: "1px solid rgba(var(--color-accent-rgb), 0.25)",
                 }}
               >
                 <div className="relative z-10">
@@ -178,10 +178,10 @@ export default function ContactPage() {
                   </div>
                   <a
                     href={`tel:${PHONE.replace(/\s/g, "")}`}
-                    className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-white transition-all duration-200"
+                    className="inline-flex items-center gap-2 rounded-xl font-bold text-sm px-6 py-3 text-[var(--color-accent-solid-fg)] transition-all duration-200"
                     style={{
-                      background: "linear-gradient(135deg, #cc200e, #A93226)",
-                      boxShadow: "0 8px 20px rgba(204,32,14,0.3)",
+                      background: "linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))",
+                      boxShadow: "0 8px 20px rgba(var(--color-accent-rgb), 0.3)",
                     }}
                   >
                     <Phone size={15} />
@@ -205,11 +205,11 @@ export default function ContactPage() {
                     <div
                       className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
                       style={{
-                        background: "linear-gradient(135deg, #cc200e, #A93226)",
-                        boxShadow: "0 16px 40px rgba(204,32,14,0.35)",
+                        background: "linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))",
+                        boxShadow: "0 16px 40px rgba(var(--color-accent-rgb), 0.35)",
                       }}
                     >
-                      <CheckCircle size={36} className="text-white" />
+                      <CheckCircle size={36} className="text-[var(--color-accent-solid-fg)]" />
                     </div>
                     <h3
                       className="text-2xl font-black text-fg mb-3"
@@ -370,11 +370,11 @@ export default function ContactPage() {
                       <button
                         id="contact-submit"
                         type="submit"
-                        className="w-full flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-white transition-all duration-200"
+                        className="w-full flex items-center justify-center gap-2 rounded-xl font-bold text-base px-8 py-4 text-[var(--color-accent-solid-fg)] transition-all duration-200"
                         style={{
                           background:
-                            "linear-gradient(135deg, #cc200e, #A93226)",
-                          boxShadow: "0 16px 40px rgba(204,32,14,0.3)",
+                            "linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))",
+                          boxShadow: "0 16px 40px rgba(var(--color-accent-rgb), 0.3)",
                         }}
                       >
                         <Send size={16} />

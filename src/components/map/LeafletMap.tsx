@@ -28,8 +28,15 @@ interface LeafletMapProps {
 
 const MARKER_COLORS: Record<NonNullable<MapMarker["color"]>, string> = {
   pickup: "#22c55e",
-  dropoff: "#cc200e",
-  default: "#cc200e",
+  dropoff: "#FFD000",
+  default: "#FFD000",
+};
+
+// Icon stroke on each marker fill — dark on brand yellow, white on green.
+const MARKER_ICON_STROKE: Record<NonNullable<MapMarker["color"]>, string> = {
+  pickup: "#fff",
+  dropoff: "#0A0A0A",
+  default: "#0A0A0A",
 };
 
 const CAR_PATHS = `
@@ -47,7 +54,7 @@ const OFFICE_PATHS = `
   <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" />
 `;
 
-function createCarIcon(color: string, isDark: boolean) {
+function createCarIcon(color: string, iconStroke: string, isDark: boolean) {
   const ringColor = isDark ? "#fff" : "#1a1a1a";
   return L.divIcon({
     className: "",
@@ -61,7 +68,7 @@ function createCarIcon(color: string, isDark: boolean) {
       border-radius:50%;
       box-shadow:0 1px 6px rgba(0,0,0,0.55);
     ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="${iconStroke}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         ${CAR_PATHS}
       </svg>
     </div>`,
@@ -71,7 +78,7 @@ function createCarIcon(color: string, isDark: boolean) {
   });
 }
 
-function createOfficeIcon(color: string, isDark: boolean) {
+function createOfficeIcon(color: string, iconStroke: string, isDark: boolean) {
   const ringColor = isDark ? "#fff" : "#1a1a1a";
   return L.divIcon({
     className: "",
@@ -85,7 +92,7 @@ function createOfficeIcon(color: string, isDark: boolean) {
       border-radius:50%;
       box-shadow:0 2px 8px rgba(0,0,0,0.55);
     ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="${iconStroke}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         ${OFFICE_PATHS}
       </svg>
     </div>`,
@@ -97,7 +104,10 @@ function createOfficeIcon(color: string, isDark: boolean) {
 
 function createIcon(markerColor: NonNullable<MapMarker["color"]>, isDark: boolean) {
   const color = MARKER_COLORS[markerColor];
-  return markerColor === "default" ? createOfficeIcon(color, isDark) : createCarIcon(color, isDark);
+  const iconStroke = MARKER_ICON_STROKE[markerColor];
+  return markerColor === "default"
+    ? createOfficeIcon(color, iconStroke, isDark)
+    : createCarIcon(color, iconStroke, isDark);
 }
 
 const DEFAULT_CENTER: [number, number] = [51.6155, -0.2405];
@@ -194,10 +204,17 @@ export default function LeafletMap({
       >
         <DarkTileLayer />
         {route && route.length > 1 && (
-          <Polyline
-            positions={route}
-            pathOptions={{ color: "#cc200e", weight: 4, opacity: 0.85 }}
-          />
+          <>
+            {/* dark casing keeps the yellow route visible on light map tiles */}
+            <Polyline
+              positions={route}
+              pathOptions={{ color: "#0A0A0A", weight: 7, opacity: 0.6 }}
+            />
+            <Polyline
+              positions={route}
+              pathOptions={{ color: "#FFD000", weight: 4, opacity: 0.95 }}
+            />
+          </>
         )}
         {markers.map((marker, i) => (
           <Marker

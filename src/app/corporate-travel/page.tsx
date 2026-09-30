@@ -17,14 +17,14 @@ import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/corporate-travel',
-  title: 'Corporate Travel | Bittacy Cars – Business Transport North London',
+  title: 'Corporate Travel | Heathrow Mini Cab – Business Transport Heathrow & West London',
   description:
-    'Premium corporate travel solutions for businesses in North London. Executive vehicles, corporate accounts, monthly invoicing. Professional and reliable.',
+    'Premium corporate travel for businesses around Heathrow, Stockley Park and West London. Executive vehicles, corporate accounts, monthly invoicing. Professional and reliable.',
   image: '/images/fleet/corporate.png',
   keywords: [
-    'corporate travel North London',
-    'business taxi Mill Hill',
-    'executive car service North London',
+    'corporate travel Heathrow',
+    'business taxi Stockley Park',
+    'executive car service West London',
   ],
 });
 
@@ -82,7 +82,7 @@ export default function CorporateTravelPage() {
           className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[700px] -translate-x-1/2"
           style={{
             background:
-              'radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)',
+              'radial-gradient(ellipse, rgba(var(--color-accent-rgb), 0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -91,9 +91,9 @@ export default function CorporateTravelPage() {
           <span
             className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
             style={{
-              background: 'rgba(204,32,14,0.12)',
-              border: '1px solid rgba(204,32,14,0.3)',
-              color: '#cc200e',
+              background: 'rgba(var(--color-accent-rgb), 0.12)',
+              border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+              color: 'var(--color-accent)',
             }}
           >
             <Briefcase size={14} />
@@ -107,7 +107,7 @@ export default function CorporateTravelPage() {
               lineHeight: 1.02,
             }}
           >
-            Premium <span style={{ color: '#cc200e' }}>Business</span>
+            Premium <span className="accent-word">Business</span>
             <br />
             Transport
           </h1>
@@ -121,10 +121,10 @@ export default function CorporateTravelPage() {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex h-14 min-w-[210px] items-center justify-center rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+              className="inline-flex h-14 min-w-[210px] items-center justify-center rounded-xl px-8 text-base font-bold text-[var(--color-accent-solid-fg)] transition-all duration-200"
               style={{
-                background: '#cc200e',
-                boxShadow: '0 16px 40px rgba(204,32,14,0.3)',
+                background: 'var(--color-accent-solid)',
+                boxShadow: '0 16px 40px rgba(var(--color-accent-rgb), 0.3)',
                 textDecoration: 'none',
               }}
             >
@@ -154,7 +154,7 @@ export default function CorporateTravelPage() {
             <div className="relative h-72 w-full sm:h-96">
               <Image
                 src="/images/fleet/corporate.png"
-                alt="Corporate travel service — Bittacy Cars"
+                alt="Corporate travel service — Heathrow Mini Cab"
                 fill
                 className="object-cover"
                 sizes="(max-width: 896px) 100vw, 896px"
@@ -183,7 +183,7 @@ export default function CorporateTravelPage() {
             <Reveal key={stat.label} delay={index * 0.08}>
               <div
                 className="mb-1 text-3xl font-black"
-                style={{ color: '#cc200e', letterSpacing: '-0.03em' }}
+                style={{ color: 'var(--color-accent)', letterSpacing: '-0.03em' }}
               >
                 {stat.value}
               </div>
@@ -203,9 +203,9 @@ export default function CorporateTravelPage() {
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
               style={{
-                background: 'rgba(204,32,14,0.12)',
-                border: '1px solid rgba(204,32,14,0.3)',
-                color: '#cc200e',
+                background: 'rgba(var(--color-accent-rgb), 0.12)',
+                border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+                color: 'var(--color-accent)',
               }}
             >
               Corporate Features
@@ -236,11 +236,11 @@ export default function CorporateTravelPage() {
                   <div
                     className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
                     style={{
-                      background: '#cc200e',
-                      boxShadow: '0 8px 20px rgba(204,32,14,0.3)',
+                      background: 'var(--color-accent-solid)',
+                      boxShadow: '0 8px 20px rgba(var(--color-accent-rgb), 0.3)',
                     }}
                   >
-                    <Icon size={22} className="text-white" />
+                    <Icon size={22} className="text-[var(--color-accent-solid-fg)]" />
                   </div>
 
                   <h3
@@ -275,7 +275,7 @@ export default function CorporateTravelPage() {
               <div className="max-w-2xl text-left">
                 <span
                   className="mb-3 block text-xs font-black uppercase tracking-[0.22em]"
-                  style={{ color: '#cc200e' }}
+                  style={{ color: 'var(--color-accent)' }}
                 >
                   Corporate Travel
                 </span>
@@ -296,10 +296,10 @@ export default function CorporateTravelPage() {
               <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-auto">
                 <Link
                   href="/contact"
-                  className="inline-flex h-14 min-w-[180px] items-center justify-center rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+                  className="inline-flex h-14 min-w-[180px] items-center justify-center rounded-xl px-8 text-base font-bold text-[var(--color-accent-solid-fg)] transition-all duration-200"
                   style={{
-                    background: '#cc200e',
-                    boxShadow: '0 14px 35px rgba(204,32,14,0.25)',
+                    background: 'var(--color-accent-solid)',
+                    boxShadow: '0 14px 35px rgba(var(--color-accent-rgb), 0.25)',
                     textDecoration: 'none',
                   }}
                 >

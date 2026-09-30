@@ -58,8 +58,8 @@ export default function ScrollRouteLine({ containerRef }: ScrollRouteLineProps) 
       >
         <defs>
           <linearGradient id="routeLineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#A93226" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#cc200e" stopOpacity="0.9" />
+            <stop offset="0%" stopOpacity="0.9" style={{ stopColor: 'var(--color-accent-hover)' }} />
+            <stop offset="100%" stopOpacity="0.9" style={{ stopColor: 'var(--color-accent)' }} />
           </linearGradient>
           <filter id="routeLineGlow" x="-50%" y="-20%" width="200%" height="140%">
             <feGaussianBlur stdDeviation="1.4" result="blur" />
@@ -99,7 +99,7 @@ export default function ScrollRouteLine({ containerRef }: ScrollRouteLineProps) 
       >
         <div
           className="absolute inset-[-8px] rounded-full blur-[6px]"
-          style={{ background: 'radial-gradient(circle, rgba(255,43,36,0.9) 0%, rgba(255,43,36,0) 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(var(--color-accent-rgb), 0.9) 0%, rgba(var(--color-accent-rgb), 0) 70%)' }}
         />
         <svg
           viewBox="0 0 24 24"

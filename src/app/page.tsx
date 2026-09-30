@@ -13,10 +13,10 @@ import { buildMetadata, serviceJsonLd } from '@/lib/seo';
 
 export const metadata = buildMetadata({
   path: '/',
-  title: 'Mill Hill Taxis, Airport Transfers & School Runs | Bittacy Cars',
+  title: 'Heathrow Minicabs & Airport Transfers | Heathrow Mini Cab',
   description:
-    'Book reliable Mill Hill taxis, airport transfers, school runs and private hire cars across North London with Bittacy Cars. Call 020 3761 7526.',
-  keywords: ['taxi near Mill Hill', '24 hour taxi Mill Hill', 'private hire North London'],
+    'Book reliable Heathrow minicabs, fixed-price airport transfers and private hire cars across Hounslow, Hayes and West London with Heathrow Mini Cab. Call 020 3761 7526.',
+  keywords: ['taxi near Heathrow', '24 hour minicab Heathrow', 'private hire West London'],
 });
 
 export default function HomePage() {

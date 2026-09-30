@@ -4,7 +4,7 @@ export const services: Service[] = [
   {
     id: 'airport-transfers',
     title: 'Airport Transfers',
-    description: 'All major London airports, fixed prices.',
+    description: 'Heathrow T2–T5 and all London airports, fixed prices.',
     image: '/images/airport-transfer.jpg',
     href: '/airport-transfers',
   },
@@ -18,7 +18,7 @@ export const services: Service[] = [
   {
     id: 'local-rides',
     title: 'Local Rides',
-    description: 'Comfortable rides across North London.',
+    description: 'Comfortable rides across West London and Heathrow.',
     image: '/images/local-rides.jpg',
     href: '/local-rides',
   },

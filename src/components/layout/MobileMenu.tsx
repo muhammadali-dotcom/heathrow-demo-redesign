@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { X, ChevronDown } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
 import { services } from '@/data/services';
-import { COMPANY_NAME } from '@/lib/constants';
 import ThemeToggle from '@/components/ui/ThemeToggle';
+import Logo from '@/components/ui/Logo';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -44,15 +43,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-line">
           <div className="flex items-center gap-2">
-            <div className="relative w-8 h-8 flex-shrink-0">
-              <Image
-                src="/images/fleet/bittacylogo.png"
-                alt="Bittacy Cars Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <span className="text-fg font-bold text-base">{COMPANY_NAME}</span>
+            <Logo className="h-9 w-auto" />
           </div>
           <div className="flex items-center gap-1">
             <ThemeToggle iconSize={20} />
@@ -118,8 +109,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <Link
             href="/contact"
             onClick={onClose}
-            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-white font-semibold text-sm"
-            style={{ background: '#cc200e' }}
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-[var(--color-accent-solid-fg)] font-semibold text-sm"
+            style={{ background: 'var(--color-accent-solid)' }}
           >
             Contact Now
           </Link>

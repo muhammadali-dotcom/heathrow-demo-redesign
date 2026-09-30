@@ -8,35 +8,35 @@ import Reveal from '@/components/ui/Reveal';
 
 export const metadata = buildMetadata({
   path: '/local-rides',
-  title: 'Local Rides | Bittacy Cars – Taxis Across North London',
+  title: 'Local Rides | Heathrow Mini Cab – Minicabs Across West London',
   description:
-    'Comfortable, affordable local taxi rides across Mill Hill and North London. Available 24/7 with fixed prices. Book your local ride with Bittacy Cars.',
-  image: '/images/fleet/local.png',
+    'Comfortable, affordable local minicab rides across Heathrow and West London. Available 24/7 with fixed prices. Book your local ride with Heathrow Mini Cab.',
+  image: '/images/fleet/local-branded.jpg',
   keywords: [
-    'local taxi Mill Hill',
-    'taxi Barnet',
-    'taxi Hendon',
-    'taxi Finchley',
-    'taxi Edgware',
+    'local minicab Heathrow',
+    'taxi Hounslow',
+    'taxi Hayes',
+    'taxi Feltham',
+    'taxi Uxbridge',
   ],
 });
 
 const areas = [
-  'Mill Hill',
-  'Barnet',
-  'Hendon',
-  'Golders Green',
-  'Finchley',
-  'Edgware',
-  'Brent Cross',
-  'Hampstead',
-  'Harrow',
-  'Wembley',
-  'Cricklewood',
-  'Colindale',
-  'Burnt Oak',
-  'Totteridge',
-  'Whetstone',
+  'Heathrow',
+  'Hounslow',
+  'Hayes',
+  'Harlington',
+  'West Drayton',
+  'Feltham',
+  'Staines',
+  'Uxbridge',
+  'Slough',
+  'Ealing',
+  'Southall',
+  'Twickenham',
+  'Isleworth',
+  'Cranford',
+  'Stanwell',
 ];
 
 const features = [
@@ -62,13 +62,13 @@ const features = [
     icon: Star,
     title: 'Top-Rated Drivers',
     description:
-      'Our professional, friendly drivers know North London inside out and always find the quickest routes.',
+      'Our professional, friendly drivers know West London inside out and always find the quickest routes.',
   },
   {
     icon: MapPin,
     title: 'Local Expertise',
     description:
-      'Based in Mill Hill, we know every road in North London and use local knowledge to beat the traffic.',
+      'Based near Heathrow, we know every road around the airport and West London and use local knowledge to beat the traffic.',
   },
   {
     icon: Phone,
@@ -93,7 +93,7 @@ export default function LocalRidesPage() {
           className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[700px] -translate-x-1/2"
           style={{
             background:
-              'radial-gradient(ellipse, rgba(204,32,14,0.12) 0%, transparent 70%)',
+              'radial-gradient(ellipse, rgba(var(--color-accent-rgb), 0.12) 0%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -102,9 +102,9 @@ export default function LocalRidesPage() {
           <span
             className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
             style={{
-              background: 'rgba(204,32,14,0.12)',
-              border: '1px solid rgba(204,32,14,0.3)',
-              color: '#cc200e',
+              background: 'rgba(var(--color-accent-rgb), 0.12)',
+              border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+              color: 'var(--color-accent)',
             }}
           >
             <MapPin size={14} />
@@ -115,24 +115,24 @@ export default function LocalRidesPage() {
             className="mb-6 text-4xl font-black text-fg sm:text-6xl lg:text-7xl"
             style={{ letterSpacing: '-0.04em', lineHeight: 1.02 }}
           >
-            Your Local <span style={{ color: '#cc200e' }}>Taxi</span>
+            Your Local <span className="accent-word">Taxi</span>
             <br />
-            in North London
+            in West London
           </h1>
 
           <p className="mb-10 text-lg leading-relaxed text-muted">
             Comfortable, reliable and affordable local taxi rides anywhere across
-            Mill Hill and North London. Available 24/7 with fixed, transparent
+            Heathrow and West London. Available 24/7 with fixed, transparent
             prices.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={`tel:${PHONE.replace(/\s/g, '')}`}
-              className="inline-flex h-14 min-w-[210px] items-center justify-center gap-2 rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+              className="inline-flex h-14 min-w-[210px] items-center justify-center gap-2 rounded-xl px-8 text-base font-bold text-[var(--color-accent-solid-fg)] transition-all duration-200"
               style={{
-                background: '#cc200e',
-                boxShadow: '0 16px 40px rgba(204,32,14,0.3)',
+                background: 'var(--color-accent-solid)',
+                boxShadow: '0 16px 40px rgba(var(--color-accent-rgb), 0.3)',
                 textDecoration: 'none',
               }}
             >
@@ -161,8 +161,8 @@ export default function LocalRidesPage() {
           <div className="overflow-hidden rounded-3xl" style={{ border: '1px solid var(--color-line)' }}>
             <div className="relative h-72 w-full sm:h-96">
               <Image
-                src="/images/fleet/local.png"
-                alt="Local taxi rides across North London — Bittacy Cars"
+                src="/images/fleet/local-branded.jpg"
+                alt="Local taxi rides across West London — Heathrow Mini Cab"
                 fill
                 className="object-cover"
                 sizes="(max-width: 896px) 100vw, 896px"
@@ -186,9 +186,9 @@ export default function LocalRidesPage() {
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
               style={{
-                background: 'rgba(204,32,14,0.12)',
-                border: '1px solid rgba(204,32,14,0.3)',
-                color: '#cc200e',
+                background: 'rgba(var(--color-accent-rgb), 0.12)',
+                border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+                color: 'var(--color-accent)',
               }}
             >
               Coverage
@@ -212,7 +212,7 @@ export default function LocalRidesPage() {
                   border: '1px solid var(--color-line)',
                 }}
               >
-                <MapPin size={13} style={{ color: '#cc200e' }} />
+                <MapPin size={13} style={{ color: 'var(--color-accent)' }} />
                 {area}
               </span>
             ))}
@@ -227,12 +227,12 @@ export default function LocalRidesPage() {
             <span
               className="mb-4 inline-block rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em]"
               style={{
-                background: 'rgba(204,32,14,0.12)',
-                border: '1px solid rgba(204,32,14,0.3)',
-                color: '#cc200e',
+                background: 'rgba(var(--color-accent-rgb), 0.12)',
+                border: '1px solid rgba(var(--color-accent-rgb), 0.3)',
+                color: 'var(--color-accent)',
               }}
             >
-              Why Bittacy Cars
+              Why Heathrow Mini Cab
             </span>
 
             <h2
@@ -261,11 +261,11 @@ export default function LocalRidesPage() {
                   <div
                     className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
                     style={{
-                      background: '#cc200e',
-                      boxShadow: '0 8px 20px rgba(204,32,14,0.3)',
+                      background: 'var(--color-accent-solid)',
+                      boxShadow: '0 8px 20px rgba(var(--color-accent-rgb), 0.3)',
                     }}
                   >
-                    <Icon size={22} className="text-white" />
+                    <Icon size={22} className="text-[var(--color-accent-solid-fg)]" />
                   </div>
 
                   <h3
@@ -300,7 +300,7 @@ export default function LocalRidesPage() {
               <div className="max-w-2xl text-left">
                 <span
                   className="mb-3 block text-xs font-black uppercase tracking-[0.22em]"
-                  style={{ color: '#cc200e' }}
+                  style={{ color: 'var(--color-accent)' }}
                 >
                   Local Rides
                 </span>
@@ -320,10 +320,10 @@ export default function LocalRidesPage() {
               <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-auto">
                 <a
                   href={`tel:${PHONE.replace(/\s/g, '')}`}
-                  className="inline-flex h-14 min-w-[200px] items-center justify-center gap-2 rounded-xl px-8 text-base font-bold text-white transition-all duration-200"
+                  className="inline-flex h-14 min-w-[200px] items-center justify-center gap-2 rounded-xl px-8 text-base font-bold text-[var(--color-accent-solid-fg)] transition-all duration-200"
                   style={{
-                    background: '#cc200e',
-                    boxShadow: '0 14px 35px rgba(204,32,14,0.25)',
+                    background: 'var(--color-accent-solid)',
+                    boxShadow: '0 14px 35px rgba(var(--color-accent-rgb), 0.25)',
                     textDecoration: 'none',
                   }}
                 >

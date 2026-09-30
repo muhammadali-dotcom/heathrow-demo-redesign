@@ -3,10 +3,10 @@ import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
   path: '/book',
-  title: 'Book a Ride | Bittacy Cars',
+  title: 'Book a Ride | Heathrow Mini Cab',
   description:
-    'Book your taxi with Bittacy Cars. Fast, fixed-price quotes for airport transfers, school runs and local rides across North London.',
-  keywords: ['book taxi Mill Hill', 'book airport transfer North London', 'Bittacy Cars booking'],
+    'Book your taxi with Heathrow Mini Cab. Fast, fixed-price quotes for airport transfers, school runs and local rides across Heathrow and West London.',
+  keywords: ['book minicab Heathrow', 'book Heathrow airport transfer', 'Heathrow Mini Cab booking'],
 });
 
 export default function BookPage() {

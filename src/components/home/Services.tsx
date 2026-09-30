@@ -11,26 +11,26 @@ import Reveal from '@/components/ui/Reveal';
 const homeServices = [
   {
     id: 'airport-transfers',
-    image: '/images/fleet/airport.png',
+    image: '/images/fleet/airport-branded.jpg',
     title: 'Airport Transfers',
     description:
-      'Reliable door-to-door airport transfer service to all major London airports — Heathrow, Gatwick, Stansted, Luton and City. Fixed prices, meet & greet included.',
+      'Heathrow specialists covering Terminals 2, 3, 4 and 5, plus door-to-door transfers to Gatwick, Stansted, Luton and City. Fixed prices, meet & greet included.',
     href: '/airport-transfers',
   },
   {
     id: 'school-runs',
-    image: '/images/fleet/school.png',
+    image: '/images/fleet/school-branded.jpg',
     title: 'School Runs',
     description:
-      'Safe, punctual and DBS-checked drivers for your children&apos;s school pickups and drop-offs across North London. Regular or one-off bookings available.',
+      'Safe, punctual and DBS-checked drivers for your children&apos;s school pickups and drop-offs across West London. Regular or one-off bookings available.',
     href: '/school-runs',
   },
   {
     id: 'local-rides',
-    image: '/images/fleet/local.png',
+    image: '/images/fleet/local-branded.jpg',
     title: 'Local Rides',
     description:
-      'Comfortable and affordable local rides across Finchley, Barnet, Hendon, Golders Green and all surrounding North London areas.',
+      'Comfortable and affordable local rides across Hounslow, Hayes, Feltham, West Drayton and all surrounding West London areas.',
     href: '/local-rides',
   },
   {
@@ -58,7 +58,7 @@ export default function Services() {
           <SectionTitle
             label="Our Services"
             title="Travel Solutions Tailored to You"
-            subtitle="From airport transfers to school runs, we cover every journey across North London."
+            subtitle="From airport transfers to school runs, we cover every journey to and from Heathrow and across West London."
             centered
           />
         </Reveal>
@@ -74,8 +74,8 @@ export default function Services() {
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
                 el.style.transform = 'translateY(-8px)';
-                el.style.borderColor = 'rgba(204,32,14,0.45)';
-                el.style.boxShadow = '0 24px 60px rgba(204,32,14,0.12)';
+                el.style.borderColor = 'rgba(var(--color-accent-rgb), 0.45)';
+                el.style.boxShadow = '0 24px 60px rgba(var(--color-accent-rgb), 0.12)';
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLDivElement;
@@ -115,7 +115,7 @@ export default function Services() {
                 <Link
                   href={service.href}
                   className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-200"
-                  style={{ color: '#cc200e' }}
+                  style={{ color: 'var(--color-accent)' }}
                 >
                   Learn More <ArrowRight size={14} />
                 </Link>

@@ -4,5 +4,5 @@ export const features = [
   { id: 'drivers', title: 'Professional Drivers', description: 'Experienced and courteous drivers.' },
   { id: 'support', title: '24/7 Support', description: 'We are available around the clock.' },
   { id: 'prices', title: 'Fixed Prices', description: 'No hidden charges, ever.' },
-  { id: 'airport', title: 'Airport Specialists', description: 'Experts in airport transfers.' },
+  { id: 'airport', title: 'Heathrow Specialists', description: 'Heathrow terminal experts with meet & greet and flight tracking.' },
 ];

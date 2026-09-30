@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ChevronDown, Plane, GraduationCap, MapPin, Briefcase } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
 import { services } from '@/data/services';
-import { COMPANY_NAME } from '@/lib/constants';
 import MobileMenu from './MobileMenu';
 import ThemeToggle from '@/components/ui/ThemeToggle';
+import Logo from '@/components/ui/Logo';
 
 const serviceIcons: Record<string, React.ElementType> = {
   'airport-transfers': Plane,
@@ -44,18 +43,7 @@ export default function Header() {
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className="relative w-10 h-10 flex-shrink-0">
-                <Image
-                  src="/images/fleet/bittacylogo.png"
-                  alt="Bittacy Cars Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              <span className="text-fg font-bold text-lg tracking-tight hidden sm:block">
-                {COMPANY_NAME}
-              </span>
+              <Logo priority className="h-9 sm:h-11 w-auto" />
             </Link>
 
             {/* Desktop Nav */}
@@ -104,11 +92,11 @@ export default function Header() {
                               <span
                                 className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg transition-colors duration-150"
                                 style={{
-                                  background: 'rgba(204,32,14,0.1)',
-                                  border: '1px solid rgba(204,32,14,0.18)',
+                                  background: 'rgba(var(--color-accent-rgb), 0.1)',
+                                  border: '1px solid rgba(var(--color-accent-rgb), 0.18)',
                                 }}
                               >
-                                <Icon size={14} style={{ color: '#cc200e' }} />
+                                <Icon size={14} style={{ color: 'var(--color-accent)' }} />
                               </span>
                               <div>
                                 <div className="text-sm font-semibold text-fg leading-tight">
@@ -127,7 +115,7 @@ export default function Header() {
                           <Link
                             href="/services"
                             className="flex items-center justify-between py-2 text-xs font-bold uppercase tracking-widest transition-colors duration-150"
-                            style={{ color: '#cc200e' }}
+                            style={{ color: 'var(--color-accent)' }}
                           >
                             View All Services
                             <ChevronDown size={12} className="-rotate-90" />
@@ -151,10 +139,10 @@ export default function Header() {
             {/* Contact Now CTA */}
             <Link
               href="/contact"
-              className="hidden lg:flex items-center gap-2 px-5 py-2.5 rounded-xl text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:brightness-110"
+              className="hidden lg:flex items-center gap-2 px-5 py-2.5 rounded-xl text-[var(--color-accent-solid-fg)] text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:brightness-110"
               style={{
-                background: 'var(--color-accent)',
-                boxShadow: '0 4px 16px rgba(204,32,14,0.28)',
+                background: 'var(--color-accent-solid)',
+                boxShadow: '0 4px 16px rgba(var(--color-accent-rgb), 0.28)',
               }}
             >
               Contact Now

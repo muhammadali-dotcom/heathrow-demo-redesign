@@ -53,14 +53,14 @@ export default function VehicleSelector({
               className="group relative flex flex-col overflow-hidden rounded-xl text-left transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
               style={{
                 background: isSelected
-                  ? 'rgba(204,32,14,0.1)'
+                  ? 'rgba(var(--color-accent-rgb), 0.1)'
                   : 'var(--color-surface)',
                 border: isSelected
                   ? `1px solid ${RED}`
                   : '1px solid var(--color-line)',
                 opacity: isDisabled ? 0.35 : 1,
                 cursor: isDisabled ? 'not-allowed' : 'pointer',
-                boxShadow: isSelected ? '0 0 20px rgba(204,32,14,0.15)' : 'none',
+                boxShadow: isSelected ? '0 0 20px rgba(var(--color-accent-rgb), 0.15)' : 'none',
               }}
             >
               {/* Selected dot */}

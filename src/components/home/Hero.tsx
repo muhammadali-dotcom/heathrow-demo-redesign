@@ -35,8 +35,8 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src={isLight ? '/images/fleet/herolight2.jpg' : '/images/fleet/Hero5.jpg'}
-          alt="Bittacy premium taxi service"
+          src={isLight ? '/images/fleet/hero-yellow-light.jpg' : '/images/fleet/hero-yellow-dark.jpg'}
+          alt="Heathrow Mini Cab premium taxi service"
           fill
           priority
           className="object-cover object-[36%_center] opacity-90 lg:object-[68%_center]"
@@ -50,15 +50,15 @@ export default function Hero() {
       ) : (
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,6,7,0.98)_0%,rgba(5,6,7,0.90)_36%,rgba(5,6,7,0.55)_58%,rgba(5,6,7,0.18)_100%)]" />
       )}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_50%,rgba(204,32,14,0.28),transparent_32%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_50%,rgba(var(--color-accent-rgb),0.28),transparent_32%)]" />
       <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-bg-alt via-bg-alt/80 to-transparent" />
 
       {/* Light streaks — dark mode only */}
       {!isLight && (
         <>
-          <div className="absolute right-[-12%] top-[20%] h-[2px] w-[58%] rotate-[-18deg] bg-[#cc200e]/70 blur-[1px]" />
-          <div className="absolute right-[-15%] top-[30%] h-[1px] w-[65%] rotate-[-18deg] bg-[#A93226]/60 blur-[1px]" />
-          <div className="absolute left-0 bottom-[28%] h-[1px] w-[44%] bg-[#cc200e]/35 blur-[1px]" />
+          <div className="absolute right-[-12%] top-[20%] h-[2px] w-[58%] rotate-[-18deg] bg-[var(--color-accent)]/70 blur-[1px]" />
+          <div className="absolute right-[-15%] top-[30%] h-[1px] w-[65%] rotate-[-18deg] bg-[var(--color-accent-hover)]/60 blur-[1px]" />
+          <div className="absolute left-0 bottom-[28%] h-[1px] w-[44%] bg-[var(--color-accent)]/35 blur-[1px]" />
         </>
       )}
 
@@ -70,9 +70,9 @@ export default function Hero() {
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="mb-5 text-xs font-black uppercase tracking-[0.22em] text-[#A93226]"
+              className="mb-5 text-xs font-black uppercase tracking-[0.22em] text-[var(--color-accent-hover)]"
             >
-              Mill Hill Taxis, Airport Transfers &amp; School Runs
+              Heathrow Minicabs, Airport Transfers &amp; Local Rides
             </motion.p>
 
             <motion.h1
@@ -83,7 +83,7 @@ export default function Hero() {
             >
               Your Journey,
               <br />
-              Our <span className="text-[#cc200e]">Priority</span>
+              Our <span className="accent-word">Priority</span>
             </motion.h1>
 
             <motion.p
@@ -92,8 +92,8 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.22 }}
               className={`mb-8 max-w-[520px] text-base leading-relaxed ${heroSubTextColor} sm:text-lg`}
             >
-              Reliable, punctual and comfortable taxi services across North London
-              and beyond.
+              Reliable, punctual and comfortable minicab services to and from Heathrow
+              and across West London.
             </motion.p>
 
             <motion.div
@@ -105,7 +105,7 @@ export default function Hero() {
               <Button
                 variant="primary"
                 href="/book"
-                className="group h-14 px-8 text-base font-bold shadow-[0_18px_50px_rgba(204,32,14,0.35)]"
+                className="group h-14 px-8 text-base font-bold shadow-[0_18px_50px_rgba(var(--color-accent-rgb),0.35)]"
               >
                 Book a Ride
                 <ArrowRight
@@ -117,7 +117,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 href="/contact"
-                className={`h-14 px-8 text-base font-bold backdrop-blur-md hover:border-[#cc200e] hover:text-[#cc200e] ${
+                className={`h-14 px-8 text-base font-bold backdrop-blur-md hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] ${
                   isLight
                     ? 'border-fg/20 bg-white/60 text-fg'
                     : 'border-white/30 bg-black/25 text-white'
@@ -135,7 +135,7 @@ export default function Hero() {
             >
               {trustPoints.map(({ icon: Icon, title, text }) => (
                 <div key={title} className="text-center">
-                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#cc200e]/60 bg-[#cc200e]/10 text-[#A93226] shadow-[0_0_28px_rgba(204,32,14,0.18)]">
+                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-accent)]/60 bg-[var(--color-accent)]/10 text-[var(--color-accent-hover)] shadow-[0_0_28px_rgba(var(--color-accent-rgb),0.18)]">
                     <Icon size={21} strokeWidth={2} />
                   </div>
                   <h3 className={`text-sm font-bold leading-tight ${trustTextColor}`}>{title}</h3>
@@ -156,7 +156,7 @@ export default function Hero() {
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             className="relative hidden min-h-[520px] lg:block"
           >
-            <div className="absolute bottom-6 right-[-40px] h-[170px] w-[82%] rounded-full bg-[#cc200e]/20 blur-[70px]" />
+            <div className="absolute bottom-6 right-[-40px] h-[170px] w-[82%] rounded-full bg-[var(--color-accent)]/20 blur-[70px]" />
             {!isLight && (
               <div className="absolute bottom-10 right-[-30px] h-[90px] w-[78%] rounded-full bg-overlay blur-[42px]" />
             )}

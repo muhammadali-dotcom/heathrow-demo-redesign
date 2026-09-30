@@ -3,7 +3,7 @@
 Create the project structure like this:
 
 ```txt
-bittacy-cars/
+heathrow-mini-cab/
 │
 ├── public/
 │   ├── images/

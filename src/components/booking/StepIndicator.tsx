@@ -32,17 +32,17 @@ export default function StepIndicator({ steps, currentStepNumber }: StepIndicato
                 {step.state === 'completed' ? (
                   <div
                     className="flex items-center justify-center w-9 h-9 rounded-full"
-                    style={{ backgroundColor: 'var(--color-accent)' }}
+                    style={{ backgroundColor: 'var(--color-accent-solid)' }}
                   >
-                    <Check className="w-5 h-5 text-white" strokeWidth={2.5} />
+                    <Check className="w-5 h-5 text-[var(--color-accent-solid-fg)]" strokeWidth={2.5} />
                   </div>
                 ) : step.state === 'active' ? (
                   <div
                     className="flex items-center justify-center w-9 h-9 rounded-full"
-                    style={{ backgroundColor: 'var(--color-accent)' }}
+                    style={{ backgroundColor: 'var(--color-accent-solid)' }}
                     aria-current="step"
                   >
-                    <span className="text-white font-bold text-sm leading-none">
+                    <span className="text-[var(--color-accent-solid-fg)] font-bold text-sm leading-none">
                       {stepNumber}
                     </span>
                   </div>

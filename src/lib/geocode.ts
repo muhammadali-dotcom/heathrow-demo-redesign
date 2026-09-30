@@ -4,7 +4,7 @@ export interface GeocodeResult {
   displayName: string;
 }
 
-// Rough bounding box around North London / Greater London + main airports,
+// Rough bounding box around Greater London (incl. Heathrow) + main airports,
 // used to bias Nominatim results toward locally relevant addresses.
 const LONDON_VIEWBOX = "-0.79,51.86,0.51,51.28";
 

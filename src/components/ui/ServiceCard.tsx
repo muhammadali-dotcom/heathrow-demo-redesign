@@ -27,8 +27,8 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       }}
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-8px)';
-        (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(204,32,14,0.45)';
-        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 24px 60px rgba(204,32,14,0.12)';
+        (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(var(--color-accent-rgb), 0.45)';
+        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 24px 60px rgba(var(--color-accent-rgb), 0.12)';
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLDivElement).style.transform = '';
@@ -39,13 +39,13 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       {/* Image area */}
       <div
         className="h-44 flex items-center justify-center"
-        style={{ background: 'rgba(204,32,14,0.05)' }}
+        style={{ background: 'rgba(var(--color-accent-rgb), 0.05)' }}
       >
         <div
           className="w-16 h-16 rounded-2xl flex items-center justify-center"
-          style={{ background: 'linear-gradient(135deg, #cc200e, #A93226)', boxShadow: '0 8px 24px rgba(204,32,14,0.35)' }}
+          style={{ background: 'linear-gradient(135deg, var(--color-accent-solid), var(--color-accent-solid-hover))', boxShadow: '0 8px 24px rgba(var(--color-accent-rgb), 0.35)' }}
         >
-          <Icon size={28} className="text-white" />
+          <Icon size={28} className="text-[var(--color-accent-solid-fg)]" />
         </div>
       </div>
 
@@ -58,7 +58,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
         <Link
           href={service.href}
           className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-200"
-          style={{ color: '#cc200e' }}
+          style={{ color: 'var(--color-accent)' }}
         >
           Learn More <ArrowRight size={14} />
         </Link>
